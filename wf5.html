@@ -1,0 +1,2741 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+  <title>: Workflow 5</title>
+  
+  <meta property="description" itemprop="description" content="A brief description...."/>
+  
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+  
+  
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content=": Workflow 5"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="A brief description...."/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content=""/>
+  
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content=": Workflow 5"/>
+  <meta property="twitter:description" content="A brief description...."/>
+  
+  <!--/radix_placeholder_meta_tags-->
+  
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["Workflow 5"]},{"type":"character","attributes":{},"value":["A brief description.... \n"]},{"type":"character","attributes":{},"value":["assets/cite.bib"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  
+  <script type="application/javascript">
+  
+    window.headroom_prevent_pin = false;
+  
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+  
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+  
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+  
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+  
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+  
+  <style type="text/css">
+  
+  /* Theme (user-documented overrideables for nav appearance) */
+  
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #455a64;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .distill-site-nav a:hover {
+    color: white;
+  }
+  
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+  
+  .distill-site-header {
+  
+  }
+  
+  .distill-site-footer {
+  
+  }
+  
+  
+  /* Site Header */
+  
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+  
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+  
+  
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+  
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+  
+  .distill-site-header .title {
+    font-size: 18px;
+  }
+  
+  .distill-site-header .logo {
+    padding: 0;
+  }
+  
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+  
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+  
+  
+  
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+  
+  
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+  
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+  
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-dropdown-active {
+    display: block;
+  }
+  
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+  
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+  
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative;}
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  
+  /* Site Footer */
+  
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Headroom */
+  
+  d-title {
+    padding-top: 6rem;
+  }
+  
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+  
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+  
+  .headroom--unpinned {
+    top: -100px;
+  }
+  
+  .headroom--pinned {
+    top: 0;
+  }
+  
+  </style>
+  
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+  
+  <style type="text/css">
+  
+  body {
+    background-color: white;
+  }
+  
+  .pandoc-table {
+    width: 100%;
+  }
+  
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+  
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+  
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+  
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+  
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .shaded-content {
+    background: white;
+  }
+  
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  d-article {
+    padding-bottom: 30px;
+  }
+  
+  d-appendix {
+    padding-top: 30px;
+  }
+  
+  d-article>p>img {
+    width: 100%;
+  }
+  
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for table of contents */
+  
+  .d-toc {
+    color: rgba(0,0,0,0.8);
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+  
+  .d-toc-header {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.3em;
+  }
+  
+  .d-toc a {
+    border-bottom: none;
+  }
+  
+  .d-toc ul {
+    padding-left: 0;
+  }
+  
+  .d-toc li>ul {
+    padding-top: 0.8em;
+    padding-left: 16px;
+    margin-bottom: 0.6em;
+  }
+  
+  .d-toc ul,
+  .d-toc li {
+    list-style-type: none;
+  }
+  
+  .d-toc li {
+    margin-bottom: 0.9em;
+  }
+  
+  .d-toc-separator {
+    margin-top: 20px;
+    margin-bottom: 2em;
+  }
+  
+  .d-article-with-toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  
+  
+  /* Tweak code blocks (note that this CSS is repeated above in an injection
+     into the d-code shadow dom) */
+  
+  d-code {
+    overflow-x: auto !important;
+  }
+  
+  pre.d-code code.d-code {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  pre.text-output {
+  
+    font-size: 12px;
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-code {
+    overflow-x: visible !important;
+  }
+  
+  pre.d-code code.d-code  {
+      padding-left: 18px;
+      font-size: 14px;
+  }
+  pre.text-output {
+    font-size: 14px;
+  }
+  }
+  
+  /* Figure */
+  
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+  
+  .figure img {
+    width: 100%;
+  }
+  
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+  
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  
+  
+  /* Tweak 1000px media break to show more text */
+  
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+  
+    .grid {
+      grid-column-gap: 16px;
+    }
+  
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+  
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+  
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+  
+  
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+  
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  
+  /* Social footer */
+  
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+  
+  .disqus-comments {
+    margin-right: 30px;
+  }
+  
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  #disqus_thread {
+    margin-top: 30px;
+  }
+  
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+  
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+  
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  
+  
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+  
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+  
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+  
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+  
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+  
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+  
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+  
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  </style>
+  
+  <script type="application/javascript">
+  
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+  
+  // show body when load is complete
+  function on_load_complete() {
+  
+    // set body to visible
+    document.body.style.visibility = 'visible';
+  
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+  
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+  
+  function init_distill() {
+  
+    init_common();
+  
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+  
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+  
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+  
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+  
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+  
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+  
+    // create d-bibliography
+    var bibliography = $('<d-bibliography></d-bibliography>');
+    $('#distill-bibliography').wrap(bibliography);
+  
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+  
+    // replace citations with <d-cite>
+    $('.citation').each(function(i, val) {
+      appendix = true;
+      var cites = $(this).attr('data-cites').split(" ");
+      var dt_cite = $('<d-cite></d-cite>');
+      dt_cite.attr('key', cites.join());
+      $(this).replaceWith(dt_cite);
+    });
+    // remove refs
+    $('#refs').remove();
+  
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+  
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+  
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+  
+    // replace code blocks with d-code
+    $('pre>code').each(function(i, val) {
+      var code = $(this);
+      var pre = code.parent();
+      var clz = "";
+      var language = pre.attr('class');
+      if (language) {
+        // map unknown languages to "clike" (without this they just dissapear)
+        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                                 "javascript", "js", "julia", "lua", "markdown",
+                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
+          language = "clike";
+        language = ' language="' + language + '"';
+        var dt_code = $('<d-code block' + language + clz + '></d-code>');
+        dt_code.text(code.text());
+        pre.replaceWith(dt_code);
+      } else {
+        code.addClass('text-output').unwrap().changeElementType('pre');
+      }
+    });
+  
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+  
+      // capture layout
+      var layout = $(this).attr('data-layout');
+  
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('d-code, pre.text-output, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+  
+  
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+  
+    // load distill framework
+    load_distill_framework();
+  
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+  
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+  
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+  
+      // table of contents
+      if (have_authors) // adjust border if we are in authors
+        $('.d-toc').parent().addClass('d-article-with-toc');
+  
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+  
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+  
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+  
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+  
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+  
+      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+      $('d-code').each(function(i, val) {
+        var style = document.createElement('style');
+        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+        if (this.shadowRoot)
+          this.shadowRoot.appendChild(style);
+      });
+  
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+  
+      // clear polling timer
+      clearInterval(tid);
+  
+      // show body now that everything is ready
+      on_load_complete();
+    }
+  
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+  
+  }
+  
+  function init_downlevel() {
+  
+    init_common();
+  
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+  
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+  
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+  
+    // remove toc
+    $('.d-toc-header').remove();
+    $('.d-toc').remove();
+    $('.d-toc-separator').remove();
+  
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+  
+  
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+  
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+  
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+  
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+  
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+  
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+  
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+  
+    $('body').addClass('downlevel');
+  
+    on_load_complete();
+  }
+  
+  
+  function init_common() {
+  
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+  
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+  
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+  
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+  
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
+    });
+  
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+  
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+  
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+  
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+  
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+  
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+  
+  </script>
+  
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+  <script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+  <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/datatables-binding-0.14/datatables.js"></script>
+  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+  <script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="site_libs/jszip-1.10.20/jszip.min.js"></script>
+  <link href="site_libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+  <script src="site_libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+  <script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+  <script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+  <script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+  <script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
+  <link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+  <script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+  <link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+  <script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <style type="text/css">
+  /* Whole document: */
+  @import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif|Lato:300|Roboto:300|Nunito+Sans:300|Inconsolata|Source+Sans+Pro|Work+Sans:200,300,400,500');
+  /* controls general properties of site*/
+  body {
+    color: #414141;
+  /*  line-height: 1.7;
+    font-size: 17px; */
+    background-color: #FEFEFE;
+  }
+  
+  d-title h1{
+  font-size: 1.8em;
+  font-family: 'Work Sans';
+  font-weight: 300;
+  }
+  
+  d-article h1 {
+    font-size: 1.8em;
+    font-family: 'Work Sans', 'Source Sans Pro', 'PT Sans';
+    font-weight: 300;
+  }
+  
+  d-article h2 {
+    font-size: 1.65em;
+    font-family: 'Work Sans', 'Source Sans Pro', 'PT Sans';
+    font-weight: 500;
+  }
+  
+  d-article h3 {
+    margin-top: 1em;
+  }
+  d-byline .authors-affiliations {
+    grid-column-end: span 3;
+    grid-column-gap: 8px;
+  }
+  
+  a.name:-webkit-any-link {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+  
+  a.affiliation:-webkit-any-link {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+  
+  blockquote p {
+  	font-size: 1.3em;
+  	font-family: 'Lato';
+    font-style: normal;
+    margin: 0.5em 0 0.5em;
+  }
+  
+  d-code {
+    background-color: #E8E8E8;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-family: 'Monaco', 'PT Mono', monospace;
+    overflow-x: scroll !important;
+    margin-bottom: 20px;
+    border-left: 5px solid #323232;
+    border-top: 1px solid #B7B7B7;
+    border-right: 1px solid #B7B7B7;
+    border-bottom: 1px solid #B7B7B7;
+  }
+  
+  code {
+    background-color: #E8E8E8;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'Monaco', 'PT Mono', monospace;
+    overflow-x: scroll !important;
+    margin-bottom: 20px;
+    color: #BF2727;
+  }
+  
+  pre.text-output {
+    margin-top: 0px;
+     color: #333333;
+     background-color: #FAFAFA;
+     font-size: 0.8em
+   }
+  
+  pre {
+    border: 1px solid #ccc;
+    padding: 0px 10px 10px 18px;
+    margin: 1em 0px;
+    border-radius: 5px;
+  }
+  
+  .nav-dropdown-content .nav-dropdown-header {
+    text-transform: none;
+  }
+  
+  d-article li {
+    margin: 0px 0px 4px;
+  }
+  
+  /*************************************************
+  *  code for side by side krona plot
+  **************************************************/
+  
+  .column {
+    float: left;
+    width: 48%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  div.krona {
+    width: 100%;
+  	height: 90%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+  	margin-top: 5px;
+  }
+  
+  div.container-krona {
+    text-align: center;
+    padding: 1px 10px;
+  	color: #414141;
+  	font-size: 1.48em;
+  	line-height: 0.8em;
+  	font-family: 'Inconsolata';
+  }
+  
+  div.container-krona p {
+    margin: 20px;
+  }
+  
+  div.krona img {
+    border:1px solid white;
+    margin: 25px;
+  }
+  
+  img {
+    margin: 25px;
+  }
+  
+  /** LIGHTBOX MARKUP **/
+  .thumbnail {
+    max-width: 100%;
+    position: relative;
+  }
+  
+  .lightbox {
+  	/** Default lightbox to hidden */
+  	display: none;
+  
+  	/** Position and style */
+  	position: fixed;
+  	z-index: 999;
+  	width: 100%;
+  	height: 100%;
+  	text-align: center;
+  	top: 0;
+  	left: 0;
+  	background: rgba(0,0,0,0.8);
+  }
+  
+  .lightbox img {
+  	/** Pad the lightbox image */
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+  	max-width: 0%;
+  	max-height: 0%;
+  	margin: auto;
+  	box-sizing: border-box;
+  }
+  
+  .lightbox:target {
+  	/** Remove default browser outline */
+  	outline: none;
+  
+  	/** Unhide lightbox **/
+  	display: block;
+  }
+  
+  .lightbox:target img {
+  	max-height: 100%;
+  	max-width: 100%;
+  }
+  
+  .distill-site-header .logo img {
+    margin-top: 15px;
+    max-height: 30px;
+    margin-bottom: 5px;
+  }
+  
+  .distill-site-nav {
+      color: #F5F5F5;
+      background-color: #323232;
+      font-size: 16px;
+      font-weight: 300;
+  }
+  
+  .article-banner {
+    width: auto;
+    height: auto;
+    border: 0;
+  }
+  
+  img[src="assets/banner.png"] {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    margin: 100px 50px 0px 25px;
+  }
+  
+  </style>
+  <!--/radix_placeholder_site_in_header-->
+
+  <link rel="stylesheet" href="assets/styles.css" type="text/css"/>
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Workflow 5","description":"A brief description....","authors":[]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo" href="index.html">
+<img src="assets/icon.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title"></a>
+</div>
+<div class="nav-right">
+<a href="index.html">
+<i class="fa fa-home" aria-hidden="true"></i>
+</a>
+<a href="wf1.html">1. Name</a>
+<a href="wf2.html">2. Name</a>
+<a href="wf3.html">3. Name</a>
+<a href="wf4.html">4. Name</a>
+<a href="wf5.html">5. Name</a>
+<a href="wf6.html">6. Name</a>
+<a href="wf7.html">7. Name</a>
+<a href="data-availability.html">Data</a>
+<a href="https://github.com/bocasbiome/web/">
+<i class="fa fa-github fa-lg" aria-hidden="true"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Workflow 5</h1>
+<p><p>A brief description….</p></p>
+</div>
+
+
+<div class="d-article">
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#jaccard">Jaccard</a></li>
+<li><a href="#modified-gower">Modified Gower</a></li>
+<li><a href="#bray-curtis">Bray Curtis</a></li>
+<li><a href="#unifrac">UNIFRAC</a></li>
+<li><a href="#gunifrac">GUNIFRAC</a></li>
+<li><a href="#wunifrac">WUNIFRAC</a></li>
+<li><a href="#source-code">Source Code</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
+<p>BOCASBIOME SCRIPT.5: Beta diversity WHOLE fish microbiome</p>
+<p>#load rarified whole fish gut microbiome data</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.whole &lt;- readRDS(&quot;rdata/p3/ps_16S_bocas_fish_final.rds&quot;)</code></pre>
+</div>
+<p>First only the WHOLE fish microbiome see script p5_core for betadiversity CORE careful they over-write each other</p>
+<h2 id="jaccard">Jaccard</h2>
+<h3 id="dissimilarity-matrix">Dissimilarity Matrix</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+type.jaccard &lt;- phyloseq::distance(ps.whole, method = &quot;jaccard&quot;, binary = T) 
+sampledf &lt;- data.frame(sample_data(ps.whole))</code></pre>
+</div>
+<h3 id="beta-dispersions">Beta Dispersions</h3>
+<h4 id="by-zone">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.jaccard1 &lt;- betadisper(type.jaccard, sampledf$Zone, 
+                            type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.jaccard1
+permutest(beta.jaccard1, binary = TRUE, pairwise = TRUE, 
+          permutations = 10000)</code></pre>
+</div>
+<h4 id="by-position-inner-vs.-outer">By Position: Inner vs. outer</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.jaccard2 &lt;- betadisper(type.jaccard, sampledf$Position, 
+                            type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.jaccard2
+permutest(beta.jaccard2, binary = TRUE, pairwise = TRUE, 
+          permutations = 10000) </code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay">By Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.whole.inner &lt;- subset_samples(ps.whole, Zone != &quot;Outer bay&quot;)
+type.jaccard.inner &lt;- phyloseq::distance(ps.whole.inner, 
+                                         method = &quot;jaccard&quot;, binary = T)
+sampledf.inner &lt;- data.frame(sample_data(ps.whole.inner))</code></pre>
+</div>
+<h4 id="by-reef-type">By Reef Type</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.jaccard3 &lt;- betadisper(type.jaccard.inner, sampledf.inner$Reef_type, 
+                            type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.jaccard3
+permutest(beta.jaccard3, binary = TRUE, pairwise = TRUE, 
+          permutations = 10000)</code></pre>
+</div>
+<h3 id="permanova">PERMANOVA</h3>
+<h4 id="by-zone-1">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.jaccard0 &lt;- adonis(type.jaccard ~ Zone, data = sampledf, 
+                          permutations = 10000)
+adonis.jaccard0</code></pre>
+</div>
+<h4 id="by-reef">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.jaccardR &lt;- adonis(type.jaccard ~ Reef, data = sampledf, 
+                          permutations = 10000)
+adonis.jaccardR</code></pre>
+</div>
+<h4 id="by-zone-with-reef-nested-in-zone">By Zone with Reef nested in Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.jaccard1&lt;- adonis(type.jaccard ~ Zone/Reef, data = sampledf, 
+                         permutations = 10000)
+adonis.jaccard1</code></pre>
+</div>
+<h4 id="by-position-inner-vs.-outer-with-reef-nested-in-position">By Position: Inner vs. outer with Reef nested in Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.jaccard2 &lt;- adonis(type.jaccard ~ Position/Reef, data = sampledf, 
+                          permutations = 10000)
+adonis.jaccard2</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-with-reef-nested-in-cover-inside-bay">By Low vs. high cover with Reef nested in cover inside bay)</h4>
+<p>variable Reef_type is healthy and disturbed (based on level coral cover)</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.jaccard3 &lt;- adonis(type.jaccard.inner ~ Reef_type/Reef, data = sampledf.inner, permutations = 10000)
+adonis.jaccard3</code></pre>
+</div>
+<p>pairwise adonis as a substitute for posthoc test of PERMANOVA, default: p.adjust.m = “bonferroni”</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+# Between groups
+pairwise1 &lt;- pairwise.adonis(type.jaccard, factors = sampledf$Zone)
+pairwise1
+# Between stations
+pairwise2 &lt;- pairwise.adonis(type.jaccard, factors = sampledf$Reef)
+pairwise2</code></pre>
+</div>
+<h2 id="modified-gower">Modified Gower</h2>
+<ol type="1">
+<li>log transform using either base 10(1+x) = “log10p” or base 2 see Anderson 2006 use microbime package transformation because uses vegan deconstand function rarefied data store in dataframe create distance matrix on log tranf. data</li>
+</ol>
+<h3 id="beta-dispersions-1">Beta Dispersions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+data.log10&lt;- microbiome::transform(ps.whole, transform = &quot;log10p&quot;)
+sampledf.log10 &lt;- data.frame(sample_data(data.log10))
+type.modGower &lt;- phyloseq::distance(data.log10, method = &quot;altGower&quot;)</code></pre>
+</div>
+<h4 id="by-zone-2">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.Gower1 &lt;- betadisper(type.modGower, sampledf.log10$Zone, 
+                          type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.Gower1
+permutest(beta.Gower1, pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-reef-1">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.GowerR &lt;- betadisper(type.modGower, sampledf.log10$Reef, 
+                          type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.GowerR
+permutest(beta.GowerR, pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-position">By Position:</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.Gower2 &lt;- betadisper(type.modGower, sampledf.log10$Position, 
+                          type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.Gower2
+permutest(beta.Gower2, pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-1">By Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+data.log10.inner &lt;- subset_samples(data.log10, Zone != &quot;Outer bay&quot;)
+type.modGower.inner &lt;- phyloseq::distance(data.log10.inner, method = &quot;altGower&quot;)
+sampledf.inner &lt;- data.frame(sample_data(data.log10.inner))
+beta.Gower3 &lt;- betadisper(type.modGower.inner, sampledf.inner$Reef_type, 
+                          type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.Gower3
+permutest(beta.Gower3, binary = TRUE, pairwise = TRUE, 
+          permutations = 10000) </code></pre>
+</div>
+<h3 id="permanova-1">PERMANOVA</h3>
+<h4 id="by-zone-3">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+adonis.modGower0 &lt;- adonis(type.modGower ~ Zone, data = sampledf.log10,
+ permutations = 10000)
+adonis.modGower0</code></pre>
+</div>
+<h4 id="by-reef-2">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.modGowerR &lt;- adonis(type.modGower ~ Reef, data = sampledf.log10,
+ permutations = 10000)
+adonis.modGowerR</code></pre>
+</div>
+<h4 id="by-zone-with-reef-nested-in-zone-1">By Zone with Reef nested in Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.modGower1 &lt;- adonis(type.modGower ~ Zone/Reef, data = sampledf.log10, 
+ permutations = 10000)
+adonis.modGower1</code></pre>
+</div>
+<h4 id="by-inner-vs.-outer-with-reef-nested-in-position">By Inner vs. outer with reef nested in position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.modGower2 &lt;- adonis(type.modGower ~ Position/Reef, data = sampledf.log10,
+ permutations = 10000)
+adonis.modGower2</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-2">By Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+data.log10.inner &lt;- subset_samples(data.log10, Zone != &quot;Outer bay&quot;)
+type.modGower.inner &lt;- phyloseq::distance(data.log10.inner, method = &quot;altGower&quot;)
+sampledf.inner.log10 &lt;- data.frame(sample_data(data.log10.inner))
+adonis.modGower3 &lt;- adonis(type.modGower.inner ~ Reef_type/Reef, 
+                           data = sampledf.inner.log10, permutations = 10000)
+adonis.modGower3</code></pre>
+</div>
+<h3 id="pairwise-comparisons-following-the-permanova">Pairwise comparisons following the PERMANOVA</h3>
+<h4 id="between-zones">Between zones</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.modGower, factors = sampledf$Zone)</code></pre>
+</div>
+<h4 id="between-reefs">Between reefs</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.modGower, factors = sampledf$Reef)</code></pre>
+</div>
+<h2 id="bray-curtis">Bray Curtis</h2>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+type.bray &lt;- phyloseq::distance(ps.whole, method = &quot;bray&quot;)
+sampledf &lt;- data.frame(sample_data(ps.whole))</code></pre>
+</div>
+<h3 id="beta-dispersions-2">Beta Dispersions</h3>
+<h4 id="by-zone-4">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.bray1 &lt;- betadisper(type.bray, sampledf$Zone, 
+                         type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.bray1
+permutest(beta.bray1, pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h4 id="by-reef-3">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.brayR &lt;- betadisper(type.bray, sampledf$Reef, 
+                         type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.brayR
+permutest(beta.brayR, pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-position-inner-vs.-outer-1">By Position: Inner vs. outer</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.bray2 &lt;- betadisper(type.bray, sampledf$Position, 
+                         type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.bray2
+permutest(beta.bray2, pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<p>!!! JJS Changed sampledf.whole.inner to sampledf.inner #### By Low vs. high cover inside bay</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.whole.inner &lt;- subset_samples(ps.whole, Zone != &quot;Outer bay&quot;)
+type.bray.inner &lt;- phyloseq::distance(ps.whole.inner, method = &quot;bray&quot;)
+beta.bray3 &lt;- betadisper(type.bray.inner, sampledf.inner$Reef_type, 
+                         type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.bray3
+permutest(beta.bray3, pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h3 id="permanova-2">PERMANOVA</h3>
+<h4 id="by-zone-5">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+adonis.bray0 &lt;- adonis(type.bray ~ Zone, data = sampledf,
+                            permutations = 10000)
+adonis.bray0</code></pre>
+</div>
+<h4 id="by-reef-4">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.brayR &lt;- adonis(type.bray ~ Reef, data = sampledf,
+                               permutations = 10000)
+adonis.brayR</code></pre>
+</div>
+<h4 id="by-zone-with-station-nested-in-group">By ZONE with Station nested in Group</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.bray1 &lt;- adonis(type.bray ~ Zone/Reef, data = sampledf, 
+                            permutations = 10000)
+adonis.bray1 </code></pre>
+</div>
+<h4 id="by-inner-vs.-outer-with-reef-nested-in-position-1">By Inner vs. outer with REEF nested in Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.bray2 &lt;- adonis(type.bray ~ Position/Reef, data = sampledf, 
+                            permutations = 10000)
+adonis.bray2</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-with-reef-nested-in-cover">By Low vs. high cover inside bay with Reef nested in cover</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.whole.inner &lt;- subset_samples(ps.whole, Zone != &quot;Outer bay&quot;)
+type.bray.inner &lt;- phyloseq::distance(ps.whole.inner, method = &quot;bray&quot;)
+sampledf.inner &lt;- data.frame(sample_data(ps.whole.inner))
+adonis.bray3 &lt;- adonis(type.bray.inner ~ Reef_type/Reef, data = sampledf.inner, 
+                           permutations = 10000)
+adonis.bray3</code></pre>
+</div>
+<h3 id="pairwise-comparisons-following-the-permanova-1">Pairwise comparisons following the PERMANOVA</h3>
+<h4 id="between-zones-1">Between Zones</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.bray, factors = sampledf$Zone)</code></pre>
+</div>
+<h4 id="between-reefs-1">Between Reefs</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.bray, factors = sampledf$Reef)</code></pre>
+</div>
+<h2 id="unifrac">UNIFRAC</h2>
+<h3 id="dissimilarity-matrix-1">Dissimilarity Matrix</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+type.unifrac &lt;- phyloseq::distance(ps.whole, method = &quot;unifrac&quot;, weighted = F)
+sampledf &lt;- data.frame(sample_data(ps.whole))</code></pre>
+</div>
+<h3 id="beta-dispersions-3">Beta Dispersions</h3>
+<h4 id="by-zone-6">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.unifrac1 &lt;- betadisper(type.unifrac, sampledf$Zone, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.unifrac1
+permutest(beta.unifrac1, pairwise=TRUE, permutations=10000) </code></pre>
+</div>
+<h4 id="by-reef-5">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.unifracR &lt;- betadisper(type.unifrac, sampledf$Reef, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.unifracR
+permutest(beta.unifracR, pairwise=TRUE, permutations=10000)</code></pre>
+</div>
+<h4 id="by-position-inner-vs.-outer-2">By Position: Inner vs. outer</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.unifrac2 &lt;- betadisper(type.unifrac, sampledf$Position, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.unifrac2
+permutest(beta.unifrac2, pairwise=TRUE, permutations=10000)</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-3">By Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.whole.inner &lt;- subset_samples(ps.whole, Zone != &quot;Outer bay&quot;)
+type.unifrac.inner &lt;- phyloseq::distance(ps.whole.inner, method = &quot;unifrac&quot;)
+sampledf.whole.inner &lt;- data.frame(sample_data(ps.whole.inner))
+beta.unifrac3 &lt;- betadisper(type.unifrac.inner, sampledf.whole.inner$Reef_type, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.unifrac3
+permutest(beta.unifrac3, pairwise=TRUE, permutations=10000) </code></pre>
+</div>
+<h3 id="permanova-3">PERMANOVA</h3>
+<h4 id="by-zone-7">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+adonis.unifrac0 &lt;- adonis(type.unifrac ~ Zone, data = sampledf,
+                               permutations = 10000)
+adonis.unifrac0</code></pre>
+</div>
+<h4 id="by-reef-6">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.unifracR &lt;- adonis(type.unifrac ~ Reef, data = sampledf,
+                                  permutations = 10000)
+adonis.unifracR</code></pre>
+</div>
+<h4 id="by-group-with-reef-nested-in-group">By Group with Reef nested in Group</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.unifrac1 &lt;- adonis(type.unifrac ~ Zone/Reef, data = sampledf,   
+                             permutations = 10000)
+adonis.unifrac1</code></pre>
+</div>
+<h4 id="by-inner-vs.-outer-with-reef-nested-in-position-2">By Inner vs. outer with Reef nested in Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.unifrac2 &lt;- adonis(type.unifrac ~ Position/Reef, data = sampledf, 
+                               permutations = 10000)
+adonis.unifrac2</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-with-reef-nested-in-cover-1">By Low vs. high cover inside bay with Reef nested in Cover</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.whole.inner &lt;- subset_samples(ps.whole, Zone != &quot;Outer bay&quot;)
+type.unifrac.inner &lt;- phyloseq::distance(ps.whole.inner, method = &quot;unifrac&quot;)
+sampledf.inner &lt;- data.frame(sample_data(ps.whole.inner))
+
+adonis.unifrac3 &lt;- adonis(type.unifrac.inner ~ Reef_type/Reef, 
+                          data = sampledf.inner, permutations = 10000)
+adonis.unifrac3</code></pre>
+</div>
+<h3 id="pairwise-comparisons-following-the-permanova-2">Pairwise comparisons following the PERMANOVA</h3>
+<h4 id="between-zones-2">Between zones</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.unifrac, factors = sampledf$Zone)</code></pre>
+</div>
+<h4 id="between-reefs-2">Between reefs</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.unifrac, factors = sampledf$Reef)</code></pre>
+</div>
+<h2 id="gunifrac">GUNIFRAC</h2>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+asv.tab&lt;-otu_table(ps.whole)
+ps.whole.inner &lt;- subset_samples(ps.whole, Zone != &quot;Outer bay&quot;)
+asv.tab.inner &lt;- otu_table(ps.whole.inner) #for within bay comparison
+
+tree.fish&lt;-phy_tree(ps.whole)
+tree.fish.inner&lt;-phy_tree(ps.whole.inner)
+
+fish.sample&lt;-sample_data(ps.whole)
+fish.sample.inner&lt;-sample_data(ps.whole.inner)
+
+groups2.whole &lt;- fish.sample$Zone
+groupsR.whole &lt;- fish.sample$Reef
+groups.inner &lt;- fish.sample.inner$Zone
+position.whole &lt;- fish.sample$Position
+asv.tab</code></pre>
+</div>
+<h3 id="run-gunifrac">Run GUniFrac</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+unifracs &lt;- GUniFrac(asv.tab, tree.fish, alpha=c(0, 0.5, 1))$unifracs
+unifracs.inner &lt;- GUniFrac(asv.tab.inner, tree.fish.inner, alpha=c(0, 0.5, 1))$unifracs
+
+d5.all &lt;- unifracs[, , &quot;d_0.5&quot;]
+d5.all
+
+d5.inner &lt;- unifracs.inner[, , &quot;d_0.5&quot;]   
+d5.inner
+
+type.gunifrac &lt;- as.dist(d5.all)
+type.gunifrac.inner &lt;- as.dist(d5.inner)</code></pre>
+</div>
+<h3 id="beta-dispersion">Beta Dispersion</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+beta.gunifrac1 &lt;- betadisper(as.dist(d5.all), groups2.whole, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.gunifrac1 
+permutest(beta.gunifrac1, pairwise=T, permutations=10000)</code></pre>
+</div>
+<h4 id="by-reef-7">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.gunifracR &lt;- betadisper(as.dist(d5.all), groupsR.whole, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.gunifracR
+permutest(beta.gunifracR, pairwise=T, permutations=10000)</code></pre>
+</div>
+<h4 id="by-position-1">By Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.gunifrac2 &lt;- betadisper(as.dist(d5.all), position.whole, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.gunifrac2
+permutest(beta.gunifrac2, pairwise=T, permutations=10000)</code></pre>
+</div>
+<h4 id="by-cover-inner-bay-comparison">By Cover (inner bay comparison)</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.gunifrac.inner &lt;- betadisper(as.dist(d5.inner), groups.inner, 
+                                  type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.gunifrac.inner
+permutest(beta.gunifrac.inner, pairwise=T, permutations=10000)</code></pre>
+</div>
+<h4 id="by-zone-with-reef-nested-in-zone-2">By Zone with Reef nested in Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+sampledf &lt;- data.frame(sample_data(ps.whole))
+sampledf.inner &lt;- data.frame(sample_data(ps.whole.inner))
+adonis.gunifrac1&lt;- adonis(type.gunifrac ~ Zone/Reef, data = sampledf, 
+                           permutations = 10000)
+adonis.gunifrac1</code></pre>
+</div>
+<h4 id="by-position-with-reef-nested-in-position">By Position with reef nested in position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.gunifrac2&lt;- adonis(type.gunifrac ~ Position/Reef, data = sampledf,
+                                    permutations = 10000)
+adonis.gunifrac2</code></pre>
+</div>
+<h4 id="by-cover">By Cover</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.gunifrac3&lt;- adonis(type.gunifrac.inner ~ Reef_type/Reef, data = sampledf.whole.inner, 
+                                 permutations = 10000)
+adonis.gunifrac3</code></pre>
+</div>
+<h3 id="pairwise-adonis">Pairwise adonis</h3>
+<p>as a substitute for posthoc test of PERMANOVA</p>
+<h4 id="between-zones-3">Between Zones</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+pairwise.adonis(type.gunifrac, factors = sampledf$Zone, p.adjust.m = &quot;bonferroni&quot;)
+# Between Reefs
+pairwise.adonis(type.gunifrac, factors = sampledf$Reef,
+                p.adjust.m = &quot;bonferroni&quot;)</code></pre>
+</div>
+<h2 id="wunifrac">WUNIFRAC</h2>
+<h3 id="calculating-dissimilarity-matrix">Calculating Dissimilarity Matrix</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+type.wunifrac &lt;- phyloseq::distance(ps.whole, method = &quot;wunifrac&quot;)
+sampledf &lt;- data.frame(sample_data(ps.whole))</code></pre>
+</div>
+<h4 id="by-zone-8">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.wunifrac1 &lt;- betadisper(type.wunifrac, sampledf$Zone, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.wunifrac1
+permutest(beta.wunifrac1, pairwise=TRUE, permutations=10000)</code></pre>
+</div>
+<h3 id="beta-dispersions-4">Beta Dispersions</h3>
+<h4 id="by-reef-8">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.wunifracR &lt;- betadisper(type.wunifrac, sampledf$Reef, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.wunifracR 
+permutest(beta.wunifracR, pairwise=TRUE, permutations=10000) </code></pre>
+</div>
+<h4 id="inner-vs.-outer">Inner vs. outer</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.wunifrac2 &lt;- betadisper(type.wunifrac, sampledf$Position, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.wunifrac2
+permutest(beta.wunifrac2, pairwise=TRUE, permutations=10000) </code></pre>
+</div>
+<h4 id="low-vs.-high-cover-inside-bay">Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.whole.inner &lt;- subset_samples(ps.whole, Zone != &quot;Outer bay&quot;)
+type.wunifrac.inner &lt;- phyloseq::distance(ps.whole.inner, method = &quot;wunifrac&quot;)
+sampledf.inner &lt;- data.frame(sample_data(ps.whole.inner))</code></pre>
+</div>
+<h4 id="reef-type">Reef Type</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.wunifrac3 &lt;- betadisper(type.wunifrac.inner, sampledf.inner$Reef_type, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.wunifrac3
+permutest(beta.wunifrac3, pairwise=TRUE, permutations=10000) </code></pre>
+</div>
+<h3 id="permanova-4">PERMANOVA</h3>
+<h4 id="by-zone-9">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+adonis.wunifrac0 &lt;- adonis(type.wunifrac ~ Zone, data = sampledf,
+                                permutations = 10000)
+adonis.wunifrac0</code></pre>
+</div>
+<h4 id="by-reef-9">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.wunifracR &lt;- adonis(type.wunifrac ~ Reef, data = sampledf,
+                                permutations = 10000)
+adonis.wunifracR</code></pre>
+</div>
+<h4 id="by-zone-with-reef-nested-in-zone-3">By Zone with Reef nested in Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.wunifrac1 &lt;- adonis(type.wunifrac ~ Zone/Reef, data = sampledf, 
+                                permutations = 10000)
+adonis.wunifrac1</code></pre>
+</div>
+<h4 id="by-inner-vs.-outer-with-reef-nested-in-position-3">By Inner vs. outer with Reef nested in Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.wunifrac2 &lt;- adonis(type.wunifrac ~ Position/Reef, data = sampledf, 
+                                permutations = 10000)
+adonis.wunifrac2</code></pre>
+</div>
+<h3 id="pairwise-comparisons-following-the-permanova-3">Pairwise comparisons following the PERMANOVA</h3>
+<h4 id="between-zones-4">Between Zones</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.wunifrac, factors = sampledf$Zone)</code></pre>
+</div>
+<h4 id="between-reefs-3">Between Reefs</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.wunifrac, factors = sampledf$Reef)</code></pre>
+</div>
+<p>create one dataframe with betadisper outputs for all 5 distances for plot</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+df1 &lt;- data.frame(Distance_to_centroid=beta.jaccard1$distances, 
+                  Zone=beta.jaccard1$group)
+df1$Metric &lt;- &quot;Jaccard&quot;
+df1 &lt;- cbind(df1, sampledf)
+df1[, c(4:8, 10:14)] &lt;- NULL
+df1 &lt;- df1 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df2 &lt;- data.frame(Distance_to_centroid=beta.Gower1$distances, 
+                  Zone=beta.Gower1$group)
+df2$Metric &lt;- &quot;Modified Gower&quot;
+df2 &lt;- cbind(df2, sampledf)
+df2[, c(4:8, 10:14)] &lt;- NULL
+df2 &lt;- df2 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df3 &lt;- data.frame(Distance_to_centroid=beta.bray1$distances, 
+                  Zone=beta.bray1$group)
+df3$Metric &lt;- &quot;Bray Curtis&quot;
+df3 &lt;- cbind(df3, sampledf)
+df3[, c(4:8, 10:14)] &lt;- NULL
+df3 &lt;- df3 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df4 &lt;- data.frame(Distance_to_centroid=beta.unifrac1$distances, 
+                  Zone=beta.unifrac1$group)
+df4$Metric &lt;- &quot;Unifrac&quot;
+df4 &lt;- cbind(df4, sampledf)
+df4[, c(4:8, 10:14)] &lt;- NULL
+df4 &lt;- df4 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df5 &lt;- data.frame(Distance_to_centroid=beta.gunifrac1$distances, 
+                  Zone=beta.gunifrac1$group)
+df5$Metric &lt;- &quot;Generalized Unifrac&quot;
+df5 &lt;- cbind(df5, sampledf)
+df5[, c(4:8, 10:14)] &lt;- NULL
+df5 &lt;- df5 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df6 &lt;- data.frame(Distance_to_centroid=beta.wunifrac1$distances, 
+                  Zone=beta.wunifrac1$group)
+df6$Metric &lt;- &quot;Weighted Unifrac&quot;
+df6 &lt;- cbind(df6, sampledf)
+df6[, c(4:8, 10:14)] &lt;- NULL
+df6 &lt;- df6 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+all.data &lt;- rbind(df1,df2,df3,df4,df5,df6)
+str(all.data)
+write.csv(all.data, file = &quot;tables/p5/boxplot_dispersion_data_whole_jjs.csv&quot;)</code></pre>
+</div>
+<p></br></p>
+<div class="layout-chunk" data-layout="l-body">
+<div id="g2rvw71rqu9pzonn6fam" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="g2rvw71rqu9pzonn6fam">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0\" data-max=\"1.27739937087316\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Inner bay&quot;,&quot;Inner bay disturbed&quot;,&quot;Outer bay&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;ALR&quot;,&quot;CCR&quot;,&quot;PBL&quot;,&quot;PPR&quot;,&quot;PST&quot;,&quot;RNW&quot;,&quot;ROL&quot;,&quot;SCR&quot;,&quot;SIS&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Table: \n  <em>Beta diversity estimates of the whole fish microbiome. Use the buttons to\n            navigate through the table or download a copy.<\/em>\n<\/caption>","data":[["ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543"],[0.705307111759448,0.565280813891017,0.725705436859271,0.618246413430991,0.696342136152209,0.672673862349712,0.574421960417029,0.659197101179582,0.678618510732125,0.695634836901457,0.570745873257323,0.599122130105689,0.631509745717931,0.671811782438608,0.530425825357313,0.511458188691533,0.646729879903889,0.515148272078575,0.575885963018266,0.727945908402826,0.64690619998478,0.634378938421148,0.591786224916307,0.697953990067557,0.563224861753512,0.598976778586436,0.60694348933399,0.76869324262171,0.672626177286499,0.655641218324542,0.616622487422997,0.709831897616551,0.69188905050304,0.627853879121906,0.566169260137161,0.560736462546497,0.555142667068596,0.596496226723704,0.52973536641502,0.692712231060785,0.67411455964731,0.662684266788591,0.594311490252736,0.545327092884769,0.505971060888831,0.606782954198617,0.733403086994597,0.62742466609016,0.609569804678733,0.732784163112516,0.611078665589047,0.732057545780997,0.532932137816429,0.552833993736749,0.575009444672612,0.543115816942863,0.515495620549954,0.584357504838854,0.639813963044421,0.558813377516029,0.550257609492042,0.626978732379198,0.632471839756099,0.589852671079453,0.642697595025202,0.619486913164448,0.546971205226264,0.541422946636039,0.629865761713883,0.560643890064906,0.698184086412359,0.609141878380623,0.58063065562773,0.691504060151005,0.645885397516317,0.558750694414708,0.719985204871002,0.590199314355768,0.584263375847322,0.647326851458578,0.670602882735685,0.632448851527071,0.592098697181003,0.571550845642499,0.486585236475126,0.558751878203797,0.554873959131202,0.595302634628293,0.679793563828782,0.283251349458113,0.71628183573016,1.11770831115789,0.709189909641715,0.624635886129982,0.607966428951924,0.940074202903323,0.567193312095661,0.764480481450512,1.00804381080576,0.482498604208199,1.11057523205448,0.764296589286138,0.289715860001621,0.879630366091856,0.732530423215786,1.02137634398712,0.658682600528008,0.67969849012588,0.854270987950597,0.467131679059482,0.845933572915001,0.968632854533421,0.903572431768102,0.883025831112015,1.02808283608449,0.639849724601981,0.225363425093076,0.642641368531406,0.982918956909341,0.713346126918384,0.449467456819259,0.653637371173017,0.502234879211953,0.809419047137656,0.769420322653324,0.593554488383457,0.789720475436724,0.755695732074465,0.316380501826378,0.914795903550276,0.769717342458412,0.753666043404996,0.978960981315053,0.710451872246313,0.894170614840448,1.27739937087316,0.812575521741212,0.769902463393864,1.01481670579723,0.820375060377234,0,0.910768547711314,0.813238645394261,0.764020699167691,0.809753062438874,0.832315798093629,0.974258702693074,0.770639513758224,0.913286465257911,0.672264307659158,1.03705827253751,0.458174539519511,0.782544583696073,0.502088589226975,0.470637780438885,0.796263739440875,0.762351388661313,0.779499667696327,0.790596684472485,1.02933210955347,0.663345591118211,0.608106761039138,0.809447924670817,0.589165942825236,0.713545031744791,0.323339222897218,0.737292340948897,0.641073544946655,0.419002233357818,0.585503824564118,0.82519001188139,0.515294126706081,0.76065026505721,0.684636970087399,0.866728231300305,0.819582847556688,0.755175834645837,0.911477995029892,0.427522978998589,0.540235359358191,0.762213862044764,0.779575182867857,0.709482938014223,0.331799679594955,0.696279727078418,0.523497785669759,0.309962008933234,0.768190105378356,0.254535146603113,0.634526085137906,0.448838563004457,0.65915412643608,0.55649887939171,0.345482384129608,0.732685197592067,0.280889248177488,0.489840494009691,0.840604514276315,0.517125996115892,0.322382074128724,0.705877677133933,0.79030684721928,0.522735408240958,0.584356813573201,0.377254682368205,0.370092714576903,0.507417322680089,0.460813556128765,0.533447636032074,0.429821139931659,0.475316047268631,0.350647266834392,0.655707807217231,0.339597946179527,0.322467892070617,0.380724786263348,0.365177302852038,0.436655039012657,0.382379227320579,0.535947081980101,0.321641575301796,0.544106951884975,0.326201290436152,0.428377359047583,0.779378823175279,0.524816301783767,0.31115290766937,0.755262834673246,0.356246236953244,0.587479156682773,0.480130826733205,0.505893186080445,0.394377949107695,0.392725674329916,0.639879567236977,0.366380804314651,0.449142446763957,0.630548610305012,0.262986217614554,0.687607909471175,0.353007482009391,0.288021488907844,0.652707981934763,0.282063363382978,0.49865597177508,0.289138010287108,0.675986277084534,0.349424094130852,0.768448942246131,0.315893509618702,0.493705521430226,0.2933288390108,0.309444954185715,0.474842896576102,0.773298912178776,0.494835438385352,0.307394640509181,0.370925733015223,0.522284610379275,0.303893710962989,0.29679335079189,0.610493418229951,0.331835277637289,0.52926863533497,0.310221631309732,0.546097560896699,0.575552135267333,0.6564951211206,0.371795004671884,0.600871661082148,0.418380631844474,0.523672258618011,0.486131694040959,0.339689268754204,0.473707427767233,0.512063821802871,0.472917472886515,0.486829403372828,0.465894848079186,0.387174774847189,0.568364765548249,0.396724279421389,0.463952907389635,0.610478531929896,0.431888919562875,0.524251662255117,0.603368309020407,0.570599606134857,0.443391434373999,0.494248610300777,0.5357430192493,0.354758956875751,0.469828724103225,0.431675647501506,0.586996138041975,0.517827218259479,0.445416059858193,0.471980499651682,0.637619788228943,0.573332034936075,0.540815644104885,0.373009303171813,0.544650215433304,0.400446769989828,0.401691812015732,0.362419893205623,0.576247178198055,0.483648409492933,0.530218691279066,0.486984606955423,0.406754373363845,0.505157492927922,0.488486835329189,0.586415567909135,0.410339869229742,0.431923332162042,0.608543827210691,0.498318565947418,0.688205367358784,0.419888116854925,0.434308619000579,0.373835222038309,0.363657232705229,0.467725137650338,0.375588409658385,0.501720508027476,0.51963726198069,0.411885961524872,0.458063618006813,0.473566666299167,0.396657273792515,0.532102407568833,0.430549133239292,0.394406593360023,0.48162043264434,0.500664551538058,0.380120949884398,0.534187063974279,0.394546142983937,0.406395288714393,0.523034426297298,0.427197973310954,0.359228250128416,0.620535929202817,0.448157323939742,0.45135254821473,0.549696667428401,0.611100076508458,0.470806288449573,0.443326562637232,0.493840862396096,0.314593717880915,0.396257988443763,0.363069317725592,0.417397038230421,0.513573347052852,0.350194034655493,0.224678048773472,0.453998833590765,0.332802964283952,0.34282734605894,0.177711079760547,0.299333771510346,0.188680975608785,0.193834615390452,0.48692365534387,0.157664499085451,0.291088797122246,0.174496505869146,0.310380576334016,0.183544940407643,0.183962950442214,0.331350123882863,0.12735059460671,0.251450818855245,0.438764057150455,0.253267859548432,0.205253555816796,0.292375589129686,0.478185508689582,0.200765788734057,0.243598703599367,0.183991865366449,0.222324826776237,0.22797510464605,0.285972972482878,0.205256273188987,0.364342017191225,0.402342816821845,0.174604202073482,0.259247674382525,0.189933187334031,0.135765288986792,0.17036751222343,0.180216569323362,0.301057261341602,0.257601150020145,0.276595805680881,0.129616878608813,0.219704283275017,0.193323081239204,0.200916284928199,0.542904810081457,0.254023212835635,0.142803951536888,0.518363537781901,0.180263265642927,0.334345146923659,0.21890255804856,0.212416348755371,0.186058171373851,0.185911375441891,0.259805270158416,0.268419356961097,0.308570285419957,0.237854695674104,0.148134847544175,0.299818066008819,0.199163178006725,0.13148592976064,0.296249413551461,0.140779515468565,0.190860325775692,0.126746901994039,0.314392485612,0.176669600912733,0.523934750517545,0.152263302449414,0.207647461345338,0.190102479614314,0.13112177981636,0.226434542266703,0.43744594941718,0.259304024470086,0.150581900539225,0.17798779990689,0.444948120895643,0.12591612628501,0.194017474731146,0.262893057415558,0.168426287330271,0.193330462340041,0.136717006860439,0.23985155006971,0.303101949863173,0.0990237148878279,0.111909149522515,0.168026817156434,0.166936140530191,0.145929652773385,0.0617417725696687,0.15512865419325,0.0772091697411546,0.0652652667443918,0.378651534451971,0.0406725414732869,0.140975569155561,0.0597310810736362,0.125069799708205,0.0898182753861954,0.0907605028182727,0.19098697108175,0.055241707413362,0.0873409933326329,0.184775828002376,0.0993816553202547,0.0689573177129112,0.156604553309552,0.287880215399115,0.0798543047655268,0.0956265577850972,0.0804602809642254,0.0584841390946232,0.0909411648403454,0.124891694427936,0.0880313878141692,0.0887609693380615,0.215041234458648,0.0582292376942012,0.152423982382522,0.0918706338815037,0.0378449402012227,0.0791497770750904,0.0803376371973661,0.0825723405892465,0.091936650580032,0.0818051269913929,0.0627030938352059,0.0854647229388717,0.0911066423193615,0.0898105413807485,0.396618222554757,0.0741128416766246,0.0621188531069399,0.283367351434876,0.0882511493453106,0.0808813234488633,0.0949819391612738,0.0959482346238338,0.0915621547416444,0.0776161634845423,0.151912197881714,0.117551980677585,0.0903559986843985,0.0972180212721741,0.0469397011435823,0.17023249778408,0.0734654407024886,0.0580696054783342,0.11807458485426,0.0599725785220509,0.0652597705175781,0.0618879077584987,0.157926728451253,0.0888930254341436,0.404067938428634,0.0577712223417694,0.0964402706482415,0.0602483156888589,0.0597918301478928,0.0899341271034553,0.193378863948801,0.10329378530627,0.0608669348828456,0.0376868151485413,0.239987977186481,0.0623158013390958,0.0759449176433894,0.0799444969188346,0.0876015199828041,0.0765194472323815,0.0573709892999598,0.106252445630324,0.0993336799309441],["Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed"],["Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac"],["CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Sample_ID<\/th>\n      <th>Distance_to_centroid<\/th>\n      <th>Zone<\/th>\n      <th>Metric<\/th>\n      <th>Reef<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"Blfrtip","buttons":["copy","csv","excel"],"pageLength":5,"lengthMenu":[[5,10,50,-1],["5","10","50","All"]],"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'80%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'80%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'80%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'80%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'80%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+<p></br></p>
+<p>That’s the end of Workflow 5.</p>
+<p></br> </br></p>
+<div class="post-nav">
+<div class="post-nav-item">
+<div class="meta-nav">
+Previous
+</div>
+<p><a href="wf4.html" rel="next">N<sup><u>o</u></sup> 4. Workflow</a></p>
+</div>
+</div>
+<div class="post-nav">
+<div class="post-nav-item">
+<div class="meta-nav">
+Next
+</div>
+<p>Next<br/> <a href="wf6.html" rel="prev">N<sup><u>o</u></sup> 6. Workflow</a></p>
+</div>
+</div>
+<h2 id="source-code" class="appendix">Source Code</h2>
+<p>The source code for this page can be accessed on GitHub by <a href="https://github.com/bocasbiome/web/blob/master/wf5.Rmd">clicking this link</a>.</p>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+<h3 id="updates-and-corrections">Corrections</h3>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/bocasbiome/web/issues/new">create an issue</a> on the source repository.</p>
+<h3 id="reuse">Reuse</h3>
+<p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source code is available at <a href="https://github.com/bocasbiome/web/">https://github.com/bocasbiome/web/</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+</div>
+<script id="distill-bibliography" type="text/bibtex">
+@article{callahan2016dada2,
+  title={DADA2: high-resolution sample inference from Illumina amplicon data},
+  author={Callahan, Benjamin J and McMurdie, Paul J and Rosen, Michael J and Han, Andrew W and Johnson, Amy Jo A and Holmes, Susan P},
+  journal={Nature Methods},
+  volume={13},
+  number={7},
+  pages={581},
+  year={2016},
+  url = {https://doi.org/10.1038/nmeth.3869},
+}
+
+@article{martin2011cutadapt,
+  title={Cutadapt removes adapter sequences from high-throughput sequencing reads},
+  author={Martin, Marcel},
+  journal={EMBnet. journal},
+  volume={17},
+  number={1},
+  pages={10--12},
+  year={2011},
+  url = {https://doi.org/10.14806/ej.17.1.200}
+}
+
+@article{quast2012silva,
+  title={The SILVA ribosomal RNA gene database project: improved data processing and web-based tools},
+  author={Quast, Christian and Pruesse, Elmar and Yilmaz, Pelin and Gerken, Jan and Schweer, Timmy and Yarza, Pablo and Peplies, J{\"o}rg and Gl{\"o}ckner, Frank Oliver},
+  journal={Nucleic Acids Research},
+  volume={41},
+  number={D1},
+  pages={D590--D596},
+  year={2012},
+  url = {https://doi.org/10.1093/nar/gks1219}
+}
+
+@article{mcmurdie2013phyloseq,
+  title={phyloseq: an R package for reproducible interactive analysis and graphics of microbiome census data},
+  author={McMurdie, Paul J and Holmes, Susan},
+  journal={PLoS One},
+  volume={8},
+  number={4},
+  pages={e61217},
+  year={2013},
+  url = {https://doi.org/10.1371/journal.pone.0061217}
+}
+
+@misc{wong2011points,
+  title={Points of view: Color blindness},
+  author={Wong, Bang},
+  journal={Nature Methods},
+  volume={8},
+  number={6},
+  pages={441},
+  year={2011},
+  url = {https://doi.org/10.1038/nmeth.1618}
+}
+
+@misc{lahti2017microbiome,
+  author = {Lahti, Leo and Shetty Sudarshan and others},
+  title = {Tools for microbiome analysis in R. Version 1.9.97},
+  year = {2017},
+  url = {https://github.com/microbiome/microbiome},
+}
+
+@article{eren2015anvi,
+  title={Anvi’o: an advanced analysis and visualization platform for ‘omics data},
+  author={Eren, A Murat and Esen, {\"O}zcan C and Quince, Christopher and Vineis, Joseph H and Morrison, Hilary G and Sogin, Mitchell L and Delmont, Tom O},
+  journal={PeerJ},
+  volume={3},
+  pages={e1319},
+  year={2015},
+  url = {https://doi.org/10.7717/peerj.1319}
+}
+
+@article{bolger2014trimmomatic,
+  title={Trimmomatic: a flexible trimmer for Illumina sequence data},
+  author={Bolger, Anthony M and Lohse, Marc and Usadel, Bjoern},
+  journal={Bioinformatics},
+  volume={30},
+  number={15},
+  pages={2114--2120},
+  year={2014},
+  url = {https://doi.org/10.1093/bioinformatics/btu170}
+}
+
+@article{koster2012snakemake,
+  title={Snakemake—a scalable bioinformatics workflow engine},
+  author={K{\"o}ster, Johannes and Rahmann, Sven},
+  journal={Bioinformatics},
+  volume={28},
+  number={19},
+  pages={2520--2522},
+  year={2012},
+  url = {https://doi.org/10.1093/bioinformatics/bts480}
+}
+
+@article{menzel2016fast,
+  title={Fast and sensitive taxonomic classification for metagenomics with Kaiju},
+  author={Menzel, Peter and Ng, Kim Lee and Krogh, Anders},
+  journal={Nature Communications},
+  volume={7},
+  pages={11257},
+  year={2016},
+  url = {https://doi.org/10.1038/ncomms11257}
+}
+
+@article{roux2015virsorter,
+  title={VirSorter: mining viral signal from microbial genomic data},
+  author={Roux, Simon and Enault, Francois and Hurwitz, Bonnie L and Sullivan, Matthew B},
+  journal={PeerJ},
+  volume={3},
+  pages={e985},
+  year={2015},
+  url = {https://doi.org/10.1093/bioinformatics/btu170}
+}
+
+@article{kim2016centrifuge,
+  title={Centrifuge: rapid and sensitive classification of metagenomic sequences},
+  author={Kim, Daehwan and Song, Li and Breitwieser, Florian P and Salzberg, Steven L},
+  journal={Genome Research},
+  volume={26},
+  number={12},
+  pages={1721--1729},
+  year={2016},
+  url = {https://doi.org/10.1101/gr.210641.116.}
+}
+
+@article{hyatt2010prodigal,
+  title={Prodigal: prokaryotic gene recognition and translation initiation site identification},
+  author={Hyatt, Doug and Chen, Gwo-Liang and LoCascio, Philip F and Land, Miriam L and Larimer, Frank W and Hauser, Loren J},
+  journal={BMC Bioinformatics},
+  volume={11},
+  number={1},
+  pages={119},
+  year={2010},
+  url = {https://doi.org/10.1186/1471-2105-11-119}
+}
+
+@article{edgar2004muscle,
+  title={MUSCLE: multiple sequence alignment with high accuracy and high throughput},
+  author={Edgar, Robert C},
+  journal={Nucleic Acids Research},
+  volume={32},
+  number={5},
+  pages={1792--1797},
+  year={2004},
+  url = {https://doi.org/10.1093/nar/gkh340}
+}
+
+@article{li2015megahit,
+  title={MEGAHIT: an ultra-fast single-node solution for large and complex metagenomics assembly via succinct de Bruijn graph},
+  author={Li, Dinghua and Liu, Chi-Man and Luo, Ruibang and Sadakane, Kunihiko and Lam, Tak-Wah},
+  journal={Bioinformatics},
+  volume={31},
+  number={10},
+  pages={1674--1676},
+  year={2015},
+  url = {https://doi.org/10.1093/bioinformatics/btv033}
+}
+
+@article{langmead2012fast,
+  title={Fast gapped-read alignment with Bowtie 2},
+  author={Langmead, Ben and Salzberg, Steven L},
+  journal={Nature Methods},
+  volume={9},
+  number={4},
+  pages={357},
+  year={2012},
+  url = {https://doi.org/10.1038/nmeth.1923}
+}
+
+@article{li2009fast,
+  title={Fast and accurate short read alignment with Burrows--Wheeler transform},
+  author={Li, Heng and Durbin, Richard},
+  journal={Bioinformatics},
+  volume={25},
+  number={14},
+  pages={1754--1760},
+  year={2009},
+  url = {https://doi.org/10.1093/bioinformatics/btp324}
+}
+
+@article{li2009sequence,
+  title={The sequence alignment/map format and SAMtools},
+  author={Li, Heng and Handsaker, Bob and Wysoker, Alec and Fennell, Tim and Ruan, Jue and Homer, Nils and Marth, Gabor and Abecasis, Goncalo and Durbin, Richard},
+  journal={Bioinformatics},
+  volume={25},
+  number={16},
+  pages={2078--2079},
+  year={2009},
+  url = {https://doi.org/10.1093/bioinformatics/btp352}
+}
+
+@article{breitwieser2018krakenuniq,
+  title={KrakenUniq: confident and fast metagenomics classification using unique k-mer counts},
+  author={Breitwieser, FP and Baker, DN and Salzberg, Steven L},
+  journal={Genome Biology},
+  volume={19},
+  number={1},
+  pages={1--10},
+  year={2018},
+  url = {https://doi.org/10.5281/zenodo.1412647}
+}
+
+@article{eren2013filtering,
+  title={A filtering method to generate high quality short reads using Illumina paired-end technology},
+  author={Eren, A Murat and Vineis, Joseph H and Morrison, Hilary G and Sogin, Mitchell L},
+  journal={PLoS One},
+  volume={8},
+  number={6},
+  year={2013},
+  url = {https://doi.org/10.1371/journal.pone.0066643}
+}
+
+@article{alneberg2014binning,
+  title={Binning metagenomic contigs by coverage and composition},
+  author={Alneberg, Johannes and Bjarnason, Brynjar Sm{\'a}ri and De Bruijn, Ino and Schirmer, Melanie and Quick, Joshua and Ijaz, Umer Z and Lahti, Leo and Loman, Nicholas J and Andersson, Anders F and Quince, Christopher},
+  journal={Nature Methods},
+  volume={11},
+  number={11},
+  pages={1144--1146},
+  year={2014},
+  url = {https://doi.org/10.1038/nmeth.3103}
+}
+
+@article{sieber2018recovery,
+  title={Recovery of genomes from metagenomes via a dereplication, aggregation and scoring strategy},
+  author={Sieber, Christian MK and Probst, Alexander J and Sharrar, Allison and Thomas, Brian C and Hess, Matthias and Tringe, Susannah G and Banfield, Jillian F},
+  journal={Nature Microbiology},
+  volume={3},
+  number={7},
+  pages={836--843},
+  year={2018},
+}
+
+@article{kang2019metabat,
+  title={MetaBAT 2: an adaptive binning algorithm for robust and efficient genome reconstruction from metagenome assemblies},
+  author={Kang, Dongwan D and Li, Feng and Kirton, Edward and Thomas, Ashleigh and Egan, Rob and An, Hong and Wang, Zhong},
+  journal={PeerJ},
+  volume={7},
+  pages={e7359},
+  year={2019},
+}
+@article{wu2016maxbin,
+  title={MaxBin 2.0: an automated binning algorithm to recover genomes from multiple metagenomic datasets},
+  author={Wu, Yu-Wei and Simmons, Blake A and Singer, Steven W},
+  journal={Bioinformatics},
+  volume={32},
+  number={4},
+  pages={605--607},
+  year={2016},
+}
+
+@article{ondov2011krona,
+  title={Interactive metagenomic visualization in a Web browser},
+  author={Ondov, Brian D and Bergman, Nicholas H and Phillippy, Adam M},
+  journal={BMC Bioinformatics},
+  volume={12},
+  number={1},
+  pages={385},
+  year={2011},
+  url = {https://doi.org/10.1186/1471-2105-12-385}
+}
+
+@article{buchfink2015fast,
+  title={Fast and sensitive protein alignment using DIAMOND},
+  author={Buchfink, Benjamin and Xie, Chao and Huson, Daniel H},
+  journal={Nature Methods},
+  volume={12},
+  number={1},
+  pages={59--60},
+  year={2015},
+  url = {https://doi.org/10.1038/nmeth.3176}
+}
+
+@article{delmont2018nitrogen,
+  title={Nitrogen-fixing populations of Planctomycetes and Proteobacteria are abundant in surface ocean metagenomes},
+  author={Delmont, Tom O and Quince, Christopher and Shaiber, Alon and Esen, {\"O}zcan C and Lee, Sonny TM and Rapp{\'e}, Michael S and McLellan, Sandra L and L{\"u}cker, Sebastian and Eren, A Murat},
+  journal={Nature Microbiology},
+  volume={3},
+  number={7},
+  pages={804--813},
+  year={2018},
+  url = {https://doi.org/10.1038/s41564-018-0176-9}
+}
+
+@article{dongen2000cluster,
+  title={A cluster algorithm for graphs},
+  author={Dongen, Stijn},
+  year={2000},
+  publisher={CWI (Centre for Mathematics and Computer Science)},
+  url = {https://www.micans.org/mcl/index.html?sec_software}
+}
+
+@article{jain2018high,
+  title={High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries},
+  author={Jain, Chirag and Rodriguez-R, Luis M and Phillippy, Adam M and Konstantinidis, Konstantinos T and Aluru, Srinivas},
+  journal={Nature Communications},
+  volume={9},
+  number={1},
+  pages={1--8},
+  year={2018},
+  url={https://doi.org/10.1038/s41467-018-07641-9}
+}
+
+@article{stamatakis2014raxml,
+  title={RAxML version 8: a tool for phylogenetic analysis and post-analysis of large phylogenies},
+  author={Stamatakis, Alexandros},
+  journal={Bioinformatics},
+  volume={30},
+  number={9},
+  pages={1312--1313},
+  year={2014},
+  url={https://doi.org/10.1093/bioinformatics/btu033}
+}
+
+@article{minh2020iq,
+  title={IQ-TREE 2: New models and efficient methods for phylogenetic inference in the genomic era},
+  author={Minh, Bui Quang and Schmidt, Heiko A and Chernomor, Olga and Schrempf, Dominik and Woodhams, Michael D and Von Haeseler, Arndt and Lanfear, Robert},
+  journal={Molecular Biology and Evolution},
+  volume={37},
+  number={5},
+  pages={1530--1534},
+  year={2020},
+  url={https://doi.org/10.1093/molbev/msaa015}
+}
+
+@article{kalyaanamoorthy2017modelfinder,
+  title={ModelFinder: fast model selection for accurate phylogenetic estimates},
+  author={Kalyaanamoorthy, Subha and Minh, Bui Quang and Wong, Thomas KF and von Haeseler, Arndt and Jermiin, Lars S},
+  journal={Nature Methods},
+  volume={14},
+  number={6},
+  pages={587},
+  year={2017},
+  url={https://doi.org/10.1038/nmeth.4285}
+}
+
+@article{quince2011removing,
+  title={Removing noise from pyrosequenced amplicons},
+  author={Quince, Christopher and Lanzen, Anders and Davenport, Russell J and Turnbaugh, Peter J},
+  journal={BMC bioinformatics},
+  volume={12},
+  number={1},
+  pages={38},
+  year={2011},
+  url={https://doi.org/10.1186/1471-2105-12-38}
+}
+@article{caporaso2011global,
+  title={Global patterns of 16S rRNA diversity at a depth of millions of sequences per sample},
+  author={Caporaso, J Gregory and Lauber, Christian L and Walters, William A and Berg-Lyons, Donna and Lozupone, Catherine A and Turnbaugh, Peter J and Fierer, Noah and Knight, Rob},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={108},
+  number={Supplement 1},
+  pages={4516--4522},
+  year={2011},
+  url={https://doi.org/10.1073/pnas.1000080107}
+}
+@article{kanehisa2000kegg,
+  title={KEGG: kyoto encyclopedia of genes and genomes},
+  author={Kanehisa, Minoru and Goto, Susumu},
+  journal={Nucleic Acids Research},
+  volume={28},
+  number={1},
+  pages={27--30},
+  year={2000},
+  url={https://doi.org/10.1093/nar/28.1.27}
+}
+
+@article{kanehisa2016blastkoala,
+  title={BlastKOALA and GhostKOALA: KEGG tools for functional characterization of genome and metagenome sequences},
+  author={Kanehisa, Minoru and Sato, Yoko and Morishima, Kanae},
+  journal={Journal of Molecular Biology},
+  volume={428},
+  number={4},
+  pages={726--731},
+  year={2016},
+  url={https://doi.org/10.1016/j.jmb.2015.11.006}
+}
+
+@article{minoche2011evaluation,
+  title={Evaluation of genomic high-throughput sequencing data generated on Illumina HiSeq and genome analyzer systems},
+  author={Minoche, Andr{\'e} E and Dohm, Juliane C and Himmelbauer, Heinz},
+  journal={Genome Biology},
+  volume={12},
+  number={11},
+  pages={R112},
+  year={2011},
+  url={https://doi.org/10.1186/gb-2011-12-11-r112}
+}
+
+@article{lee2019gtotree,
+  title={GToTree: a user-friendly workflow for phylogenomics},
+  author={Lee, Michael D},
+  journal={Bioinformatics},
+  volume={35},
+  number={20},
+  pages={4162--4164},
+  year={2019},
+  url={https://doi.org/10.1093/bioinformatics/btz188}
+}
+
+@article{wang2007naive,
+  title={Naive Bayesian classifier for rapid assignment of rRNA sequences into the new bacterial taxonomy},
+  author={Wang, Qiong and Garrity, George M and Tiedje, James M and Cole, James R},
+  journal={Applied & Environmental Microbiology},
+  volume={73},
+  number={16},
+  pages={5261--5267},
+  year={2007},
+  url={https://doi.org/10.1128/AEM.00062-07}
+}
+
+@article{hoang2017ultrafast,
+  author = {Hoang, Diep Thi and Chernomor, Olga and von Haeseler, Arndt and Minh, Bui Quang and Vinh, Le Sy},
+  title = {UFBoot2: Improving the Ultrafast Bootstrap Approximation},
+  journal = {Molecular Biology and Evolution},
+  volume = {35},
+  number = {2},
+  pages = {518-522},
+  year = {2017},
+  url = {https://doi.org/10.1093/molbev/msx281}
+}
+
+@article{parada2016every,
+  title={Every base matters: assessing small subunit rRNA primers for marine microbiomes with mock communities, time series and global field samples},
+  author={Parada, Alma E and Needham, David M and Fuhrman, Jed A},
+  journal={Environmental microbiology},
+  volume={18},
+  number={5},
+  pages={1403--1414},
+  year={2016},
+  url = {https://doi.org/10.1111/1462-2920.13023}
+}
+
+@article{parks2018gtgb,
+  title={A standardized bacterial taxonomy based on genome phylogeny substantially revises the tree of life},
+  author={Parks, Donovan H and Chuvochina, Maria and Waite, David W and Rinke, Christian and Skarshewski, Adam and Chaumeil, Pierre-Alain and Hugenholtz, Philip},
+  journal={Nature Biotechnology},
+  volume={36},
+  number={10},
+  pages={1546-1696},
+  year={2018},
+  url = {https://doi.org/10.1038/nbt.4229}
+}
+
+@article{foster2017metacoder,
+  title={Metacoder: an R package for visualization and manipulation of community taxonomic diversity data},
+  author={Foster, Zachary SL and Sharpton, Thomas J and Gr{\"u}nwald, Niklaus J},
+  journal={PLoS Computational Biology},
+  volume={13},
+  number={2},
+  pages={e1005404},
+  year={2017},
+  url={https://doi.org/10.1371/journal.pcbi.1005404}
+}
+
+@article{dufrene1997species,
+  title={Species assemblages and indicator species: the need for a flexible asymmetrical approach},
+  author={Dufr{\^e}ne, Marc and Legendre, Pierre},
+  journal={Ecological Monographs},
+  volume={67},
+  number={3},
+  pages={345--366},
+  year={1997},
+  url={https://doi.org/10.1890/0012-9615(1997)067[0345:SAAIST]2.0.CO;2}
+}
+
+@article{roberts2007labdsv,
+  title={labdsv: Ordination and multivariate analysis for ecology},
+  author={Roberts, David W and others},
+  journal={R package version},
+  volume={1},
+  number={1},
+  year={2007}
+}
+</script>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
