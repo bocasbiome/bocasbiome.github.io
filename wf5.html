@@ -1571,18 +1571,29 @@
 <h3 class="d-toc-header">Table of Contents</h3>
 <nav class="d-toc" id="TOC">
 <ul>
+<li><a href="#whole-fish-microbiome-beta-diversity">WHOLE fish microbiome Beta diversity</a><ul>
 <li><a href="#jaccard">Jaccard</a></li>
 <li><a href="#modified-gower">Modified Gower</a></li>
 <li><a href="#bray-curtis">Bray Curtis</a></li>
 <li><a href="#unifrac">UNIFRAC</a></li>
 <li><a href="#gunifrac">GUNIFRAC</a></li>
 <li><a href="#wunifrac">WUNIFRAC</a></li>
+</ul></li>
+<li><a href="#core-fish-microbiome-beta-diversity">CORE fish microbiome Beta diversity</a><ul>
+<li><a href="#jaccard-1">Jaccard</a></li>
+<li><a href="#permanova-5">PERMANOVA</a></li>
+<li><a href="#modified-gower-1">Modified Gower</a></li>
+<li><a href="#bray-curtis-1">Bray Curtis</a></li>
+<li><a href="#unifrac-1">UNIFRAC</a></li>
+<li><a href="#gunifrac-1">GUNIFRAC</a></li>
+<li><a href="#wunifrac-1">WUNIFRAC</a></li>
 <li><a href="#source-code">Source Code</a></li>
+</ul></li>
 </ul>
 </nav>
 <hr class="d-toc-separator"/>
-<p>BOCASBIOME SCRIPT.5: Beta diversity WHOLE fish microbiome</p>
-<p>#load rarified whole fish gut microbiome data</p>
+<h1 id="whole-fish-microbiome-beta-diversity">WHOLE fish microbiome Beta diversity</h1>
+<p>load rarefied whole fish gut microbiome data</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 ps.whole &lt;- readRDS(&quot;rdata/p3/ps_16S_bocas_fish_final.rds&quot;)</code></pre>
@@ -1665,7 +1676,8 @@ adonis.jaccard2</code></pre>
 <p>variable Reef_type is healthy and disturbed (based on level coral cover)</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-adonis.jaccard3 &lt;- adonis(type.jaccard.inner ~ Reef_type/Reef, data = sampledf.inner, permutations = 10000)
+adonis.jaccard3 &lt;- adonis(type.jaccard.inner ~ Reef_type/Reef, 
+                          data = sampledf.inner, permutations = 10000)
 adonis.jaccard3</code></pre>
 </div>
 <p>pairwise adonis as a substitute for posthoc test of PERMANOVA, default: p.adjust.m = “bonferroni”</p>
@@ -2211,7 +2223,8 @@ df6 &lt;- df6 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
 
 all.data &lt;- rbind(df1,df2,df3,df4,df5,df6)
 str(all.data)
-write.csv(all.data, file = &quot;tables/p5/boxplot_dispersion_data_whole_jjs.csv&quot;)</code></pre>
+write.csv(all.data, file = &quot;tables/p5/boxplot_dispersion_data_whole_jjs.csv&quot;, 
+          row.names = FALSE)</code></pre>
 </div>
 <p></br></p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2219,6 +2232,719 @@ write.csv(all.data, file = &quot;tables/p5/boxplot_dispersion_data_whole_jjs.csv
 <script type="application/json" data-for="g2rvw71rqu9pzonn6fam">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0\" data-max=\"1.27739937087316\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Inner bay&quot;,&quot;Inner bay disturbed&quot;,&quot;Outer bay&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;ALR&quot;,&quot;CCR&quot;,&quot;PBL&quot;,&quot;PPR&quot;,&quot;PST&quot;,&quot;RNW&quot;,&quot;ROL&quot;,&quot;SCR&quot;,&quot;SIS&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Table: \n  <em>Beta diversity estimates of the whole fish microbiome. Use the buttons to\n            navigate through the table or download a copy.<\/em>\n<\/caption>","data":[["ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543"],[0.705307111759448,0.565280813891017,0.725705436859271,0.618246413430991,0.696342136152209,0.672673862349712,0.574421960417029,0.659197101179582,0.678618510732125,0.695634836901457,0.570745873257323,0.599122130105689,0.631509745717931,0.671811782438608,0.530425825357313,0.511458188691533,0.646729879903889,0.515148272078575,0.575885963018266,0.727945908402826,0.64690619998478,0.634378938421148,0.591786224916307,0.697953990067557,0.563224861753512,0.598976778586436,0.60694348933399,0.76869324262171,0.672626177286499,0.655641218324542,0.616622487422997,0.709831897616551,0.69188905050304,0.627853879121906,0.566169260137161,0.560736462546497,0.555142667068596,0.596496226723704,0.52973536641502,0.692712231060785,0.67411455964731,0.662684266788591,0.594311490252736,0.545327092884769,0.505971060888831,0.606782954198617,0.733403086994597,0.62742466609016,0.609569804678733,0.732784163112516,0.611078665589047,0.732057545780997,0.532932137816429,0.552833993736749,0.575009444672612,0.543115816942863,0.515495620549954,0.584357504838854,0.639813963044421,0.558813377516029,0.550257609492042,0.626978732379198,0.632471839756099,0.589852671079453,0.642697595025202,0.619486913164448,0.546971205226264,0.541422946636039,0.629865761713883,0.560643890064906,0.698184086412359,0.609141878380623,0.58063065562773,0.691504060151005,0.645885397516317,0.558750694414708,0.719985204871002,0.590199314355768,0.584263375847322,0.647326851458578,0.670602882735685,0.632448851527071,0.592098697181003,0.571550845642499,0.486585236475126,0.558751878203797,0.554873959131202,0.595302634628293,0.679793563828782,0.283251349458113,0.71628183573016,1.11770831115789,0.709189909641715,0.624635886129982,0.607966428951924,0.940074202903323,0.567193312095661,0.764480481450512,1.00804381080576,0.482498604208199,1.11057523205448,0.764296589286138,0.289715860001621,0.879630366091856,0.732530423215786,1.02137634398712,0.658682600528008,0.67969849012588,0.854270987950597,0.467131679059482,0.845933572915001,0.968632854533421,0.903572431768102,0.883025831112015,1.02808283608449,0.639849724601981,0.225363425093076,0.642641368531406,0.982918956909341,0.713346126918384,0.449467456819259,0.653637371173017,0.502234879211953,0.809419047137656,0.769420322653324,0.593554488383457,0.789720475436724,0.755695732074465,0.316380501826378,0.914795903550276,0.769717342458412,0.753666043404996,0.978960981315053,0.710451872246313,0.894170614840448,1.27739937087316,0.812575521741212,0.769902463393864,1.01481670579723,0.820375060377234,0,0.910768547711314,0.813238645394261,0.764020699167691,0.809753062438874,0.832315798093629,0.974258702693074,0.770639513758224,0.913286465257911,0.672264307659158,1.03705827253751,0.458174539519511,0.782544583696073,0.502088589226975,0.470637780438885,0.796263739440875,0.762351388661313,0.779499667696327,0.790596684472485,1.02933210955347,0.663345591118211,0.608106761039138,0.809447924670817,0.589165942825236,0.713545031744791,0.323339222897218,0.737292340948897,0.641073544946655,0.419002233357818,0.585503824564118,0.82519001188139,0.515294126706081,0.76065026505721,0.684636970087399,0.866728231300305,0.819582847556688,0.755175834645837,0.911477995029892,0.427522978998589,0.540235359358191,0.762213862044764,0.779575182867857,0.709482938014223,0.331799679594955,0.696279727078418,0.523497785669759,0.309962008933234,0.768190105378356,0.254535146603113,0.634526085137906,0.448838563004457,0.65915412643608,0.55649887939171,0.345482384129608,0.732685197592067,0.280889248177488,0.489840494009691,0.840604514276315,0.517125996115892,0.322382074128724,0.705877677133933,0.79030684721928,0.522735408240958,0.584356813573201,0.377254682368205,0.370092714576903,0.507417322680089,0.460813556128765,0.533447636032074,0.429821139931659,0.475316047268631,0.350647266834392,0.655707807217231,0.339597946179527,0.322467892070617,0.380724786263348,0.365177302852038,0.436655039012657,0.382379227320579,0.535947081980101,0.321641575301796,0.544106951884975,0.326201290436152,0.428377359047583,0.779378823175279,0.524816301783767,0.31115290766937,0.755262834673246,0.356246236953244,0.587479156682773,0.480130826733205,0.505893186080445,0.394377949107695,0.392725674329916,0.639879567236977,0.366380804314651,0.449142446763957,0.630548610305012,0.262986217614554,0.687607909471175,0.353007482009391,0.288021488907844,0.652707981934763,0.282063363382978,0.49865597177508,0.289138010287108,0.675986277084534,0.349424094130852,0.768448942246131,0.315893509618702,0.493705521430226,0.2933288390108,0.309444954185715,0.474842896576102,0.773298912178776,0.494835438385352,0.307394640509181,0.370925733015223,0.522284610379275,0.303893710962989,0.29679335079189,0.610493418229951,0.331835277637289,0.52926863533497,0.310221631309732,0.546097560896699,0.575552135267333,0.6564951211206,0.371795004671884,0.600871661082148,0.418380631844474,0.523672258618011,0.486131694040959,0.339689268754204,0.473707427767233,0.512063821802871,0.472917472886515,0.486829403372828,0.465894848079186,0.387174774847189,0.568364765548249,0.396724279421389,0.463952907389635,0.610478531929896,0.431888919562875,0.524251662255117,0.603368309020407,0.570599606134857,0.443391434373999,0.494248610300777,0.5357430192493,0.354758956875751,0.469828724103225,0.431675647501506,0.586996138041975,0.517827218259479,0.445416059858193,0.471980499651682,0.637619788228943,0.573332034936075,0.540815644104885,0.373009303171813,0.544650215433304,0.400446769989828,0.401691812015732,0.362419893205623,0.576247178198055,0.483648409492933,0.530218691279066,0.486984606955423,0.406754373363845,0.505157492927922,0.488486835329189,0.586415567909135,0.410339869229742,0.431923332162042,0.608543827210691,0.498318565947418,0.688205367358784,0.419888116854925,0.434308619000579,0.373835222038309,0.363657232705229,0.467725137650338,0.375588409658385,0.501720508027476,0.51963726198069,0.411885961524872,0.458063618006813,0.473566666299167,0.396657273792515,0.532102407568833,0.430549133239292,0.394406593360023,0.48162043264434,0.500664551538058,0.380120949884398,0.534187063974279,0.394546142983937,0.406395288714393,0.523034426297298,0.427197973310954,0.359228250128416,0.620535929202817,0.448157323939742,0.45135254821473,0.549696667428401,0.611100076508458,0.470806288449573,0.443326562637232,0.493840862396096,0.314593717880915,0.396257988443763,0.363069317725592,0.417397038230421,0.513573347052852,0.350194034655493,0.224678048773472,0.453998833590765,0.332802964283952,0.34282734605894,0.177711079760547,0.299333771510346,0.188680975608785,0.193834615390452,0.48692365534387,0.157664499085451,0.291088797122246,0.174496505869146,0.310380576334016,0.183544940407643,0.183962950442214,0.331350123882863,0.12735059460671,0.251450818855245,0.438764057150455,0.253267859548432,0.205253555816796,0.292375589129686,0.478185508689582,0.200765788734057,0.243598703599367,0.183991865366449,0.222324826776237,0.22797510464605,0.285972972482878,0.205256273188987,0.364342017191225,0.402342816821845,0.174604202073482,0.259247674382525,0.189933187334031,0.135765288986792,0.17036751222343,0.180216569323362,0.301057261341602,0.257601150020145,0.276595805680881,0.129616878608813,0.219704283275017,0.193323081239204,0.200916284928199,0.542904810081457,0.254023212835635,0.142803951536888,0.518363537781901,0.180263265642927,0.334345146923659,0.21890255804856,0.212416348755371,0.186058171373851,0.185911375441891,0.259805270158416,0.268419356961097,0.308570285419957,0.237854695674104,0.148134847544175,0.299818066008819,0.199163178006725,0.13148592976064,0.296249413551461,0.140779515468565,0.190860325775692,0.126746901994039,0.314392485612,0.176669600912733,0.523934750517545,0.152263302449414,0.207647461345338,0.190102479614314,0.13112177981636,0.226434542266703,0.43744594941718,0.259304024470086,0.150581900539225,0.17798779990689,0.444948120895643,0.12591612628501,0.194017474731146,0.262893057415558,0.168426287330271,0.193330462340041,0.136717006860439,0.23985155006971,0.303101949863173,0.0990237148878279,0.111909149522515,0.168026817156434,0.166936140530191,0.145929652773385,0.0617417725696687,0.15512865419325,0.0772091697411546,0.0652652667443918,0.378651534451971,0.0406725414732869,0.140975569155561,0.0597310810736362,0.125069799708205,0.0898182753861954,0.0907605028182727,0.19098697108175,0.055241707413362,0.0873409933326329,0.184775828002376,0.0993816553202547,0.0689573177129112,0.156604553309552,0.287880215399115,0.0798543047655268,0.0956265577850972,0.0804602809642254,0.0584841390946232,0.0909411648403454,0.124891694427936,0.0880313878141692,0.0887609693380615,0.215041234458648,0.0582292376942012,0.152423982382522,0.0918706338815037,0.0378449402012227,0.0791497770750904,0.0803376371973661,0.0825723405892465,0.091936650580032,0.0818051269913929,0.0627030938352059,0.0854647229388717,0.0911066423193615,0.0898105413807485,0.396618222554757,0.0741128416766246,0.0621188531069399,0.283367351434876,0.0882511493453106,0.0808813234488633,0.0949819391612738,0.0959482346238338,0.0915621547416444,0.0776161634845423,0.151912197881714,0.117551980677585,0.0903559986843985,0.0972180212721741,0.0469397011435823,0.17023249778408,0.0734654407024886,0.0580696054783342,0.11807458485426,0.0599725785220509,0.0652597705175781,0.0618879077584987,0.157926728451253,0.0888930254341436,0.404067938428634,0.0577712223417694,0.0964402706482415,0.0602483156888589,0.0597918301478928,0.0899341271034553,0.193378863948801,0.10329378530627,0.0608669348828456,0.0376868151485413,0.239987977186481,0.0623158013390958,0.0759449176433894,0.0799444969188346,0.0876015199828041,0.0765194472323815,0.0573709892999598,0.106252445630324,0.0993336799309441],["Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed"],["Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac"],["CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Sample_ID<\/th>\n      <th>Distance_to_centroid<\/th>\n      <th>Zone<\/th>\n      <th>Metric<\/th>\n      <th>Reef<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"Blfrtip","buttons":["copy","csv","excel"],"pageLength":5,"lengthMenu":[[5,10,50,-1],["5","10","50","All"]],"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'80%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'80%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'80%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'80%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'80%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <p></br></p>
+<h1 id="core-fish-microbiome-beta-diversity">CORE fish microbiome Beta diversity</h1>
+<p>load unrarefied core fish gut microbiome data</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.core &lt;- readRDS(&quot;ps_indv01_core_fish.rds&quot;)
+ps.core</code></pre>
+</div>
+<h2 id="jaccard-1">Jaccard</h2>
+<p>binary = TRUE for true Jaccard as in vegan package (Presence/Absence)</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+type.jaccard &lt;- phyloseq::distance(ps.core, method = &quot;jaccard&quot;, binary = T) 
+sampledf &lt;- data.frame(sample_data(ps.core))</code></pre>
+</div>
+<h3 id="beta-dispersions-5">Beta Dispersions</h3>
+<h4 id="by-zone-10">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.jaccard1 &lt;- betadisper(type.jaccard, sampledf$Zone, 
+                            type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.jaccard1
+permutest(beta.jaccard1, binary = TRUE, pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h4 id="by-position-inner-vs.-outer-3">By Position: Inner vs. outer</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.jaccard2 &lt;- betadisper(type.jaccard, sampledf$Position, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.jaccard2
+permutest(beta.jaccard2,  binary = TRUE,  pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-4">By Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.core.inner &lt;- subset_samples(ps.core, Zone != &quot;Outer bay&quot;)
+type.jaccard.inner &lt;- phyloseq::distance(ps.core.inner, 
+                                         method = &quot;jaccard&quot;, binary=T)
+sampledf.inner &lt;- data.frame(sample_data(ps.core.inner))</code></pre>
+</div>
+<h4 id="by-reef-type-1">By Reef Type</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.jaccard3 &lt;- betadisper(type.jaccard.inner, sampledf.inner$Reef_type, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.jaccard3
+permutest(beta.jaccard3,  binary = TRUE,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h2 id="permanova-5">PERMANOVA</h2>
+<h4 id="by-zone-11">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.jaccard0&lt;- adonis(type.jaccard ~ Zone, data = sampledf,
+                         permutations = 10000)
+adonis.jaccard0</code></pre>
+</div>
+<h4 id="by-reef-10">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.jaccardR&lt;- adonis(type.jaccard ~ Reef, data = sampledf,
+                         permutations = 10000)
+adonis.jaccardR</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+#by Zone with Reef nested in Zone
+adonis.jaccard1&lt;- adonis(type.jaccard ~ Zone/Reef, data = sampledf,
+                         permutations = 10000)
+adonis.jaccard1</code></pre>
+</div>
+<h4 id="by-position-inner-vs.-outer-with-reef-nested-in-position-1">By Position: Inner vs. outer with Reef nested in Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.jaccard2 &lt;- adonis(type.jaccard ~ Position/Reef, data = sampledf,
+                          permutations = 10000)
+adonis.jaccard2</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-with-reef-nested-in-cover-inside-bay-1">By Low vs. high cover with Reef nested in cover inside bay</h4>
+<p>variable Reef_type is healthy and disturbed (based on level coral cover)</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.jaccard3 &lt;- adonis(type.jaccard.inner ~ Reef_type/Reef, 
+                          data = sampledf.inner, permutations = 10000)
+adonis.jaccard3</code></pre>
+</div>
+<p>pairwise adonis as a substitute for posthoc test of PERMANOVA, default: p.adjust.m = “bonferroni”</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+# Between groups
+pairwise1 &lt;- pairwise.adonis(type.jaccard, factors = sampledf$Zone)
+pairwise1
+# Between stations
+pairwise2 &lt;- pairwise.adonis(type.jaccard, factors = sampledf$Reef)
+pairwise2</code></pre>
+</div>
+<h2 id="modified-gower-1">Modified Gower</h2>
+<ol type="1">
+<li>log transform using either base 10(1+x)=“log10p” or base 2 see Anderson 2006 use microbime package transformation because uses vegan deconstand function rarefied data store in dataframe create distance matrix on log tranf. data</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+data.log10&lt;- microbiome::transform(ps.core, transform = &quot;log10p&quot;)
+sampledf.log10 &lt;- data.frame(sample_data(data.log10))
+type.modGower &lt;- phyloseq::distance(data.log10, method = &quot;altGower&quot;)</code></pre>
+</div>
+<h3 id="beta-dispersions-6">Beta Dispersions</h3>
+<h4 id="by-zone-12">by Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.Gower1 &lt;- betadisper(type.modGower, sampledf.log10$Zone, 
+                          type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.Gower1
+permutest(beta.Gower1,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-reef-11">by Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+    Homogeneity of multivariate dispersions
+
+Call: betadisper(d = type.modGower, group =
+sampledf.log10$Reef, type = &quot;centroid&quot;, bias.adjust = TRUE)
+
+No. of Positive Eigenvalues: 52
+No. of Negative Eigenvalues: 36
+
+Average distance to centroid:
+  ALR   CCR   PBL   PPR   PST   RNW   ROL   SCR   SIS 
+1.092 1.091 1.397 1.024 1.262 1.009 1.086 1.033 1.078 
+
+Eigenvalues for PCoA axes:
+(Showing 8 of 88 eigenvalues)
+ PCoA1  PCoA2  PCoA3  PCoA4  PCoA5  PCoA6  PCoA7  PCoA8 
+35.054 20.825 13.740  9.937  7.333  6.827  4.997  4.244 </code></pre>
+<pre><code>
+Permutation test for homogeneity of multivariate dispersions
+Permutation: free
+Number of permutations: 10000
+
+Response: Distances
+          Df Sum Sq  Mean Sq     F N.Perm Pr(&gt;F)
+Groups     8 0.8291 0.103635 1.351  10000 0.2287
+Residuals 80 6.1366 0.076708                    
+
+Pairwise comparisons:
+(Observed p-value below diagonal, permuted p-value above
+diagonal)
+          ALR       CCR       PBL       PPR       PST       RNW
+ALR           0.9966003 0.0290971 0.6076392 0.2229777 0.5602440
+CCR 0.9974405           0.0265973 0.6002400 0.2364764 0.5384462
+PBL 0.0275332 0.0270626           0.0133987 0.2092791 0.0311969
+PPR 0.6076493 0.6041984 0.0128554           0.1022898 0.9310069
+PST 0.2210027 0.2278808 0.2089863 0.0967195           0.1686831
+RNW 0.5664588 0.5491062 0.0308227 0.9281901 0.1618143          
+ROL 0.9614360 0.9613949 0.0364961 0.6560278 0.2500871 0.5982854
+SCR 0.6112878 0.5978037 0.0106047 0.9449796 0.1064595 0.8672413
+SIS 0.9026070 0.9057629 0.0062179 0.6445246 0.0815395 0.6314736
+          ROL       SCR    SIS
+ALR 0.9595040 0.6140386 0.9041
+CCR 0.9609039 0.5963404 0.9013
+PBL 0.0373963 0.0111989 0.0074
+PPR 0.6560344 0.9436056 0.6363
+PST 0.2452755 0.1076892 0.0834
+RNW 0.6011399 0.8667133 0.6193
+ROL           0.6474353 0.9518
+SCR 0.6520618           0.6904
+SIS 0.9468090 0.6934268       </code></pre>
+</div>
+<h4 id="by-position-2">by Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.Gower2 &lt;- betadisper(type.modGower, sampledf.log10$Position, 
+                          type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.Gower2
+permutest(beta.Gower2,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-5">By Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+data.log10.inner &lt;- subset_samples(data.log10, Zone != &quot;Outer bay&quot;)
+type.modGower.inner &lt;- phyloseq::distance(data.log10.inner, 
+                                          method = &quot;altGower&quot;)
+sampledf.inner &lt;- data.frame(sample_data(data.log10.inner))
+beta.Gower3 &lt;- betadisper(type.modGower.inner, sampledf.inner$Reef_type, 
+                          type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.Gower3
+permutest(beta.Gower3,  binary = TRUE,  pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h3 id="permanova-6">PERMANOVA</h3>
+<h4 id="by-zone-13">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+adonis.modGower0 &lt;- adonis(type.modGower ~ Zone, data = sampledf.log10,
+                           permutations = 10000)
+adonis.modGower0</code></pre>
+</div>
+<h4 id="by-reef-12">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.modGowerR &lt;- adonis(type.modGower ~ Reef, data = sampledf.log10,
+                           permutations = 10000)
+adonis.modGowerR</code></pre>
+</div>
+<h4 id="by-zone-with-reef-nested-in-zone-4">By Zone with Reef nested in Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.modGower1 &lt;- adonis(type.modGower ~ Zone/Reef, data = sampledf.log10, 
+                           permutations = 10000)
+adonis.modGower1</code></pre>
+</div>
+<h4 id="by-inner-vs.-outer-with-reef-nested-in-position-4">By Inner vs. outer with reef nested in position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.modGower2 &lt;- adonis(type.modGower ~ Position/Reef, data = sampledf.log10,
+                           permutations = 10000)
+adonis.modGower2</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-6">By Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+data.log10.inner &lt;- subset_samples(data.log10, Zone != &quot;Outer bay&quot;)
+type.modGower.inner &lt;- phyloseq::distance(data.log10.inner, method = &quot;altGower&quot;)
+sampledf.inner.log10 &lt;- data.frame(sample_data(data.log10.inner))
+adonis.modGower3 &lt;- adonis(type.modGower.inner ~ Reef_type/Reef, 
+                           data = sampledf.inner.log10, permutations = 10000)
+adonis.modGower3</code></pre>
+</div>
+<p>making pairwise comparisons following the PERMANOVA Between zones &amp; Between reefs</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.modGower, factors = sampledf$Zone)
+set.seed(1911)
+pairwise.adonis(type.modGower, factors = sampledf$Reef)</code></pre>
+</div>
+<h2 id="bray-curtis-1">Bray Curtis</h2>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+type.bray &lt;- phyloseq::distance(ps.core, method = &quot;bray&quot;)
+sampledf &lt;- data.frame(sample_data(ps.core))</code></pre>
+</div>
+<h3 id="beta-dispersions-7">Beta Dispersions</h3>
+<h4 id="by-zone-14">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.bray1 &lt;- betadisper(type.bray, sampledf$Zone, 
+                         type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.bray1
+permutest(beta.bray1,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-reef-13">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.brayR &lt;- betadisper(type.bray, sampledf$Reef, 
+                         type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.brayR
+permutest(beta.brayR,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-position-inner-vs.-outer-4">By Position: Inner vs. outer</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.bray2 &lt;- betadisper(type.bray, sampledf$Position, 
+                         type = &quot;centroid&quot;, bias.adjust = TRUE)
+beta.bray2
+permutest(beta.bray2,  pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h4 id="low-vs.-high-cover-inside-bay-1">Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.core.inner &lt;- subset_samples(ps.core, Zone != &quot;Outer bay&quot;)
+type.bray.inner &lt;- phyloseq::distance(ps.core.inner, method = &quot;bray&quot;)
+beta.bray3 &lt;- betadisper(type.bray.inner, sampledf.inner$Reef_type, 
+                         type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.bray3
+permutest(beta.bray3,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h3 id="permanova-7">PERMANOVA</h3>
+<h4 id="by-zone-15">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+adonis.bray0 &lt;- adonis(type.bray ~ Zone, data = sampledf,
+                       permutations = 10000)</code></pre>
+</div>
+<h4 id="by-reef-14">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.bray0
+adonis.brayR &lt;- adonis(type.bray ~ Reef, data = sampledf,
+                       permutations = 10000)</code></pre>
+</div>
+<h4 id="by-zone-with-station-nested-in-group-1">By ZONE with Station nested in Group</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.brayR
+adonis.bray1 &lt;- adonis(type.bray ~ Zone/Reef, data = sampledf, 
+                       permutations = 10000)
+adonis.bray1 </code></pre>
+</div>
+<h4 id="by-inner-vs.-outer-with-reef-nested-in-position-5">By Inner vs. outer with REEF nested in Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.bray2 &lt;- adonis(type.bray ~ Position/Reef, data = sampledf, 
+                       permutations = 10000)
+adonis.bray2</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-with-reef-nested-in-cover-2">By Low vs. high cover inside bay with Reef nested in cover</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.core.inner &lt;- subset_samples(ps.core, Zone != &quot;Outer bay&quot;)
+type.bray.inner &lt;- phyloseq::distance(ps.core.inner, method = &quot;bray&quot;)
+sampledf.inner &lt;- data.frame(sample_data(ps.core.inner))
+adonis.bray3 &lt;- adonis(type.bray.inner ~ Reef_type/Reef, data = sampledf.inner, 
+                       permutations = 10000)
+adonis.bray3</code></pre>
+</div>
+<p>making pairwise comparisons following the PERMANOVA Between zones &amp; Between reefs.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.bray, factors = sampledf$Zone)
+set.seed(1911)
+pairwise.adonis(type.bray, factors = sampledf$Reef)</code></pre>
+</div>
+<h2 id="unifrac-1">UNIFRAC</h2>
+<p>calculating dissimilarity matrix</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+type.unifrac &lt;- phyloseq::distance(ps.core, method = &quot;unifrac&quot;, weighted=F)
+sampledf &lt;- data.frame(sample_data(ps.core))</code></pre>
+</div>
+<h3 id="beta-dispersions-8">Beta Dispersions</h3>
+<h4 id="by-zone-16">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.unifrac1 &lt;- betadisper(type.unifrac, sampledf$Zone, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.unifrac1
+permutest(beta.unifrac1,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-reef-15">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.unifracR &lt;- betadisper(type.unifrac, sampledf$Reef, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.unifracR
+permutest(beta.unifracR,  pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h4 id="by-position-inner-vs.-outer-5">By Position: Inner vs. outer</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.unifrac2 &lt;- betadisper(type.unifrac, sampledf$Position, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.unifrac2
+permutest(beta.unifrac2,  pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-7">By Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.core.inner &lt;- subset_samples(ps.core, Zone != &quot;Outer bay&quot;)
+type.unifrac.inner &lt;- phyloseq::distance(ps.core.inner, method = &quot;unifrac&quot;)
+sampledf.core.inner &lt;- data.frame(sample_data(ps.core.inner))
+beta.unifrac3 &lt;- betadisper(type.unifrac.inner, sampledf.core.inner$Reef_type, 
+                            type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.unifrac3
+permutest(beta.unifrac3,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h3 id="permanova-8">PERMANOVA</h3>
+<h4 id="by-zone-17">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+adonis.unifrac0 &lt;- adonis(type.unifrac ~ Zone, data = sampledf,
+                          permutations = 10000)
+adonis.unifrac0</code></pre>
+</div>
+<h4 id="by-reef-16">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.unifracR &lt;- adonis(type.unifrac ~ Reef, data = sampledf,
+                          permutations = 10000)
+adonis.unifracR</code></pre>
+</div>
+<h4 id="by-group-with-reef-nested-in-group-1">By Group with Reef nested in Group</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.unifrac1 &lt;- adonis(type.unifrac ~ Zone/Reef, data = sampledf,   
+                          permutations = 10000)
+adonis.unifrac1</code></pre>
+</div>
+<h4 id="by-inner-vs.-outer-with-reef-nested-in-position-6">By Inner vs. outer with Reef nested in Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.unifrac2 &lt;- adonis(type.unifrac ~ Position/Reef, data = sampledf, 
+                          permutations = 10000)
+adonis.unifrac2</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-with-reef-nested-in-cover-3">By Low vs. high cover inside bay with Reef nested in Cover</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.core.inner &lt;- subset_samples(ps.core, Zone != &quot;Outer bay&quot;)
+type.unifrac.inner &lt;- phyloseq::distance(ps.core.inner, method = &quot;unifrac&quot;)
+sampledf.inner &lt;- data.frame(sample_data(ps.core.inner))</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.unifrac3 &lt;- adonis(type.unifrac.inner ~ Reef_type/Reef, 
+                          data = sampledf.inner, 
+                          permutations = 10000)
+adonis.unifrac3</code></pre>
+</div>
+<p>making pairwise comparisons following the PERMANOVA Between zones &amp; Between reefs</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.unifrac, factors = sampledf$Zone)
+# 
+set.seed(1911)
+pairwise.adonis(type.unifrac, factors = sampledf$Reef)</code></pre>
+</div>
+<h2 id="gunifrac-1">GUNIFRAC</h2>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+asv.tab&lt;-otu_table(ps.core)
+ps.core.inner &lt;- subset_samples(ps.core, Zone != &quot;Outer bay&quot;)
+asv.tab.inner &lt;- otu_table(ps.core.inner)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+tree.fish.core&lt;-phy_tree(ps.core)
+tree.fish.core.inner&lt;-phy_tree(ps.core.inner)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+fish.sample.core&lt;-sample_data(ps.core)
+fish.sample.core.inner&lt;-sample_data(ps.core.inner)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+groups2.core &lt;- fish.sample.core$Zone
+groupsR.core &lt;- fish.sample.core$Reef
+groups.inner.core &lt;- fish.sample.core.inner$Zone
+position.core &lt;- fish.sample.core$Position
+position.core
+#asv.tab.core #JJS# says he doesnt know what this is? Changed to asv.tab</code></pre>
+</div>
+<h3 id="run-gunifrac-1">Run GUniFrac</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+unifracs &lt;- GUniFrac(asv.tab, tree.fish.core, 
+                     alpha=c(0, 0.5, 1))$unifracs
+unifracs2 &lt;- GUniFrac(asv.tab.inner, tree.fish.core.inner, 
+                      alpha=c(0, 0.5, 1))$unifracs</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+d5.all &lt;- unifracs[, , &quot;d_0.5&quot;] 
+d5.all</code></pre>
+</div>
+<p>JJS change unifracs.inner to unifracs2</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+d5.inner &lt;- unifracs2[, , &quot;d_0.5&quot;]  
+d5.inner</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+type.gunifrac &lt;- as.dist(d5.all)
+type.gunifrac.inner &lt;- as.dist(d5.inner)</code></pre>
+</div>
+<h3 id="beta-dispersions-9">Beta Dispersions</h3>
+<h4 id="by-zone-18">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+beta.gunifrac1 &lt;- betadisper(as.dist(d5.all), groups2.core, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.gunifrac1 
+permutest(beta.gunifrac1, pairwise=T, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-reef-17">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.gunifracR &lt;- betadisper(as.dist(d5.all), groupsR.core, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.gunifracR
+permutest(beta.gunifracR, pairwise=T, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-position-3">By Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.gunifrac2 &lt;- betadisper(as.dist(d5.all), position.core, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.gunifrac2
+permutest(beta.gunifrac2, pairwise=T, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-cover-inner-bay-comparison-1">By Cover (inner bay comparison)</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.gunifrac.inner &lt;- betadisper(as.dist(d5.inner), groups.inner.core, 
+                                  type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.gunifrac.inner
+permutest(beta.gunifrac.inner, pairwise=T, permutations = 10000)</code></pre>
+</div>
+<h3 id="permanova-9">PERMANOVA</h3>
+<h4 id="by-zone-with-reef-nested-in-zone-5">By Zone with Reef nested in Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+sampledf &lt;- data.frame(sample_data(ps.core))
+sampledf.inner &lt;- data.frame(sample_data(ps.core.inner))</code></pre>
+</div>
+<h4 id="by-zone-19">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.gunifrac0&lt;- adonis(type.gunifrac ~ Zone, data = sampledf, 
+                          permutations = 10000)
+adonis.gunifrac0</code></pre>
+</div>
+<h4 id="by-reef-18">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.gunifracR&lt;- adonis(type.gunifrac ~ Zone, data = sampledf, 
+                          permutations = 10000)
+adonis.gunifracR</code></pre>
+</div>
+<h4 id="by-zone-with-reef-nested-within-zone">By Zone with Reef nested within Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.gunifrac1&lt;- adonis(type.gunifrac ~ Zone/Reef, data = sampledf, 
+                          permutations = 10000)
+adonis.gunifrac1</code></pre>
+</div>
+<h4 id="by-position-with-reef-nested-in-position-1">By Position with reef nested in position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.gunifrac2&lt;- adonis(type.gunifrac ~ Position/Reef, data = sampledf,
+                          permutations = 10000)
+adonis.gunifrac2</code></pre>
+</div>
+<h4 id="by-cover-1">By Cover</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.gunifrac3&lt;- adonis(type.gunifrac.inner ~ Reef_type/Reef, 
+                          data = sampledf.core.inner, permutations = 10000)
+adonis.gunifrac3</code></pre>
+</div>
+<p>pairwise adonis as a substitute for posthoc test of PERMANOVA by Zone &amp; by Reef</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+library(pairwiseAdonis)
+pairwise.adonis(type.gunifrac, factors = sampledf$Zone, 
+                p.adjust.m = &quot;bonferroni&quot;)
+pairwise.adonis(type.gunifrac, factors = sampledf$Reef,
+                p.adjust.m = &quot;bonferroni&quot;)</code></pre>
+</div>
+<h2 id="wunifrac-1">WUNIFRAC</h2>
+<p>calculating dissimilarity matrix</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+type.wunifrac &lt;- phyloseq::distance(ps.core, method = &quot;wunifrac&quot;)
+sampledf &lt;- data.frame(sample_data(ps.core))</code></pre>
+</div>
+<h3 id="beta-dispersions-10">Beta Dispersions</h3>
+<h4 id="by-zone-20">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.wunifrac1 &lt;- betadisper(type.wunifrac, sampledf$Zone, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.wunifrac1
+permutest(beta.wunifrac1,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-reef-19">By REEF</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.wunifracR &lt;- betadisper(type.wunifrac, sampledf$Reef, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.wunifracR 
+permutest(beta.wunifracR,  pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h4 id="by-position-inner-vs.-outer-6">By Position: Inner vs. outer</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.wunifrac2 &lt;- betadisper(type.wunifrac, sampledf$Position, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.wunifrac2
+permutest(beta.wunifrac2,  pairwise = TRUE, permutations = 10000)</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-8">By Low vs. high cover inside bay</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.core.inner &lt;- subset_samples(ps.core, Zone != &quot;Outer bay&quot;)
+type.wunifrac.inner &lt;- phyloseq::distance(ps.core.inner, method = &quot;wunifrac&quot;)
+sampledf.inner &lt;- data.frame(sample_data(ps.core.inner))</code></pre>
+</div>
+<h4 id="by-reef-type-2">By Reef Type</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+beta.wunifrac3 &lt;- betadisper(type.wunifrac.inner, sampledf.inner$Reef_type, 
+                             type=&quot;centroid&quot;, bias.adjust = TRUE)
+beta.wunifrac3
+permutest(beta.wunifrac3,  pairwise = TRUE, permutations = 10000) </code></pre>
+</div>
+<h3 id="permanova-10">PERMANOVA</h3>
+<h4 id="by-zone-21">By Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+adonis.wunifrac0 &lt;- adonis(type.wunifrac ~ Zone, data = sampledf,
+                           permutations = 10000)
+adonis.wunifrac0</code></pre>
+</div>
+<h4 id="by-reef-20">By Reef</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.wunifracR &lt;- adonis(type.wunifrac ~ Reef, data = sampledf,
+                           permutations = 10000)
+adonis.wunifracR</code></pre>
+</div>
+<h4 id="by-zone-with-reef-nested-in-zone-6">By Zone with Reef nested in Zone</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.wunifrac1 &lt;- adonis(type.wunifrac ~ Zone/Reef, data = sampledf, 
+                           permutations = 10000)
+adonis.wunifrac1</code></pre>
+</div>
+<h4 id="by-inner-vs.-outer-with-reef-nested-in-position-7">By Inner vs. outer with Reef nested in Position</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.wunifrac2 &lt;- adonis(type.wunifrac ~ Position/Reef, data = sampledf, 
+                           permutations = 10000)
+adonis.wunifrac2</code></pre>
+</div>
+<h4 id="by-low-vs.-high-cover-inside-bay-with-reef-nested-in-cover-4">By Low vs. high cover inside bay with Reef nested in Cover</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.core.inner &lt;- subset_samples(ps.core, Zone != &quot;Outer bay&quot;)
+type.wunifrac.inner &lt;- phyloseq::distance(ps.core.inner, method = &quot;wunifrac&quot;)
+sampledf.inner &lt;- data.frame(sample_data(ps.core.inner))</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+adonis.wunifrac3 &lt;- adonis(type.wunifrac.inner ~ Reef_type/Reef, 
+                           data = sampledf.inner, permutations = 10000)
+adonis.wunifrac3</code></pre>
+</div>
+<p>making pairwise comparisons following the PERMANOVA Between groups Between stations</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+set.seed(1911)
+pairwise.adonis(type.wunifrac, factors = sampledf$Zone)
+set.seed(1911)
+pairwise.adonis(type.wunifrac, factors = sampledf$Reef)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+df1 &lt;- data.frame(Distance_to_centroid=beta.jaccard1$distances, 
+                  Zone=beta.jaccard1$group)
+df1$Metric &lt;- &quot;Jaccard&quot;
+df1 &lt;- cbind(df1, sampledf)
+df1[, c(4:8, 10:14)] &lt;- NULL
+df1 &lt;- df1 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df2 &lt;- data.frame(Distance_to_centroid=beta.Gower1$distances, 
+                  Zone=beta.Gower1$group)
+df2$Metric &lt;- &quot;Modified Gower&quot;
+df2 &lt;- cbind(df2, sampledf)
+df2[, c(4:8, 10:14)] &lt;- NULL
+df2 &lt;- df2 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df3 &lt;- data.frame(Distance_to_centroid=beta.bray1$distances, 
+                  Zone=beta.bray1$group)
+df3$Metric &lt;- &quot;Bray Curtis&quot;
+df3 &lt;- cbind(df3, sampledf)
+df3[, c(4:8, 10:14)] &lt;- NULL
+df3 &lt;- df3 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df4 &lt;- data.frame(Distance_to_centroid=beta.unifrac1$distances, 
+                  Zone=beta.unifrac1$group)
+df4$Metric &lt;- &quot;Unifrac&quot;
+df4 &lt;- cbind(df4, sampledf)
+df4[, c(4:8, 10:14)] &lt;- NULL
+df4 &lt;- df4 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df5 &lt;- data.frame(Distance_to_centroid=beta.gunifrac1$distances, 
+                  Zone=beta.gunifrac1$group)
+df5$Metric &lt;- &quot;Generalized Unifrac&quot;
+df5 &lt;- cbind(df5, sampledf)
+df5[, c(4:8, 10:14)] &lt;- NULL
+df5 &lt;- df5 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+df6 &lt;- data.frame(Distance_to_centroid=beta.wunifrac1$distances, 
+                  Zone=beta.wunifrac1$group)
+df6$Metric &lt;- &quot;Weighted Unifrac&quot;
+df6 &lt;- cbind(df6, sampledf)
+df6[, c(4:8, 10:14)] &lt;- NULL
+df6 &lt;- df6 %&gt;% tibble::rownames_to_column(&quot;Sample_ID&quot;)
+
+all.data &lt;- rbind(df1,df2,df3,df4,df5,df6)
+str(all.data)
+write.csv(all.data, 
+          file = &quot;tables/p5/boxplot_dispersion_data_core_NEW2_jjs.csv&quot;, 
+          row.names = FALSE, quote = FALSE)</code></pre>
+</div>
+<p></br></p>
+<div class="layout-chunk" data-layout="l-body">
+<div id="sez1e1nej0qm6k8kgsff" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="sez1e1nej0qm6k8kgsff">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.115911687073923\" data-max=\"1.8032657219248\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Inner bay&quot;,&quot;Inner bay disturbed&quot;,&quot;Outer bay&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;ALR&quot;,&quot;CCR&quot;,&quot;PBL&quot;,&quot;PPR&quot;,&quot;PST&quot;,&quot;RNW&quot;,&quot;ROL&quot;,&quot;SCR&quot;,&quot;SIS&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Table: \n  <em>Beta diversity estimates of the whole fish microbiome. Use the buttons to\n            navigate through the table or download a copy.<\/em>\n<\/caption>","data":[["ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543"],[0.308180075755744,0.354601928116101,0.562633383358865,0.378419866803429,0.544694938778474,0.555924070815511,0.389198268092323,0.421071695036684,0.615471462338911,0.569326540819441,0.24917708081559,0.48027045521692,0.264006303175646,0.294692177130479,0.264019610255054,0.280497817207049,0.524366205060212,0.35226523479288,0.267255670517013,0.611501085083745,0.339438146434765,0.47513079362219,0.421859623177882,0.549781856494285,0.331541867058571,0.446331783297799,0.377619009550334,0.557390357244146,0.514371714206537,0.526934630516528,0.514367642853986,0.371891235276684,0.446037769990691,0.353773391923495,0.328186545990338,0.471624248106634,0.292249337371484,0.426659960755412,0.323101010828839,0.387643853443436,0.603762046905807,0.467170369247071,0.448894296066957,0.344436157025988,0.274658777297325,0.513240612387228,0.755181737222451,0.257470611929242,0.430889443627463,0.778685481462931,0.45689415189979,0.470933039629628,0.378214533766355,0.342655656620856,0.434083748901908,0.310851543913928,0.271990483124616,0.332732413860719,0.314599962248224,0.383038943029944,0.264645682428788,0.544216590169822,0.352594412246274,0.455859901600146,0.302790816919766,0.307039939807481,0.284005992184341,0.354649926123568,0.466628231806411,0.401774405524848,0.701833385883828,0.44007664803668,0.24901271235847,0.531802114247181,0.561891998055883,0.254872865594855,0.467079284702112,0.361728676336291,0.340360427815023,0.307160651965579,0.290796836978904,0.54512226453476,0.27436915536919,0.237219559462299,0.228185007832709,0.359299660405277,0.383123433492462,0.350425302828369,0.467892437489525,0.933567195736239,1.11040203700779,1.51823117263979,1.72457641000478,1.22438104472582,1.25976530107236,1.52312211798578,1.18364791602045,1.30333653485885,1.21216229514816,0.886328234008893,1.53779619637817,1.11641528661046,1.22058938197995,0.869950038770328,0.781813105149144,1.63757782791714,0.722604625400311,0.654098299520342,1.55821166602426,1.18045752039616,1.18443028092094,1.69452103253352,1.45842809433645,1.46260007435614,1.59870397627056,0.893463212092636,1.19499502497876,1.28773871249229,1.36992000295851,1.24943545818958,0.8767468278188,0.876536440410431,0.805918167958138,0.986557696378634,1.09788476773081,0.891802008174128,1.16763399943916,0.921404444143792,0.943864227994158,1.33136838647283,1.18258974466142,0.993508544572988,1.31220896535173,0.589607208132208,1.32976101890277,1.8032657219248,1.15051502631203,1.1338017834879,1.71281100945205,1.10163520830841,1.2553010935174,1.37637298719334,1.08285638876781,1.19597581453073,1.05880371913414,0.906435857430257,0.803186257366704,1.08585561150035,1.47770688121596,0.696489423978297,1.54152305768033,0.934905350888331,1.30706520856317,1.20719311002496,0.773816160481885,0.829471658265195,0.866298231747042,1.49516263175751,0.989584205168251,1.69481485967416,0.866074886489187,1.04146825016884,1.10632123864122,0.917263941664948,1.06161362450851,1.10037348984193,0.993357762191526,0.862712740501266,1.1111942143966,0.755560086283357,1.20667135540368,0.963489775312319,1.22477992805652,0.512098699719626,1.05214637955573,1.05686389365963,1.3513607480842,1.49455089228478,0.324807078089932,0.531549678994115,0.774307849352217,0.792958868728258,0.634921304386376,0.296716766660555,0.678570083256877,0.50811023044625,0.29729288825234,0.736525285874686,0.242634393829404,0.616874054682365,0.429123405003495,0.659204064116827,0.536155273071854,0.336733218034957,0.730958517192474,0.271275283779806,0.472323511145172,0.800207183547696,0.480388661256226,0.284919892830881,0.706470961934938,0.831834793566226,0.482877486629128,0.513868284956569,0.323859844509949,0.325139782395187,0.474394245828978,0.389951055961325,0.514118175342396,0.359913822885986,0.348207381483015,0.312723437934373,0.641833206010292,0.318842736057604,0.298573567333909,0.364674545089559,0.411236915988729,0.336915680989607,0.347755937059249,0.515041068783629,0.352349395338962,0.541196517654359,0.306775176382652,0.40101703539583,0.793694714290274,0.480707187020347,0.351852699479292,0.698290567446691,0.371153631694398,0.553164469477398,0.457241976692362,0.48081088363649,0.424775768664864,0.444362220159122,0.62766959901426,0.322594096912075,0.378778112279787,0.573599828298997,0.250383694400938,0.686813329442187,0.330711043999681,0.301385606322493,0.631213616050391,0.313013975414851,0.457252979089206,0.294679033381027,0.65732561135497,0.317165750979157,0.80015373166982,0.274526071420701,0.448445550805526,0.334391210853587,0.304695851500807,0.422276073171506,0.714728323309584,0.45643901829292,0.297416067649443,0.332789147599627,0.412379038229077,0.291372407556559,0.255542034133428,0.600113462332056,0.299278422683734,0.478904804203613,0.291025335391741,0.51244808236451,0.4920231364623,0.307492875674237,0.168939737690109,0.305577872795885,0.212045376056428,0.225299289762172,0.549261513682809,0.211787853605857,0.355442623336947,0.554019193899519,0.340851726529467,0.302400962108389,0.361642609538275,0.248299405791256,0.199809199783597,0.142748966365873,0.194546272932101,0.316962821456631,0.234737098993146,0.197975843912551,0.36841576118248,0.281777131971035,0.368227527574425,0.252310524356688,0.307211547155179,0.236924616613315,0.290237616352306,0.21656600727442,0.409490269510964,0.457515158839083,0.33037712902822,0.357845976396222,0.225280369367337,0.565166441156693,0.218913762157885,0.262122187053329,0.503700178031761,0.215964535267211,0.319252658273271,0.289949437210272,0.319704951776788,0.404541448860561,0.32974491956683,0.247631126804352,0.233593591916996,0.330965228443185,0.452358317560683,0.642494540914642,0.218404764906142,0.469196653537598,0.606292636135359,0.572837803779491,0.179336628343869,0.220145600022554,0.232995692267354,0.296346750200611,0.167682129587408,0.210178082086326,0.299247089316307,0.163039817743981,0.341757896958767,0.252027135550753,0.242083278968884,0.227335649114923,0.406952048786634,0.223304709903214,0.366274203746135,0.152916528571708,0.341626679746788,0.259978092064218,0.431540823450124,0.590732083943131,0.321594762447089,0.204527116884752,0.672525996207477,0.440454211245517,0.153777306328584,0.321962909993018,0.183022472688444,0.280646628720828,0.386076119074439,0.347786023196722,0.664287171250677,0.281074445671192,0.16769694144906,0.157976228099456,0.188976666476344,0.387557554494266,0.321753827243127,0.220721387501687,0.432285060893762,0.508806707422559,0.61464809053821,0.766538799303943,0.284099417054382,0.286135553499815,0.691492667156436,0.276574940391368,0.287035619970878,0.285505434088969,0.303077620744719,0.612387404052529,0.258758968488467,0.598366945041601,0.32858552026391,0.267687925444153,0.744151825300083,0.246865303698099,0.389460406458801,0.639381289179028,0.427373215189007,0.28773159917309,0.720258358756003,0.701084504372405,0.442962207846335,0.527838868967829,0.27900723970982,0.278167820085309,0.41756083412797,0.448536620642451,0.419201236642339,0.282976352823843,0.282304779261991,0.263379408665462,0.594523208692926,0.283101858639642,0.248903744937012,0.238030974204116,0.236960500924113,0.252410616311307,0.28936010116754,0.372117424568749,0.277426837222552,0.451850552746679,0.273498025061071,0.414795564796491,0.450818575519395,0.336489025764269,0.292662003896415,0.301480586687412,0.283482764462584,0.331166340886716,0.488608867773563,0.425167190240326,0.270723828676685,0.327234842523487,0.646816459211453,0.258342717420056,0.305137642392901,0.542422901337782,0.289799695509762,0.715356253713042,0.258035136407357,0.280719982150227,0.616006346428505,0.282464806792564,0.305171497955257,0.265427563950814,0.640515261734138,0.283748056707335,0.63766508834654,0.254130552905557,0.476077280723107,0.294117370573985,0.284280513749183,0.419446791399831,0.342682463022364,0.338708452342533,0.268695199243345,0.262971871473875,0.365336701978495,0.286940001245878,0.246625919426135,0.387631430017033,0.26028270848406,0.25811920362181,0.285546273495075,0.547238825814131,0.316022872118201,0.28593023910044,0.460429630841609,0.597758290791894,0.792060482747497,0.211582025737298,0.236680576334359,0.691373074990535,0.216481647330975,0.236774180029643,0.195087639210819,0.144693858415582,0.622167626236582,0.205862233411545,0.555059911280571,0.295773603637822,0.212872501288493,0.778156697800785,0.196788671734766,0.240334548227809,0.611028200447525,0.301958296990862,0.236238894012256,0.719853809718267,0.702741350894983,0.332672172754161,0.40746531053017,0.218800224053264,0.234170945177491,0.33920119134893,0.360860301747523,0.340941441131936,0.192621005616813,0.215765034825855,0.228912629344458,0.591781092891434,0.214627345065223,0.13948473840144,0.178610995659396,0.162241991933667,0.199923966000755,0.220216844890125,0.314952121883585,0.234620137449117,0.376938697650643,0.21329062335245,0.338805926731018,0.301045004162642,0.178614578614323,0.234392911129843,0.23199735349283,0.218473886178493,0.295427912995903,0.404944453908989,0.382746825856604,0.213670014326436,0.189936865376189,0.654288203008449,0.196471024991341,0.160384466621831,0.452578952810282,0.166051998354729,0.769498807658901,0.194779403813588,0.223026197046164,0.607225201724953,0.233952340481915,0.187238634599035,0.230395718977721,0.628574511629944,0.213457544103594,0.60423741712647,0.224769674223116,0.393187077777419,0.236370294249155,0.236522788128703,0.354801372769956,0.188116844855391,0.30075602419276,0.23060418378789,0.115911687073924,0.226378003653229,0.237033571154609,0.126775967971582,0.27108970251628,0.208299483006729,0.195204879516416,0.235531597518731,0.481412934677696,0.201155860780866],["Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed"],["Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Jaccard","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Modified Gower","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Bray Curtis","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Generalized Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac","Weighted Unifrac"],["CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Sample_ID<\/th>\n      <th>Distance_to_centroid<\/th>\n      <th>Zone<\/th>\n      <th>Metric<\/th>\n      <th>Reef<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"Blfrtip","buttons":["copy","csv","excel"],"pageLength":5,"lengthMenu":[[5,10,50,-1],["5","10","50","All"]],"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'80%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'80%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'80%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'80%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'80%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
 <p>That’s the end of Workflow 5.</p>
 <p></br> </br></p>
 <div class="post-nav">
