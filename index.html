@@ -1315,6 +1315,11 @@
   d-article h3 {
     margin-top: 1em;
   }
+  
+  d-article h4 {
+    font-size: 1em;
+  }
+  
   d-byline .authors-affiliations {
     grid-column-end: span 3;
     grid-column-gap: 8px;
@@ -1351,9 +1356,9 @@
   }
   
   code {
-    background-color: #E8E8E8;
+    background-color: #F5F5F5;
     border-radius: 3px;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-family: 'Monaco', 'PT Mono', monospace;
     overflow-x: scroll !important;
     margin-bottom: 20px;
@@ -1555,13 +1560,13 @@
 <a href="index.html">
 <i class="fa fa-home" aria-hidden="true"></i>
 </a>
-<a href="wf1.html">1. Name</a>
-<a href="wf2.html">2. Name</a>
-<a href="wf3.html">3. Name</a>
-<a href="wf4.html">4. Name</a>
-<a href="wf5.html">5. Name</a>
-<a href="wf6.html">6. Name</a>
-<a href="wf7.html">7. Name</a>
+<a href="wf1.html">1. Indicator Analysis</a>
+<a href="wf2.html">2. Taxa by Sample Fraction</a>
+<a href="wf3.html">3. Subset Fish</a>
+<a href="wf4.html">4. Alpha Diversity</a>
+<a href="wf5.html">5. Beta Diversity</a>
+<a href="wf6.html">6. Beta Dispersion</a>
+<a href="wf7.html">7. PIME Analysis</a>
 <a href="data-availability.html">Data</a>
 <a href="https://github.com/bocasbiome/web/">
 <i class="fa fa-github fa-lg" aria-hidden="true"></i>
@@ -1604,20 +1609,26 @@
 </div>
 
 <div class="d-article">
+<p>If you want to follow the workflow step-by-step, please use the navigation bar above where scripts are presented in order. If you would instead like to jump to specific sections, please select an area on the <strong>clickable image map</strong> to go directly to that secxtion.</p>
 <div id="image_map">
 <map name="workflow">
-<area target="_blank" alt="WF2" title="WF2" href="https://bocasbiome.github.io/wf2.html" coords="301,77,420,156" shape="rect">
-<area target="_blank" alt="WF3" title="WF3" href="https://bocasbiome.github.io/wf3.html" coords="97,282,195,359" shape="rect">
-<area target="_blank" alt="WF4" title="WF4" href="https://bocasbiome.github.io/wf4.html" coords="302,287,421,362" shape="rect">
-<area target="_parent" alt="WF5" title="WF5" href="https://bocasbiome.github.io/wf5.html#unifrac" coords="597,52,748,86" shape="rect">
-<area target="_parent" alt="WF5" title="WF5" href="https://bocasbiome.github.io/wf5.html#wunifrac-1" coords="595,97,750,131" shape="rect">
-<area target="_parent" alt="WF1" title="WF1" href="https://bocasbiome.github.io/" coords="596,149,750,180" shape="rect">
-<area target="_top" alt="WF1" title="WF1" href="https://bocasbiome.github.io/wf1.html" coords="23,11,261,12,211,65,79,66,80,167,22,216,21,172" shape="poly">
-<area target="_top" alt="WF1" title="WF1" href="https://bocasbiome.github.io/wf1.html" coords="262,13,208,67,208,170,264,221,263,141" shape="poly">
-<area target="_self" alt="WF1" title="WF1" href="https://bocasbiome.github.io/wf1.html" coords="24,216,79,167,207,170,259,215" shape="poly">
-<area target="_self" alt="WF7" title="WF7" href="https://bocasbiome.github.io/wf7.html" coords="81,65,210,167" shape="rect">
-<area target="_self" alt="WF6" title="WF6" href="https://bocasbiome.github.io/wf6.html" coords="580,11,761,52" shape="rect">
-<area target="" alt="WF6" title="WF6" href="https://bocasbiome.github.io/wf6.html" coords="582,180,763,208" shape="rect">
+<area target="_blank" alt="" title="all fish ASVs" href="wf3.html" coords="82,65,208,168" shape="rect">
+<area target="_blank" alt="" title="all ASVs" href="wf1.html#data-preparation" coords="23,12,261,65" shape="rect">
+<area target="_blank" alt="" title="all ASVs" href="wf1.html#data-preparation" coords="20,168,263,219" shape="rect">
+<area target="_blank" alt="" title="all ASVs" href="wf1.html#data-preparation" coords="23,67,80,167" shape="rect">
+<area target="_blank" alt="" title="all ASVs" href="wf1.html#data-preparation" coords="208,66,264,168" shape="rect">
+<area target="_blank" alt="" title="fish-core" href="wf1.html#run-indicator-analysis-to-identify-core-taxa" coords="94,284,197,363" shape="rect">
+<area target="_blank" alt="" title="alpha diversity all" href="wf4.html#whole-community" coords="300,76,419,105" shape="rect">
+<area target="_blank" alt="" title="beta dispersion all" href="wf6.html#beta-dispersion-plots-whole-v-core" coords="300,106,419,128" shape="rect">
+<area target="_blank" alt="" title="beta diversity all" href="wf5.html#whole-community" coords="300,131,419,156" shape="rect">
+<area target="_blank" alt="" title="alpha diversity core" href="wf4.html#core-community" coords="302,287,421,312" shape="rect">
+<area target="_blank" alt="" title="beta dispersion core" href="wf6.html#beta-dispersion-plots-whole-v-core" coords="301,314,419,337" shape="rect">
+<area target="_blank" alt="" title="beta diversity core" href="wf5.html#core-community" coords="303,339,420,365" shape="rect">
+<area target="_blank" alt="" title="PIME" href="wf7.html" coords="596,53,748,85" shape="rect">
+<area target="_blank" alt="" title="PIME" href="wf7.html" coords="596,99,748,132" shape="rect">
+<area target="_blank" alt="" title="PIME" href="wf7.html" coords="597,147,749,179" shape="rect">
+<area target="_blank" alt="" title="PIME" href="wf7.html" coords="583,11,766,51" shape="rect">
+<area target="_blank" alt="" title="PIME" href="wf7.html" coords="581,177,763,208" shape="rect">
 </map>
 <img src="assets/wf_map.png" alt="image map example" usemap="#workflow">
 </div>

@@ -19,31 +19,31 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>: Workflow 1</title>
+  <title>: No 1. Indicator Analysis</title>
   
-  <meta property="description" itemprop="description" content="A brief description...."/>
+  <meta property="description" itemprop="description" content="Script to identify the core fish gut microbiome using Indicator Analysis."/>
   
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content=": Workflow 1"/>
+  <meta property="og:title" content=": No 1. Indicator Analysis"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A brief description...."/>
+  <meta property="og:description" content="Script to identify the core fish gut microbiome using Indicator Analysis."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content=""/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content=": Workflow 1"/>
-  <meta property="twitter:description" content="A brief description...."/>
+  <meta property="twitter:title" content=": No 1. Indicator Analysis"/>
+  <meta property="twitter:description" content="Script to identify the core fish gut microbiome using Indicator Analysis."/>
   
   <!--/radix_placeholder_meta_tags-->
   
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["Workflow 1"]},{"type":"character","attributes":{},"value":["A brief description.... \n"]},{"type":"character","attributes":{},"value":["assets/cite.bib"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["No 1. Indicator Analysis"]},{"type":"character","attributes":{},"value":["Script to identify the core fish gut microbiome using Indicator Analysis.\n"]},{"type":"character","attributes":{},"value":["assets/cite.bib"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1325,6 +1325,11 @@
   d-article h3 {
     margin-top: 1em;
   }
+  
+  d-article h4 {
+    font-size: 1em;
+  }
+  
   d-byline .authors-affiliations {
     grid-column-end: span 3;
     grid-column-gap: 8px;
@@ -1361,9 +1366,9 @@
   }
   
   code {
-    background-color: #E8E8E8;
+    background-color: #F5F5F5;
     border-radius: 3px;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-family: 'Monaco', 'PT Mono', monospace;
     overflow-x: scroll !important;
     margin-bottom: 20px;
@@ -1513,6 +1518,16 @@
     margin: 100px 50px 0px 25px;
   }
   
+  img.map, map area {
+    outline: none;
+  }
+  
+  img[src="assets/wf_map.png"] {
+    border: 0;
+    padding: 0;
+    margin: 0px 0px 0px 0px;
+  }
+  
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -1525,7 +1540,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Workflow 1","description":"A brief description....","authors":[]}
+{"title":"No 1. Indicator Analysis","description":"Script to identify the core fish gut microbiome using Indicator Analysis.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1542,13 +1557,13 @@
 <a href="index.html">
 <i class="fa fa-home" aria-hidden="true"></i>
 </a>
-<a href="wf1.html">1. Name</a>
-<a href="wf2.html">2. Name</a>
-<a href="wf3.html">3. Name</a>
-<a href="wf4.html">4. Name</a>
-<a href="wf5.html">5. Name</a>
-<a href="wf6.html">6. Name</a>
-<a href="wf7.html">7. Name</a>
+<a href="wf1.html">1. Indicator Analysis</a>
+<a href="wf2.html">2. Taxa by Sample Fraction</a>
+<a href="wf3.html">3. Subset Fish</a>
+<a href="wf4.html">4. Alpha Diversity</a>
+<a href="wf5.html">5. Beta Diversity</a>
+<a href="wf6.html">6. Beta Dispersion</a>
+<a href="wf7.html">7. PIME Analysis</a>
 <a href="data-availability.html">Data</a>
 <a href="https://github.com/bocasbiome/web/">
 <i class="fa fa-github fa-lg" aria-hidden="true"></i>
@@ -1562,8 +1577,8 @@
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Workflow 1</h1>
-<p><p>A brief description….</p></p>
+<h1>No 1. Indicator Analysis</h1>
+<p><p>Script to identify the core fish gut microbiome using Indicator Analysis.</p></p>
 </div>
 
 
@@ -1573,22 +1588,14 @@
 <ul>
 <li><a href="#data-preparation">Data Preparation</a></li>
 <li><a href="#run-indicator-analysis-to-identify-core-taxa">Run Indicator Analysis to Identify Core Taxa</a></li>
-<li><a href="#plot-the-results">Plot the Results</a></li>
+<li><a href="#fish-core-summary">Fish Core Summary</a></li>
+<li><a href="#fish-core-plots">Fish Core Plots</a></li>
 <li><a href="#source-code">Source Code</a></li>
 </ul>
 </nav>
 <hr class="d-toc-separator"/>
-<p>So far the code has six parts:</p>
-<ol type="1">
-<li>Core delineation (Indicator analysis) and Figure S5 (as it is now)</li>
-<li>Barcharts comparing all fractions (here I still need to correct colors in code) Figure S4</li>
-<li>Create the only fish gut microbiome phyloseq object</li>
-<li>Alpha diversity and Figure 4 5_whole beta diversity whole fish gut microbiome 5_core beta diversity core fish gut microbiome</li>
-<li>Figure 5 (faceted boxplot betadispersion whole and core)</li>
-</ol>
-<p>The R objects with the data will follow. Please let me know if you have questions.</p>
 <h2 id="data-preparation">Data Preparation</h2>
-<p>Here, we use unrarefied data to identify the core. First, we get <code>ps</code> object containing all unrarefied sample fractions (i.e. fish, water, potential prey items).</p>
+<p>Here, we use unrarefied data to identify the core. First, we get <code>ps</code> object containing all unrarefied sample fractions (i.e. fish, water, &amp; potential prey items).</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 ps.slv.tree.mbio.bocas &lt;- readRDS(&quot;rdata/p1/ps_16S_capis_bocas_all_unrar.rds&quot;)
@@ -1602,47 +1609,49 @@ sample_data() Sample Data:       [ 127 samples by 11 sample variables ]
 tax_table()   Taxonomy Table:    [ 10711 taxa by 11 taxonomic ranks ]
 phy_tree()    Phylogenetic Tree: [ 10711 tips and 10710 internal nodes ]</code></pre>
 </div>
-<p>Here is a summary table… <br/></p>
+<p>Here is a summary table of all samples.</p>
+<p><br/></p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
+<p><br/></p>
 <div class="layout-chunk" data-layout="l-page">
 <div id="nsuxann9l3fmx3yh74pu" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="nsuxann9l3fmx3yh74pu">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;inside bay&quot;,&quot;outside bay&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;disturbed&quot;,&quot;healthy&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Inner bay&quot;,&quot;Inner bay disturbed&quot;,&quot;Outer bay&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;ALR&quot;,&quot;CCR&quot;,&quot;Dock station&quot;,&quot;PBL&quot;,&quot;PPR&quot;,&quot;PST&quot;,&quot;RNW&quot;,&quot;ROL&quot;,&quot;SCR&quot;,&quot;SIS&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Environment&quot;,&quot;Fish&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Algae&quot;,&quot;Coral&quot;,&quot;Fish&quot;,&quot;Softcoral&quot;,&quot;Sponge&quot;,&quot;Water&quot;,&quot;Zoanthus&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Agaricia tenuifolia&quot;,&quot;Amphimedon compressa&quot;,&quot;Amphiroa&quot;,&quot;Antillogorgia bipinnata&quot;,&quot;blue rope&quot;,&quot;brown&quot;,&quot;Chaetodon capistratus&quot;,&quot;Chondrilla nucula&quot;,&quot;infauna Amphimedon compressa&quot;,&quot;infauna light blue encrusting&quot;,&quot;Knobby_searod_Eunicea?&quot;,&quot;light blue encrusting&quot;,&quot;orange&quot;,&quot;Palythoa caribaeorum&quot;,&quot;Poritis furcata&quot;,&quot;Siderastrea sidera&quot;,&quot;Turf&quot;,&quot;Water&quot;,&quot;Zoanthid&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"10369\" data-max=\"79466\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Table: \n  <em>Sample  summary table. Use the buttons to\n            navigate through the table or download a copy.<\/em>\n<\/caption>","data":[["ML1855","ML1856","ML1857","ML1861","ML1862","ML1866","ML1871","ML1875","ML1876","ML2360","ML2363","ML2364","ML2365","ML2366","ML2367","ML2368","ML2369","ML2370","ML2371","ML2372","ML2373","ML2374","ML2375","ML2376","ML2377","ML2379","ML2380","ML2382","ML2383","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2670","ML2671","ML2673","ML2674","ML2675","ML2677","ML2678","ML2680","ML2681"],["Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean"],["Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro"],["inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","inside bay",null,null,"inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","outside bay","outside bay","outside bay",null,"outside bay","outside bay","inside bay","inside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","outside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","outside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","inside bay","inside bay","inside bay","inside bay"],["disturbed","healthy","healthy","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","disturbed","healthy",null,null,"healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","healthy","healthy",null,"healthy","healthy","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","disturbed","disturbed","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","disturbed","disturbed","disturbed","healthy","healthy","healthy","healthy","healthy","disturbed","disturbed"],["Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay",null,null,"Inner bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Outer bay",null,"Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay","Inner bay disturbed","Inner bay disturbed"],["PST","SCR","SIS","ROL","ALR","PBL","CCR","PPR","RNW","SCR","ALR","PPR","ALR","PPR","PBL","ALR",null,null,"ALR","Dock station","ALR","PPR","Dock station","ALR","PPR","SCR","SCR",null,"SCR","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","PST","PBL","SCR","PPR","CCR","ROL","ALR","PST","PBL"],["Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment","Environment"],["Water","Water","Water","Water","Water","Water","Water","Water","Water","Algae","Algae","Sponge","Sponge","Sponge","Sponge","Sponge","Sponge","Sponge","Sponge","Coral","Coral","Coral","Coral","Coral","Coral","Softcoral","Softcoral","Zoanthus","Zoanthus","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Water","Water","Water","Water","Water","Water","Water","Water","Water"],["Water","Water","Water","Water","Water","Water","Water","Water","Water","Amphiroa","Turf","blue rope","orange","brown","Chondrilla nucula","light blue encrusting","Amphimedon compressa","infauna Amphimedon compressa","infauna light blue encrusting","Siderastrea sidera","Poritis furcata","Agaricia tenuifolia","Siderastrea sidera","Poritis furcata","Agaricia tenuifolia","Antillogorgia bipinnata","Knobby_searod_Eunicea?","Zoanthid","Palythoa caribaeorum","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Water","Water","Water","Water","Water","Water","Water","Water","Water"],[46686,61553,38398,43066,45139,58720,52288,57095,53664,26886,45359,37808,35929,40828,38573,58711,35405,33825,40614,46708,14432,45017,37442,10369,36006,11555,54633,29975,46056,43119,35389,25485,75913,46315,32132,44017,38071,42558,24500,34459,35613,32445,53475,40765,42158,36603,34871,26583,60608,44778,45546,39384,51943,70447,47790,31161,49370,35881,48357,34677,30401,38418,30896,33080,35176,41694,40092,53629,39658,33041,35737,43411,43193,38949,47336,15754,49856,47325,31635,47136,40286,41437,41577,51927,58098,40508,39139,41801,45290,31830,25329,37731,41570,43056,44984,34308,42900,41441,34865,37957,28842,45242,18533,37027,53875,79466,38861,35623,43540,34657,25673,41487,42202,35662,36708,34824,34825,53514,56971,46559,48512,52118,51878,44815,46067,49624,49278]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Sample_ID<\/th>\n      <th>Region<\/th>\n      <th>Locality<\/th>\n      <th>Position<\/th>\n      <th>Reef_type<\/th>\n      <th>Zone<\/th>\n      <th>Reef<\/th>\n      <th>Fraction<\/th>\n      <th>Fraction_delailed<\/th>\n      <th>Species<\/th>\n      <th>SeqDepth<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"Blfrtip","buttons":["copy","csv","excel"],"pageLength":5,"lengthMenu":[[5,10,50,-1],["5","10","50","All"]],"columnDefs":[{"className":"dt-right","targets":10}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'80%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'80%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'80%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'80%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'80%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'80%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'80%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'80%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'80%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'80%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'80%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 <p><br/></p>
-<p>Next, make a column in tax table for ASV IDs by number. <em>Caution</em>, ASV ID numbers will differ between the core (unrarefied) and the rarefied data set.</p>
+<p>Next, we make a column in taxonomy table for ASV IDs by number. <em>Caution</em>, ASV ID numbers will differ between the core (unrarefied) and the rarefied data set.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-tax_table(ps.slv.tree.mbio.bocas) &lt;- cbind(tax_table(ps.slv.tree.mbio.bocas), 
+tax_table(ps.slv.tree.mbio.bocas) &lt;- cbind(tax_table(ps.slv.tree.mbio.bocas),
                                            rownames(tax_table(ps.slv.tree.mbio.bocas)))
 
-colnames(tax_table(ps.slv.tree.mbio.bocas)) &lt;- 
-        c(&quot;Kingdom&quot;, &quot;Phylum&quot;, &quot;Class&quot;, 
-          &quot;Order&quot;, &quot;Family&quot;, &quot;Genus&quot;, &quot;ASV&quot;) #JJS# Changed</code></pre>
+colnames(tax_table(ps.slv.tree.mbio.bocas)) &lt;-
+        c(&quot;Kingdom&quot;, &quot;Phylum&quot;, &quot;Class&quot;,
+          &quot;Order&quot;, &quot;Family&quot;, &quot;Genus&quot;, &quot;ASV&quot;)</code></pre>
 </div>
-<p>change row names in tax table (ASVs) to AVS IDs for plotting first for only numbers:</p>
+<p>Next, we change row names in taxonomy table to AVS IDs for plotting purposes.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 taxa_names(ps.slv.tree.mbio.bocas) &lt;- 1:ntaxa(ps.slv.tree.mbio.bocas)
-taxa_names(ps.slv.tree.mbio.bocas) &lt;- paste(&quot;ASV_&quot;, 
-                                            taxa_names(ps.slv.tree.mbio.bocas), 
+taxa_names(ps.slv.tree.mbio.bocas) &lt;- paste(&quot;ASV_&quot;,
+                                            taxa_names(ps.slv.tree.mbio.bocas),
                                             sep = &quot;&quot;) #JJS# Changed</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-tax.unrar.bocas.all &lt;- data.frame(tax_table(ps.slv.tree.mbio.bocas)) 
-tax.unrar.new &lt;- data.frame(ASV_ID = row.names(tax.unrar.bocas.all), 
+tax.unrar.bocas.all &lt;- data.frame(tax_table(ps.slv.tree.mbio.bocas))
+tax.unrar.new &lt;- data.frame(ASV_ID = row.names(tax.unrar.bocas.all),
                             tax.unrar.bocas.all)
 tax.unrar.new &lt;- tax.unrar.new[, c(2,3,4,5,6,7,1,8)]
 tax.unrar.new2 &lt;- as.matrix(tax.unrar.new)
-ps.slv.tree.mbio.bocas &lt;- merge_phyloseq(otu_table(ps.slv.tree.mbio.bocas), 
-                                         tax_table(tax.unrar.new2), 
+ps.slv.tree.mbio.bocas &lt;- merge_phyloseq(otu_table(ps.slv.tree.mbio.bocas),
+                                         tax_table(tax.unrar.new2),
                                          sample_data(ps.slv.tree.mbio.bocas),
                                          phy_tree(ps.slv.tree.mbio.bocas))
 saveRDS(ps.slv.tree.mbio.bocas, &quot;rdata/p1/ps_16S_bocas_unrar_all_ASVID.rds&quot;)</code></pre>
 </div>
-<p>Next, we rename all <code>NA</code> taxa by the next highest named rank. First, create a copy of the original <code>ps</code> object <em>before</em> renaming taxa.</p>
+<p>We will also rename all <code>NA</code> taxa by the next highest named rank. To do this we first, create a copy of the original <code>ps</code> object <em>before</em> renaming taxa. That way we have a copy for other analyses.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 ps.slv.tree.mbio.bocas_o &lt;- ps.slv.tree.mbio.bocas</code></pre>
@@ -1672,27 +1681,27 @@ for (i in 1:nrow(tax.clean)){
 }
 rm(class, order, phylum, kingdom)</code></pre>
 </div>
-<p>Then, add new ASV names that have a taxa name attached.</p>
+<p>Then, we create new ASV names that have lowest rank name attached.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-tax.clean &lt;- tax.clean %&gt;% unite(&quot;ASV_IDa&quot;, Genus:ASV_ID, 
+tax.clean &lt;- tax.clean %&gt;% unite(&quot;ASV_IDa&quot;, Genus:ASV_ID,
                                  remove = FALSE, sep = &quot;_&quot;)
-tax.clean &lt;- tax.clean %&gt;% unite(&quot;ASV_IDb&quot;, ASV_ID:Genus, 
+tax.clean &lt;- tax.clean %&gt;% unite(&quot;ASV_IDb&quot;, ASV_ID:Genus,
                                  remove = FALSE, sep = &quot;_&quot;)
-tax.clean &lt;- tax.clean[, c(1,2,3,4,5,8,9,6,7,10)] 
-tax.clean$ASV_IDa &lt;- 
-  str_replace_all(tax.clean$ASV_IDa, 
-                  &#39;Clostridium_sensu_stricto_[0-9]&#39;, 
+tax.clean &lt;- tax.clean[, c(1,2,3,4,5,8,9,6,7,10)]
+tax.clean$ASV_IDa &lt;-
+  str_replace_all(tax.clean$ASV_IDa,
+                  &#39;Clostridium_sensu_stricto_[0-9]&#39;,
                   &#39;Clostridium&#39;)
-tax.clean$ASV_IDb &lt;- 
-  str_replace_all(tax.clean$ASV_IDb, 
-                  &#39;Clostridium_sensu_stricto_[0-9]&#39;, 
+tax.clean$ASV_IDb &lt;-
+  str_replace_all(tax.clean$ASV_IDb,
+                  &#39;Clostridium_sensu_stricto_[0-9]&#39;,
                   &#39;Clostridium&#39;)
 tax.clean$ASV_IDc &lt;- tax.clean$ASV_IDa
-tax.clean$ASV_IDc &lt;- 
-  str_replace_all(tax.clean$ASV_IDc, 
+tax.clean$ASV_IDc &lt;-
+  str_replace_all(tax.clean$ASV_IDc,
                   &#39;_ASV&#39;, &#39;&#39;)
-tax.clean &lt;- tax.clean[, c(1,2,3,4,5,6,7,8,9,11,10)] 
+tax.clean &lt;- tax.clean[, c(1,2,3,4,5,6,7,8,9,11,10)]
 write.csv(tax.clean, &quot;tables/p1/tax_all_new_no_na.csv&quot;)</code></pre>
 </div>
 <p>And finally, add the taxonomy table back to the phyloseq object.</p>
@@ -1703,6 +1712,7 @@ rank_names(ps.slv.tree.mbio.bocas)
 saveRDS(ps.slv.tree.mbio.bocas, &quot;rdata/p1/ps_16S_bocas_unrar_all_ASVID_no_NA.rds&quot;)</code></pre>
 </div>
 <h2 id="run-indicator-analysis-to-identify-core-taxa">Run Indicator Analysis to Identify Core Taxa</h2>
+<p>Now we can run the Indicator Analysis.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -1716,7 +1726,7 @@ data.IndVal.ASV &lt;- tibble::remove_rownames(data.IndVal.env.fish)</code></pre>
 <p>And then generate an Indicator value group file.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-data.IndVal.group &lt;- data.frame(sample_data(ps.slv.tree.mbio.bocas)) %&gt;% 
+data.IndVal.group &lt;- data.frame(sample_data(ps.slv.tree.mbio.bocas)) %&gt;%
   select(Fraction)
 data.IndVal.group$Status &lt;- data.IndVal.group$Fraction
 data.IndVal.group &lt;- data.IndVal.group[, c(2,1)]
@@ -1726,7 +1736,7 @@ data.IndVal.group &lt;- tibble::rownames_to_column(data.IndVal.group, &quot;Labe
 data.IndVal.group$Status &lt;-  as.integer(data.IndVal.group$Status)
 data.IndVal.group$Fraction &lt;-  as.character(data.IndVal.group$Fraction)</code></pre>
 </div>
-<p>Next, calculate the indicator values. We set a seed for reproducibility and save a table of results.</p>
+<p>Next, calculate the indicator values. We set a seed for reproducibility and saved a table of results.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 set.seed(1280)
@@ -1739,28 +1749,57 @@ fr &lt;- apply(data.IndVal.ASV &gt; 0, 2, sum)[iva$pval &lt;= 0.01]
 indval.out &lt;- data.frame(group = gr, indval = iv, pval = pv, freq = fr)
 indval.out &lt;- indval.out[order(indval.out$group, -indval.out$indval),]
 indval.out
-write.csv(indval.out, 
+write.csv(indval.out,
           file = &quot;tables/p1/IndVal_microbiome_env_fish_output_p01_new0.csv&quot;)</code></pre>
 </div>
-<p>Finally, correct p-values for repeated testing and save a new table of corrected results.</p>
+<p>Finally, we correct p-values for repeated testing and save a new table of corrected results.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 indval.out.prob.corrected = p.adjust(indval.out$pval, &quot;bonferroni&quot;)
-write.csv(indval.out.prob.corrected, 
+write.csv(indval.out.prob.corrected,
           file = &quot;tables/p1/IndVal_microbiome_env_fish_bonf_new0.csv&quot;)</code></pre>
 </div>
-<h2 id="plot-the-results">Plot the Results</h2>
-<p>Now we plot the results of the fish core by subsetting only the ASVs that were significant for fish. First, we grab the ASVs form the phyloseq object.</p>
+<h2 id="fish-core-summary">Fish Core Summary</h2>
+<p>Now we plot the results of the <strong>fish core</strong> by subsetting only the ASVs that were significant for fish. First, we grab the ASVs from the phyloseq object.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 fish_ind_asvs &lt;- indval.out[indval.out$group == 2, ]
 fish_ind_asvs_list &lt;- row.names(fish_ind_asvs)
-ps.indv.core.01 &lt;- subset_taxa(ps.slv.tree.mbio.bocas, 
-                               rownames(tax_table(ps.slv.tree.mbio.bocas)) %in% 
+ps.indv.core.01 &lt;- subset_taxa(ps.slv.tree.mbio.bocas,
+                               rownames(tax_table(ps.slv.tree.mbio.bocas)) %in%
                                        fish_ind_asvs_list)
 ps.indv.core.01</code></pre>
 </div>
-<p>And here is a summary of the data.</p>
+<p>Then pull out the fish-only samples.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.indv.core.fish &lt;- subset_samples(ps.indv.core.01, Fraction == &quot;Fish&quot;)
+sample_data(ps.indv.core.fish)
+tax.core &lt;- tax_table(ps.indv.core.fish)
+
+write.csv(tax.core, file = &quot;tables/p1/tax_indVal_core.csv&quot;)
+tax_core_mod &lt;- read.csv(&quot;tables/p1/tax_indVal_core.csv&quot;, header = TRUE, row.names = 1)
+tax_core_mod2 &lt;- as.matrix(tax_core_mod)</code></pre>
+</div>
+<p>And add the modified tax table to ps object and save ps object. This contains all ASVs identified with Indicator analysis at 0.01 for fish gut samples.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.indv.core.fish &lt;- merge_phyloseq(otu_table(ps.indv.core.fish),
+                                    tax_table(tax_core_mod2),
+                                    sample_data(ps.indv.core.fish),
+                                    phy_tree(ps.indv.core.fish))
+saveRDS(ps.indv.core.fish, &quot;rdata/p1/ps_indv01_core_fish.rds&quot;)
+ps.indv.core.fish &lt;- readRDS(&quot;rdata/p1/ps_indv01_core_fish.rds&quot;)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 27 taxa and 89 samples ]
+sample_data() Sample Data:       [ 89 samples by 11 sample variables ]
+tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
+</div>
+<p>Here is a summary of the data set.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -1774,7 +1813,7 @@ ps.indv.core.01</code></pre>
 <tbody>
 <tr class="odd">
 <td>Min. number of reads</td>
-<td>0</td>
+<td>326</td>
 </tr>
 <tr class="even">
 <td>Max. number of reads</td>
@@ -1782,19 +1821,19 @@ ps.indv.core.01</code></pre>
 </tr>
 <tr class="odd">
 <td>Total number of reads</td>
-<td>2795415</td>
+<td>2775814</td>
 </tr>
 <tr class="even">
 <td>Average number of reads</td>
-<td>22011</td>
+<td>31189</td>
 </tr>
 <tr class="odd">
 <td>Median number of reads</td>
-<td>27108</td>
+<td>33658</td>
 </tr>
 <tr class="even">
 <td>Sparsity</td>
-<td>0.644</td>
+<td>0.513</td>
 </tr>
 <tr class="odd">
 <td>Any ASVs sum to 1 or less?</td>
@@ -1810,29 +1849,7 @@ ps.indv.core.01</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Without NA taxa pull out the fish gut samples</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-ps.indv.core.fish &lt;- subset_samples(ps.indv.core.01, Fraction == &quot;Fish&quot;)
-sample_data(ps.indv.core.fish)
-tax.core &lt;- tax_table(ps.indv.core.fish)
-
-write.csv(tax.core, file = &quot;tables/p1/tax_indVal_core.csv&quot;)
-tax_core_mod &lt;- read.csv(&quot;tables/p1/tax_indVal_core.csv&quot;, header = TRUE, row.names = 1)
-
-tax_core_mod2 &lt;- as.matrix(tax_core_mod)</code></pre>
-</div>
-<p>add the modified tax table to ps object, save ps object this contains all identified ASVs with Indicator analysis at 0.01</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-ps.indv.core.fish &lt;- merge_phyloseq(otu_table(ps.indv.core.fish), 
-                                    tax_table(tax_core_mod2), 
-                                    sample_data(ps.indv.core.fish), 
-                                    phy_tree(ps.indv.core.fish))
-ps.indv.core.fish
-saveRDS(ps.indv.core.fish, &quot;rdata/p1/ps_indv01_core_fish.rds&quot;)
-ps.indv.core.fish &lt;- readRDS(&quot;rdata/p1/ps_indv01_core_fish.rds&quot;)</code></pre>
-</div>
+<p>And a look at the individual ASVs.</p>
 <p><br/></p>
 <div class="layout-chunk" data-layout="l-page">
 <div id="nsuxann9l3fmx3yh74pu" style="width:100%;height:auto;" class="datatables html-widget"></div>
@@ -1842,83 +1859,81 @@ ps.indv.core.fish &lt;- readRDS(&quot;rdata/p1/ps_indv01_core_fish.rds&quot;)</c
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>Set plot parameters</p>
+<h2 id="fish-core-plots">Fish Core Plots</h2>
+<p>First, we set all of the plot parameters</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 ASV_colors &lt;- c(
-        &quot;mediumaquamarine&quot;,&quot;darkcyan&quot;, &quot;darkseagreen2&quot;, 
-        &quot;springgreen4&quot;, &quot;lightseagreen&quot;,&quot;aquamarine2&quot;, 
+        &quot;mediumaquamarine&quot;,&quot;darkcyan&quot;, &quot;darkseagreen2&quot;,
+        &quot;springgreen4&quot;, &quot;lightseagreen&quot;,&quot;aquamarine2&quot;,
         &quot;turquoise&quot;, &quot;aquamarine&quot;,&quot;aquamarine4&quot;, &quot;darkseagreen4&quot;,
         &quot;dodgerblue1&quot;,&quot;dodgerblue3&quot;, &quot;lightsalmon3&quot;, &quot;coral&quot;,
-        &quot;coral2&quot;,&quot;darksalmon&quot;,&quot;lightsalmon&quot;,&quot;coral3&quot;, &quot;salmon3&quot; , 
+        &quot;coral2&quot;,&quot;darksalmon&quot;,&quot;lightsalmon&quot;,&quot;coral3&quot;, &quot;salmon3&quot; ,
         &quot;indianred&quot;, &quot;indianred2&quot;,&quot;salmon2&quot;, &quot;salmon&quot;,&quot;lightsalmon4&quot;,
         &quot;lavender&quot;,&quot;darkslategrey&quot;,&quot;plum3&quot;)
 
-level_order &lt;- c(&#39;Outer bay&#39;, 
-                 &#39;Inner bay&#39;, 
+level_order &lt;- c(&#39;Outer bay&#39;,
+                 &#39;Inner bay&#39;,
                  &#39;Inner bay disturbed&#39;)
 level_order2 &lt;- c(&#39;SCR&#39;, &#39;PPR&#39;, &#39;CCR&#39;, &#39;ALR&#39;,
                   &#39;SIS&#39;,&#39;ROL&#39;,&#39;RNW&#39;, &#39;PST&#39;, &#39;PBL&#39;)
-asv_order &lt;- rev(c(&quot;ASV_95&quot;, &quot;ASV_589&quot;, &quot;ASV_2&quot;, &quot;ASV_25&quot;, &quot;ASV_18&quot;, 
-               &quot;ASV_15&quot;, &quot;ASV_14&quot;, &quot;ASV_94&quot;, &quot;ASV_30&quot;, &quot;ASV_10&quot;, 
-               &quot;ASV_9&quot;, &quot;ASV_24&quot;, &quot;ASV_74&quot;, &quot;ASV_19&quot;, &quot;ASV_39&quot;, 
-               &quot;ASV_41&quot;, &quot;ASV_27&quot;, &quot;ASV_7&quot;, &quot;ASV_68&quot;, &quot;ASV_6&quot;, 
-               &quot;ASV_59&quot;, &quot;ASV_5&quot;, &quot;ASV_3&quot;, &quot;ASV_17&quot;, &quot;ASV_163&quot;, 
+asv_order &lt;- rev(c(&quot;ASV_95&quot;, &quot;ASV_589&quot;, &quot;ASV_2&quot;, &quot;ASV_25&quot;, &quot;ASV_18&quot;,
+               &quot;ASV_15&quot;, &quot;ASV_14&quot;, &quot;ASV_94&quot;, &quot;ASV_30&quot;, &quot;ASV_10&quot;,
+               &quot;ASV_9&quot;, &quot;ASV_24&quot;, &quot;ASV_74&quot;, &quot;ASV_19&quot;, &quot;ASV_39&quot;,
+               &quot;ASV_41&quot;, &quot;ASV_27&quot;, &quot;ASV_7&quot;, &quot;ASV_68&quot;, &quot;ASV_6&quot;,
+               &quot;ASV_59&quot;, &quot;ASV_5&quot;, &quot;ASV_3&quot;, &quot;ASV_17&quot;, &quot;ASV_163&quot;,
                &quot;ASV_11&quot;, &quot;ASV_1&quot;))</code></pre>
 </div>
-<p>agglomerate at phylum level Transform to rel. abundance Melt to long format in this case (core) do not filter out low abundance taxa Sort data frame alphabetically by ASV.ID</p>
+<p>Then we agglomerate at phylum level and transform read counts to relative abundance.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 capis.core &lt;- ps.indv.core.fish %&gt;%
-        tax_glom(taxrank = &quot;ASV_IDa&quot;) %&gt;%                     
-        transform_sample_counts(function(x) {x/sum(x)} ) %&gt;%  
-        psmelt() %&gt;%                                          
-        filter(Abundance &gt; 0.00) %&gt;%                          
-        arrange(ASV_IDa)                                     
+        tax_glom(taxrank = &quot;ASV_IDa&quot;) %&gt;%
+        transform_sample_counts(function(x) {x/sum(x)} ) %&gt;%
+        psmelt() %&gt;%
+        filter(Abundance &gt; 0.00) %&gt;%
+        arrange(ASV_IDa)
 capis.core$ASV_ID &lt;- gdata::reorder.factor(capis.core$ASV_ID, new.order = asv_order)
 capis.core &lt;- capis.core %&gt;% dplyr::arrange(ASV_ID)
 capis.core$ASV_IDa &lt;- factor(capis.core$ASV_IDa, levels = unique(capis.core$ASV_IDa))
 levels(capis.core$ASV_IDa)
 attributes(capis.core$ASV_IDa)</code></pre>
 </div>
-<h3 id="plot-stacked-barchart">Plot stacked barchart</h3>
-<p>Plot 1</p>
-<p>FC Notes and comments</p>
-<p>factor(Station, level = level_order) take out position = “fill” if want to leave white space were rare stuff was taken out ylab(“Relative Abundance (ASV)”)</p>
+<p>Plot first figure.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-fig01 &lt;- ggplot(capis.core, aes(x = factor(Zone, level = level_order), 
-                                y = Abundance, fill = ASV_IDa)) + 
-        geom_bar(stat = &quot;identity&quot;, position = &quot;fill&quot;) +  
+fig01 &lt;- ggplot(capis.core, aes(x = factor(Zone, level = level_order),
+                                y = Abundance, fill = ASV_IDa)) +
+        geom_bar(stat = &quot;identity&quot;, position = &quot;fill&quot;) +
         scale_fill_manual(values = ASV_colors) +
-        scale_x_discrete(&quot;Zone&quot;, expand = waiver(), 
+        scale_x_discrete(&quot;Zone&quot;, expand = waiver(),
                          position = &quot;bottom&quot;, drop = FALSE) +
-        guides(fill = guide_legend(reverse = TRUE, 
-                                   keywidth = 1, 
-                                   keyheight = 1, 
+        guides(fill = guide_legend(reverse = TRUE,
+                                   keywidth = 1,
+                                   keyheight = 1,
                                    title=&quot;ASV ID&quot;)) + #JJS# added new title
-        ylab(&quot;&quot;) + 
+        ylab(&quot;&quot;) +
         ggtitle(&quot;&quot;, subtitle = &quot;Core across zones&quot;) +
-        theme(plot.title = element_text(size = 18)) + 
-        theme(plot.subtitle = element_text(size = 16)) +  
+        theme(plot.title = element_text(size = 18)) +
+        theme(plot.subtitle = element_text(size = 16)) +
         theme_cowplot()</code></pre>
 </div>
-<p>Plot 2 FC Notes and comments factor(Station, level = level_order) take out position = “fill” if want to leave white space were rare stuff was taken out</p>
+<p>Plot second figure.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 fig02 &lt;-
-        ggplot(capis.core, aes(x = Species, y = Abundance, fill = ASV_IDa)) +       
-        geom_bar(stat = &quot;identity&quot;, position = &quot;fill&quot;) +  
+        ggplot(capis.core, aes(x = Species, y = Abundance, fill = ASV_IDa)) +
+        geom_bar(stat = &quot;identity&quot;, position = &quot;fill&quot;) +
         scale_fill_manual(values = ASV_colors) +
-        scale_x_discrete(&quot;&quot;, expand = waiver(), 
+        scale_x_discrete(&quot;&quot;, expand = waiver(),
                          position = &quot;bottom&quot;, drop = FALSE) +
-        guides(fill = guide_legend(reverse = TRUE,  
-                                   keywidth = 1, 
-                                   keyheight = 1, 
+        guides(fill = guide_legend(reverse = TRUE,
+                                   keywidth = 1,
+                                   keyheight = 1,
                                    title = &quot;ASV ID&quot;)) + #JJS# added new title
         ylab(&quot;Relative Abundance (ASV)&quot;) +
         ggtitle(&quot;Fish gut core microbiome&quot;, subtitle = &quot;&quot;) +
-        theme(plot.title = element_text(size = 18)) + 
+        theme(plot.title = element_text(size = 18)) +
         theme_cowplot()</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
@@ -1928,16 +1943,16 @@ fig02 &lt;-
 
 </div>
 <div class="layout-chunk" data-layout="l-page">
-<p><img src="wf1_files/figure-html5/unnamed-chunk-28-1.png" width="624" /></p>
+<p><img src="wf1_files/figure-html5/unnamed-chunk-29-1.png" width="624" /></p>
 </div>
-<p>That’s the end of Workflow 1.</p>
-<p></br> </br></p>
+<p>That’s the end of Script 1. In the next Script we compare taxonomic composition across different sample fractions.</p>
+<p></br></p>
 <div class="post-nav">
 <div class="post-nav-item">
 <div class="meta-nav">
 Next
 </div>
-<p><a href="wf2.html" rel="next">Workflow 2</a></p>
+<p><a href="wf2.html" rel="next">N<sup><u>o</u></sup> 2 Comparing Sample Fractions</a></p>
 </div>
 </div>
 <h2 id="source-code" class="appendix">Source Code</h2>
