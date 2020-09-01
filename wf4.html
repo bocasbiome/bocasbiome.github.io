@@ -19,31 +19,31 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>: Workflow 4</title>
+  <title>: No 4. Alpha Diversity Estimates</title>
   
-  <meta property="description" itemprop="description" content="A brief description...."/>
+  <meta property="description" itemprop="description" content="Script testing alpha diversity (Hill Diversity, Shannon Exponential, &amp; Simpson Index) against the whole and core fish gut communities."/>
   
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content=": Workflow 4"/>
+  <meta property="og:title" content=": No 4. Alpha Diversity Estimates"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A brief description...."/>
+  <meta property="og:description" content="Script testing alpha diversity (Hill Diversity, Shannon Exponential, &amp; Simpson Index) against the whole and core fish gut communities."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content=""/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content=": Workflow 4"/>
-  <meta property="twitter:description" content="A brief description...."/>
+  <meta property="twitter:title" content=": No 4. Alpha Diversity Estimates"/>
+  <meta property="twitter:description" content="Script testing alpha diversity (Hill Diversity, Shannon Exponential, &amp; Simpson Index) against the whole and core fish gut communities."/>
   
   <!--/radix_placeholder_meta_tags-->
   
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["Workflow 4"]},{"type":"character","attributes":{},"value":["A brief description.... \n"]},{"type":"character","attributes":{},"value":["assets/cite.bib"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["No 4. Alpha Diversity Estimates"]},{"type":"character","attributes":{},"value":["Script testing alpha diversity (Hill Diversity, Shannon Exponential, & Simpson Index) against the whole and core fish gut communities.\n"]},{"type":"character","attributes":{},"value":["assets/cite.bib"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1269,6 +1269,8 @@
   </script>
   
   <!--/radix_placeholder_distill-->
+  <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+  <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
   <script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
   <script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
   <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
@@ -1325,6 +1327,11 @@
   d-article h3 {
     margin-top: 1em;
   }
+  
+  d-article h4 {
+    font-size: 1em;
+  }
+  
   d-byline .authors-affiliations {
     grid-column-end: span 3;
     grid-column-gap: 8px;
@@ -1361,9 +1368,9 @@
   }
   
   code {
-    background-color: #E8E8E8;
+    background-color: #F5F5F5;
     border-radius: 3px;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-family: 'Monaco', 'PT Mono', monospace;
     overflow-x: scroll !important;
     margin-bottom: 20px;
@@ -1513,6 +1520,16 @@
     margin: 100px 50px 0px 25px;
   }
   
+  img.map, map area {
+    outline: none;
+  }
+  
+  img[src="assets/wf_map.png"] {
+    border: 0;
+    padding: 0;
+    margin: 0px 0px 0px 0px;
+  }
+  
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -1525,7 +1542,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Workflow 4","description":"A brief description....","authors":[]}
+{"title":"No 4. Alpha Diversity Estimates","description":"Script testing alpha diversity (Hill Diversity, Shannon Exponential, & Simpson Index) against the whole and core fish gut communities.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1542,13 +1559,13 @@
 <a href="index.html">
 <i class="fa fa-home" aria-hidden="true"></i>
 </a>
-<a href="wf1.html">1. Name</a>
-<a href="wf2.html">2. Name</a>
-<a href="wf3.html">3. Name</a>
-<a href="wf4.html">4. Name</a>
-<a href="wf5.html">5. Name</a>
-<a href="wf6.html">6. Name</a>
-<a href="wf7.html">7. Name</a>
+<a href="wf1.html">1. Indicator Analysis</a>
+<a href="wf2.html">2. Taxa by Sample Fraction</a>
+<a href="wf3.html">3. Subset Fish</a>
+<a href="wf4.html">4. Alpha Diversity</a>
+<a href="wf5.html">5. Beta Diversity</a>
+<a href="wf6.html">6. Beta Dispersion</a>
+<a href="wf7.html">7. PIME Analysis</a>
 <a href="data-availability.html">Data</a>
 <a href="https://github.com/bocasbiome/web/">
 <i class="fa fa-github fa-lg" aria-hidden="true"></i>
@@ -1562,8 +1579,8 @@
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Workflow 4</h1>
-<p><p>A brief description….</p></p>
+<h1>No 4. Alpha Diversity Estimates</h1>
+<p><p>Script testing alpha diversity (Hill Diversity, Shannon Exponential, &amp; Simpson Index) against the whole and core fish gut communities.</p></p>
 </div>
 
 
@@ -1571,12 +1588,29 @@
 <h3 class="d-toc-header">Table of Contents</h3>
 <nav class="d-toc" id="TOC">
 <ul>
+<li><a href="#whole-community">Whole Community</a><ul>
+<li><a href="#prepare-data-set">Prepare Data Set</a></li>
+<li><a href="#alpha-diversity-estimates">Alpha Diversity Estimates</a></li>
+<li><a href="#alpha-diversity-estimates-by-zone">Alpha Diversity Estimates by Zone</a></li>
+<li><a href="#significance-test">Significance Test</a></li>
+</ul></li>
+<li><a href="#core-community">Core Community</a><ul>
+<li><a href="#prepare-data-set-1">Prepare Data Set</a></li>
+<li><a href="#alpha-diversity-estimates-1">Alpha Diversity Estimates</a></li>
+<li><a href="#alpha-diversity-estimates-by-zone-1">Alpha Diversity Estimates by Zone</a></li>
+<li><a href="#significance-test-1">Significance Test</a></li>
+</ul></li>
+<li><a href="#analysis-summary">Analysis Summary</a><ul>
+<li><a href="#summary-table">Summary Table</a></li>
+<li><a href="#summary-figure">Summary Figure</a></li>
 <li><a href="#source-code">Source Code</a></li>
+</ul></li>
 </ul>
 </nav>
 <hr class="d-toc-separator"/>
-<p>BOCASBIOME SCRIPT.4: Alpha diversity using Hill numbers following Alberdi 2019</p>
-<p>read in the whole fish microbiome data</p>
+<h1 id="whole-community">Whole Community</h1>
+<h2 id="prepare-data-set">Prepare Data Set</h2>
+<p>The first step is to read in the whole community fish microbiome data.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 ps.whole &lt;- readRDS(&quot;rdata/p3/ps_16S_bocas_fish_final.rds&quot;)
@@ -1590,7 +1624,326 @@ sample_data() Sample Data:       [ 89 samples by 11 sample variables ]
 tax_table()   Taxonomy Table:    [ 3113 taxa by 11 taxonomic ranks ]
 phy_tree()    Phylogenetic Tree: [ 3113 tips and 3112 internal nodes ]</code></pre>
 </div>
-<p>read in the fish core microbiome data</p>
+<p>Then get the ASV table and transpose the table so ASVs are rows. Also get the phylogenetic tree and make sure the ASV names in the ASV table and the tip names in the phylogenetic tree are identical.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+asv.whole &lt;- t(otu_table(ps.whole))
+tree.whole &lt;- phy_tree(ps.whole)
+identical(sort(rownames(asv.whole)), sort(tree.whole$tip.label))</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+[1] TRUE</code></pre>
+</div>
+<p>Finally, normalize the ASV table to relative abundance.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+asv.whole.norm &lt;- microbiome::transform(asv.whole, transform = &quot;compositional&quot;)</code></pre>
+</div>
+<h2 id="alpha-diversity-estimates">Alpha Diversity Estimates</h2>
+<h3 id="hill-diversity">Hill Diversity</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+hillq0 &lt;- estimate_richness(ps.whole, measures = &quot;Observed&quot;)</code></pre>
+</div>
+<h3 id="shannon-exponential">Shannon Exponential</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+shannon.hill &lt;- exp(vegan::diversity(t(asv.whole.norm), index = &quot;shannon&quot;))
+shannon.whole.df &lt;- as.data.frame(shannon.hill)</code></pre>
+</div>
+<h3 id="simpson-index">Simpson Index</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+1/(1-(vegan::diversity(t(asv.whole.norm), index = &quot;simpson&quot;)))
+simpson.hill&lt;-1/(1-(vegan::diversity(t(asv.whole.norm), index = &quot;simpson&quot;)))
+simpson.whole.df &lt;- as.data.frame(simpson.hill)</code></pre>
+</div>
+<p>Now we combine the phyloseq object, sample data, and add new columns with Hill diversity into one data frame and save the object.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+newDF.whole &lt;- data.frame(hillq0, shannon.hill, simpson.hill,
+                          sample_data(ps.whole))
+ps.whole.hill &lt;- merge_phyloseq(otu_table(ps.whole),
+                                sample_data(newDF.whole),
+                                tax_table(ps.whole),
+                                phy_tree(ps.whole))
+ps.whole.hill
+sample_data(ps.whole.hill)
+saveRDS(ps.whole.hill, &quot;rdata/p4/ps_16S_bocas_fish_final_hill.rds&quot;)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 3113 taxa and 89 samples ]
+sample_data() Sample Data:       [ 89 samples by 14 sample variables ]
+tax_table()   Taxonomy Table:    [ 3113 taxa by 11 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 3113 tips and 3112 internal nodes ]</code></pre>
+</div>
+<h2 id="alpha-diversity-estimates-by-zone">Alpha Diversity Estimates by Zone</h2>
+<p>Next, we calculate alpha diversity with Hill numbers <strong><em>for each zone</em></strong> using <code>alpha_div()</code> function.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+ps.outer &lt;- subset_samples(ps.whole.hill, Zone == &quot;Outer bay&quot;)
+ps.outer &lt;- prune_taxa(taxa_sums(ps.outer) &gt; 0, ps.outer)
+ps.outer
+ps.inner &lt;- subset_samples(ps.whole.hill, Zone == &quot;Inner bay&quot;)
+ps.inner &lt;- prune_taxa(taxa_sums(ps.inner) &gt; 0, ps.inner)
+ps.inner
+ps.inner.dist &lt;- subset_samples(ps.whole.hill, Zone == &quot;Inner bay disturbed&quot;)
+ps.inner.dist &lt;- prune_taxa(taxa_sums(ps.inner.dist) &gt; 0, ps.inner.dist)
+ps.inner.dist</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 1271 taxa and 35 samples ]
+sample_data() Sample Data:       [ 35 samples by 14 sample variables ]
+tax_table()   Taxonomy Table:    [ 1271 taxa by 11 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 1271 tips and 1270 internal nodes ]</code></pre>
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 1590 taxa and 35 samples ]
+sample_data() Sample Data:       [ 35 samples by 14 sample variables ]
+tax_table()   Taxonomy Table:    [ 1590 taxa by 11 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 1590 tips and 1589 internal nodes ]</code></pre>
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 909 taxa and 19 samples ]
+sample_data() Sample Data:       [ 19 samples by 14 sample variables ]
+tax_table()   Taxonomy Table:    [ 909 taxa by 11 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 909 tips and 908 internal nodes ]</code></pre>
+</div>
+<p>Get the ASV tables and transpose the tables so ASVs are rows.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+asv.outer &lt;- t(otu_table(ps.outer))
+asv.inner &lt;- t(otu_table(ps.inner))
+asv.inner.dist &lt;- t(otu_table(ps.inner.dist))</code></pre>
+</div>
+<p>And transform the counts to relative abundance.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+asv.outer.norm &lt;- microbiome::transform(asv.outer, transform = &quot;compositional&quot;)
+asv.inner.norm &lt;- microbiome::transform(asv.inner, transform = &quot;compositional&quot;)
+asv.inner.dist.norm &lt;- microbiome::transform(asv.inner.dist,
+                                             transform = &quot;compositional&quot;)</code></pre>
+</div>
+<p>Now we can test alpha diversity per zone based on Hill numbers at different diversity levels (<code>q = 0 (observed)</code>, <code>q = 1 (shannon exponential)</code>, <code>q = 2 (multiplicative simpson)</code>).</p>
+<p><em>Note</em>: for Hill numbers, alpha diversity per zone cannot be obtained as a mean across samples. The calculation is different as performed by function <code>alpha_div()</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+alpha_div(countable = asv.outer.norm, qvalue = 0)
+alpha_div(countable = asv.outer.norm, qvalue = 1)
+alpha_div(countable = asv.outer.norm, qvalue = 2)
+
+alpha_div(countable = asv.inner.norm, qvalue = 0)
+alpha_div(countable = asv.inner.norm, qvalue = 1)
+alpha_div(countable = asv.inner.norm, qvalue = 2)
+
+alpha_div(countable = asv.inner.dist.norm, qvalue = 0)
+alpha_div(countable = asv.inner.dist.norm, qvalue = 1)
+alpha_div(countable = asv.inner.dist.norm, qvalue = 2)</code></pre>
+</div>
+<h2 id="significance-test">Significance Test</h2>
+<p>Here we run Kruskal-Wallis Tests on each order of diversty (q value) and posthoc Dunn Tests with Benjamin Hochberg correction for zone comparison.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+temp_table &lt;- data.frame(sample_data(ps.whole))
+temp_table[, c(1:4, 7:11)] &lt;- list(NULL)
+temp_table &lt;- temp_table %&gt;% tibble::rownames_to_column(&quot;Sample&quot;)
+temp_table &lt;- temp_table %&gt;% dplyr::rename(Group = Zone)
+temp_table$Group &lt;- as.character(temp_table$Group)
+temp_table$Reef &lt;- as.character(temp_table$Reef)
+
+hill_hierarchy &lt;- temp_table[,1:2]
+hill_hierarchy2 &lt;- temp_table[, c(1, 3)]</code></pre>
+</div>
+<h3 id="by-zone">By Zone</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+divtestresult.q0 &lt;- div_test(asv.whole.norm, qvalue = 0,
+                             hierarchy = hill_hierarchy, posthoc = TRUE)
+divtestresult.q1 &lt;- div_test(asv.whole.norm, qvalue = 1,
+                             hierarchy = hill_hierarchy, posthoc = TRUE)
+divtestresult.q2 &lt;- div_test(asv.whole.norm, qvalue = 2,
+                             hierarchy = hill_hierarchy, posthoc = TRUE)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><br/></p>
+<div class="l-body-outset">
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 28%" />
+<col style="width: 25%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>q-value</th>
+<th>homogeneity.pvalue</th>
+<th>normality.pvalue</th>
+<th>method</th>
+<th>posthoc.method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.4515383</td>
+<td>0</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.2115412</td>
+<td>0</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.016806</td>
+<td>0</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="q-value-0">q-value = 0</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+                                        Z    P.unadj     P.adj
+Inner bay-Inner bay disturbed 0.008682602 0.99307237 0.9930724
+Inner bay-Outer bay           1.700501330 0.08903667 0.2671100
+Inner bay disturbed-Outer bay 1.417817787 0.15624397 0.2343660</code></pre>
+</div>
+<h4 id="q-value-1">q-value = 1</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+                                      Z     P.unadj       P.adj
+Inner bay-Inner bay disturbed -1.416080 0.156752013 0.156752013
+Inner bay-Outer bay            2.128057 0.033332390 0.049998585
+Inner bay disturbed-Outer bay  3.201244 0.001368355 0.004105066</code></pre>
+</div>
+<h4 id="q-value-2">q-value = 2</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+                                      Z     P.unadj     P.adj
+Inner bay-Inner bay disturbed -1.579482 0.114225549 0.1142255
+Inner bay-Outer bay            1.586790 0.112560206 0.1688403
+Inner bay disturbed-Outer bay  2.910593 0.003607432 0.0108223</code></pre>
+</div>
+<h3 id="by-reef">By Reef</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+divtestresult.q0 &lt;- div_test(asv.whole.norm, qvalue = 0,
+                             hierarchy = hill_hierarchy2, posthoc = TRUE)
+divtestresult.q1 &lt;- div_test(asv.whole.norm, qvalue = 1,
+                             hierarchy = hill_hierarchy2, posthoc = TRUE)
+divtestresult.q2 &lt;- div_test(asv.whole.norm, qvalue = 2,
+                             hierarchy = hill_hierarchy2, posthoc = TRUE)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><br/></p>
+<div class="l-body-outset">
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 28%" />
+<col style="width: 25%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>q-value</th>
+<th>homogeneity.pvalue</th>
+<th>normality.pvalue</th>
+<th>method</th>
+<th>posthoc.method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.0027403</td>
+<td>0</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.0003942</td>
+<td>0</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.0000162</td>
+<td>0</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="q-value-0-1">q-value = 0</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Z"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["P.unadj"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["P.adj"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2.51330951","2":"0.01196043","3":"0.4305757","_rn_":"ALR-CCR"},{"1":"1.15174311","2":"0.24942665","3":"0.8163054","_rn_":"ALR-PBL"},{"1":"-0.80197096","2":"0.42256976","3":"0.8948536","_rn_":"CCR-PBL"},{"1":"1.75061310","2":"0.08001258","3":"0.7201132","_rn_":"ALR-PPR"},{"1":"-0.28070073","2":"0.77893995","3":"0.9347279","_rn_":"CCR-PPR"},{"1":"0.46142119","2":"0.64449645","3":"0.8923797","_rn_":"PBL-PPR"},{"1":"1.15581750","2":"0.24775582","3":"0.8919209","_rn_":"ALR-PST"},{"1":"-0.67250266","2":"0.50126375","3":"0.9497629","_rn_":"CCR-PST"},{"1":"0.06499973","2":"0.94817422","3":"0.9752649","_rn_":"PBL-PST"},{"1":"-0.37119880","2":"0.71048947","3":"0.9134865","_rn_":"PPR-PST"},{"1":"0.26859110","2":"0.78824436","3":"0.9153805","_rn_":"ALR-RNW"},{"1":"-1.93341077","2":"0.05318562","3":"0.6382274","_rn_":"CCR-RNW"},{"1":"-0.83930601","2":"0.40129761","3":"0.9029196","_rn_":"PBL-RNW"},{"1":"-1.37182734","2":"0.17011719","3":"0.7655274","_rn_":"PPR-RNW"},{"1":"-0.86414130","2":"0.38751027","3":"0.9300247","_rn_":"PST-RNW"},{"1":"2.02500797","2":"0.04286655","3":"0.7715978","_rn_":"ALR-ROL"},{"1":"-0.48832739","2":"0.62531797","3":"0.9004579","_rn_":"CCR-ROL"},{"1":"0.43145105","2":"0.66614044","3":"0.8881872","_rn_":"PBL-ROL"},{"1":"-0.10551980","2":"0.91596336","3":"0.9992328","_rn_":"PPR-ROL"},{"1":"0.32736657","2":"0.74339065","3":"0.9228298","_rn_":"PST-ROL"},{"1":"1.51140123","2":"0.13068626","3":"0.7841175","_rn_":"RNW-ROL"},{"1":"1.38688405","2":"0.16547712","3":"0.8510252","_rn_":"ALR-SCR"},{"1":"-1.03066810","2":"0.30269649","3":"0.8382364","_rn_":"CCR-SCR"},{"1":"-0.01935703","2":"0.98455629","3":"0.9845563","_rn_":"PBL-SCR"},{"1":"-0.56011867","2":"0.57539850","3":"0.9006237","_rn_":"PPR-SCR"},{"1":"-0.09212599","2":"0.92659794","3":"0.9811037","_rn_":"PST-SCR"},{"1":"0.97187570","2":"0.33111239","3":"0.8514319","_rn_":"RNW-SCR"},{"1":"-0.56310382","2":"0.57336419","3":"0.9382323","_rn_":"ROL-SCR"},{"1":"0.54425039","2":"0.58626918","3":"0.8794038","_rn_":"ALR-SIS"},{"1":"-1.64284036","2":"0.10041597","3":"0.7229950","_rn_":"CCR-SIS"},{"1":"-0.60633139","2":"0.54429472","3":"0.9330767","_rn_":"PBL-SIS"},{"1":"-1.12871870","2":"0.25901652","3":"0.7770496","_rn_":"PPR-SIS"},{"1":"-0.64343724","2":"0.51994043","3":"0.9358928","_rn_":"PST-SIS"},{"1":"0.25164135","2":"0.80131829","3":"0.9014831","_rn_":"RNW-SIS"},{"1":"-1.22400656","2":"0.22094975","3":"0.8837990","_rn_":"ROL-SIS"},{"1":"-0.69621641","2":"0.48629331","3":"0.9725866","_rn_":"SCR-SIS"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[5],"max":[5]},"pages":{}}}
+  </script>
+</div>
+</div>
+<h4 id="q-value-1-1">q-value = 1</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Z"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["P.unadj"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["P.adj"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1.89829812","2":"0.05765682","3":"0.3459409","_rn_":"ALR-CCR"},{"1":"-0.43221309","2":"0.66558655","3":"0.8557541","_rn_":"ALR-PBL"},{"1":"-1.96574989","2":"0.04932751","3":"0.3551581","_rn_":"CCR-PBL"},{"1":"1.20815978","2":"0.22698581","3":"0.5107181","_rn_":"ALR-PPR"},{"1":"-0.33173454","2":"0.74008972","3":"0.8326009","_rn_":"CCR-PPR"},{"1":"1.42123316","2":"0.15524899","3":"0.4657470","_rn_":"PBL-PPR"},{"1":"0.04484107","2":"0.96423399","3":"0.9917835","_rn_":"ALR-PST"},{"1":"-1.36832137","2":"0.17121150","3":"0.4741242","_rn_":"CCR-PST"},{"1":"0.39630572","2":"0.69187951","3":"0.8302554","_rn_":"PBL-PST"},{"1":"-0.94054388","2":"0.34693865","3":"0.6938773","_rn_":"PPR-PST"},{"1":"-0.47346572","2":"0.63588095","3":"0.8478413","_rn_":"ALR-RNW"},{"1":"-2.17321827","2":"0.02976389","3":"0.2678750","_rn_":"CCR-RNW"},{"1":"0.00000000","2":"1.00000000","3":"1.0000000","_rn_":"PBL-RNW"},{"1":"-1.52777974","2":"0.12656723","3":"0.4556420","_rn_":"PPR-RNW"},{"1":"-0.42094405","2":"0.67379594","3":"0.8364363","_rn_":"PST-RNW"},{"1":"1.30085389","2":"0.19330847","3":"0.4639403","_rn_":"ALR-ROL"},{"1":"-0.61521278","2":"0.53841421","3":"0.7753165","_rn_":"CCR-ROL"},{"1":"1.49038653","2":"0.13612263","3":"0.4454923","_rn_":"PBL-ROL"},{"1":"-0.15462140","2":"0.87711980","3":"0.9287151","_rn_":"PPR-ROL"},{"1":"0.92941929","2":"0.35267183","3":"0.6682203","_rn_":"PST-ROL"},{"1":"1.64442479","2":"0.10008849","3":"0.4003540","_rn_":"RNW-ROL"},{"1":"2.23591443","2":"0.02535738","3":"0.3042885","_rn_":"ALR-SCR"},{"1":"0.49199495","2":"0.62272291","3":"0.8622317","_rn_":"CCR-SCR"},{"1":"2.25782958","2":"0.02395629","3":"0.4312132","_rn_":"PBL-SCR"},{"1":"0.71113816","2":"0.47699863","3":"0.7466065","_rn_":"PPR-SCR"},{"1":"1.67002702","2":"0.09491402","3":"0.4881292","_rn_":"PST-SCR"},{"1":"2.47332839","2":"0.01338611","3":"0.4818999","_rn_":"RNW-SCR"},{"1":"1.05600687","2":"0.29096508","3":"0.6161613","_rn_":"ROL-SCR"},{"1":"0.33213267","2":"0.73978908","3":"0.8591099","_rn_":"ALR-SIS"},{"1":"-1.32404301","2":"0.18548876","3":"0.4769711","_rn_":"CCR-SIS"},{"1":"0.68085491","2":"0.49596330","3":"0.7439450","_rn_":"PBL-SIS"},{"1":"-0.81730874","2":"0.41375201","3":"0.7447536","_rn_":"PPR-SIS"},{"1":"0.22405086","2":"0.82271772","3":"0.8975102","_rn_":"PST-SIS"},{"1":"0.73540735","2":"0.46209145","3":"0.7561496","_rn_":"RNW-SIS"},{"1":"-0.80453041","2":"0.42109072","3":"0.7218698","_rn_":"ROL-SIS"},{"1":"-1.66773000","2":"0.09536934","3":"0.4291620","_rn_":"SCR-SIS"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[5],"max":[5]},"pages":{}}}
+  </script>
+</div>
+</div>
+<h4 id="q-value-2-1">q-value = 2</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Z"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["P.unadj"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["P.adj"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1.112795451","2":"0.26579629","3":"0.7360513","_rn_":"ALR-CCR"},{"1":"-0.690250758","2":"0.49003651","3":"0.7350548","_rn_":"ALR-PBL"},{"1":"-1.608647081","2":"0.10769353","3":"0.6461612","_rn_":"CCR-PBL"},{"1":"0.417575675","2":"0.67625738","3":"0.8394919","_rn_":"ALR-PPR"},{"1":"-0.499508331","2":"0.61742132","3":"0.7938274","_rn_":"CCR-PPR"},{"1":"0.977304853","2":"0.32841825","3":"0.7389411","_rn_":"PBL-PPR"},{"1":"-0.609596218","2":"0.54212932","3":"0.7806662","_rn_":"ALR-PST"},{"1":"-1.462753486","2":"0.14353484","3":"0.7381792","_rn_":"CCR-PST"},{"1":"0.034090815","2":"0.97280473","3":"1.0000000","_rn_":"PBL-PST"},{"1":"-0.893327823","2":"0.37168164","3":"0.7433633","_rn_":"PPR-PST"},{"1":"-0.717265232","2":"0.47321046","3":"0.7406772","_rn_":"ALR-RNW"},{"1":"-1.737457281","2":"0.08230649","3":"0.5926067","_rn_":"CCR-RNW"},{"1":"0.032848263","2":"0.97379559","3":"1.0000000","_rn_":"PBL-RNW"},{"1":"-1.016294040","2":"0.30948939","3":"0.7427745","_rn_":"PPR-RNW"},{"1":"-0.005092065","2":"0.99593714","3":"0.9959371","_rn_":"PST-RNW"},{"1":"0.554653450","2":"0.57913172","3":"0.7721756","_rn_":"ALR-ROL"},{"1":"-0.584698949","2":"0.55875016","3":"0.7736541","_rn_":"CCR-ROL"},{"1":"1.159189523","2":"0.24637894","3":"0.7391368","_rn_":"PBL-ROL"},{"1":"0.035434071","2":"0.97173362","3":"1.0000000","_rn_":"PPR-ROL"},{"1":"1.044347487","2":"0.29632465","3":"0.7619777","_rn_":"PST-ROL"},{"1":"1.238475836","2":"0.21553968","3":"0.7759428","_rn_":"RNW-ROL"},{"1":"1.880380337","2":"0.06005626","3":"0.5405064","_rn_":"ALR-SCR"},{"1":"0.897415686","2":"0.36949715","3":"0.7824645","_rn_":"CCR-SCR"},{"1":"2.225574874","2":"0.02604267","3":"0.4687681","_rn_":"PBL-SCR"},{"1":"1.196533546","2":"0.23148842","3":"0.7575985","_rn_":"PPR-SCR"},{"1":"2.051782103","2":"0.04019084","3":"0.4822901","_rn_":"PST-SCR"},{"1":"2.399128535","2":"0.01643414","3":"0.5916292","_rn_":"RNW-SCR"},{"1":"1.427441461","2":"0.15345269","3":"0.6138107","_rn_":"ROL-SCR"},{"1":"0.247332839","2":"0.80465065","3":"0.9655808","_rn_":"ALR-SIS"},{"1":"-0.720681637","2":"0.47110541","3":"0.7708998","_rn_":"CCR-SIS"},{"1":"0.848082427","2":"0.39639207","3":"0.7135057","_rn_":"PBL-SIS"},{"1":"-0.165598503","2":"0.86847293","3":"0.9770320","_rn_":"PPR-SIS"},{"1":"0.767204476","2":"0.44295995","3":"0.7593599","_rn_":"PST-SIS"},{"1":"0.880553537","2":"0.37855952","3":"0.7172707","_rn_":"RNW-SIS"},{"1":"-0.232812828","2":"0.81590675","3":"0.9475046","_rn_":"ROL-SIS"},{"1":"-1.434530464","2":"0.15142094","3":"0.6813942","_rn_":"SCR-SIS"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[5],"max":[5]},"pages":{}}}
+  </script>
+</div>
+</div>
+<p><br/></p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+data.hill.whole_n &lt;- data.frame(sample_data(ps.whole.hill)) %&gt;%
+  pivot_longer(cols = 1:3, names_to = &quot;Index&quot;,  values_to = &quot;Diversity&quot;)
+data.hill.whole_n$Fraction_delailed &lt;- NULL
+data.hill.whole_n &lt;- data.hill.whole_n[, c(10,1,2,3,4,5,6,7,8,9,12,11)]
+data.hill.whole_n &lt;- dplyr::mutate_if(data.hill.whole_n, is.factor, as.character)
+data.hill.whole_n$Index &lt;- stringr::str_replace(
+  data.hill.whole_n$Index, &quot;Observed&quot;, &quot;Observed (q=0)&quot;)
+data.hill.whole_n$Index &lt;- stringr::str_replace(
+  data.hill.whole_n$Index, &quot;shannon.hill&quot;, &quot;Shannon exponential (q=1)&quot;)
+data.hill.whole_n$Index &lt;- stringr::str_replace(
+  data.hill.whole_n$Index, &quot;simpson.hill&quot;, &quot;Simpson multiplicative inverse (q=2)&quot;)
+data.hill.whole_n &lt;- data.hill.whole_n[order(data.hill.whole_n$Index),]</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h1 id="core-community">Core Community</h1>
+<p>This code is basically the same as the code above, but this time on the core community identified using the <a href="wf1.html#run-indicator-analysis-to-identify-core-taxa">Indicator analysis described in the first script</a>.</p>
+<h2 id="prepare-data-set-1">Prepare Data Set</h2>
+<p>The first step is to read in the whole community fish microbiome data.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 ps.core &lt;- readRDS(&quot;rdata/p1/ps_indv01_core_fish.rds&quot;)
@@ -1604,190 +1957,129 @@ sample_data() Sample Data:       [ 89 samples by 11 sample variables ]
 tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
 phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
 </div>
-<p>get ASV tables and transpose so ASVs are rows get trees check class of tree needs to be phylo Check that the ASV names in the ASV table and the tip names in the phylogenetic tree are identical.</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.whole &lt;- t(otu_table(ps.whole))
-tree.whole &lt;- phy_tree(ps.whole)</code></pre>
-</div>
-<p>identical(sort(rownames(asv.whole)), sort(tree.whole$tip.label)) normalize otu table to rel abundance</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.whole.norm &lt;- microbiome::transform(asv.whole, transform = &quot;compositional&quot;)</code></pre>
-</div>
-<p>SAME as above FOR THE CORE ### get ASV tables and transpose so ASVs are rows</p>
-<p>get trees Check that the ASV names in the ASV table and the tip names in the phylogenetic tree are identical.</p>
+<p>Then get the ASV table and transpose the table so ASVs are rows. Also get the phylogenetic tree and make sure the ASV names in the ASV table and the tip names in the phylogenetic tree are identical.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 asv.core &lt;- t(otu_table(ps.core))
-asv.core
 tree.core &lt;- phy_tree(ps.core)
 identical(sort(rownames(asv.core)), sort(tree.core$tip.label))</code></pre>
 </div>
-<p>normalize otu table to rel abundance</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+[1] TRUE</code></pre>
+</div>
+<p>Finally, normalize the ASV table to relative abundance.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 asv.core.norm &lt;- microbiome::transform(asv.core, transform = &quot;compositional&quot;)</code></pre>
 </div>
-<p>proceed with the whole fish microbiome add observed richness (hill diversity q=0)</p>
+<h2 id="alpha-diversity-estimates-1">Alpha Diversity Estimates</h2>
+<h3 id="hill-diversity-1">Hill Diversity</h3>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-hillq0 &lt;- estimate_richness(ps.whole, measures = &quot;Observed&quot;)
-hillq0</code></pre>
+hillq0 &lt;- estimate_richness(ps.core, measures = &quot;Observed&quot;)</code></pre>
 </div>
-<p>shannon exponential</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-shannon.hill &lt;- exp(vegan::diversity(t(asv.whole.norm), index = &quot;shannon&quot;))
-shannon.hill
-shannon.whole.df &lt;- as.data.frame(shannon.hill)
-shannon.whole.df</code></pre>
-</div>
-<p>simpson</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-1/(1-(vegan::diversity(t(asv.whole.norm), index = &quot;simpson&quot;)))
-simpson.hill&lt;-1/(1-(vegan::diversity(t(asv.whole.norm), index = &quot;simpson&quot;)))
-simpson.hill
-simpson.whole.df &lt;- as.data.frame(simpson.hill)</code></pre>
-</div>
-<p>Combine ps object sample data and new columns with hill diversity into one data frame save ps object</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-newDF.whole &lt;- data.frame(hillq0, shannon.hill, simpson.hill, sample_data(ps.whole))
-newDF.whole
-ps.whole.hill &lt;- merge_phyloseq(otu_table(ps.whole), 
-                                sample_data(newDF.whole), 
-                                tax_table(ps.whole), 
-                                phy_tree(ps.whole))
-ps.whole.hill
-sample_data(ps.whole.hill)
-saveRDS(ps.whole.hill, &quot;rdata/p4/ps_16S_bocas_fish_final_hill.rds&quot;)</code></pre>
-</div>
-<p>SAME as above FOR THE CORE ### careful over-writes code add observed richness (hill diversity q = 0)</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-hillq0 &lt;- estimate_richness(ps.core, measures = &quot;Observed&quot;)
-hillq0</code></pre>
-</div>
-<p>shannon exponential</p>
+<h3 id="shannon-exponential-1">Shannon Exponential</h3>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 shannon.hill &lt;- exp(vegan::diversity(t(asv.core.norm), index = &quot;shannon&quot;))
-shannon.hill
-shannon.whole.df &lt;- as.data.frame(shannon.hill)
-shannon.whole.df</code></pre>
+shannon.core.df &lt;- as.data.frame(shannon.hill)</code></pre>
 </div>
-<p>simpson</p>
+<h3 id="simpson-index-1">Simpson Index</h3>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 1/(1-(vegan::diversity(t(asv.core.norm), index = &quot;simpson&quot;)))
 simpson.hill &lt;- 1/(1-(vegan::diversity(t(asv.core.norm), index = &quot;simpson&quot;)))
-simpson.hill
 simpson.core.df &lt;- as.data.frame(simpson.hill)</code></pre>
 </div>
-<p>Combine ps object sample data and new columns with hill diversity into one data frame save ps object</p>
+<p>Now we combine the phyloseq object, sample data, and add new columns with Hill diversity into one data frame and save the object.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-newDF.core &lt;- data.frame(hillq0, shannon.hill, 
+newDF.core &lt;- data.frame(hillq0, shannon.hill,
                          simpson.hill, sample_data(ps.core))
-newDF.core
-ps.core.hill &lt;- merge_phyloseq(otu_table(ps.core), 
-                               sample_data(newDF.core), 
-                               tax_table(ps.core), 
+ps.core.hill &lt;- merge_phyloseq(otu_table(ps.core),
+                               sample_data(newDF.core),
+                               tax_table(ps.core),
                                phy_tree(ps.core))
-ps.core.hill
-sample_data(ps.core.hill)
 saveRDS(ps.core.hill, &quot;rdata/p4/ps_core_hill.rds&quot;)</code></pre>
 </div>
-<p>Calculate ALPHA DIVERSITY with Hill numbers FOR EACH ZONE using alpha_div() function Pull out zones</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-ps.outer &lt;- subset_samples(ps.whole.hill, Zone == &quot;Outer bay&quot;)
-ps.outer &lt;- prune_taxa(taxa_sums(ps.outer) &gt; 0, ps.outer) #JJS# Added
-ps.outer
-ps.inner &lt;- subset_samples(ps.whole.hill, Zone == &quot;Inner bay&quot;)
-ps.inner &lt;- prune_taxa(taxa_sums(ps.inner) &gt; 0, ps.inner) #JJS# Added
-ps.inner 
-ps.inner.dist &lt;- subset_samples(ps.whole.hill, Zone == &quot;Inner bay disturbed&quot;)
-ps.inner.dist &lt;- prune_taxa(taxa_sums(ps.inner.dist) &gt; 0, ps.inner.dist) #JJS# Added
-ps.inner.dist</code></pre>
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 27 taxa and 89 samples ]
+sample_data() Sample Data:       [ 89 samples by 14 sample variables ]
+tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
 </div>
-<p>get otu tables and transpose so ASVs are rows</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.outer &lt;- t(otu_table(ps.outer))
-asv.inner &lt;- t(otu_table(ps.inner))
-asv.inner.dist &lt;- t(otu_table(ps.inner.dist))</code></pre>
-</div>
-<p>transform to relative abundance</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.outer.norm &lt;- microbiome::transform(asv.outer, transform = &quot;compositional&quot;)
-asv.inner.norm &lt;- microbiome::transform(asv.inner, transform = &quot;compositional&quot;)
-asv.inner.dist.norm &lt;- microbiome::transform(asv.inner.dist, transform = &quot;compositional&quot;)</code></pre>
-</div>
-<p>alpha diversity per zone based on hill numbers at differend diversity levels (q=0 (observed), q=1(shannon exponential), q=2(multiplicative simpson)) note: for hill numbers alpha div. per zone cannot be obtained as a mean across samples. The calculation is different as performed by function alpha_div()</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-alpha_div(countable = asv.outer.norm,qvalue = 0)
-alpha_div(countable = asv.outer.norm,qvalue = 1)
-alpha_div(countable = asv.outer.norm,qvalue = 2)
-
-alpha_div(countable = asv.inner.norm,qvalue = 0)
-alpha_div(countable = asv.inner.norm,qvalue = 1)
-alpha_div(countable = asv.inner.norm,qvalue = 2)
-
-alpha_div(countable = asv.inner.dist.norm,qvalue = 0)
-alpha_div(countable = asv.inner.dist.norm,qvalue = 1)
-alpha_div(countable = asv.inner.dist.norm,qvalue = 2)</code></pre>
-</div>
-<p>SAME as above FOR THE CORE ### careful, over-writing code Pull out zones</p>
+<h2 id="alpha-diversity-estimates-by-zone-1">Alpha Diversity Estimates by Zone</h2>
+<p>Next, we calculate alpha diversity with Hill numbers <strong><em>for each zone</em></strong> using <code>alpha_div()</code> function.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 ps.outer &lt;- subset_samples(ps.core.hill, Zone == &quot;Outer bay&quot;)
-ps.outer &lt;- prune_taxa(taxa_sums(ps.outer) &gt; 0, ps.outer) #JJS# Added
+ps.outer &lt;- prune_taxa(taxa_sums(ps.outer) &gt; 0, ps.outer)
 ps.outer
 ps.inner &lt;- subset_samples(ps.core.hill, Zone == &quot;Inner bay&quot;)
-ps.inner &lt;- prune_taxa(taxa_sums(ps.inner) &gt; 0, ps.outer) #JJS# Added
-ps.inner 
+ps.inner &lt;- prune_taxa(taxa_sums(ps.inner) &gt; 0, ps.inner)
+ps.inner
 ps.inner.dist &lt;- subset_samples(ps.core.hill, Zone == &quot;Inner bay disturbed&quot;)
-ps.inner.dist &lt;- prune_taxa(taxa_sums(ps.inner.dist) &gt; 0, ps.outer) #JJS# Added
+ps.inner.dist &lt;- prune_taxa(taxa_sums(ps.inner.dist) &gt; 0, ps.inner.dist)
 ps.inner.dist</code></pre>
 </div>
-<p>get otu tables and transpose so ASVs are rows</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 27 taxa and 35 samples ]
+sample_data() Sample Data:       [ 35 samples by 14 sample variables ]
+tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 27 taxa and 35 samples ]
+sample_data() Sample Data:       [ 35 samples by 14 sample variables ]
+tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 27 taxa and 19 samples ]
+sample_data() Sample Data:       [ 19 samples by 14 sample variables ]
+tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
+</div>
+<p>Get the ASV tables and transpose the tables so ASVs are rows.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 asv.outer &lt;- t(otu_table(ps.outer))
 asv.inner &lt;- t(otu_table(ps.inner))
 asv.inner.dist &lt;- t(otu_table(ps.inner.dist))</code></pre>
 </div>
-<p>transform to relative abundance</p>
+<p>And transform the counts to relative abundance.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 asv.outer.norm &lt;- microbiome::transform(asv.outer, transform = &quot;compositional&quot;)
 asv.inner.norm &lt;- microbiome::transform(asv.inner, transform = &quot;compositional&quot;)
 asv.inner.dist.norm &lt;- microbiome::transform(asv.inner.dist, transform = &quot;compositional&quot;)</code></pre>
 </div>
-<p>diversity per zone based on hill numbers at differend diversity levels (q=0 (observed), q=1(shannon exponential), q=2(multiplicative simpson)) note: for hill numbers alpha div. per zone cannot be obtained as a mean across samples. The calculation is different as performed by function alpha_div()</p>
+<p>Now we can test alpha diversity per zone based on Hill numbers at different diversity levels (<code>q = 0 (observed)</code>, <code>q = 1 (shannon exponential)</code>, <code>q = 2 (multiplicative simpson)</code>).</p>
+<p><em>Note</em>: for Hill numbers, alpha diversity per zone cannot be obtained as a mean across samples. The calculation is different as performed by function <code>alpha_div()</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-alpha_div(countable = asv.outer.norm,qvalue = 0)
-alpha_div(countable = asv.outer.norm,qvalue = 1)
-alpha_div(countable = asv.outer.norm,qvalue = 2)
+alpha_div(countable = asv.outer.norm, qvalue = 0)
+alpha_div(countable = asv.outer.norm, qvalue = 1)
+alpha_div(countable = asv.outer.norm, qvalue = 2)
 
-alpha_div(countable = asv.inner.norm,qvalue = 0)
-alpha_div(countable = asv.inner.norm,qvalue = 1)
-alpha_div(countable = asv.inner.norm,qvalue = 2)
+alpha_div(countable = asv.inner.norm, qvalue = 0)
+alpha_div(countable = asv.inner.norm, qvalue = 1)
+alpha_div(countable = asv.inner.norm, qvalue = 2)
 
-alpha_div(countable = asv.inner.dist.norm,qvalue = 0)
-alpha_div(countable = asv.inner.dist.norm,qvalue = 1)
-alpha_div(countable = asv.inner.dist.norm,qvalue = 2)</code></pre>
+alpha_div(countable = asv.inner.dist.norm, qvalue = 0)
+alpha_div(countable = asv.inner.dist.norm, qvalue = 1)
+alpha_div(countable = asv.inner.dist.norm, qvalue = 2)</code></pre>
 </div>
-<p>RUN KRUSKAL-WALLIS-TEST - run on each order of diversty (q value) and posthoc Dunn Test with Benjamin Hochberg correction for zone comparison manually made file in excel linking each sample to its zone</p>
+<h2 id="significance-test-1">Significance Test</h2>
+<p>Here we run Kruskal-Wallis Tests on each order of diversity (q value) and posthoc Dunn Tests with Benjamin Hochberg correction for zone comparison.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-temp_table &lt;- data.frame(sample_data(ps.whole))
+temp_table &lt;- data.frame(sample_data(ps.core))
 temp_table[, c(1:4, 7:11)] &lt;- list(NULL)
 temp_table &lt;- temp_table %&gt;% tibble::rownames_to_column(&quot;Sample&quot;)
 temp_table &lt;- temp_table %&gt;% dplyr::rename(Group = Zone)
@@ -1797,144 +2089,260 @@ temp_table$Reef &lt;- as.character(temp_table$Reef)
 hill_hierarchy &lt;- temp_table[,1:2]
 hill_hierarchy2 &lt;- temp_table[, c(1, 3)]</code></pre>
 </div>
-<ol type="1">
-<li>zone observed shannon exponential multiplicative simpson</li>
-</ol>
+<h3 id="by-zone-1">By Zone</h3>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-divtestresult.q0 &lt;- div_test(asv.whole.norm, qvalue = 0, 
+divtestresult.q1 &lt;- div_test(asv.core.norm, qvalue = 1,
                              hierarchy = hill_hierarchy, posthoc = TRUE)
-divtestresult.q0
-divtestresult.q1 &lt;- div_test(asv.whole.norm, qvalue = 1, 
-                             hierarchy = hill_hierarchy, posthoc = TRUE)
-divtestresult.q1
-divtestresult.q2 &lt;- div_test(asv.whole.norm, qvalue = 2, 
-                             hierarchy = hill_hierarchy, posthoc = TRUE)
-divtestresult.q2</code></pre>
+divtestresult.q2 &lt;- div_test(asv.core.norm, qvalue = 2,
+                             hierarchy = hill_hierarchy, posthoc = TRUE)</code></pre>
 </div>
-<ol start="2" type="1">
-<li>Reef careful, over-writing code observed shannon exponential multiplicative simpson</li>
-</ol>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><br/></p>
+<div class="l-body-outset">
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 28%" />
+<col style="width: 25%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>q-value</th>
+<th>homogeneity.pvalue</th>
+<th>normality.pvalue</th>
+<th>method</th>
+<th>posthoc.method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0.6000394</td>
+<td>0.0000041</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0.3376986</td>
+<td>0.0000004</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="q-value-1-2">q-value = 1</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+                                      Z     P.unadj      P.adj
+Inner bay-Inner bay disturbed -1.633200 0.102426879 0.15364032
+Inner bay-Outer bay            1.480387 0.138769942 0.13876994
+Inner bay disturbed-Outer bay  2.875053 0.004039591 0.01211877</code></pre>
+</div>
+<h4 id="q-value-2-2">q-value = 2</h4>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+                                      Z     P.unadj      P.adj
+Inner bay-Inner bay disturbed -1.944889 0.051788329 0.07768249
+Inner bay-Outer bay            1.105664 0.268871893 0.26887189
+Inner bay disturbed-Outer bay  2.872398 0.004073694 0.01222108</code></pre>
+</div>
+<h3 id="by-reef-1">By Reef</h3>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-divtestresult.q0 &lt;- div_test(asv.whole.norm,qvalue = 0, 
+divtestresult.q1 &lt;- div_test(asv.core.norm, qvalue = 1,
                              hierarchy = hill_hierarchy2, posthoc = TRUE)
-divtestresult.q0
-divtestresult.q1 &lt;- div_test(asv.whole.norm,qvalue = 1, 
-                             hierarchy = hill_hierarchy2, posthoc = TRUE)
-divtestresult.q1
-divtestresult.q2 &lt;- div_test(asv.whole.norm,qvalue = 2, 
-                             hierarchy = hill_hierarchy2, posthoc = TRUE)
-divtestresult.q2</code></pre>
+divtestresult.q2 &lt;- div_test(asv.core.norm, qvalue = 2,
+                             hierarchy = hill_hierarchy2, posthoc = TRUE)</code></pre>
 </div>
-<p>###SAME as above FOR THE CORE ### #careful, over-writing code #1. Zone #observed for core will be run separately below because div_test uses ANOVA and posthoc Tuckey instead of Kruskal and posthoc Dunn test #divtestresult.q0&lt;- # div_test(asv.core.norm,qvalue=0,hierarchy=hill_hierarchy,posthoc=TRUE) #divtestresult.q0 #shannon exponential #multiplicative simpson</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-divtestresult.q1 &lt;- div_test(asv.core.norm, qvalue = 1, 
-                             hierarchy = hill_hierarchy, posthoc = TRUE)
-divtestresult.q1
-divtestresult.q2 &lt;- div_test(asv.core.norm, qvalue = 2, 
-                             hierarchy = hill_hierarchy, posthoc = TRUE)
-divtestresult.q2</code></pre>
+
 </div>
-<p>#2. Reef #careful, over-writing code #observed for core will be run separately below because div_test uses ANOVA and posthoc Tuckey instead of Kruskal and posthoc Dunn test #divtestresult.q0&lt;- # div_test(asv.core.norm,qvalue=0,hierarchy=hill_hierarchy2,posthoc=TRUE) #divtestresult.q0 #shannon exponential #multiplicative simpson</p>
+<p><br/></p>
+<div class="l-body-outset">
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 28%" />
+<col style="width: 25%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>q-value</th>
+<th>homogeneity.pvalue</th>
+<th>normality.pvalue</th>
+<th>method</th>
+<th>posthoc.method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0.0003462</td>
+<td>0.0000041</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0.0000402</td>
+<td>0.0000004</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="q-value-1-3">q-value = 1</h4>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-divtestresult.q1 &lt;- div_test(asv.core.norm, qvalue = 1, 
-                             hierarchy = hill_hierarchy2, posthoc = TRUE)
-divtestresult.q1
-divtestresult.q2 &lt;- div_test(asv.core.norm, qvalue = 2, 
-                             hierarchy = hill_hierarchy2, posthoc = TRUE)
-divtestresult.q2</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Z"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["P.unadj"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["P.adj"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.38641664","2":"0.6991881310","3":"0.811960410","_rn_":"ALR-CCR"},{"1":"-0.64509417","2":"0.5188661640","3":"0.812138344","_rn_":"ALR-PBL"},{"1":"-0.36552504","2":"0.7147195161","3":"0.804059456","_rn_":"CCR-PBL"},{"1":"-1.33701724","2":"0.1812170088","3":"0.501831717","_rn_":"ALR-PPR"},{"1":"-1.07756530","2":"0.2812277950","3":"0.632762539","_rn_":"CCR-PPR"},{"1":"-0.56319263","2":"0.5733037229","3":"0.825557361","_rn_":"PBL-PPR"},{"1":"-1.71608001","2":"0.0861473994","3":"0.310130638","_rn_":"ALR-PST"},{"1":"-1.49486041","2":"0.1349508775","3":"0.404852632","_rn_":"CCR-PST"},{"1":"-0.97584957","2":"0.3291390182","3":"0.697000274","_rn_":"PBL-PST"},{"1":"-0.47404923","2":"0.6354648049","3":"0.788852861","_rn_":"PPR-PST"},{"1":"-1.85499629","2":"0.0635967564","3":"0.254387025","_rn_":"ALR-RNW"},{"1":"-1.61455033","2":"0.1064081081","3":"0.348244717","_rn_":"CCR-RNW"},{"1":"-0.97051686","2":"0.3317889244","3":"0.663577849","_rn_":"PBL-RNW"},{"1":"-0.40731890","2":"0.6837737838","3":"0.820528541","_rn_":"PPR-RNW"},{"1":"0.11711750","2":"0.9067669442","3":"0.989200303","_rn_":"PST-RNW"},{"1":"-0.89277552","2":"0.3719773968","3":"0.637675537","_rn_":"ALR-ROL"},{"1":"-0.55149272","2":"0.5812959591","3":"0.804871328","_rn_":"CCR-ROL"},{"1":"-0.04807698","2":"0.9616548884","3":"0.961654888","_rn_":"PBL-ROL"},{"1":"0.63378668","2":"0.5262200473","3":"0.789330071","_rn_":"PPR-ROL"},{"1":"1.09931314","2":"0.2716315012","3":"0.651915603","_rn_":"PST-ROL"},{"1":"1.14417191","2":"0.2525523519","3":"0.649420334","_rn_":"RNW-ROL"},{"1":"2.25171595","2":"0.0243402281","3":"0.109531026","_rn_":"ALR-SCR"},{"1":"2.79360224","2":"0.0052124549","3":"0.031274729","_rn_":"CCR-SCR"},{"1":"2.48361254","2":"0.0130057231","3":"0.066886576","_rn_":"PBL-SCR"},{"1":"3.26987912","2":"0.0010759345","3":"0.012911214","_rn_":"PPR-SCR"},{"1":"3.44306731","2":"0.0005751561","3":"0.010352811","_rn_":"PST-SCR"},{"1":"3.86899226","2":"0.0001092861","3":"0.003934300","_rn_":"RNW-SCR"},{"1":"3.26629254","2":"0.0010896562","3":"0.009806906","_rn_":"ROL-SCR"},{"1":"-0.81619837","2":"0.4143866903","3":"0.678087311","_rn_":"ALR-SIS"},{"1":"-0.51956118","2":"0.6033694606","3":"0.804492614","_rn_":"CCR-SIS"},{"1":"-0.09257238","2":"0.9262432890","3":"0.980728188","_rn_":"PBL-SIS"},{"1":"0.50881476","2":"0.6108820754","3":"0.785419811","_rn_":"PPR-SIS"},{"1":"0.94882146","2":"0.3427114229","3":"0.649347959","_rn_":"PST-SIS"},{"1":"0.94828842","2":"0.3429826421","3":"0.617368756","_rn_":"RNW-SIS"},{"1":"-0.06115020","2":"0.9512395862","3":"0.978417860","_rn_":"ROL-SIS"},{"1":"-2.83019434","2":"0.0046519738","3":"0.033494211","_rn_":"SCR-SIS"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[5],"max":[5]},"pages":{}}}
+  </script>
 </div>
-<p>#separately calculate Observed for core Kruskal and posthoc Dunn test =because divtest function used ANOVA and Tuckey for core data observed (not Kruskal and Dunn) #run Kruskal-Wallis Test #Core #Get data for Kruskal Wallis #Core #get the unadjusted p</p>
+</div>
+<h4 id="q-value-2-3">q-value = 2</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Z"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["P.unadj"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["P.adj"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.6566971","2":"0.5113756831","3":"0.736380984","_rn_":"ALR-CCR"},{"1":"-0.8837790","2":"0.3768155204","3":"0.616607215","_rn_":"ALR-PBL"},{"1":"-0.3992140","2":"0.6897355375","3":"0.800983205","_rn_":"CCR-PBL"},{"1":"-1.4464976","2":"0.1480376737","3":"0.409950481","_rn_":"ALR-PPR"},{"1":"-0.9646993","2":"0.3346954485","3":"0.602451807","_rn_":"CCR-PPR"},{"1":"-0.4422719","2":"0.6582924934","3":"0.789950992","_rn_":"PBL-PPR"},{"1":"-1.9427092","2":"0.0520513015","3":"0.208205206","_rn_":"ALR-PST"},{"1":"-1.5288560","2":"0.1263001540","3":"0.378900462","_rn_":"CCR-PST"},{"1":"-0.9779802","2":"0.3280840966","3":"0.621633025","_rn_":"PBL-PST"},{"1":"-0.5911450","2":"0.5544232372","3":"0.739230983","_rn_":"PPR-PST"},{"1":"-2.0599292","2":"0.0394053084","3":"0.177323888","_rn_":"ALR-RNW"},{"1":"-1.5922036","2":"0.1113389607","3":"0.364382053","_rn_":"CCR-RNW"},{"1":"-0.9227376","2":"0.3561439820","3":"0.610532541","_rn_":"PBL-RNW"},{"1":"-0.4874472","2":"0.6259414465","3":"0.804781860","_rn_":"PPR-RNW"},{"1":"0.1646434","2":"0.8692246388","3":"0.894059628","_rn_":"PST-RNW"},{"1":"-1.0643350","2":"0.2871769687","3":"0.574353937","_rn_":"ALR-ROL"},{"1":"-0.4491816","2":"0.6533006471","3":"0.810993907","_rn_":"CCR-ROL"},{"1":"0.0614317","2":"0.9510154048","3":"0.951015405","_rn_":"PBL-ROL"},{"1":"0.6023792","2":"0.5469217472","3":"0.757276265","_rn_":"PPR-ROL"},{"1":"1.2042476","2":"0.2284939007","3":"0.483869437","_rn_":"PST-ROL"},{"1":"1.2060589","2":"0.2277947962","3":"0.512538291","_rn_":"RNW-ROL"},{"1":"1.8803803","2":"0.0600562614","3":"0.216202541","_rn_":"ALR-SCR"},{"1":"2.6669083","2":"0.0076552565","3":"0.055117847","_rn_":"CCR-SCR"},{"1":"2.4191031","2":"0.0155588286","3":"0.093352972","_rn_":"PBL-SCR"},{"1":"3.0606069","2":"0.0022088892","3":"0.026506671","_rn_":"PPR-SCR"},{"1":"3.3848951","2":"0.0007120546","3":"0.012816983","_rn_":"PST-SCR"},{"1":"3.7417925","2":"0.0001827123","3":"0.006577644","_rn_":"RNW-SCR"},{"1":"3.0464299","2":"0.0023157646","3":"0.020841882","_rn_":"ROL-SCR"},{"1":"-0.7349319","2":"0.4623809917","3":"0.723726770","_rn_":"ALR-SIS"},{"1":"-0.1955338","2":"0.8449750973","3":"0.921791015","_rn_":"CCR-SIS"},{"1":"0.1970896","2":"0.8437574390","3":"0.949227119","_rn_":"PBL-SIS"},{"1":"0.6810906","2":"0.4958141531","3":"0.743721230","_rn_":"PPR-SIS"},{"1":"1.2254903","2":"0.2203905291","3":"0.566718504","_rn_":"PST-SIS"},{"1":"1.2095516","2":"0.2264510143","3":"0.543482434","_rn_":"RNW-SIS"},{"1":"0.1753464","2":"0.8608074777","3":"0.911443212","_rn_":"ROL-SIS"},{"1":"-2.4167952","2":"0.0156578256","3":"0.080525960","_rn_":"SCR-SIS"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[5],"max":[5]},"pages":{}}}
+  </script>
+</div>
+</div>
+<p><br/></p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 hill.core.DF &lt;- data.frame(sample_data(ps.core.hill))
 kruskal.test(Observed~Zone, data = hill.core.DF)
 kruskal.test(Observed~Reef, data = hill.core.DF)
-library(dunn.test)
-dunn.core.obs.zone&lt;-dunn.test(hill.core.DF$Observed, hill.core.DF$Zone, 
+dunn.core.obs.zone &lt;- dunn.test(hill.core.DF$Observed, hill.core.DF$Zone,
                               method=&quot;hochberg&quot;, table=TRUE, wrap=TRUE)
-dunn.core.obs.zone
-dunn.core.obs.reef&lt;-dunn.test(hill.core.DF$Observed, hill.core.DF$Reef, 
+dunn.core.obs.reef &lt;- dunn.test(hill.core.DF$Observed, hill.core.DF$Reef,
                               method=&quot;hochberg&quot;, table = TRUE, wrap = TRUE)
-dunn.core.obs.reef
 dunn.test(hill.core.DF$Observed, hill.core.DF$Zone, method=&quot;none&quot;)
 dunn.test(hill.core.DF$Observed, hill.core.DF$Reef, method=&quot;none&quot;)</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><br/></p>
+<div class="l-body-outset">
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 28%" />
+<col style="width: 25%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>q-value</th>
+<th>homogeneity.pvalue</th>
+<th>normality.pvalue</th>
+<th>method</th>
+<th>posthoc.method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0.0003462</td>
+<td>0.0000041</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0.0000402</td>
+<td>0.0000004</td>
+<td>Kruskal-Wallis Test</td>
+<td>Dunn test with Benjamini-Hochberg correction</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="q-value-1-4">q-value = 1</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Z"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["P.unadj"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["P.adj"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.38641664","2":"0.6991881310","3":"0.811960410","_rn_":"ALR-CCR"},{"1":"-0.64509417","2":"0.5188661640","3":"0.812138344","_rn_":"ALR-PBL"},{"1":"-0.36552504","2":"0.7147195161","3":"0.804059456","_rn_":"CCR-PBL"},{"1":"-1.33701724","2":"0.1812170088","3":"0.501831717","_rn_":"ALR-PPR"},{"1":"-1.07756530","2":"0.2812277950","3":"0.632762539","_rn_":"CCR-PPR"},{"1":"-0.56319263","2":"0.5733037229","3":"0.825557361","_rn_":"PBL-PPR"},{"1":"-1.71608001","2":"0.0861473994","3":"0.310130638","_rn_":"ALR-PST"},{"1":"-1.49486041","2":"0.1349508775","3":"0.404852632","_rn_":"CCR-PST"},{"1":"-0.97584957","2":"0.3291390182","3":"0.697000274","_rn_":"PBL-PST"},{"1":"-0.47404923","2":"0.6354648049","3":"0.788852861","_rn_":"PPR-PST"},{"1":"-1.85499629","2":"0.0635967564","3":"0.254387025","_rn_":"ALR-RNW"},{"1":"-1.61455033","2":"0.1064081081","3":"0.348244717","_rn_":"CCR-RNW"},{"1":"-0.97051686","2":"0.3317889244","3":"0.663577849","_rn_":"PBL-RNW"},{"1":"-0.40731890","2":"0.6837737838","3":"0.820528541","_rn_":"PPR-RNW"},{"1":"0.11711750","2":"0.9067669442","3":"0.989200303","_rn_":"PST-RNW"},{"1":"-0.89277552","2":"0.3719773968","3":"0.637675537","_rn_":"ALR-ROL"},{"1":"-0.55149272","2":"0.5812959591","3":"0.804871328","_rn_":"CCR-ROL"},{"1":"-0.04807698","2":"0.9616548884","3":"0.961654888","_rn_":"PBL-ROL"},{"1":"0.63378668","2":"0.5262200473","3":"0.789330071","_rn_":"PPR-ROL"},{"1":"1.09931314","2":"0.2716315012","3":"0.651915603","_rn_":"PST-ROL"},{"1":"1.14417191","2":"0.2525523519","3":"0.649420334","_rn_":"RNW-ROL"},{"1":"2.25171595","2":"0.0243402281","3":"0.109531026","_rn_":"ALR-SCR"},{"1":"2.79360224","2":"0.0052124549","3":"0.031274729","_rn_":"CCR-SCR"},{"1":"2.48361254","2":"0.0130057231","3":"0.066886576","_rn_":"PBL-SCR"},{"1":"3.26987912","2":"0.0010759345","3":"0.012911214","_rn_":"PPR-SCR"},{"1":"3.44306731","2":"0.0005751561","3":"0.010352811","_rn_":"PST-SCR"},{"1":"3.86899226","2":"0.0001092861","3":"0.003934300","_rn_":"RNW-SCR"},{"1":"3.26629254","2":"0.0010896562","3":"0.009806906","_rn_":"ROL-SCR"},{"1":"-0.81619837","2":"0.4143866903","3":"0.678087311","_rn_":"ALR-SIS"},{"1":"-0.51956118","2":"0.6033694606","3":"0.804492614","_rn_":"CCR-SIS"},{"1":"-0.09257238","2":"0.9262432890","3":"0.980728188","_rn_":"PBL-SIS"},{"1":"0.50881476","2":"0.6108820754","3":"0.785419811","_rn_":"PPR-SIS"},{"1":"0.94882146","2":"0.3427114229","3":"0.649347959","_rn_":"PST-SIS"},{"1":"0.94828842","2":"0.3429826421","3":"0.617368756","_rn_":"RNW-SIS"},{"1":"-0.06115020","2":"0.9512395862","3":"0.978417860","_rn_":"ROL-SIS"},{"1":"-2.83019434","2":"0.0046519738","3":"0.033494211","_rn_":"SCR-SIS"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[5],"max":[5]},"pages":{}}}
+  </script>
+</div>
+</div>
+<h4 id="q-value-2-4">q-value = 2</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Z"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["P.unadj"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["P.adj"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"-0.6566971","2":"0.5113756831","3":"0.736380984","_rn_":"ALR-CCR"},{"1":"-0.8837790","2":"0.3768155204","3":"0.616607215","_rn_":"ALR-PBL"},{"1":"-0.3992140","2":"0.6897355375","3":"0.800983205","_rn_":"CCR-PBL"},{"1":"-1.4464976","2":"0.1480376737","3":"0.409950481","_rn_":"ALR-PPR"},{"1":"-0.9646993","2":"0.3346954485","3":"0.602451807","_rn_":"CCR-PPR"},{"1":"-0.4422719","2":"0.6582924934","3":"0.789950992","_rn_":"PBL-PPR"},{"1":"-1.9427092","2":"0.0520513015","3":"0.208205206","_rn_":"ALR-PST"},{"1":"-1.5288560","2":"0.1263001540","3":"0.378900462","_rn_":"CCR-PST"},{"1":"-0.9779802","2":"0.3280840966","3":"0.621633025","_rn_":"PBL-PST"},{"1":"-0.5911450","2":"0.5544232372","3":"0.739230983","_rn_":"PPR-PST"},{"1":"-2.0599292","2":"0.0394053084","3":"0.177323888","_rn_":"ALR-RNW"},{"1":"-1.5922036","2":"0.1113389607","3":"0.364382053","_rn_":"CCR-RNW"},{"1":"-0.9227376","2":"0.3561439820","3":"0.610532541","_rn_":"PBL-RNW"},{"1":"-0.4874472","2":"0.6259414465","3":"0.804781860","_rn_":"PPR-RNW"},{"1":"0.1646434","2":"0.8692246388","3":"0.894059628","_rn_":"PST-RNW"},{"1":"-1.0643350","2":"0.2871769687","3":"0.574353937","_rn_":"ALR-ROL"},{"1":"-0.4491816","2":"0.6533006471","3":"0.810993907","_rn_":"CCR-ROL"},{"1":"0.0614317","2":"0.9510154048","3":"0.951015405","_rn_":"PBL-ROL"},{"1":"0.6023792","2":"0.5469217472","3":"0.757276265","_rn_":"PPR-ROL"},{"1":"1.2042476","2":"0.2284939007","3":"0.483869437","_rn_":"PST-ROL"},{"1":"1.2060589","2":"0.2277947962","3":"0.512538291","_rn_":"RNW-ROL"},{"1":"1.8803803","2":"0.0600562614","3":"0.216202541","_rn_":"ALR-SCR"},{"1":"2.6669083","2":"0.0076552565","3":"0.055117847","_rn_":"CCR-SCR"},{"1":"2.4191031","2":"0.0155588286","3":"0.093352972","_rn_":"PBL-SCR"},{"1":"3.0606069","2":"0.0022088892","3":"0.026506671","_rn_":"PPR-SCR"},{"1":"3.3848951","2":"0.0007120546","3":"0.012816983","_rn_":"PST-SCR"},{"1":"3.7417925","2":"0.0001827123","3":"0.006577644","_rn_":"RNW-SCR"},{"1":"3.0464299","2":"0.0023157646","3":"0.020841882","_rn_":"ROL-SCR"},{"1":"-0.7349319","2":"0.4623809917","3":"0.723726770","_rn_":"ALR-SIS"},{"1":"-0.1955338","2":"0.8449750973","3":"0.921791015","_rn_":"CCR-SIS"},{"1":"0.1970896","2":"0.8437574390","3":"0.949227119","_rn_":"PBL-SIS"},{"1":"0.6810906","2":"0.4958141531","3":"0.743721230","_rn_":"PPR-SIS"},{"1":"1.2254903","2":"0.2203905291","3":"0.566718504","_rn_":"PST-SIS"},{"1":"1.2095516","2":"0.2264510143","3":"0.543482434","_rn_":"RNW-SIS"},{"1":"0.1753464","2":"0.8608074777","3":"0.911443212","_rn_":"ROL-SIS"},{"1":"-2.4167952","2":"0.0156578256","3":"0.080525960","_rn_":"SCR-SIS"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[5],"max":[5]},"pages":{}}}
+  </script>
+</div>
+</div>
+<p><br/></p>
+<div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-#JJS# Added to make tables
-data.hill.core_n &lt;- hill.core.DF %&gt;% 
+data.hill.core_n &lt;- hill.core.DF %&gt;%
   pivot_longer(cols = 1:3, names_to = &quot;Index&quot;,  values_to = &quot;Diversity&quot;)
 data.hill.core_n$Fraction_delailed &lt;- NULL
-data.hill.core_n &lt;- data.hill.core_n[, c(10,1,2,3,4,5,6,7,8,9,12,11)] 
+data.hill.core_n &lt;- data.hill.core_n[, c(10,1,2,3,4,5,6,7,8,9,12,11)]
 data.hill.core_n &lt;- dplyr::mutate_if(data.hill.core_n, is.factor, as.character)
 data.hill.core_n$Index &lt;- stringr::str_replace(
-  data.hill.core_n$Index, &quot;Observed&quot;, &quot;Observed (q=0)&quot;) 
+  data.hill.core_n$Index, &quot;Observed&quot;, &quot;Observed (q=0)&quot;)
 data.hill.core_n$Index &lt;- stringr::str_replace(
   data.hill.core_n$Index, &quot;shannon.hill&quot;, &quot;Shannon exponential (q=1)&quot;)
 data.hill.core_n$Index &lt;- stringr::str_replace(
   data.hill.core_n$Index, &quot;simpson.hill&quot;, &quot;Simpson multiplicative inverse (q=2)&quot;)
 data.hill.core_n &lt;- data.hill.core_n[order(data.hill.core_n$Index),]</code></pre>
 </div>
+<h1 id="analysis-summary">Analysis Summary</h1>
+<h2 id="summary-table">Summary Table</h2>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-data.hill.whole_n &lt;- data.frame(sample_data(ps.whole.hill)) %&gt;% 
-  pivot_longer(cols = 1:3, names_to = &quot;Index&quot;,  values_to = &quot;Diversity&quot;)
-data.hill.whole_n$Fraction_delailed &lt;- NULL
-data.hill.whole_n &lt;- data.hill.whole_n[, c(10,1,2,3,4,5,6,7,8,9,12,11)] 
-data.hill.whole_n &lt;- dplyr::mutate_if(data.hill.whole_n, is.factor, as.character)
-data.hill.whole_n$Index &lt;- stringr::str_replace(
-  data.hill.whole_n$Index, &quot;Observed&quot;, &quot;Observed (q=0)&quot;) 
-data.hill.whole_n$Index &lt;- stringr::str_replace(
-  data.hill.whole_n$Index, &quot;shannon.hill&quot;, &quot;Shannon exponential (q=1)&quot;)
-data.hill.whole_n$Index &lt;- stringr::str_replace(
-  data.hill.whole_n$Index, &quot;simpson.hill&quot;, &quot;Simpson multiplicative inverse (q=2)&quot;)
-data.hill.whole_n &lt;- data.hill.whole_n[order(data.hill.whole_n$Index),]</code></pre>
-</div>
-<p>#Use these commands if you want to use the r created tables #Otherwise, comment out and uncomment the lines below ####Create faceted boxplot for the 3 alpha diversity measures using hill numbers #manually modify sample data (file=sample_hill_div_core.csv) for plot: new data files: whole_microbiota_diversity_hill_boxplot.csv and sample_hill_div_core_boxplot.csv #data.hill.whole &lt;- read.csv(“tables/p4/whole_microbiota_diversity_hill_boxplot.csv”, header = T, sep = “,”) #data.hill.core &lt;- read.csv(“tables/p4/sample_hill_div_coreNEW_boxplot.csv”, header = T, sep = ‘,’)</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-data.hill.whole &lt;- data.hill.whole_n
-data.hill.core &lt;- data.hill.core_n</code></pre>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-data.hill.whole
-data.hill.core</code></pre>
+data.hill.whole &lt;- readRDS(&quot;rdata/p4/data.hill.whole_n.rds&quot;)
+data.hill.core &lt;- readRDS(&quot;rdata/p4/data.hill.core_n.rds&quot;)</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
+<p><br/></p>
 <div class="layout-chunk" data-layout="l-body-outset">
 <div id="sp61m892w0poktim96dq" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="sp61m892w0poktim96dq">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"15754\" data-max=\"79466\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1.09391718106198\" data-max=\"373\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1.04604566066507\" data-max=\"24\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Table: \n  <em>Diversity estimates for whole vs. core. Use the buttons to\n            navigate through the table or download a copy.<\/em>\n<\/caption>","data":[["ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543","ML2384","ML2385","ML2388","ML2390","ML2392","ML2393","ML2394","ML2396","ML2397","ML2404","ML2405","ML2406","ML2407","ML2409","ML2410","ML2411","ML2412","ML2413","ML2414","ML2415","ML2416","ML2417","ML2418","ML2419","ML2421","ML2429","ML2432","ML2433","ML2438","ML2440","ML2441","ML2442","ML2445","ML2446","ML2447","ML2448","ML2449","ML2451","ML2452","ML2454","ML2455","ML2456","ML2459","ML2460","ML2463","ML2466","ML2468","ML2469","ML2471","ML2472","ML2473","ML2475","ML2478","ML2481","ML2486","ML2487","ML2488","ML2489","ML2490","ML2491","ML2492","ML2493","ML2494","ML2495","ML2496","ML2501","ML2502","ML2504","ML2505","ML2507","ML2509","ML2510","ML2511","ML2513","ML2514","ML2515","ML2521","ML2522","ML2526","ML2527","ML2529","ML2531","ML2532","ML2533","ML2534","ML2538","ML2541","ML2542","ML2543"],["Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean"],["Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro"],["outside bay","inside bay","inside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","outside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","outside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","outside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","outside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","inside bay","inside bay","outside bay","inside bay","outside bay","inside bay","outside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","outside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","outside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","inside bay"],["healthy","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","disturbed","disturbed","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","disturbed","disturbed","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","disturbed","disturbed","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","healthy","healthy","healthy","disturbed","healthy","disturbed","healthy","healthy","disturbed"],["Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Outer bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Inner bay","Inner bay","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Inner bay disturbed","Inner bay","Outer bay","Inner bay disturbed","Outer bay","Inner bay disturbed","Outer bay","Inner bay","Inner bay","Inner bay","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Inner bay","Inner bay disturbed","Inner bay","Inner bay disturbed","Outer bay","Outer bay","Inner bay disturbed"],["CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST","CCR","ROL","RNW","CCR","ALR","SCR","CCR","ALR","SCR","SIS","CCR","PBL","PPR","ROL","RNW","SIS","ROL","SCR","ROL","SCR","SIS","SCR","CCR","ROL","PPR","CCR","ROL","SCR","RNW","ALR","PST","ALR","ALR","SCR","ALR","ROL","CCR","SIS","SIS","ROL","ALR","RNW","CCR","PBL","ROL","PST","PBL","SIS","CCR","SCR","ROL","PBL","CCR","PST","ALR","ROL","CCR","ALR","ALR","ROL","PPR","PBL","ALR","SCR","PST","CCR","RNW","CCR","ROL","ROL","ALR","CCR","PPR","SCR","CCR","RNW","SIS","RNW","SCR","PPR","CCR","SCR","SIS","PBL","ROL","RNW","PPR","PPR","PST"],["Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish"],["Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus"],[43119,35389,25485,75913,46315,32132,44017,38071,42558,24500,34459,35613,32445,53475,40765,42158,36603,34871,26583,60608,44778,45546,39384,51943,70447,47790,31161,49370,35881,48357,34677,30401,38418,30896,33080,35176,41694,40092,53629,39658,33041,35737,43411,43193,38949,47336,15754,49856,47325,31635,47136,40286,41437,41577,51927,58098,40508,39139,41801,45290,31830,25329,37731,41570,43056,44984,34308,42900,41441,34865,37957,28842,45242,18533,37027,53875,79466,38861,35623,43540,34657,25673,41487,42202,35662,36708,34824,34825,53514,43119,35389,25485,75913,46315,32132,44017,38071,42558,24500,34459,35613,32445,53475,40765,42158,36603,34871,26583,60608,44778,45546,39384,51943,70447,47790,31161,49370,35881,48357,34677,30401,38418,30896,33080,35176,41694,40092,53629,39658,33041,35737,43411,43193,38949,47336,15754,49856,47325,31635,47136,40286,41437,41577,51927,58098,40508,39139,41801,45290,31830,25329,37731,41570,43056,44984,34308,42900,41441,34865,37957,28842,45242,18533,37027,53875,79466,38861,35623,43540,34657,25673,41487,42202,35662,36708,34824,34825,53514,43119,35389,25485,75913,46315,32132,44017,38071,42558,24500,34459,35613,32445,53475,40765,42158,36603,34871,26583,60608,44778,45546,39384,51943,70447,47790,31161,49370,35881,48357,34677,30401,38418,30896,33080,35176,41694,40092,53629,39658,33041,35737,43411,43193,38949,47336,15754,49856,47325,31635,47136,40286,41437,41577,51927,58098,40508,39139,41801,45290,31830,25329,37731,41570,43056,44984,34308,42900,41441,34865,37957,28842,45242,18533,37027,53875,79466,38861,35623,43540,34657,25673,41487,42202,35662,36708,34824,34825,53514],[256,35,153,68,135,48,30,81,32,69,50,22,53,157,36,29,21,19,67,175,99,49,13,163,36,35,57,313,76,43,34,308,205,64,33,22,48,26,32,194,51,99,11,34,27,23,65,101,29,148,20,315,23,27,21,25,19,47,113,36,28,21,102,34,131,47,44,21,46,23,123,39,48,53,33,61,373,69,22,78,120,13,77,78,31,38,19,34,109,19.2703162490267,4.20616091423186,53.8444187333552,9.6079760658587,12.2845945255344,1.7381343088372,9.80880120724869,8.11998936174514,2.46057811070082,22.9732885956557,5.15967776414084,8.70134233797787,7.93594722866264,15.5369546523872,6.56435097349983,3.43772401671984,3.18213243186985,1.64763581039036,13.1079465089599,32.2550725894621,9.97593161558571,4.73293563243853,5.44755481971177,36.8618177435492,9.43778824102688,9.64467472147983,3.37204823438954,7.29996126028796,8.08378925987143,6.32362324056365,3.75810012567144,22.4495017929303,33.1102728180809,3.95512845238188,4.01843543789046,3.47213986572089,5.22391464592873,2.25290411807935,2.54406304142781,12.6839383619409,4.35753447223706,9.52651614252602,1.25301179684319,10.1613219575741,2.63767324646765,5.6476837301728,23.7452198559385,21.116023052108,2.23608775273706,41.7401202718634,2.51625184317107,9.63749009289845,7.04710580786716,6.2580103136701,2.94987046001662,3.16811794425108,3.85935389695739,6.18285564663833,20.2548178013021,12.1763122857978,2.73788821480012,2.92159482909506,3.68426780736184,2.8578035598712,21.0909916909085,2.15062064409477,8.27833490574591,2.76393170590795,8.55497957927386,3.3177937435354,50.8753750746481,1.76055001594044,6.20487671640515,3.93401133425907,1.60176034579978,10.5446950585828,18.5382552435335,9.56451639662813,1.56623272289973,8.74406877713883,15.7850628917127,2.47180716004033,8.25330921931577,16.8894781035523,2.75166088946136,9.31893575689482,2.21369209506503,7.93018149092415,20.3580257963958,6.85047439253868,3.1287386917826,15.5183214961974,5.06546737884128,5.21862540129444,1.20271858784162,7.06759948024469,4.90733720119436,1.57710792173129,18.442313481466,2.96484231078111,5.29017779361695,4.55373443910469,9.27859225819157,4.40499387306241,2.13842430012981,1.79539847254428,1.240330020781,8.32507939964061,13.8460202409979,6.10549152125809,2.22896738590403,4.69661074055205,12.9278130450283,5.74675751200772,6.67815640028058,1.81243376655677,2.04876601172476,4.66018755237318,3.4160852013254,2.99197392147831,5.44823663541943,8.91151409229068,2.6150681657957,2.1600489266944,2.35776520262977,3.24594091192399,1.39545137215005,1.45001649601009,5.84445026204478,1.91579643928892,3.80051413403774,1.09391718106198,7.17873470950692,1.68867508327647,4.12325177872396,14.3838119880885,10.0781526214115,1.38052142096319,23.4895919608196,1.52588662152566,2.5417947371197,4.84643072559275,3.60563456185834,2.08943487299982,2.01034186923332,2.23649710860231,2.29187984962156,8.09732264426488,8.4937356857629,1.68653005275002,1.61390684071604,1.71457581335742,1.5675404349698,12.4890459652099,1.478087105524,4.49337615009482,1.94146832793575,4.92813729055986,2.33608592253517,35.9853606780966,1.20962599429671,3.63360334552182,2.09324955675046,1.20356884112746,5.66204986689337,3.56728854127229,4.19817749170946,1.18458667912701,4.80233118803384,7.36670350378328,1.91701105125369,3.65916010632499,9.91606926333943,1.59206072625468,5.63913803284926,1.41044728530693,6.0376969137518,8.3251773828632],[18,14,8,12,12,5,12,12,5,9,14,11,12,19,20,15,12,13,21,8,15,9,9,10,17,19,12,7,12,11,10,17,13,11,16,10,17,13,19,13,8,14,9,19,16,11,3,24,12,3,9,11,12,16,13,15,15,17,19,17,17,10,17,14,21,14,18,12,15,12,4,11,14,8,9,20,12,15,10,15,17,5,19,19,19,15,9,11,14,5.45157294225647,3.5771990314907,6.22439941973666,4.85355973503266,2.30762688825538,1.13030712744249,6.0799138750952,4.66212961094758,1.38008685853856,1.94794681532811,4.52118500710955,4.48810374914946,4.97437532740751,8.32265902873498,4.89559615224055,2.75285026456789,2.3949276585564,1.5910759165383,7.50854019964331,2.46785819430933,6.13495696418926,1.84627441348388,5.31184858423424,5.31970426187569,7.00662772421994,7.26521794381129,1.51249178979275,1.1498512537579,4.19519058091068,2.64140223869514,2.37960965872288,2.92080858407961,2.46637868331151,2.05453975070007,2.99527869268216,2.88062606588304,4.20787949621625,1.9601350901854,1.97158340285111,2.8920057555776,1.68796002830807,2.09406491511068,1.26612789886875,7.81321498654954,2.08598808216722,3.95935354837648,2.53590121369736,9.23832792164862,1.78519002378614,1.15466753615964,1.97510632295042,1.49773326354123,5.64304948582983,5.73664364911619,2.9104479725512,2.73809912438799,3.18626010632691,2.08634174135544,6.7119507468075,9.96672203477134,2.45413832571256,1.77955768150796,2.18191140105086,2.29701609243023,9.20531719552992,1.73495241740072,5.20781942958769,2.26718293143908,5.81159543577594,2.70583412545473,2.12429013799992,1.2873776013287,4.42526449021126,2.27443263371685,1.31404205587045,6.80412593315036,6.00230164040841,4.35462547619217,1.49292581881966,6.87886879366616,3.80600706147679,1.98240016949471,5.10169104935799,8.4982435582084,2.26443135946184,7.70005253172196,1.64265960581778,5.77645508960501,6.40325022416502,3.8033196955842,2.96317243386289,5.7427570697536,3.29320920732993,1.9578383397433,1.04604566066507,4.74064585931383,3.70835648924032,1.18864225552973,1.37507991973847,2.87370064413968,3.09696168898691,3.7232522810791,6.74575682744838,3.82875100282547,1.94697571276164,1.5310798001178,1.22855842237614,5.81157040813738,1.81005777013652,4.87867816184328,1.42139867109749,4.6254927404393,3.41000715205264,4.79064492675856,5.1971251133738,1.18037431142437,1.04758403798013,3.38314491118617,2.24883444604399,2.07326985468355,1.69124740646639,1.54084885636018,1.85367125257714,1.8667280958985,2.20401170223077,2.99381268631606,1.33323846757326,1.31099224149738,2.18083885032988,1.30573446205771,1.37590960450371,1.10385063578157,5.79982544018444,1.55126224831053,3.08964256808607,2.24713494312175,6.38758526586616,1.27204958351361,1.05634556255329,1.39254831585421,1.18610152379545,4.26088651554374,3.4877665128721,2.08827444130758,1.89957890859607,1.98696607856453,1.36998676171429,4.07460513519498,8.07378950883018,1.61678329698149,1.27384706800084,1.45208517534843,1.44753050916548,6.47902567629266,1.3702655524694,3.25841107045776,1.81159181767847,3.7100375107414,2.1533442465229,1.73083824023006,1.09568165321925,3.08743286923717,1.72595194659409,1.13258254250778,4.32979976095306,3.55802497281665,2.8497445517335,1.17375720171535,4.32277357680798,2.62411542359182,1.73375967777447,2.89170149498849,6.43448582267629,1.48923217722288,5.97444507093083,1.23419133351183,4.63189341555359,4.54145290228084],["Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Observed (q=0)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Shannon exponential (q=1)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)","Simpson multiplicative inverse (q=2)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Sample<\/th>\n      <th>Region<\/th>\n      <th>Locality<\/th>\n      <th>Position<\/th>\n      <th>Reef_type<\/th>\n      <th>Zone<\/th>\n      <th>Reef<\/th>\n      <th>Fraction<\/th>\n      <th>Species<\/th>\n      <th>SeqDepth<\/th>\n      <th>Diversity_whole<\/th>\n      <th>Diversity_core<\/th>\n      <th>Index<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"Blfrtip","buttons":["copy","csv","excel"],"pageLength":5,"lengthMenu":[[5,10,50,-1],["5","10","50","All"]],"columnDefs":[{"targets":10,"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"targets":11,"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[9,10,11]}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'80%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'80%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'80%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'80%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'80%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'80%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'80%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'80%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'80%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'80%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'80%'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'font-size':'80%'});\nvar value=data[12]; $(this.api().cell(row, 12).node()).css({'font-size':'80%'});\n}"}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.rowCallback"],"jsHooks":[]}</script>
 </div>
+<p><br/></p>
+<h2 id="summary-figure">Summary Figure</h2>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
+#, foldcode=TRUE
 level_order3 &lt;- c(&#39;SCR&#39;, &#39;PPR&#39;, &#39;CCR&#39;, &#39;ALR&#39;, &#39;SIS&#39;, &#39;ROL&#39;, &#39;RNW&#39;, &#39;PST&#39;,&#39;PBL&#39;)
 level_order &lt;- c(&#39;Outer bay&#39;, &#39;Inner bay&#39;, &#39;Inner bay disturbed&#39;)
 level_order2 &lt;- c(&#39;Observed&#39;, &#39;shannon.hill&#39;, &#39;simpson.hill&#39;)
-disp.pal4 &lt;- c(&quot;royalblue4&quot;, &quot;royalblue3&quot;, &quot;royalblue1&quot;, &quot;aquamarine4&quot;, 
-               &quot;mediumaquamarine&quot;, &quot;aquamarine2&quot;, &quot;chocolate3&quot;, &quot;chocolate2&quot;, 
-               &quot;sienna1&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;, &quot;royalblue1&quot;, 
-               &quot;aquamarine4&quot;, &quot;mediumaquamarine&quot;, &quot;aquamarine2&quot;, &quot;chocolate3&quot;, 
+disp.pal4 &lt;- c(&quot;royalblue4&quot;, &quot;royalblue3&quot;, &quot;royalblue1&quot;, &quot;aquamarine4&quot;,
+               &quot;mediumaquamarine&quot;, &quot;aquamarine2&quot;, &quot;chocolate3&quot;, &quot;chocolate2&quot;,
+               &quot;sienna1&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;, &quot;royalblue1&quot;,
+               &quot;aquamarine4&quot;, &quot;mediumaquamarine&quot;, &quot;aquamarine2&quot;, &quot;chocolate3&quot;,
                &quot;chocolate2&quot;, &quot;sienna1&quot;)
 disp.pal5 &lt;-  c(&quot;midnightblue&quot;, &quot;royalblue4&quot;, &quot;royalblue3&quot;,&quot;darkslategrey&quot;,
-                &quot;aquamarine4&quot;, &quot;mediumaquamarine&quot;, &quot;chocolate4&quot;, &quot;sienna&quot;, 
+                &quot;aquamarine4&quot;, &quot;mediumaquamarine&quot;, &quot;chocolate4&quot;, &quot;sienna&quot;,
                 &quot;chocolate3&quot;,&quot;midnightblue&quot;, &quot;royalblue4&quot;, &quot;royalblue3&quot;,
-                &quot;darkslategrey&quot;,&quot;aquamarine4&quot;, &quot;mediumaquamarine&quot;, &quot;chocolate4&quot;, 
+                &quot;darkslategrey&quot;,&quot;aquamarine4&quot;, &quot;mediumaquamarine&quot;, &quot;chocolate4&quot;,
                 &quot;sienna&quot;, &quot;chocolate3&quot;)</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-data.hill.whole$Reef &lt;- factor(data.hill.whole$Reef, 
-                               levels = c(&#39;SCR&#39;, &#39;PPR&#39;, &#39;CCR&#39;, &#39;ALR&#39;, &#39;SIS&#39;, 
+data.hill.whole$Reef &lt;- factor(data.hill.whole$Reef,
+                               levels = c(&#39;SCR&#39;, &#39;PPR&#39;, &#39;CCR&#39;, &#39;ALR&#39;, &#39;SIS&#39;,
                                           &#39;ROL&#39;, &#39;RNW&#39;, &#39;PST&#39;,&#39;PBL&#39;))
-data.hill.core$Reef &lt;- factor(data.hill.core$Reef, 
-                              levels = c(&#39;SCR&#39;, &#39;PPR&#39;, &#39;CCR&#39;, &#39;ALR&#39;, &#39;SIS&#39;, 
+data.hill.core$Reef &lt;- factor(data.hill.core$Reef,
+                              levels = c(&#39;SCR&#39;, &#39;PPR&#39;, &#39;CCR&#39;, &#39;ALR&#39;, &#39;SIS&#39;,
                                          &#39;ROL&#39;, &#39;RNW&#39;, &#39;PST&#39;,&#39;PBL&#39;))</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
@@ -1945,14 +2353,13 @@ font_theme = theme(
         axis.title.y = element_text(size = 14),
         axis.text.y = element_text(size = 8))</code></pre>
 </div>
-<p>#WHOLE MICROBIOTA FACETED</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-fig01 &lt;- 
-        ggplot(data = data.hill.whole, aes(x = factor(Zone, level = level_order), 
-                                           y=Diversity)) + 
+fig01 &lt;-
+        ggplot(data = data.hill.whole, aes(x = factor(Zone, level = level_order),
+                                           y=Diversity)) +
         stat_boxplot(aes(colour=Reef), geom =&#39;errorbar&#39;) + #alpha=0.3
-        geom_boxplot(aes(fill=Reef, colour=Reef), alpha=0.6, 
+        geom_boxplot(aes(fill=Reef, colour=Reef), alpha=0.6,
                      outlier.alpha = 0.7, outlier.shape = 16) +
         scale_colour_manual(values=disp.pal5)+
         scale_fill_manual(values=disp.pal4)+
@@ -1961,40 +2368,39 @@ fig01 &lt;-
         theme(plot.subtitle=element_text(size=16)) +
         font_theme+
         stat_summary(aes(fill=Reef), fun=&quot;mean&quot;, geom=&quot;point&quot;, size=2.5, shape=18,
-                     position=position_dodge(width=0.75), 
+                     position=position_dodge(width=0.75),
                      color=c(  &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
                                &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
                                &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;,
                                &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
                                &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;, 
+                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;,
                                &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
                                &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;), 
+                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;),
                      show.legend = FALSE) +
         scale_x_discrete(name=&quot;Zone&quot;) + scale_y_continuous(name=&quot;Hill diversity&quot;) +
         theme(plot.title = element_text(family=NA, face=&quot;bold&quot;, size=16)) +
         facet_wrap(~factor(Index, levels=unique(Index)),scales=&quot;free&quot;,
                    nrow=2, ncol = 3) +
-        theme(strip.background = element_rect(color=&quot;black&quot;, fill=&quot;white&quot;, 
+        theme(strip.background = element_rect(color=&quot;black&quot;, fill=&quot;white&quot;,
                                               size=1, linetype=&quot;blank&quot;),
               strip.text.x = element_text(size = 14),
               panel.border = element_rect(fill = NA, color=&quot;black&quot;),
-              panel.grid.major = element_blank(), 
+              panel.grid.major = element_blank(),
               panel.grid.minor = element_blank(),
               panel.background = element_rect(fill = &quot;white&quot;,colour = NA),
-              legend.key = element_rect(fill = &quot;transparent&quot;, color = NA), 
+              legend.key = element_rect(fill = &quot;transparent&quot;, color = NA),
               legend.text = element_text(size = 12),
               legend.title = element_text(size = 14))</code></pre>
 </div>
-<p>#CORE FACETED</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-fig02 &lt;- 
-        ggplot(data = data.hill.core, aes(x = factor(Zone, level = level_order), 
-                                          y=Diversity)) + 
-        stat_boxplot(aes(colour=Reef), geom =&#39;errorbar&#39;) + 
-        geom_boxplot(aes(fill=Reef, colour=Reef), alpha=0.6, 
+fig02 &lt;-
+        ggplot(data = data.hill.core, aes(x = factor(Zone, level = level_order),
+                                          y=Diversity)) +
+        stat_boxplot(aes(colour=Reef), geom =&#39;errorbar&#39;) +
+        geom_boxplot(aes(fill=Reef, colour=Reef), alpha=0.6,
                      outlier.alpha = 0.7, outlier.shape = 16) +
         scale_colour_manual(values=disp.pal5) +
         scale_fill_manual(values=disp.pal4) +
@@ -2002,29 +2408,29 @@ fig02 &lt;-
         theme(plot.subtitle = element_text(size=16))+
         font_theme+
         stat_summary(aes(fill=Reef), fun=&quot;mean&quot;, geom=&quot;point&quot;, size=2.5, shape=18,
-                     position=position_dodge(width=0.75), 
+                     position=position_dodge(width=0.75),
                      color=c(  &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
                                &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;, 
+                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;,
                                &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
                                &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;, 
+                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;,
                                &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
                                &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;), 
+                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;),
                      show.legend = FALSE)+
         scale_x_discrete(name=&quot;Zone&quot;) + scale_y_continuous(name=&quot;Hill diversity&quot;)+
         theme(plot.title = element_text(family=NA, face=&quot;bold&quot;, size=16)) +
         facet_wrap(~factor(Index, levels=unique(Index)), scales=&quot;free&quot;,
                    nrow=2, ncol = 3) +
-        theme(strip.background = element_rect(color=&quot;black&quot;, fill=&quot;white&quot;, 
+        theme(strip.background = element_rect(color=&quot;black&quot;, fill=&quot;white&quot;,
                                               size=1, linetype=&quot;blank&quot;),
               strip.text.x = element_text(size = 14),
               panel.border = element_rect(fill = NA, color=&quot;black&quot;),
-              panel.grid.major = element_blank(), 
+              panel.grid.major = element_blank(),
               panel.grid.minor = element_blank(),
               panel.background = element_rect(fill = &quot;white&quot;,colour = NA),
-              legend.key = element_rect(fill = &quot;transparent&quot;, color = NA), 
+              legend.key = element_rect(fill = &quot;transparent&quot;, color = NA),
               legend.text = element_text(size = 12),
               legend.title = element_text(size = 14))</code></pre>
 </div>
@@ -2040,14 +2446,14 @@ fig02 &lt;-
 <div class="layout-chunk" data-layout="l-page">
 <p><img src="figures/p4/Boxplot_alpha_div_facetNEWcore.png" width="4724" /></p>
 </div>
-<p>That’s the end of Workflow 4.</p>
-<p></br> </br></p>
+<p>That’s the end of Script 4. In the next Script we calculate beta diversity estimates of the fish gut microbiome.</p>
+<p></br></p>
 <div class="post-nav">
 <div class="post-nav-item">
 <div class="meta-nav">
 Previous
 </div>
-<p><a href="wf3.html" rel="next">N<sup><u>o</u></sup> 3. Workflow</a></p>
+<p><a href="wf3.html" rel="next">N<sup><u>o</u></sup> 3. Subset Fish Only Samples</a></p>
 </div>
 </div>
 <div class="post-nav">
@@ -2055,7 +2461,7 @@ Previous
 <div class="meta-nav">
 Next
 </div>
-<p>Next<br/> <a href="wf5.html" rel="prev">N<sup><u>o</u></sup> 5. Workflow</a></p>
+<p>Next<br/> <a href="wf5.html" rel="prev">N<sup><u>o</u></sup> 5. Fish Gut Beta Diversity Analysis</a></p>
 </div>
 </div>
 <h2 id="source-code" class="appendix">Source Code</h2>

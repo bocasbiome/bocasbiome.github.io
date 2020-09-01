@@ -19,31 +19,31 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>: Workflow 7</title>
+  <title>: No 7. PIME Analysis</title>
   
-  <meta property="description" itemprop="description" content="A brief description...."/>
+  <meta property="description" itemprop="description" content="Script to run Prevalence Interval for Microbiome Evaluation (PIME) for identifying core fish gut ASVs."/>
   
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content=": Workflow 7"/>
+  <meta property="og:title" content=": No 7. PIME Analysis"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A brief description...."/>
+  <meta property="og:description" content="Script to run Prevalence Interval for Microbiome Evaluation (PIME) for identifying core fish gut ASVs."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content=""/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content=": Workflow 7"/>
-  <meta property="twitter:description" content="A brief description...."/>
+  <meta property="twitter:title" content=": No 7. PIME Analysis"/>
+  <meta property="twitter:description" content="Script to run Prevalence Interval for Microbiome Evaluation (PIME) for identifying core fish gut ASVs."/>
   
   <!--/radix_placeholder_meta_tags-->
   
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["Workflow 7"]},{"type":"character","attributes":{},"value":["A brief description....\n"]},{"type":"character","attributes":{},"value":["assets/cite.bib"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["No 7. PIME Analysis"]},{"type":"character","attributes":{},"value":["Script to run Prevalence Interval for Microbiome Evaluation (PIME) for identifying core fish gut ASVs.\n"]},{"type":"character","attributes":{},"value":["assets/cite.bib"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1325,6 +1325,11 @@
   d-article h3 {
     margin-top: 1em;
   }
+  
+  d-article h4 {
+    font-size: 1em;
+  }
+  
   d-byline .authors-affiliations {
     grid-column-end: span 3;
     grid-column-gap: 8px;
@@ -1361,9 +1366,9 @@
   }
   
   code {
-    background-color: #E8E8E8;
+    background-color: #F5F5F5;
     border-radius: 3px;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-family: 'Monaco', 'PT Mono', monospace;
     overflow-x: scroll !important;
     margin-bottom: 20px;
@@ -1513,6 +1518,16 @@
     margin: 100px 50px 0px 25px;
   }
   
+  img.map, map area {
+    outline: none;
+  }
+  
+  img[src="assets/wf_map.png"] {
+    border: 0;
+    padding: 0;
+    margin: 0px 0px 0px 0px;
+  }
+  
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -1525,7 +1540,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Workflow 7","description":"A brief description....","authors":[]}
+{"title":"No 7. PIME Analysis","description":"Script to run Prevalence Interval for Microbiome Evaluation (PIME) for identifying core fish gut ASVs.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1542,13 +1557,13 @@
 <a href="index.html">
 <i class="fa fa-home" aria-hidden="true"></i>
 </a>
-<a href="wf1.html">1. Name</a>
-<a href="wf2.html">2. Name</a>
-<a href="wf3.html">3. Name</a>
-<a href="wf4.html">4. Name</a>
-<a href="wf5.html">5. Name</a>
-<a href="wf6.html">6. Name</a>
-<a href="wf7.html">7. Name</a>
+<a href="wf1.html">1. Indicator Analysis</a>
+<a href="wf2.html">2. Taxa by Sample Fraction</a>
+<a href="wf3.html">3. Subset Fish</a>
+<a href="wf4.html">4. Alpha Diversity</a>
+<a href="wf5.html">5. Beta Diversity</a>
+<a href="wf6.html">6. Beta Dispersion</a>
+<a href="wf7.html">7. PIME Analysis</a>
 <a href="data-availability.html">Data</a>
 <a href="https://github.com/bocasbiome/web/">
 <i class="fa fa-github fa-lg" aria-hidden="true"></i>
@@ -1562,8 +1577,8 @@
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Workflow 7</h1>
-<p><p>A brief description….</p></p>
+<h1>No 7. PIME Analysis</h1>
+<p><p>Script to run Prevalence Interval for Microbiome Evaluation (PIME) for identifying core fish gut ASVs.</p></p>
 </div>
 
 
@@ -1571,32 +1586,42 @@
 <h3 class="d-toc-header">Table of Contents</h3>
 <nav class="d-toc" id="TOC">
 <ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#calculate-the-prevalence-intervals">Calculate the Prevalence Intervals</a></li>
+<li><a href="#calculate-the-best-prevalence">Calculate the Best Prevalence</a></li>
+<li><a href="#estimate-error-in-prediction">Estimate Error in Prediction</a></li>
+<li><a href="#distribution-of-pime-asvs-across-samples">Distribution of PIME ASVs across Samples</a></li>
 <li><a href="#source-code">Source Code</a></li>
 </ul>
 </nav>
 <hr class="d-toc-separator"/>
-<p>BOCASBIOME SCRIPT.7: PIME Analysis (Roesch 2019)</p>
-<p>Using a rarefied dataset is recommended. load rarified data whole fish gut microbiome data</p>
+<h2 id="setup">Setup</h2>
+<p>First, we grab the whole community, fish only, phyloseq object.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 ps.whole &lt;- readRDS(&quot;rdata/p3/ps_16S_bocas_fish_final.rds&quot;)</code></pre>
 </div>
-<p>Before running PIME explore data with random forest but without PIME filtering to see if PIME can enhance the analysis. We have to decide whether to include this step here) PIME ALGORITHM get rid of tree for analysis with PIME</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 ps.whole&lt;- phyloseq(otu_table(ps.whole), sample_data(ps.whole), tax_table(ps.whole))
 ps.whole@phy_tree &lt;- NULL</code></pre>
 </div>
-<p>get the OBB error for the original data</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 3113 taxa and 89 samples ]
+sample_data() Sample Data:       [ 89 samples by 11 sample variables ]
+tax_table()   Taxonomy Table:    [ 3113 taxa by 11 taxonomic ranks ]</code></pre>
+</div>
+<p>Next, we calculate the baseline noise detection</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 pime.oob.error(ps.whole, &quot;Zone&quot;)</code></pre>
 </div>
-<ol start="2" type="1">
-<li>Split the dataset by predictor variable</li>
-</ol>
+<p>And then split by Zone (i.e., Inner bay disturbed, Inner bay, &amp; Outer bay).</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
+data.frame(sample_data(ps.whole))
 per_variable_obj &lt;- pime.split.by.variable(ps.whole, &quot;Zone&quot;)
 per_variable_obj</code></pre>
 </div>
@@ -1620,7 +1645,8 @@ otu_table()   OTU Table:         [ 1271 taxa and 35 samples ]
 sample_data() Sample Data:       [ 35 samples by 11 sample variables ]
 tax_table()   Taxonomy Table:    [ 1271 taxa by 11 taxonomic ranks ]</code></pre>
 </div>
-<p>Calculate the highest possible prevalence intervals</p>
+<h2 id="calculate-the-prevalence-intervals">Calculate the Prevalence Intervals</h2>
+<p>Using the output of <code>pime.split.by.variable</code>, we calculate the prevalence intervals with the function <code>pime.prevalence</code>. This function estimates the highest prevalence possible (no empty ASV table), calculates prevalence for taxa, starting at 5 maximum prevalence possible (no empty ASV table or dropping samples). After prevalence calculation, each prevalence interval are merged.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 prevalences &lt;- pime.prevalence(per_variable_obj)
@@ -1664,37 +1690,37 @@ otu_table()   OTU Table:         [ 42 taxa and 89 samples ]
 sample_data() Sample Data:       [ 89 samples by 11 sample variables ]
 tax_table()   Taxonomy Table:    [ 42 taxa by 11 taxonomic ranks ]</code></pre>
 </div>
-<p>Calculate the best prevalence interval for the dataset</p>
+<h2 id="calculate-the-best-prevalence">Calculate the Best Prevalence</h2>
+<p>Finally, we use the function <code>pime.best.prevalence</code> to calculate the best prevalence. The function uses randomForest to build random forests trees for samples classification and variable importance computation. It performs classifications for each prevalence interval returned by <code>pime.prevalence</code>. Variable importance is calculated, returning the Mean Decrease Accuracy (MDA), Mean Decrease Impurity (MDI), overall and by sample group, and taxonomy for each ASV. PIME keeps the top 30 variables with highest MDA each prevalence level.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 set.seed(1911)
 best.prev &lt;- pime.best.prevalence(prevalences, &quot;Zone&quot;)</code></pre>
 </div>
-<p>get the table with OTU/ASV importance of the chosen prevalence interval.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>Looks like the lowest OOB error rate (%) is 2.25% from Prevalence 65%. We will use this interval.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 imp65 &lt;- best.prev$`Importance`$`Prevalence 65`
-kable(imp65[ ,c(1:6,11:12)], caption = &quot;Importance of ASVs to different habitat groups&quot;)
-head(knitr::kable(imp65, format=&quot;markdown&quot;))
-imp65
 write.csv(imp65, file = &quot;tables/p7/output_PIME_Zone65.csv&quot;)</code></pre>
 </div>
+<h3 id="best-prevalence-summary">Best Prevalence Summary</h3>
 <p></br></p>
 <div class="layout-chunk" data-layout="l-body-outset">
 <div id="w0vzbq4nx3jp1t81ntvw" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="w0vzbq4nx3jp1t81ntvw">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"-0.001538131845795\" data-max=\"0.079671738332188\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"-0.002464357864358\" data-max=\"0.145249567099568\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.000782555928763\" data-max=\"0.21043447030266\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.00211433126804\" data-max=\"0.105757245444624\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.924584337653202\" data-max=\"7.16176628122633\" data-scale=\"15\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Table: \n  <em>Table of ASV from the chosen prevalence interval.<\/em>\n<\/caption>","data":[["ASV_6","ASV_7","ASV_3","ASV_27","ASV_2","ASV_42","ASV_9","ASV_10","ASV_41","ASV_4","ASV_38","ASV_14","ASV_94","ASV_11","ASV_5","ASV_1","ASV_8"],[0.0506921335458487,0.0796717383321873,0.00690922345628228,0.0293369733895276,0.028462278897573,0.0251437816655309,0.00178579716636992,0.00996532788676751,0.0172152959269832,0.0209680028691639,0.0214458204334365,0.0480326128120246,0.0102778466631408,0.00258568200805043,0.000203632805103394,-0.00153813184579438,0.00077574810810105],[0.0271383116883117,0.0805640692640693,0.145249567099567,0.0351634920634921,0.0366579365079365,0.0391791486291486,0.00246724386724387,0.0780867965367965,0.0692603174603174,0.0317349206349206,0.0309922799422799,0.00898290043290043,0.0348576479076479,0.0404770562770563,0.00757857142857143,0.015231746031746,-0.00246435786435787],[0.210434470302659,0.0907091642619506,0.0547054173638539,0.0548730412518338,0.0483617884437544,0.0495009005700182,0.0905149013525175,0.0358091532220789,0.0272974515680398,0.0406259350384737,0.0184738634344671,0.00184128926628927,0.0158999637187718,0.000782555928763359,0.00672071192481409,0.00339852933444265,0.00626300447918095],[0.105757245444624,0.0825783983827114,0.0543167871069979,0.04000741163115,0.03763768762486,0.0369515624469564,0.0358900438904043,0.0333579417277667,0.0323420095084939,0.0296380872659301,0.0218748777083111,0.0202725242221128,0.0175147352616112,0.00926156364851039,0.00444902683005025,0.00415074347251276,0.00211433126804014],[7.16176628122633,7.07441385380118,5.58120211217028,3.73058523410941,3.81452102195566,3.78941815242342,3.2191563360529,3.3784756585403,4.08734275954956,2.94795237330835,2.61633854017162,2.45408503107211,2.34962994169404,0.962170522757426,0.924584337653202,1.40741469094878,1.02114185429149],["Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria"],["Proteobacteria","Proteobacteria","Proteobacteria","Firmicutes","Spirochaetes","Planctomycetes","Firmicutes","Firmicutes","Firmicutes","Cyanobacteria","Proteobacteria","Firmicutes","Firmicutes","Proteobacteria","Proteobacteria","Proteobacteria","Cyanobacteria"],["Gammaproteobacteria","Gammaproteobacteria","Gammaproteobacteria","Clostridia","Spirochaetia","Planctomycetacia","Clostridia","Clostridia","Clostridia","Oxyphotobacteria","Alphaproteobacteria","Clostridia","Clostridia","Gammaproteobacteria","Gammaproteobacteria","Gammaproteobacteria","Oxyphotobacteria"],["Oceanospirillales","Oceanospirillales","Oceanospirillales","Clostridiales","Brevinematales","Pirellulales","Clostridiales","Clostridiales","Clostridiales","Synechococcales","Rhodobacterales","Clostridiales","Clostridiales","Oceanospirillales","Oceanospirillales","Oceanospirillales","Synechococcales"],["Endozoicomonadaceae","Endozoicomonadaceae","Endozoicomonadaceae","Lachnospiraceae","Brevinemataceae","Pirellulaceae","Ruminococcaceae","Lachnospiraceae","Lachnospiraceae","Cyanobiaceae","Rhodobacteraceae","Ruminococcaceae","Peptostreptococcaceae","Endozoicomonadaceae","Endozoicomonadaceae","Endozoicomonadaceae","Cyanobiaceae"],["Endozoicomonas","Endozoicomonas","Endozoicomonas","Epulopiscium","Brevinema","f_Pirellulaceae","Flavonifractor","f_Lachnospiraceae","Epulopiscium","Synechococcus_CC9902","Ruegeria","f_Ruminococcaceae","Romboutsia","Endozoicomonas","Endozoicomonas","Endozoicomonas","Cyanobium_PCC-6307"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>ASV_ID<\/th>\n      <th>Inner.bay<\/th>\n      <th>Inner.bay.disturbed<\/th>\n      <th>Outer.bay<\/th>\n      <th>MeanDecreaseAccuracy<\/th>\n      <th>MeanDecreaseGini<\/th>\n      <th>Kingdom<\/th>\n      <th>Phylum<\/th>\n      <th>Class<\/th>\n      <th>Order<\/th>\n      <th>Family<\/th>\n      <th>Genus<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"Blfrtip","buttons":["copy","csv","excel"],"pageLength":5,"lengthMenu":[[5,10,-1],["5","10","All"]],"columnDefs":[{"targets":1,"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 4, 3, \",\", \".\"); }"},{"targets":2,"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 4, 3, \",\", \".\"); }"},{"targets":3,"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 4, 3, \",\", \".\"); }"},{"targets":4,"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 4, 3, \",\", \".\"); }"},{"targets":5,"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 4, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'80%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'80%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'80%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'80%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'80%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'80%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'80%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'80%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'80%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'80%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'80%'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'font-size':'80%'});\n}"}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.rowCallback"],"jsHooks":[]}</script>
 </div>
+<p>Now we need to create a phyloseq object of ASVs at this cutoff (Prevalence 65%).</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-#obtain the phyloseq object at this cutoff
 prevalence.65 = prevalences$`65`
 summarize_phyloseq(prevalence.65)
-#save rds file
 saveRDS(prevalence.65, &quot;rdata/p7/Pime_Prevalence_65.rds&quot;)</code></pre>
 </div>
+<p>And look at a summary of the data.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-prevalence.65</code></pre>
 <pre><code>
 phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 17 taxa and 89 samples ]
@@ -1733,58 +1759,65 @@ tax_table()   Taxonomy Table:    [ 17 taxa by 11 taxonomic ranks ]</code></pre>
 <td>6703</td>
 </tr>
 <tr class="even">
+<td>Median number of reads</td>
+<td>6703</td>
+</tr>
+<tr class="odd">
 <td>Sparsity</td>
 <td>0.577</td>
 </tr>
+<tr class="even">
+<td>Total ASVS</td>
+<td>17</td>
+</tr>
 </tbody>
 </table>
-<p>estimate error in prediction using pime.error.prediction() to randomly assign treatments to samples and run random forests classification on each prevalence interval. (…) minimum recommended randomizations: 100</p>
+<h2 id="estimate-error-in-prediction">Estimate Error in Prediction</h2>
+<p>Using the function <code>pime.error.prediction</code> we can estimate the error in prediction. For each prevalence interval, this function randomizes the samples labels into arbitrary groupings using <code>n</code> random permutations, defined by the user. For each, randomized and prevalence filtered, data set the OOB error rate is calculated to estimate whether the original differences in groups of samples occur by chance. Results are in a list containing a table and a boxplot summarizing the results.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-randomized &lt;- pime.error.prediction(ps.whole, &quot;Zone&quot;, bootstrap = 100, 
-                                    parallel = TRUE, max.prev = 95)
-randomized$`Results table`</code></pre>
+randomized &lt;- pime.error.prediction(ps.whole, &quot;Zone&quot;, bootstrap = 100,
+                                    parallel = TRUE, max.prev = 95)</code></pre>
+</div>
+<p><br/></p>
+<div class="layout-chunk" data-layout="l-body">
+
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-randomized$Plot</code></pre>
-<p><img src="wf7_files/figure-html5/unnamed-chunk-15-1.png" width="624" /></p>
+<p><img src="wf7_files/figure-html5/unnamed-chunk-18-1.png" width="624" /></p>
 </div>
-<p>It is also possible to estimate the variation of OOB error with each prevalence interval filtering. This is done by running the random forests classification for n times, determined by the user. This function will return a boxplot figure and a table for each classification error.</p>
+<p>It is also possible to estimate the variation of OOB error for each prevalence interval filtering. This is done by running the random forests classification for <code>n</code> times, determined by the user. The function will return a boxplot figure and a table for each classification error.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-replicated.oob.error= pime.oob.replicate(prevalences, &quot;Zone&quot;, 
-                                         bootstrap = 100, parallel = TRUE)
-replicated.oob.error$&#39;Table results&#39;</code></pre>
+replicated.oob.error &lt;- pime.oob.replicate(prevalences, &quot;Zone&quot;,
+                                         bootstrap = 100, parallel = TRUE)</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-replicated.oob.error$Plot</code></pre>
-<p><img src="wf7_files/figure-html5/unnamed-chunk-17-1.png" width="624" /></p>
+<p><img src="wf7_files/figure-html5/unnamed-chunk-20-1.png" width="624" /></p>
 </div>
-<p>does not work below matrix! To obtain the confusion matrix from random forests classification use the folowing:</p>
+<p>To obtain the confusion matrix from random forests classification use the folowing:</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 best.prev$Confusion$`Prevalence 65`</code></pre>
+<pre><code>
+                    Inner bay Inner bay disturbed Outer bay
+Inner bay                  34                   0         1
+Inner bay disturbed         0                  18         1
+Outer bay                   0                   0        35
+                    class.error
+Inner bay            0.02857143
+Inner bay disturbed  0.05263158
+Outer bay            0.00000000</code></pre>
 </div>
-<p>Save data add a better way to make tables?</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-PIME_preval.65_tax &lt;- tax_table(prevalence.65)
-write.csv(PIME_preval.65_tax, file=&quot;tables/p7/PIME_tax_table.csv&quot;)
 
-PIME_preval.65_ASV &lt;- otu_table(prevalence.65)
-write.csv(PIME_preval.65_ASV, file=&quot;tables/p7/PIME_otu_table.csv&quot;)
-
-PIME_preval.65_SAM &lt;- sample_data(prevalence.65)
-write.csv(PIME_preval.65_SAM, file=&quot;tables/p7/PIME_sample_data.csv&quot;)</code></pre>
 </div>
+<h2 id="distribution-of-pime-asvs-across-samples">Distribution of PIME ASVs across Samples</h2>
 <p></br></p>
 <div class="layout-chunk" data-layout="l-page">
 <div id="qbbqe2d87hjyk4w3jlyf" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="qbbqe2d87hjyk4w3jlyf">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;inside bay&quot;,&quot;outside bay&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;healthy&quot;,&quot;disturbed&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Inner bay&quot;,&quot;Inner bay disturbed&quot;,&quot;Outer bay&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;ALR&quot;,&quot;ROL&quot;,&quot;SIS&quot;,&quot;PBL&quot;,&quot;PST&quot;,&quot;RNW&quot;,&quot;CCR&quot;,&quot;PPR&quot;,&quot;SCR&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"15754\" data-max=\"79466\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;ML2385&quot;,&quot;ML2392&quot;,&quot;ML2396&quot;,&quot;ML2404&quot;,&quot;ML2409&quot;,&quot;ML2411&quot;,&quot;ML2412&quot;,&quot;ML2414&quot;,&quot;ML2416&quot;,&quot;ML2419&quot;,&quot;ML2432&quot;,&quot;ML2440&quot;,&quot;ML2442&quot;,&quot;ML2445&quot;,&quot;ML2447&quot;,&quot;ML2448&quot;,&quot;ML2451&quot;,&quot;ML2452&quot;,&quot;ML2454&quot;,&quot;ML2455&quot;,&quot;ML2463&quot;,&quot;ML2469&quot;,&quot;ML2473&quot;,&quot;ML2486&quot;,&quot;ML2487&quot;,&quot;ML2489&quot;,&quot;ML2490&quot;,&quot;ML2491&quot;,&quot;ML2494&quot;,&quot;ML2505&quot;,&quot;ML2507&quot;,&quot;ML2509&quot;,&quot;ML2521&quot;,&quot;ML2532&quot;,&quot;ML2534&quot;,&quot;ML2388&quot;,&quot;ML2406&quot;,&quot;ML2410&quot;,&quot;ML2438&quot;,&quot;ML2441&quot;,&quot;ML2456&quot;,&quot;ML2460&quot;,&quot;ML2466&quot;,&quot;ML2468&quot;,&quot;ML2475&quot;,&quot;ML2481&quot;,&quot;ML2493&quot;,&quot;ML2496&quot;,&quot;ML2502&quot;,&quot;ML2515&quot;,&quot;ML2522&quot;,&quot;ML2533&quot;,&quot;ML2538&quot;,&quot;ML2543&quot;,&quot;ML2384&quot;,&quot;ML2390&quot;,&quot;ML2393&quot;,&quot;ML2394&quot;,&quot;ML2397&quot;,&quot;ML2405&quot;,&quot;ML2407&quot;,&quot;ML2413&quot;,&quot;ML2415&quot;,&quot;ML2417&quot;,&quot;ML2418&quot;,&quot;ML2421&quot;,&quot;ML2429&quot;,&quot;ML2433&quot;,&quot;ML2446&quot;,&quot;ML2449&quot;,&quot;ML2459&quot;,&quot;ML2471&quot;,&quot;ML2472&quot;,&quot;ML2478&quot;,&quot;ML2488&quot;,&quot;ML2492&quot;,&quot;ML2495&quot;,&quot;ML2501&quot;,&quot;ML2504&quot;,&quot;ML2510&quot;,&quot;ML2511&quot;,&quot;ML2513&quot;,&quot;ML2514&quot;,&quot;ML2526&quot;,&quot;ML2527&quot;,&quot;ML2529&quot;,&quot;ML2531&quot;,&quot;ML2541&quot;,&quot;ML2542&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption style=\"caption-side: bottom; text-align: left;\">\n  Table: \n  <em>ASV abundance across samples.<\/em>\n<\/caption>","data":[["ML2385","ML2392","ML2396","ML2404","ML2409","ML2411","ML2412","ML2414","ML2416","ML2419","ML2432","ML2440","ML2442","ML2445","ML2447","ML2448","ML2451","ML2452","ML2454","ML2455","ML2463","ML2469","ML2473","ML2486","ML2487","ML2489","ML2490","ML2491","ML2494","ML2505","ML2507","ML2509","ML2521","ML2532","ML2534","ML2388","ML2406","ML2410","ML2438","ML2441","ML2456","ML2460","ML2466","ML2468","ML2475","ML2481","ML2493","ML2496","ML2502","ML2515","ML2522","ML2533","ML2538","ML2543","ML2384","ML2390","ML2393","ML2394","ML2397","ML2405","ML2407","ML2413","ML2415","ML2417","ML2418","ML2421","ML2429","ML2433","ML2446","ML2449","ML2459","ML2471","ML2472","ML2478","ML2488","ML2492","ML2495","ML2501","ML2504","ML2510","ML2511","ML2513","ML2514","ML2526","ML2527","ML2529","ML2531","ML2541","ML2542"],["Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean","Panama caribbean"],["Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro","Bocas del Toro"],["inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","inside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay","outside bay"],["healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","disturbed","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy","healthy"],["Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Inner bay disturbed","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay","Outer bay"],["ROL","ALR","ALR","SIS","ROL","SIS","ROL","ROL","SIS","ROL","ROL","ALR","ALR","ALR","ALR","ROL","SIS","SIS","ROL","ALR","ROL","SIS","ROL","ALR","ROL","ALR","ALR","ROL","ALR","ROL","ROL","ALR","SIS","SIS","ROL","RNW","PBL","RNW","RNW","PST","RNW","PBL","PST","PBL","PBL","PST","PBL","PST","RNW","RNW","RNW","PBL","RNW","PST","CCR","CCR","SCR","CCR","SCR","CCR","PPR","SCR","SCR","SCR","CCR","PPR","CCR","SCR","SCR","CCR","CCR","CCR","SCR","CCR","CCR","PPR","SCR","CCR","CCR","CCR","PPR","SCR","CCR","SCR","PPR","CCR","SCR","PPR","PPR"],["Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish"],["Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish","Fish"],["Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus","Chaetodon capistratus"],[35389,46315,38071,24500,53475,42158,36603,26583,44778,51943,31161,48357,30401,38418,33080,35176,40092,53629,39658,33041,38949,49856,47136,51927,58098,39139,41801,45290,37731,41441,34865,37957,79466,41487,35662,25485,35613,40765,35881,34677,35737,43193,47336,15754,40286,41577,25329,43056,34308,53875,38861,42202,36708,53514,43119,75913,32132,44017,42558,34459,32445,34871,60608,45546,39384,70447,47790,49370,30896,41694,43411,47325,31635,41437,40508,31830,41570,44984,42900,28842,45242,18533,37027,35623,43540,34657,25673,34824,34825],["ML2385","ML2392","ML2396","ML2404","ML2409","ML2411","ML2412","ML2414","ML2416","ML2419","ML2432","ML2440","ML2442","ML2445","ML2447","ML2448","ML2451","ML2452","ML2454","ML2455","ML2463","ML2469","ML2473","ML2486","ML2487","ML2489","ML2490","ML2491","ML2494","ML2505","ML2507","ML2509","ML2521","ML2532","ML2534","ML2388","ML2406","ML2410","ML2438","ML2441","ML2456","ML2460","ML2466","ML2468","ML2475","ML2481","ML2493","ML2496","ML2502","ML2515","ML2522","ML2533","ML2538","ML2543","ML2384","ML2390","ML2393","ML2394","ML2397","ML2405","ML2407","ML2413","ML2415","ML2417","ML2418","ML2421","ML2429","ML2433","ML2446","ML2449","ML2459","ML2471","ML2472","ML2478","ML2488","ML2492","ML2495","ML2501","ML2504","ML2510","ML2511","ML2513","ML2514","ML2526","ML2527","ML2529","ML2531","ML2541","ML2542"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Sample_ID<\/th>\n      <th>Region<\/th>\n      <th>Locality<\/th>\n      <th>Position<\/th>\n      <th>Reef_type<\/th>\n      <th>Zone<\/th>\n      <th>Reef<\/th>\n      <th>Fraction<\/th>\n      <th>Fraction_delailed<\/th>\n      <th>Species<\/th>\n      <th>SeqDepth<\/th>\n      <th>Sample<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"Blfrtip","buttons":["copy","csv","excel"],"pageLength":5,"lengthMenu":[[5,25,-1],["5","10","All"]],"columnDefs":[{"className":"dt-right","targets":10}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'80%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'80%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'80%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'80%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'80%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'80%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'80%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'80%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'80%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'80%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'80%'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'font-size':'80%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
-<p>explore new phyloseq object by group</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 per_zone = pime.split.by.variable(prevalence.65, &quot;Zone&quot;)
@@ -1810,7 +1843,7 @@ otu_table()   OTU Table:         [ 7 taxa and 35 samples ]
 sample_data() Sample Data:       [ 35 samples by 11 sample variables ]
 tax_table()   Taxonomy Table:    [ 7 taxa by 11 taxonomic ranks ]</code></pre>
 </div>
-<p>Plot stacked barchart for PIME obtained community</p>
+<p>Finally, we can create a stacked barchart for the PIME obtained.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 prevalence.65 &lt;- readRDS(&quot;Pime_Prevalence_65.rds&quot;)</code></pre>
@@ -1818,72 +1851,35 @@ prevalence.65 &lt;- readRDS(&quot;Pime_Prevalence_65.rds&quot;)</code></pre>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>gather taxa on ASV level</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-#JJS# changed prevalence.65.mod to prevalence.65
-Zone_ASV &lt;- prevalence.65 %&gt;%
-        tax_glom(taxrank = &quot;ASV_IDb&quot;) %&gt;%                     
-        transform_sample_counts(function(x) {x/sum(x)} ) %&gt;% 
-        psmelt() %&gt;%                                         
-        arrange(ASV_IDb)                                     
-
-level_order &lt;- c(&#39;Outer bay&#39;, &#39;Inner bay&#39;, &#39;Inner bay disturbed&#39;)</code></pre>
-</div>
-<p>set colors for plotting</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-ASV_colors_65 &lt;- c(
-        &quot;mediumaquamarine&quot;,&quot;snow2&quot;, &quot;darkseagreen2&quot;,&quot;pink3&quot;, &quot;lightsalmon&quot;, 
-        &quot;lightgoldenrod3&quot;,&quot;lightsalmon2&quot;,&quot;plum1&quot;,&quot;darkolivegreen1&quot;,&quot;skyblue&quot;, 
-        &quot;powderblue&quot;, &quot;aquamarine&quot;, &quot;darkseagreen&quot;, &quot;lavenderblush3&quot;,
-        &quot;mediumturquoise&quot;,&quot;seagreen&quot;, &quot;mistyrose&quot;)</code></pre>
-</div>
-<p>Plot</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-fig00 &lt;-
-        ggplot(Zone_ASV, aes(x = factor(Zone, level = level_order), 
-                             y = Abundance, fill = ASV_IDb)) +       
-        geom_bar(stat = &quot;identity&quot;, position = &quot;fill&quot;) +  
-        scale_fill_manual(values = ASV_colors_65) +
-        scale_x_discrete(&quot;Reef&quot;, expand = waiver(), position = &quot;bottom&quot;, 
-                         drop = FALSE) +
-        theme(axis.title.x = element_blank()) + 
-        guides(fill = guide_legend(reverse = TRUE, 
-                                   keywidth = 1, 
-                                   keyheight = 1,
-                                   title = &quot;ASV ID&quot;)) +
-        ylab(&quot;Relative Abundance (ASV) \n&quot;) +
-        ggtitle(&quot;PIME Filtering Zones \n 65% Prevalence&quot;) + 
-        theme(panel.grid.major = element_blank(), 
-              panel.grid.minor = element_blank(), 
-              panel.background = element_rect(fill = &quot;transparent&quot;, colour = NA), 
-              plot.background = element_rect(fill = &quot;white&quot;,colour = NA),
-              legend.key = element_rect(fill = &quot;transparent&quot;, color = NA),
-              panel.border = element_rect(fill = NA, color=&quot;black&quot;))
-fig00</code></pre>
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <div class="layout-chunk" data-layout="l-page">
-<p><img src="wf7_files/figure-html5/unnamed-chunk-30-1.png" width="624" /></p>
+<p><img src="wf7_files/figure-html5/unnamed-chunk-33-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>That’s the end of Workflow 7.</p>
+<p>That’s the end of Script 7 and the entire workflow. Thanks for stopping by!</p>
 <p></br> </br></p>
 <div class="post-nav">
 <div class="post-nav-item">
 <div class="meta-nav">
 Previous
 </div>
-<p><a href="wf6.html" rel="next">N<sup><u>o</u></sup> 6. Workflow</a></p>
+<p><a href="wf6.html" rel="next">N<sup><u>o</u></sup> 6. Beta Dispersion</a></p>
 </div>
 </div>
 <h2 id="source-code" class="appendix">Source Code</h2>
