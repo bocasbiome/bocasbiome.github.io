@@ -1715,45 +1715,70 @@ for (i in 1:nrow(tax.clean)){
 }
 rm(class, order, phylum, kingdom)</code></pre>
 </div>
+<p>Then, we create new ASV names that have lowest rank name attached.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+tax.clean &lt;- tax.clean %&gt;% unite(&quot;ASV_IDa&quot;, Genus:ASV_ID,
+                                 remove = FALSE, sep = &quot;_&quot;)
+tax.clean &lt;- tax.clean %&gt;% unite(&quot;ASV_IDb&quot;, ASV_ID:Genus,
+                                 remove = FALSE, sep = &quot;_&quot;)
+tax.clean &lt;- tax.clean[, c(1,2,3,4,5,8,9,6,7,10)]
+tax.clean$ASV_IDa &lt;-
+  str_replace_all(tax.clean$ASV_IDa,
+                  &#39;Clostridium_sensu_stricto_[0-9]&#39;,
+                  &#39;Clostridium&#39;)
+tax.clean$ASV_IDb &lt;-
+  str_replace_all(tax.clean$ASV_IDb,
+                  &#39;Clostridium_sensu_stricto_[0-9]&#39;,
+                  &#39;Clostridium&#39;)
+tax.clean$ASV_IDc &lt;- tax.clean$ASV_IDa
+tax.clean$ASV_IDc &lt;-
+  str_replace_all(tax.clean$ASV_IDc,
+                  &#39;_ASV&#39;, &#39;&#39;)
+tax.clean &lt;- tax.clean[, c(1,2,3,4,5,6,7,8,9,11,10)]
+write.csv(tax.clean, &quot;tables/p2/tax_rar_new_no_na.csv&quot;)</code></pre>
+</div>
 <p>And finally, add the taxonomy table back to the phyloseq object.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-tax_table(ps.slv.tree.mbio.rar.bocas_no_na) &lt;- as.matrix(tax.clean)
-saveRDS(ps.slv.tree.mbio.rar.bocas_no_na,
-        &quot;rdata/p2/ps_16S_bocas_rar_all_ASVID_no_NA.rds&quot;)</code></pre>
+tax_table(ps.slv.tree.mbio.rar.bocas_no_na) &lt;- as.matrix(tax.clean)</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-rank_names(ps.slv.tree.mbio.rar.bocas_no_na)</code></pre>
+rank_names(ps.slv.tree.mbio.rar.bocas_no_na)
+saveRDS(ps.slv.tree.mbio.rar.bocas_no_na, &quot;rdata/p2/ps_16S_bocas_rar_all_ASVID_no_NA.rds&quot;)</code></pre>
 </div>
 <p><strong><em>Optional</em></strong> If you want, you can choose to separate Proteobacteria into classes and then run the phylum level analysis. We do not do that here however the code is available if you wish to implement this option.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
-proteo &lt;- subset_taxa(ps.slv.tree.mbio.rar.bocas_no_na, Phylum==&quot;Proteobacteria&quot;)
-get_taxa_unique(proteo, taxonomic.rank = rank_names(proteo)[3], errorIfNULL=TRUE)
-ps.rar.no.na.proteo &lt;- ps.slv.tree.mbio.rar.bocas_no_na
-tax.clean2 &lt;- data.frame(tax_table(ps.rar.no.na.proteo))
-for (i in 1:nrow(tax.clean2)){
-    if (tax.clean2[i,2] == &quot;Proteobacteria&quot; &amp; tax.clean2[i,3] == &quot;Alphaproteobacteria&quot;){
-        phylum &lt;- paste(&quot;Alphaproteobacteria&quot;)
-        tax.clean2[i, 2] &lt;- phylum
-}   else if (tax.clean2[i,2] == &quot;Proteobacteria&quot; &amp; tax.clean2[i,3] == &quot;Gammaproteobacteria&quot;){
-        phylum &lt;- paste(&quot;Gammaproteobacteria&quot;)
-        tax.clean2[i, 2] &lt;- phylum
-}   else if (tax.clean2[i,2] == &quot;Proteobacteria&quot; &amp; tax.clean2[i,3] == &quot;Deltaproteobacteria&quot;){
-        phylum &lt;- paste(&quot;Deltaproteobacteria&quot;)
-        tax.clean2[i, 2] &lt;- phylum
-}   else if (tax.clean2[i,2] == &quot;Proteobacteria&quot; &amp; tax.clean2[i,3] == &quot;p_Proteobacteria&quot;){
-        phylum &lt;- paste(&quot;unc_Proteobacteria&quot;)
-        tax.clean2[i, 2] &lt;- phylum
-   }
-}
-tax_table(ps.rar.no.na.proteo) &lt;- as.matrix(tax.clean2)
-rank_names(ps.rar.no.na.proteo)
-rm(class, order, phylum, kingdom)
-get_taxa_unique(ps.rar.no.na.proteo,
-                taxonomic.rank = rank_names(ps.rar.no.na.proteo)[2],
-                errorIfNULL=TRUE)</code></pre>
+##############################
+### UNCOMMENT CODE TO RUN ####
+##############################
+#proteo &lt;- subset_taxa(ps.slv.tree.mbio.rar.bocas_no_na, Phylum==&quot;Proteobacteria&quot;)
+#get_taxa_unique(proteo, taxonomic.rank = rank_names(proteo)[3], errorIfNULL=TRUE)
+#ps.rar.no.na.proteo &lt;- ps.slv.tree.mbio.rar.bocas_no_na
+#tax.clean2 &lt;- data.frame(tax_table(ps.rar.no.na.proteo))
+#for (i in 1:nrow(tax.clean2)){
+#    if (tax.clean2[i,2] == &quot;Proteobacteria&quot; &amp; tax.clean2[i,3] == &quot;Alphaproteobacteria&quot;){
+#        phylum &lt;- paste(&quot;Alphaproteobacteria&quot;)
+#        tax.clean2[i, 2] &lt;- phylum
+#}   else if (tax.clean2[i,2] == &quot;Proteobacteria&quot; &amp; tax.clean2[i,3] == &quot;Gammaproteobacteria&quot;){
+#        phylum &lt;- paste(&quot;Gammaproteobacteria&quot;)
+#        tax.clean2[i, 2] &lt;- phylum
+#}   else if (tax.clean2[i,2] == &quot;Proteobacteria&quot; &amp; tax.clean2[i,3] == &quot;Deltaproteobacteria&quot;){
+#        phylum &lt;- paste(&quot;Deltaproteobacteria&quot;)
+#        tax.clean2[i, 2] &lt;- phylum
+#}   else if (tax.clean2[i,2] == &quot;Proteobacteria&quot; &amp; tax.clean2[i,3] == &quot;p_Proteobacteria&quot;){
+#        phylum &lt;- paste(&quot;unc_Proteobacteria&quot;)
+#        tax.clean2[i, 2] &lt;- phylum
+#   }
+#}
+#tax_table(ps.rar.no.na.proteo) &lt;- as.matrix(tax.clean2)
+#rank_names(ps.rar.no.na.proteo)
+#rm(class, order, phylum, kingdom)
+#get_taxa_unique(ps.rar.no.na.proteo,
+#                taxonomic.rank = rank_names(ps.rar.no.na.proteo)[2],
+#                errorIfNULL=TRUE)</code></pre>
 </div>
 <p>First we choose the number of taxa to display for phylum and genus, then collapse the rest into <strong>Other</strong>.</p>
 <div class="layout-chunk" data-layout="l-body">
