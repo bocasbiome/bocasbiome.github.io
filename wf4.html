@@ -18,42 +18,106 @@
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { color: #585cf6; } /* Constant */
+code span.co { color: #4c886b; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.dv { color: #0000cd; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cd; } /* Float */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { color: #687687; } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #036a07; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+</style>
+
   <!--radix_placeholder_meta_tags-->
   <title>: No 4. Alpha Diversity Estimates</title>
-
+  
   <meta property="description" itemprop="description" content="Script testing alpha diversity (Hill Diversity, Shannon Exponential, &amp; Simpson Index) against the whole and core fish gut communities."/>
-
+  
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
-
-
+  
+  
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content=": No 4. Alpha Diversity Estimates"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="Script testing alpha diversity (Hill Diversity, Shannon Exponential, &amp; Simpson Index) against the whole and core fish gut communities."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content=""/>
-
+  
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content=": No 4. Alpha Diversity Estimates"/>
   <meta property="twitter:description" content="Script testing alpha diversity (Hill Diversity, Shannon Exponential, &amp; Simpson Index) against the whole and core fish gut communities."/>
-
+  
   <!--/radix_placeholder_meta_tags-->
-
   <!--radix_placeholder_rmarkdown_metadata-->
-
+  
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["No 4. Alpha Diversity Estimates"]},{"type":"character","attributes":{},"value":["Script testing alpha diversity (Hill Diversity, Shannon Exponential, & Simpson Index) against the whole and core fish gut communities.\n"]},{"type":"character","attributes":{},"value":["assets/cite.bib"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["No 4. Alpha Diversity Estimates"]},{"type":"character","attributes":{},"value":["Script testing alpha diversity (Hill Diversity, Shannon Exponential, & Simpson Index) against the whole and core fish gut communities.\n"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
-
+  <meta name="distill:offset" content=""/>
+  
   <script type="application/javascript">
-
+  
     window.headroom_prevent_pin = false;
-
+  
     window.document.addEventListener("DOMContentLoaded", function (event) {
-
+  
       // initialize headroom for banner
       var header = $('header').get(0);
       var headerHeight = header.offsetHeight;
@@ -69,13 +133,13 @@
       if(window.location.hash)
         headroom.unpin();
       $(header).addClass('headroom--transition');
-
+  
       // offset scroll location for banner on hash change
       // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
       window.addEventListener("hashchange", function(event) {
         window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
       });
-
+  
       // responsive menu
       $('.distill-site-header').each(function(i, val) {
         var topnav = $(this);
@@ -84,7 +148,7 @@
           topnav.toggleClass('responsive');
         });
       });
-
+  
       // nav dropdowns
       $('.nav-dropbtn').click(function(e) {
         $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
@@ -99,98 +163,99 @@
       });
     });
   </script>
-
+  
   <style type="text/css">
-
+  
   /* Theme (user-documented overrideables for nav appearance) */
-
+  
   .distill-site-nav {
     color: rgba(255, 255, 255, 0.8);
     background-color: #455a64;
     font-size: 15px;
     font-weight: 300;
   }
-
+  
   .distill-site-nav a {
     color: inherit;
     text-decoration: none;
   }
-
+  
   .distill-site-nav a:hover {
     color: white;
   }
-
+  
   @media print {
     .distill-site-nav {
       display: none;
     }
   }
-
+  
   .distill-site-header {
-
+  
   }
-
+  
   .distill-site-footer {
-
+  
   }
-
-
+  
+  
   /* Site Header */
-
+  
   .distill-site-header {
     width: 100%;
     box-sizing: border-box;
     z-index: 3;
   }
-
+  
   .distill-site-header .nav-left {
     display: inline-block;
     margin-left: 8px;
   }
-
+  
   @media screen and (max-width: 768px) {
     .distill-site-header .nav-left {
       margin-left: 0;
     }
   }
-
-
+  
+  
   .distill-site-header .nav-right {
     float: right;
     margin-right: 8px;
   }
-
+  
   .distill-site-header a,
   .distill-site-header .title {
     display: inline-block;
     text-align: center;
     padding: 14px 10px 14px 10px;
   }
-
+  
   .distill-site-header .title {
     font-size: 18px;
+    min-width: 150px;
   }
-
+  
   .distill-site-header .logo {
     padding: 0;
   }
-
+  
   .distill-site-header .logo img {
     display: none;
     max-height: 20px;
     width: auto;
     margin-bottom: -4px;
   }
-
+  
   .distill-site-header .nav-image img {
     max-height: 18px;
     width: auto;
     display: inline-block;
     margin-bottom: -3px;
   }
-
-
-
+  
+  
+  
   @media screen and (min-width: 1000px) {
     .distill-site-header .logo img {
       display: inline-block;
@@ -205,17 +270,17 @@
       padding-left: 12px;
     }
   }
-
-
+  
+  
   .distill-site-header .nav-toggle {
     display: none;
   }
-
+  
   .nav-dropdown {
     display: inline-block;
     position: relative;
   }
-
+  
   .nav-dropdown .nav-dropbtn {
     border: none;
     outline: none;
@@ -229,7 +294,7 @@
     margin-top: 1px;
     z-index: 2;
   }
-
+  
   .nav-dropdown-content {
     display: none;
     position: absolute;
@@ -244,18 +309,18 @@
     padding-top: 4px;
     padding-bottom: 4px;
   }
-
+  
   .nav-dropdown-content hr {
     margin-top: 4px;
     margin-bottom: 4px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-
+  
   .nav-dropdown-active {
     display: block;
   }
-
+  
   .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
     color: black;
     padding: 6px 24px;
@@ -263,7 +328,7 @@
     display: block;
     text-align: left;
   }
-
+  
   .nav-dropdown-content .nav-dropdown-header {
     display: block;
     padding: 5px 24px;
@@ -273,21 +338,21 @@
     color: #999999;
     white-space: nowrap;
   }
-
+  
   .nav-dropdown:hover .nav-dropbtn {
     color: white;
   }
-
+  
   .nav-dropdown-content a:hover {
     background-color: #ddd;
     color: black;
   }
-
+  
   .nav-right .nav-dropdown-content {
     margin-left: -45%;
     right: 0;
   }
-
+  
   @media screen and (max-width: 768px) {
     .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
     .distill-site-header a.nav-toggle {
@@ -307,10 +372,10 @@
       margin-left: 0;
     }
   }
-
-
+  
+  
   @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative;}
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
     .distill-site-header.responsive a.nav-toggle {
       position: absolute;
       right: 0;
@@ -333,9 +398,9 @@
       text-align: left;
     }
   }
-
+  
   /* Site Footer */
-
+  
   .distill-site-footer {
     width: 100%;
     overflow: hidden;
@@ -346,19 +411,19 @@
     padding-bottom: 30px;
     text-align: center;
   }
-
+  
   /* Headroom */
-
+  
   d-title {
     padding-top: 6rem;
   }
-
+  
   @media print {
     d-title {
       padding-top: 4rem;
     }
   }
-
+  
   .headroom {
     z-index: 1000;
     position: fixed;
@@ -366,61 +431,349 @@
     left: 0;
     right: 0;
   }
-
+  
   .headroom--transition {
     transition: all .4s ease-in-out;
   }
-
+  
   .headroom--unpinned {
     top: -100px;
   }
-
+  
   .headroom--pinned {
     top: 0;
   }
-
+  
   </style>
-
+  
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+  
+  <script type="application/javascript">
+  
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+  
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+  
+  function createIndex() {
+    var options = {
+      keys: [
+        "title",
+        "categories",
+        "description",
+        "contents"
+      ]
+    };
+    return new window.Fuse([],options);
+  }
+  
+  function createFuseIndex() {
+  
+    // create fuse index
+    var options = { keys: ["title", "description", "contents"] };
+    var fuse = new window.Fuse([], options);
+  
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+  
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+  
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+  
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+  
+    createFuseIndex()
+      .then(function(fuse) {
+  
+        // make search box visible
+        searchEl.classList.remove('hidden');
+  
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+              keys: [
+                { name: 'title', weight: 20 },
+                { name: 'categories', weight: 15 },
+                { name: 'description', weight: 10 },
+                { name: 'contents', weight: 5 },
+              ],
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+              .filter(function(item) { return !!item.description; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description}
+                  </div>
+                  <div class="search-item-preview">
+                    <img src="${suggestion.preview ? offsetURL(suggestion.preview) : ''}"</img>
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  });
+  
+  </script>
+  
+  <style type="text/css">
+  
+  /* Algolioa Autocomplete */
+  
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #455a64 solid;
+    width: 180px;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      visibility: hidden
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+  
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+  
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+  
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+  
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+  
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+  
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+  
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+  
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+  
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+  
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  </style>
+  
+  
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
-
+  
   <style type="text/css">
-
+  
   body {
     background-color: white;
   }
-
+  
   .pandoc-table {
     width: 100%;
   }
-
+  
   .pandoc-table>caption {
     margin-bottom: 10px;
   }
-
+  
   .pandoc-table th:not([align]) {
     text-align: left;
   }
-
+  
   .pagedtable-footer {
     font-size: 15px;
   }
-
+  
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+  
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+  
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+  
   .html-widget {
     margin-bottom: 2.0em;
   }
-
+  
   .l-screen-inset {
     padding-right: 16px;
   }
-
+  
   .l-screen .caption {
     margin-left: 10px;
   }
-
+  
   .shaded {
     background: rgb(247, 247, 247);
     padding-top: 20px;
@@ -428,43 +781,125 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-
+  
   .shaded .html-widget {
     margin-bottom: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-
+  
   .shaded .shaded-content {
     background: white;
   }
-
+  
   .text-output {
     margin-top: 0;
     line-height: 1.5em;
   }
-
+  
   .hidden {
     display: none !important;
   }
-
+  
   d-article {
+    padding-top: 2.5rem;
     padding-bottom: 30px;
   }
-
+  
   d-appendix {
     padding-top: 30px;
   }
-
+  
   d-article>p>img {
     width: 100%;
   }
-
+  
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+  
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+  
   d-article iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2.0em;
     width: 100%;
   }
-
+  
+  /* Tweak code blocks */
+  
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+  
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: hidden;
+  }
+  
+  d-article div.sourceCode {
+    background-color: white;
+  }
+  
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  d-article pre a {
+    border-bottom: none;
+  }
+  
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+  
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+  
+  d-article pre {
+    font-size: 14px;
+  }
+  
+  }
+  
   figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -472,128 +907,107 @@
     padding: 18px;
     box-sizing: border-box;
   }
-
-  /* CSS for table of contents */
-
-  .d-toc {
+  
+  /* CSS for d-contents */
+  
+  .d-contents {
+    grid-column: text;
     color: rgba(0,0,0,0.8);
-    font-size: 0.8em;
-    line-height: 1em;
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
   }
-
-  .d-toc-header {
-    font-size: 0.6rem;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
+  
+  @media(min-width: 1000px) {
+    .d-contents {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+  
+  .d-contents nav h3 {
+    font-size: 18px;
     margin-top: 0;
-    margin-bottom: 1.3em;
+    margin-bottom: 1em;
   }
-
-  .d-toc a {
-    border-bottom: none;
+  
+  .d-contents li {
+    list-style-type: none
   }
-
-  .d-toc ul {
+  
+  .d-contents nav > ul {
     padding-left: 0;
   }
-
-  .d-toc li>ul {
-    padding-top: 0.8em;
-    padding-left: 16px;
-    margin-bottom: 0.6em;
+  
+  .d-contents ul {
+    padding-left: 1em
   }
-
-  .d-toc ul,
-  .d-toc li {
-    list-style-type: none;
+  
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
   }
-
-  .d-toc li {
-    margin-bottom: 0.9em;
+  
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
   }
-
-  .d-toc-separator {
-    margin-top: 20px;
-    margin-bottom: 2em;
+  
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
   }
-
-  .d-article-with-toc {
-    border-top: none;
-    padding-top: 0;
+  
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
   }
-
-
-
-  /* Tweak code blocks (note that this CSS is repeated above in an injection
-     into the d-code shadow dom) */
-
-  d-code {
-    overflow-x: auto !important;
+  
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
   }
-
-  pre.d-code code.d-code {
-    padding-left: 10px;
-    font-size: 12px;
-    border-left: 2px solid rgba(0,0,0,0.1);
+  
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
   }
-
-  pre.text-output {
-
-    font-size: 12px;
-    color: black;
-    background: none;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
+  
+  
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
   }
-
-  @media(min-width: 768px) {
-
-  d-code {
-    overflow-x: visible !important;
+  
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
   }
-
-  pre.d-code code.d-code  {
-      padding-left: 18px;
-      font-size: 14px;
-  }
-  pre.text-output {
-    font-size: 14px;
-  }
-  }
-
+  
+  
   /* Figure */
-
+  
   .figure {
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
   }
-
+  
   .figure img {
     width: 100%;
   }
-
+  
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
     line-height: 1.5em;
   }
-
+  
   .figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -601,21 +1015,31 @@
     padding: 18px;
     box-sizing: border-box;
   }
-
+  
   .figure .caption a {
     color: rgba(0, 0, 0, 0.6);
   }
-
+  
   .figure .caption b,
   .figure .caption strong, {
     font-weight: 600;
     color: rgba(0, 0, 0, 1.0);
   }
-
-
-
+  
+  /* Citations */
+  
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+  
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+  
+  
   /* Tweak 1000px media break to show more text */
-
+  
   @media(min-width: 1000px) {
     .base-grid,
     distill-header,
@@ -631,11 +1055,11 @@
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 16px;
     }
-
+  
     .grid {
       grid-column-gap: 16px;
     }
-
+  
     d-article {
       font-size: 1.06rem;
       line-height: 1.7em;
@@ -644,7 +1068,7 @@
       font-size: 13px;
     }
   }
-
+  
   @media(min-width: 1180px) {
     .base-grid,
     distill-header,
@@ -660,16 +1084,16 @@
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 32px;
     }
-
+  
     .grid {
       grid-column-gap: 32px;
     }
   }
-
-
+  
+  
   /* Get the citation styles for the appendix (not auto-injected on render since
      we do our own rendering of the citation appendix) */
-
+  
   d-appendix .citation-appendix,
   .d-appendix .citation-appendix {
     font-size: 11px;
@@ -686,111 +1110,124 @@
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-
-
+  
+  
+  /* Anchor.js */
+  
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  
   /* Social footer */
-
+  
   .social_footer {
     margin-top: 30px;
     margin-bottom: 0;
     color: rgba(0,0,0,0.67);
   }
-
+  
   .disqus-comments {
     margin-right: 30px;
   }
-
+  
   .disqus-comment-count {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     cursor: pointer;
   }
-
+  
   #disqus_thread {
     margin-top: 30px;
   }
-
+  
   .article-sharing a {
     border-bottom: none;
     margin-right: 8px;
   }
-
+  
   .article-sharing a:hover {
     border-bottom: none;
   }
-
+  
   .sidebar-section.subscribe {
     font-size: 12px;
     line-height: 1.6em;
   }
-
+  
   .subscribe p {
     margin-bottom: 0.5em;
   }
-
-
+  
+  
   .article-footer .subscribe {
     font-size: 15px;
     margin-top: 45px;
   }
-
-
+  
+  
   .sidebar-section.custom {
     font-size: 12px;
     line-height: 1.6em;
   }
-
+  
   .custom p {
     margin-bottom: 0.5em;
   }
-
-
+  
+  
   /* Improve display for browsers without grid (IE/Edge <= 15) */
-
+  
   .downlevel {
     line-height: 1.6em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     margin: 0;
   }
-
+  
   .downlevel .d-title {
     padding-top: 6rem;
     padding-bottom: 1.5rem;
   }
-
+  
   .downlevel .d-title h1 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.1em;
     margin: 0 0 0.5rem;
   }
-
+  
   .downlevel .d-title p {
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.55em;
     margin-top: 0;
   }
-
+  
   .downlevel .d-byline {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     font-size: 0.8rem;
     line-height: 1.8em;
   }
-
+  
   .downlevel .section-separator {
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
-
+  
   .downlevel .d-article {
     font-size: 1.06rem;
     line-height: 1.7em;
     padding-top: 1rem;
     padding-bottom: 2rem;
   }
-
-
+  
+  
   .downlevel .d-appendix {
     padding-left: 0;
     padding-right: 0;
@@ -802,11 +1239,11 @@
     padding-top: 40px;
     padding-bottom: 48px;
   }
-
+  
   .downlevel .footnotes ol {
     padding-left: 13px;
   }
-
+  
   .downlevel .base-grid,
   .downlevel .distill-header,
   .downlevel .d-title,
@@ -823,7 +1260,7 @@
     padding-left: 40px;
     padding-right: 40px;
   }
-
+  
   @media(min-width: 768px) {
     .downlevel .base-grid,
     .downlevel .distill-header,
@@ -843,14 +1280,14 @@
     max-width: 900px;
   }
   }
-
+  
   .downlevel pre code {
     display: block;
     border-left: 2px solid rgba(0, 0, 0, .1);
     padding: 0 0 0 20px;
     font-size: 14px;
   }
-
+  
   .downlevel code, .downlevel pre {
     color: black;
     background: none;
@@ -861,21 +1298,21 @@
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-
+  
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-
+  
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-
+  
   </style>
-
+  
   <script type="application/javascript">
-
+  
   function is_downlevel_browser() {
     if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
                                    window.navigator.userAgent)) {
@@ -884,13 +1321,20 @@
       return window.load_distill_framework === undefined;
     }
   }
-
+  
   // show body when load is complete
   function on_load_complete() {
-
+  
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+  
+  
     // set body to visible
     document.body.style.visibility = 'visible';
-
+  
     // force redraw for leaflet widgets
     if (window.HTMLWidgets) {
       var maps = window.HTMLWidgets.findAll(".leaflet");
@@ -903,54 +1347,39 @@
         });
       });
     }
-
+  
     // trigger 'shown' so htmlwidgets resize
     $('d-article').trigger('shown');
   }
-
+  
   function init_distill() {
-
+  
     init_common();
-
+  
     // create front matter
     var front_matter = $('<d-front-matter></d-front-matter>');
     $('#distill-front-matter').wrap(front_matter);
-
+  
     // create d-title
     $('.d-title').changeElementType('d-title');
-
+  
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
-
+  
     // create d-article
     var article = $('<d-article></d-article>');
     $('.d-article').wrap(article).children().unwrap();
-
+  
     // move posts container into article
     $('.posts-container').appendTo($('d-article'));
-
+  
     // create d-appendix
     $('.d-appendix').changeElementType('d-appendix');
-
-    // create d-bibliography
-    var bibliography = $('<d-bibliography></d-bibliography>');
-    $('#distill-bibliography').wrap(bibliography);
-
+  
     // flag indicating that we have appendix items
     var appendix = $('.appendix-bottom').children('h3').length > 0;
-
-    // replace citations with <d-cite>
-    $('.citation').each(function(i, val) {
-      appendix = true;
-      var cites = $(this).attr('data-cites').split(" ");
-      var dt_cite = $('<d-cite></d-cite>');
-      dt_cite.attr('key', cites.join());
-      $(this).replaceWith(dt_cite);
-    });
-    // remove refs
-    $('#refs').remove();
-
+  
     // replace footnotes with <d-footnote>
     $('.footnote-ref').each(function(i, val) {
       appendix = true;
@@ -966,49 +1395,31 @@
     });
     // remove footnotes
     $('.footnotes').remove();
-
+  
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+  
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
     });
     $('h3.appendix').each(function(i, val) {
       var id = $(this).attr('id');
-      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
       appendix = true;
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
-
+  
     // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
-
-    // replace code blocks with d-code
-    $('pre>code').each(function(i, val) {
-      var code = $(this);
-      var pre = code.parent();
-      var clz = "";
-      var language = pre.attr('class');
-      if (language) {
-        // map unknown languages to "clike" (without this they just dissapear)
-        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
-                                 "javascript", "js", "julia", "lua", "markdown",
-                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
-          language = "clike";
-        language = ' language="' + language + '"';
-        var dt_code = $('<d-code block' + language + clz + '></d-code>');
-        dt_code.text(code.text());
-        pre.replaceWith(dt_code);
-      } else {
-        code.addClass('text-output').unwrap().changeElementType('pre');
-      }
-    });
-
+  
     // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
-
+  
       // capture layout
       var layout = $(this).attr('data-layout');
-
+  
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('d-code, pre.text-output, script');
+      var elements = $(this).children().not('div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -1019,39 +1430,60 @@
           $(this).wrap(layout_div);
         }
       });
-
-
+  
+  
       // unwrap the layout-chunk div
       $(this).children().unwrap();
     });
-
+  
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+  
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a[aria-hidden="true"]').remove();
+  
     // load distill framework
     load_distill_framework();
-
+  
     // wait for window.distillRunlevel == 4 to do post processing
     function distill_post_process() {
-
+  
       if (!window.distillRunlevel || window.distillRunlevel < 4)
         return;
-
+  
       // hide author/affiliations entirely if we have no authors
       var front_matter = JSON.parse($("#distill-front-matter").html());
       var have_authors = front_matter.authors && front_matter.authors.length > 0;
       if (!have_authors)
         $('d-byline').addClass('hidden');
-
-      // table of contents
-      if (have_authors) // adjust border if we are in authors
-        $('.d-toc').parent().addClass('d-article-with-toc');
-
+  
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+  
       // strip links that point to #
       $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
-
+  
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+  
       // hide elements of author/affiliations grid that have no value
       function hide_byline_column(caption) {
         $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
       }
-
+  
       // affiliations
       var have_affiliations = false;
       for (var i = 0; i<front_matter.authors.length; ++i) {
@@ -1063,11 +1495,11 @@
       }
       if (!have_affiliations)
         $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
-
+  
       // published date
       if (!front_matter.publishedDate)
         hide_byline_column("Published");
-
+  
       // document object identifier
       var doi = $('d-byline').find('h3:contains("DOI")');
       var doi_p = doi.next().empty();
@@ -1087,61 +1519,50 @@
            .html(front_matter.doi)
            .appendTo(doi_p);
       }
-
+  
        // change plural form of authors/affiliations
       if (front_matter.authors.length === 1) {
         var grid = $('.authors-affiliations');
         grid.children('h3:contains("Authors")').text('Author');
         grid.children('h3:contains("Affiliations")').text('Affiliation');
       }
-
-      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
-      $('d-code').each(function(i, val) {
-        var style = document.createElement('style');
-        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
-                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
-        if (this.shadowRoot)
-          this.shadowRoot.appendChild(style);
-      });
-
+  
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
-
+  
       // clear polling timer
       clearInterval(tid);
-
+  
       // show body now that everything is ready
       on_load_complete();
     }
-
+  
     var tid = setInterval(distill_post_process, 50);
     distill_post_process();
-
+  
   }
-
+  
   function init_downlevel() {
-
+  
     init_common();
-
+  
      // insert hr after d-title
     $('.d-title').after($('<hr class="section-separator"/>'));
-
+  
     // check if we have authors
     var front_matter = JSON.parse($("#distill-front-matter").html());
     var have_authors = front_matter.authors && front_matter.authors.length > 0;
-
+  
     // manage byline/border
     if (!have_authors)
       $('.d-byline').remove();
     $('.d-byline').after($('<hr class="section-separator"/>'));
     $('.d-byline a').remove();
-
+  
     // remove toc
-    $('.d-toc-header').remove();
-    $('.d-toc').remove();
-    $('.d-toc-separator').remove();
-
+    $('.d-contents').remove();
+  
     // move appendix elements
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
@@ -1149,62 +1570,62 @@
     $('h3.appendix').each(function(i, val) {
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
     });
-
-
+  
+  
     // inject headers into references and footnotes
     var refs_header = $('<h3></h3>');
     refs_header.text('References');
     $('#refs').prepend(refs_header);
-
+  
     var footnotes_header = $('<h3></h3');
     footnotes_header.text('Footnotes');
     $('.footnotes').children('hr').first().replaceWith(footnotes_header);
-
+  
     // move appendix-bottom entries to the bottom
     $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
     $('.appendix-bottom').remove();
-
+  
     // remove appendix if it's empty
     if ($('.d-appendix').children().length === 0)
       $('.d-appendix').remove();
-
+  
     // prepend separator above appendix
     $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
-
+  
     // trim code
     $('pre>code').each(function(i, val) {
       $(this).html($.trim($(this).html()));
     });
-
+  
     // move posts-container right before article
     $('.posts-container').insertBefore($('.d-article'));
-
+  
     $('body').addClass('downlevel');
-
+  
     on_load_complete();
   }
-
-
+  
+  
   function init_common() {
-
+  
     // jquery plugin to change element types
     (function($) {
       $.fn.changeElementType = function(newType) {
         var attrs = {};
-
+  
         $.each(this[0].attributes, function(idx, attr) {
           attrs[attr.nodeName] = attr.nodeValue;
         });
-
+  
         this.replaceWith(function() {
           return $("<" + newType + "/>", attrs).append($(this).contents());
         });
       };
     })(jQuery);
-
+  
     // prevent underline for linked images
     $('a > img').parent().css({'border-bottom' : 'none'});
-
+  
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
@@ -1216,35 +1637,35 @@
           var fig = $(this);
           fig.css('width', fig.attr('width') + 'px');
         });
-
+  
       }
     });
-
+  
     // auto-append index.html to post-preview links in file: protocol
     // and in rstudio ide preview
     $('.post-preview').each(function(i, val) {
       if (window.location.protocol === "file:")
         $(this).attr('href', $(this).attr('href') + "index.html");
     });
-
+  
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
         $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
       });
     }
-
+  
     // add class to pandoc style tables
     $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
     $('.kable-table').children('table').addClass('pandoc-table');
-
+  
     // add figcaption style to table captions
     $('caption').parent('table').addClass("figcaption");
-
+  
     // initialize posts list
     if (window.init_posts_list)
       window.init_posts_list();
-
+  
     // implmement disqus comment link
     $('.disqus-comment-count').click(function() {
       window.headroom_prevent_pin = true;
@@ -1258,23 +1679,23 @@
       }
     });
   }
-
+  
   document.addEventListener('DOMContentLoaded', function() {
     if (is_downlevel_browser())
       init_downlevel();
     else
       window.addEventListener('WebComponentsReady', init_distill);
   });
-
+  
   </script>
-
+  
   <!--/radix_placeholder_distill-->
   <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
   <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
   <script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
   <script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
   <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/datatables-binding-0.14/datatables.js"></script>
+  <script src="site_libs/datatables-binding-0.15/datatables.js"></script>
   <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
   <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
   <script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -1291,6 +1712,7 @@
   <script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
   <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
   <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
   <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
@@ -1298,63 +1720,117 @@
   <style type="text/css">
   /* Whole document: */
   @import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif|Lato:300|Roboto:300|Nunito+Sans:300|Inconsolata|Source+Sans+Pro|Work+Sans:200,300,400,500');
+  /********************************/
   /* controls general properties of site*/
+  /********************************/
   body {
     color: #414141;
   /*  line-height: 1.7;
     font-size: 17px; */
     background-color: #FEFEFE;
   }
-
+  
   d-title h1{
   font-size: 1.8em;
   font-family: 'Work Sans';
   font-weight: 300;
   }
-
+  
   d-article h1 {
     font-size: 1.8em;
     font-family: 'Work Sans', 'Source Sans Pro', 'PT Sans';
     font-weight: 300;
   }
-
+  
   d-article h2 {
     font-size: 1.65em;
     font-family: 'Work Sans', 'Source Sans Pro', 'PT Sans';
     font-weight: 500;
   }
-
+  
   d-article h3 {
     margin-top: 1em;
   }
-
+  
   d-article h4 {
     font-size: 1em;
   }
-
+  
   d-byline .authors-affiliations {
     grid-column-end: span 3;
     grid-column-gap: 8px;
   }
-
+  
   a.name:-webkit-any-link {
     text-decoration: underline;
     text-decoration-style: dotted;
   }
-
+  
   a.affiliation:-webkit-any-link {
     text-decoration: underline;
     text-decoration-style: dotted;
   }
-
+  
   blockquote p {
   	font-size: 1.3em;
   	font-family: 'Lato';
     font-style: normal;
     margin: 0.5em 0 0.5em;
   }
-
-  d-code {
+  
+  d-article li {
+    margin: 0px 0px 4px;
+  }
+  
+  /********************************/
+  /* controls CODE*/
+  /********************************/
+  
+  /** pre.sourceCode controls code block without lang **/
+  
+  /** Controls r code  **/
+  pre.sourceCode.r {
+    margin-top: 0px;
+     color: #333333;
+     background-color: #E8E8E8;
+     border-radius: 3px;
+     font-size: 0.80em;
+     font-family: 'Monaco', 'PT Mono', monospace;
+     overflow-x: scroll !important;
+     border-left: 5px solid #323232;
+     border-top: 1px solid #B7B7B7;
+     border-right: 1px solid #B7B7B7;
+     border-bottom: 1px solid #B7B7B7;
+     padding: 18px 0px 18px 20px;
+   }
+  
+  /** Controls code output **/
+  
+  d-article pre {
+     margin-top: 0px;
+      color: #333333;
+      background-color: #FAFAFA;
+      font-size: 0.8em;
+      border: 1px solid #ccc;
+      overflow-x: scroll !important;
+      padding:  10px 10px 10px 18px;
+      border-radius: 5px;
+  
+    }
+  
+  /** Controls inline code  **/
+  
+  p code {
+    background-color: #E8E8E8;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-family: 'Monaco', 'PT Mono', monospace;
+    overflow-x: scroll !important;
+    margin-bottom: 20px;
+    color: #BF2727;
+  }
+  
+  /*pre.sourceCode.r {
     background-color: #E8E8E8;
     border-radius: 3px;
     font-size: 0.8em;
@@ -1366,8 +1842,8 @@
     border-right: 1px solid #B7B7B7;
     border-bottom: 1px solid #B7B7B7;
   }
-
-  code {
+  
+  code.sourceCode.r {
     background-color: #F5F5F5;
     border-radius: 3px;
     font-size: 0.8em;
@@ -1376,160 +1852,80 @@
     margin-bottom: 20px;
     color: #BF2727;
   }
-
-  pre.text-output {
-    margin-top: 0px;
-     color: #333333;
-     background-color: #FAFAFA;
-     font-size: 0.8em
-   }
-
+  
+  
   pre {
     border: 1px solid #ccc;
     padding: 0px 10px 10px 18px;
     margin: 1em 0px;
     border-radius: 5px;
   }
-
+  */
+  
+  /********************************/
+  /* controls NAV BAR and HEADERS*/
+  /********************************/
+  
   .nav-dropdown-content .nav-dropdown-header {
     text-transform: none;
   }
-
-  d-article li {
-    margin: 0px 0px 4px;
+  
+  .distill-site-header .title  {
+    min-width: 150px;
+  
   }
-
-  /*************************************************
-  *  code for side by side krona plot
-  **************************************************/
-
-  .column {
-    float: left;
-    width: 48%;
-    padding: 5px;
-  }
-
-  /* Clear floats after image containers */
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-  div.krona {
-    width: 100%;
-  	height: 90%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
-  	margin-top: 5px;
-  }
-
-  div.container-krona {
-    text-align: center;
-    padding: 1px 10px;
-  	color: #414141;
-  	font-size: 1.48em;
-  	line-height: 0.8em;
-  	font-family: 'Inconsolata';
-  }
-
-  div.container-krona p {
-    margin: 20px;
-  }
-
-  div.krona img {
-    border:1px solid white;
-    margin: 25px;
-  }
-
-  img {
-    margin: 25px;
-  }
-
-  /** LIGHTBOX MARKUP **/
-  .thumbnail {
-    max-width: 100%;
-    position: relative;
-  }
-
-  .lightbox {
-  	/** Default lightbox to hidden */
-  	display: none;
-
-  	/** Position and style */
-  	position: fixed;
-  	z-index: 999;
-  	width: 100%;
-  	height: 100%;
-  	text-align: center;
-  	top: 0;
-  	left: 0;
-  	background: rgba(0,0,0,0.8);
-  }
-
-  .lightbox img {
-  	/** Pad the lightbox image */
-  	position: fixed;
-  	top: 0;
-  	left: 0;
-  	right: 0;
-  	bottom: 0;
-  	max-width: 0%;
-  	max-height: 0%;
-  	margin: auto;
-  	box-sizing: border-box;
-  }
-
-  .lightbox:target {
-  	/** Remove default browser outline */
-  	outline: none;
-
-  	/** Unhide lightbox **/
-  	display: block;
-  }
-
-  .lightbox:target img {
-  	max-height: 100%;
-  	max-width: 100%;
-  }
-
+  /**
   .distill-site-header .logo img {
     margin-top: 15px;
     max-height: 30px;
     margin-bottom: 5px;
   }
-
+  **/
+  
+  /**
+  .distill-site-header .title {
+    margin-top: 15px;
+    max-height: 30px;
+    margin-bottom: 5px;
+  }
+  **/
+  
   .distill-site-nav {
       color: #F5F5F5;
       background-color: #323232;
       font-size: 16px;
       font-weight: 300;
   }
-
+  
   .article-banner {
     width: auto;
     height: auto;
     border: 0;
   }
-
+  
   img[src="assets/banner.png"] {
     border: 0;
     padding: 0;
     width: 100%;
     margin: 100px 50px 0px 25px;
   }
-
+  
   img.map, map area {
     outline: none;
   }
-
+  
   img[src="assets/wf_map.png"] {
     border: 0;
     padding: 0;
     margin: 0px 0px 0px 0px;
   }
-
+  
+  /**span code pre d-code .token.operator {
+      color: #000000;
+      background: hsla(0, 100%, 100%, 1);
+  }
+  **/
+  
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -1554,8 +1950,6 @@
 <img src="assets/icon.png" alt="Logo"/>
 </a>
 <a href="index.html" class="title"></a>
-</div>
-<div class="nav-right">
 <a href="index.html">
 <i class="fa fa-home" aria-hidden="true"></i>
 </a>
@@ -1569,6 +1963,9 @@
 <a href="https://github.com/bocasbiome/web/">
 <i class="fa fa-github fa-lg" aria-hidden="true"></i>
 </a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -1579,13 +1976,16 @@
 
 <div class="d-title">
 <h1>No 4. Alpha Diversity Estimates</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
 <p><p>Script testing alpha diversity (Hill Diversity, Shannon Exponential, &amp; Simpson Index) against the whole and core fish gut communities.</p></p>
 </div>
 
 
 <div class="d-article">
-<h3 class="d-toc-header">Table of Contents</h3>
-<nav class="d-toc" id="TOC">
+<div class="d-contents">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
 <ul>
 <li><a href="#whole-community">Whole Community</a><ul>
 <li><a href="#prepare-data-set">Prepare Data Set</a></li>
@@ -1606,18 +2006,16 @@
 </ul></li>
 </ul>
 </nav>
-<hr class="d-toc-separator"/>
+</div>
 <h1 id="whole-community">Whole Community</h1>
 <h2 id="prepare-data-set">Prepare Data Set</h2>
 <p>The first step is to read in the whole community fish microbiome data.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-ps.whole &lt;- readRDS(&quot;rdata/p3/ps_16S_bocas_fish_final.rds&quot;)
-ps.whole</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>ps.whole &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;rdata/p3/ps_16S_bocas_fish_final.rds&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>ps.whole</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 3113 taxa and 89 samples ]
 sample_data() Sample Data:       [ 89 samples by 11 sample variables ]
 tax_table()   Taxonomy Table:    [ 3113 taxa by 11 taxonomic ranks ]
@@ -1625,55 +2023,47 @@ phy_tree()    Phylogenetic Tree: [ 3113 tips and 3112 internal nodes ]</code></p
 </div>
 <p>Then get the ASV table and transpose the table so ASVs are rows. Also get the phylogenetic tree and make sure the ASV names in the ASV table and the tip names in the phylogenetic tree are identical.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.whole &lt;- t(otu_table(ps.whole))
-tree.whole &lt;- phy_tree(ps.whole)
-identical(sort(rownames(asv.whole)), sort(tree.whole$tip.label))</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>asv.whole &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">otu_table</span>(ps.whole))</span>
+<span id="cb3-2"><a href="#cb3-2"></a>tree.whole &lt;-<span class="st"> </span><span class="kw">phy_tree</span>(ps.whole)</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="kw">identical</span>(<span class="kw">sort</span>(<span class="kw">rownames</span>(asv.whole)), <span class="kw">sort</span>(tree.whole<span class="op">$</span>tip.label))</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-[1] TRUE</code></pre>
+<pre><code>[1] TRUE</code></pre>
 </div>
 <p>Finally, normalize the ASV table to relative abundance.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.whole.norm &lt;- microbiome::transform(asv.whole, transform = &quot;compositional&quot;)</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>asv.whole.norm &lt;-<span class="st"> </span>microbiome<span class="op">::</span><span class="kw">transform</span>(asv.whole, <span class="dt">transform =</span> <span class="st">&quot;compositional&quot;</span>)</span></code></pre></div>
 </div>
 <h2 id="alpha-diversity-estimates">Alpha Diversity Estimates</h2>
 <h3 id="hill-diversity">Hill Diversity</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-hillq0 &lt;- estimate_richness(ps.whole, measures = &quot;Observed&quot;)</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>hillq0 &lt;-<span class="st"> </span><span class="kw">estimate_richness</span>(ps.whole, <span class="dt">measures =</span> <span class="st">&quot;Observed&quot;</span>)</span></code></pre></div>
 </div>
 <h3 id="shannon-exponential">Shannon Exponential</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-shannon.hill &lt;- exp(vegan::diversity(t(asv.whole.norm), index = &quot;shannon&quot;))
-shannon.whole.df &lt;- as.data.frame(shannon.hill)</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>shannon.hill &lt;-<span class="st"> </span><span class="kw">exp</span>(vegan<span class="op">::</span><span class="kw">diversity</span>(<span class="kw">t</span>(asv.whole.norm), <span class="dt">index =</span> <span class="st">&quot;shannon&quot;</span>))</span>
+<span id="cb7-2"><a href="#cb7-2"></a>shannon.whole.df &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(shannon.hill)</span></code></pre></div>
 </div>
 <h3 id="simpson-index">Simpson Index</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-1/(1-(vegan::diversity(t(asv.whole.norm), index = &quot;simpson&quot;)))
-simpson.hill&lt;-1/(1-(vegan::diversity(t(asv.whole.norm), index = &quot;simpson&quot;)))
-simpson.whole.df &lt;- as.data.frame(simpson.hill)</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>(vegan<span class="op">::</span><span class="kw">diversity</span>(<span class="kw">t</span>(asv.whole.norm), <span class="dt">index =</span> <span class="st">&quot;simpson&quot;</span>)))</span>
+<span id="cb8-2"><a href="#cb8-2"></a>simpson.hill&lt;-<span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>(vegan<span class="op">::</span><span class="kw">diversity</span>(<span class="kw">t</span>(asv.whole.norm), <span class="dt">index =</span> <span class="st">&quot;simpson&quot;</span>)))</span>
+<span id="cb8-3"><a href="#cb8-3"></a>simpson.whole.df &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(simpson.hill)</span></code></pre></div>
 </div>
 <p>Now we combine the phyloseq object, sample data, and add new columns with Hill diversity into one data frame and save the object.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-newDF.whole &lt;- data.frame(hillq0, shannon.hill, simpson.hill,
-                          sample_data(ps.whole))
-ps.whole.hill &lt;- merge_phyloseq(otu_table(ps.whole),
-                                sample_data(newDF.whole),
-                                tax_table(ps.whole),
-                                phy_tree(ps.whole))
-ps.whole.hill
-sample_data(ps.whole.hill)
-saveRDS(ps.whole.hill, &quot;rdata/p4/ps_16S_bocas_fish_final_hill.rds&quot;)</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>newDF.whole &lt;-<span class="st"> </span><span class="kw">data.frame</span>(hillq0, shannon.hill, simpson.hill,</span>
+<span id="cb9-2"><a href="#cb9-2"></a>                          <span class="kw">sample_data</span>(ps.whole))</span>
+<span id="cb9-3"><a href="#cb9-3"></a>ps.whole.hill &lt;-<span class="st"> </span><span class="kw">merge_phyloseq</span>(<span class="kw">otu_table</span>(ps.whole),</span>
+<span id="cb9-4"><a href="#cb9-4"></a>                                <span class="kw">sample_data</span>(newDF.whole),</span>
+<span id="cb9-5"><a href="#cb9-5"></a>                                <span class="kw">tax_table</span>(ps.whole),</span>
+<span id="cb9-6"><a href="#cb9-6"></a>                                <span class="kw">phy_tree</span>(ps.whole))</span>
+<span id="cb9-7"><a href="#cb9-7"></a>ps.whole.hill</span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="kw">sample_data</span>(ps.whole.hill)</span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="kw">saveRDS</span>(ps.whole.hill, <span class="st">&quot;rdata/p4/ps_16S_bocas_fish_final_hill.rds&quot;</span>)</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 3113 taxa and 89 samples ]
 sample_data() Sample Data:       [ 89 samples by 14 sample variables ]
 tax_table()   Taxonomy Table:    [ 3113 taxa by 11 taxonomic ranks ]
@@ -1682,32 +2072,28 @@ phy_tree()    Phylogenetic Tree: [ 3113 tips and 3112 internal nodes ]</code></p
 <h2 id="alpha-diversity-estimates-by-zone">Alpha Diversity Estimates by Zone</h2>
 <p>Next, we calculate alpha diversity with Hill numbers <strong><em>for each zone</em></strong> using <code>alpha_div()</code> function.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-ps.outer &lt;- subset_samples(ps.whole.hill, Zone == &quot;Outer bay&quot;)
-ps.outer &lt;- prune_taxa(taxa_sums(ps.outer) &gt; 0, ps.outer)
-ps.outer
-ps.inner &lt;- subset_samples(ps.whole.hill, Zone == &quot;Inner bay&quot;)
-ps.inner &lt;- prune_taxa(taxa_sums(ps.inner) &gt; 0, ps.inner)
-ps.inner
-ps.inner.dist &lt;- subset_samples(ps.whole.hill, Zone == &quot;Inner bay disturbed&quot;)
-ps.inner.dist &lt;- prune_taxa(taxa_sums(ps.inner.dist) &gt; 0, ps.inner.dist)
-ps.inner.dist</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>ps.outer &lt;-<span class="st"> </span><span class="kw">subset_samples</span>(ps.whole.hill, Zone <span class="op">==</span><span class="st"> &quot;Outer bay&quot;</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a>ps.outer &lt;-<span class="st"> </span><span class="kw">prune_taxa</span>(<span class="kw">taxa_sums</span>(ps.outer) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, ps.outer)</span>
+<span id="cb11-3"><a href="#cb11-3"></a>ps.outer</span>
+<span id="cb11-4"><a href="#cb11-4"></a>ps.inner &lt;-<span class="st"> </span><span class="kw">subset_samples</span>(ps.whole.hill, Zone <span class="op">==</span><span class="st"> &quot;Inner bay&quot;</span>)</span>
+<span id="cb11-5"><a href="#cb11-5"></a>ps.inner &lt;-<span class="st"> </span><span class="kw">prune_taxa</span>(<span class="kw">taxa_sums</span>(ps.inner) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, ps.inner)</span>
+<span id="cb11-6"><a href="#cb11-6"></a>ps.inner</span>
+<span id="cb11-7"><a href="#cb11-7"></a>ps.inner.dist &lt;-<span class="st"> </span><span class="kw">subset_samples</span>(ps.whole.hill, Zone <span class="op">==</span><span class="st"> &quot;Inner bay disturbed&quot;</span>)</span>
+<span id="cb11-8"><a href="#cb11-8"></a>ps.inner.dist &lt;-<span class="st"> </span><span class="kw">prune_taxa</span>(<span class="kw">taxa_sums</span>(ps.inner.dist) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, ps.inner.dist)</span>
+<span id="cb11-9"><a href="#cb11-9"></a>ps.inner.dist</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 1271 taxa and 35 samples ]
 sample_data() Sample Data:       [ 35 samples by 14 sample variables ]
 tax_table()   Taxonomy Table:    [ 1271 taxa by 11 taxonomic ranks ]
 phy_tree()    Phylogenetic Tree: [ 1271 tips and 1270 internal nodes ]</code></pre>
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 1590 taxa and 35 samples ]
 sample_data() Sample Data:       [ 35 samples by 14 sample variables ]
 tax_table()   Taxonomy Table:    [ 1590 taxa by 11 taxonomic ranks ]
 phy_tree()    Phylogenetic Tree: [ 1590 tips and 1589 internal nodes ]</code></pre>
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 909 taxa and 19 samples ]
 sample_data() Sample Data:       [ 19 samples by 14 sample variables ]
 tax_table()   Taxonomy Table:    [ 909 taxa by 11 taxonomic ranks ]
@@ -1715,58 +2101,53 @@ phy_tree()    Phylogenetic Tree: [ 909 tips and 908 internal nodes ]</code></pre
 </div>
 <p>Get the ASV tables and transpose the tables so ASVs are rows.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.outer &lt;- t(otu_table(ps.outer))
-asv.inner &lt;- t(otu_table(ps.inner))
-asv.inner.dist &lt;- t(otu_table(ps.inner.dist))</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>asv.outer &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">otu_table</span>(ps.outer))</span>
+<span id="cb15-2"><a href="#cb15-2"></a>asv.inner &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">otu_table</span>(ps.inner))</span>
+<span id="cb15-3"><a href="#cb15-3"></a>asv.inner.dist &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">otu_table</span>(ps.inner.dist))</span></code></pre></div>
 </div>
 <p>And transform the counts to relative abundance.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.outer.norm &lt;- microbiome::transform(asv.outer, transform = &quot;compositional&quot;)
-asv.inner.norm &lt;- microbiome::transform(asv.inner, transform = &quot;compositional&quot;)
-asv.inner.dist.norm &lt;- microbiome::transform(asv.inner.dist,
-                                             transform = &quot;compositional&quot;)</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>asv.outer.norm &lt;-<span class="st"> </span>microbiome<span class="op">::</span><span class="kw">transform</span>(asv.outer, <span class="dt">transform =</span> <span class="st">&quot;compositional&quot;</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a>asv.inner.norm &lt;-<span class="st"> </span>microbiome<span class="op">::</span><span class="kw">transform</span>(asv.inner, <span class="dt">transform =</span> <span class="st">&quot;compositional&quot;</span>)</span>
+<span id="cb16-3"><a href="#cb16-3"></a>asv.inner.dist.norm &lt;-<span class="st"> </span>microbiome<span class="op">::</span><span class="kw">transform</span>(asv.inner.dist,</span>
+<span id="cb16-4"><a href="#cb16-4"></a>                                             <span class="dt">transform =</span> <span class="st">&quot;compositional&quot;</span>)</span></code></pre></div>
 </div>
 <p>Now we can test alpha diversity per zone based on Hill numbers at different diversity levels (<code>q = 0 (observed)</code>, <code>q = 1 (shannon exponential)</code>, <code>q = 2 (multiplicative simpson)</code>).</p>
 <p><em>Note</em>: for Hill numbers, alpha diversity per zone cannot be obtained as a mean across samples. The calculation is different as performed by function <code>alpha_div()</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-alpha_div(countable = asv.outer.norm, qvalue = 0)
-alpha_div(countable = asv.outer.norm, qvalue = 1)
-alpha_div(countable = asv.outer.norm, qvalue = 2)
-
-alpha_div(countable = asv.inner.norm, qvalue = 0)
-alpha_div(countable = asv.inner.norm, qvalue = 1)
-alpha_div(countable = asv.inner.norm, qvalue = 2)
-
-alpha_div(countable = asv.inner.dist.norm, qvalue = 0)
-alpha_div(countable = asv.inner.dist.norm, qvalue = 1)
-alpha_div(countable = asv.inner.dist.norm, qvalue = 2)</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.outer.norm, <span class="dt">qvalue =</span> <span class="dv">0</span>)</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.outer.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>)</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.outer.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>)</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.norm, <span class="dt">qvalue =</span> <span class="dv">0</span>)</span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>)</span>
+<span id="cb17-7"><a href="#cb17-7"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>)</span>
+<span id="cb17-8"><a href="#cb17-8"></a></span>
+<span id="cb17-9"><a href="#cb17-9"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.dist.norm, <span class="dt">qvalue =</span> <span class="dv">0</span>)</span>
+<span id="cb17-10"><a href="#cb17-10"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.dist.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>)</span>
+<span id="cb17-11"><a href="#cb17-11"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.dist.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <h2 id="significance-test">Significance Test</h2>
 <p>Here we run Kruskal-Wallis Tests on each order of diversty (q value) and posthoc Dunn Tests with Benjamin Hochberg correction for zone comparison.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-temp_table &lt;- data.frame(sample_data(ps.whole))
-temp_table[, c(1:4, 7:11)] &lt;- list(NULL)
-temp_table &lt;- temp_table %&gt;% tibble::rownames_to_column(&quot;Sample&quot;)
-temp_table &lt;- temp_table %&gt;% dplyr::rename(Group = Zone)
-temp_table$Group &lt;- as.character(temp_table$Group)
-temp_table$Reef &lt;- as.character(temp_table$Reef)
-
-hill_hierarchy &lt;- temp_table[,1:2]
-hill_hierarchy2 &lt;- temp_table[, c(1, 3)]</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>temp_table &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">sample_data</span>(ps.whole))</span>
+<span id="cb18-2"><a href="#cb18-2"></a>temp_table[, <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dv">7</span><span class="op">:</span><span class="dv">11</span>)] &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="ot">NULL</span>)</span>
+<span id="cb18-3"><a href="#cb18-3"></a>temp_table &lt;-<span class="st"> </span>temp_table <span class="op">%&gt;%</span><span class="st"> </span>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(<span class="st">&quot;Sample&quot;</span>)</span>
+<span id="cb18-4"><a href="#cb18-4"></a>temp_table &lt;-<span class="st"> </span>temp_table <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">Group =</span> Zone)</span>
+<span id="cb18-5"><a href="#cb18-5"></a>temp_table<span class="op">$</span>Group &lt;-<span class="st"> </span><span class="kw">as.character</span>(temp_table<span class="op">$</span>Group)</span>
+<span id="cb18-6"><a href="#cb18-6"></a>temp_table<span class="op">$</span>Reef &lt;-<span class="st"> </span><span class="kw">as.character</span>(temp_table<span class="op">$</span>Reef)</span>
+<span id="cb18-7"><a href="#cb18-7"></a></span>
+<span id="cb18-8"><a href="#cb18-8"></a>hill_hierarchy &lt;-<span class="st"> </span>temp_table[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
+<span id="cb18-9"><a href="#cb18-9"></a>hill_hierarchy2 &lt;-<span class="st"> </span>temp_table[, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code></pre></div>
 </div>
 <h3 id="by-zone">By Zone</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-divtestresult.q0 &lt;- div_test(asv.whole.norm, qvalue = 0,
-                             hierarchy = hill_hierarchy, posthoc = TRUE)
-divtestresult.q1 &lt;- div_test(asv.whole.norm, qvalue = 1,
-                             hierarchy = hill_hierarchy, posthoc = TRUE)
-divtestresult.q2 &lt;- div_test(asv.whole.norm, qvalue = 2,
-                             hierarchy = hill_hierarchy, posthoc = TRUE)</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>divtestresult.q0 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.whole.norm, <span class="dt">qvalue =</span> <span class="dv">0</span>,</span>
+<span id="cb19-2"><a href="#cb19-2"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb19-3"><a href="#cb19-3"></a>divtestresult.q1 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.whole.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>,</span>
+<span id="cb19-4"><a href="#cb19-4"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb19-5"><a href="#cb19-5"></a>divtestresult.q2 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.whole.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>,</span>
+<span id="cb19-6"><a href="#cb19-6"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -1817,37 +2198,33 @@ divtestresult.q2 &lt;- div_test(asv.whole.norm, qvalue = 2,
 </div>
 <h4 id="q-value-0">q-value = 0</h4>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-                                        Z    P.unadj     P.adj
+<pre><code>                                        Z    P.unadj     P.adj
 Inner bay-Inner bay disturbed 0.008682602 0.99307237 0.9930724
 Inner bay-Outer bay           1.700501330 0.08903667 0.2671100
 Inner bay disturbed-Outer bay 1.417817787 0.15624397 0.2343660</code></pre>
 </div>
 <h4 id="q-value-1">q-value = 1</h4>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-                                      Z     P.unadj       P.adj
+<pre><code>                                      Z     P.unadj       P.adj
 Inner bay-Inner bay disturbed -1.416080 0.156752013 0.156752013
 Inner bay-Outer bay            2.128057 0.033332390 0.049998585
 Inner bay disturbed-Outer bay  3.201244 0.001368355 0.004105066</code></pre>
 </div>
 <h4 id="q-value-2">q-value = 2</h4>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-                                      Z     P.unadj     P.adj
+<pre><code>                                      Z     P.unadj     P.adj
 Inner bay-Inner bay disturbed -1.579482 0.114225549 0.1142255
 Inner bay-Outer bay            1.586790 0.112560206 0.1688403
 Inner bay disturbed-Outer bay  2.910593 0.003607432 0.0108223</code></pre>
 </div>
 <h3 id="by-reef">By Reef</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-divtestresult.q0 &lt;- div_test(asv.whole.norm, qvalue = 0,
-                             hierarchy = hill_hierarchy2, posthoc = TRUE)
-divtestresult.q1 &lt;- div_test(asv.whole.norm, qvalue = 1,
-                             hierarchy = hill_hierarchy2, posthoc = TRUE)
-divtestresult.q2 &lt;- div_test(asv.whole.norm, qvalue = 2,
-                             hierarchy = hill_hierarchy2, posthoc = TRUE)</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>divtestresult.q0 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.whole.norm, <span class="dt">qvalue =</span> <span class="dv">0</span>,</span>
+<span id="cb23-2"><a href="#cb23-2"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy2, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb23-3"><a href="#cb23-3"></a>divtestresult.q1 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.whole.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>,</span>
+<span id="cb23-4"><a href="#cb23-4"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy2, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb23-5"><a href="#cb23-5"></a>divtestresult.q2 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.whole.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>,</span>
+<span id="cb23-6"><a href="#cb23-6"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy2, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -1922,19 +2299,18 @@ divtestresult.q2 &lt;- div_test(asv.whole.norm, qvalue = 2,
 </div>
 <p><br/></p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-data.hill.whole_n &lt;- data.frame(sample_data(ps.whole.hill)) %&gt;%
-  pivot_longer(cols = 1:3, names_to = &quot;Index&quot;,  values_to = &quot;Diversity&quot;)
-data.hill.whole_n$Fraction_delailed &lt;- NULL
-data.hill.whole_n &lt;- data.hill.whole_n[, c(10,1,2,3,4,5,6,7,8,9,12,11)]
-data.hill.whole_n &lt;- dplyr::mutate_if(data.hill.whole_n, is.factor, as.character)
-data.hill.whole_n$Index &lt;- stringr::str_replace(
-  data.hill.whole_n$Index, &quot;Observed&quot;, &quot;Observed (q=0)&quot;)
-data.hill.whole_n$Index &lt;- stringr::str_replace(
-  data.hill.whole_n$Index, &quot;shannon.hill&quot;, &quot;Shannon exponential (q=1)&quot;)
-data.hill.whole_n$Index &lt;- stringr::str_replace(
-  data.hill.whole_n$Index, &quot;simpson.hill&quot;, &quot;Simpson multiplicative inverse (q=2)&quot;)
-data.hill.whole_n &lt;- data.hill.whole_n[order(data.hill.whole_n$Index),]</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>data.hill.whole_n &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">sample_data</span>(ps.whole.hill)) <span class="op">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">names_to =</span> <span class="st">&quot;Index&quot;</span>,  <span class="dt">values_to =</span> <span class="st">&quot;Diversity&quot;</span>)</span>
+<span id="cb24-3"><a href="#cb24-3"></a>data.hill.whole_n<span class="op">$</span>Fraction_delailed &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>data.hill.whole_n &lt;-<span class="st"> </span>data.hill.whole_n[, <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">12</span>,<span class="dv">11</span>)]</span>
+<span id="cb24-5"><a href="#cb24-5"></a>data.hill.whole_n &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">mutate_if</span>(data.hill.whole_n, is.factor, as.character)</span>
+<span id="cb24-6"><a href="#cb24-6"></a>data.hill.whole_n<span class="op">$</span>Index &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_replace</span>(</span>
+<span id="cb24-7"><a href="#cb24-7"></a>  data.hill.whole_n<span class="op">$</span>Index, <span class="st">&quot;Observed&quot;</span>, <span class="st">&quot;Observed (q=0)&quot;</span>)</span>
+<span id="cb24-8"><a href="#cb24-8"></a>data.hill.whole_n<span class="op">$</span>Index &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_replace</span>(</span>
+<span id="cb24-9"><a href="#cb24-9"></a>  data.hill.whole_n<span class="op">$</span>Index, <span class="st">&quot;shannon.hill&quot;</span>, <span class="st">&quot;Shannon exponential (q=1)&quot;</span>)</span>
+<span id="cb24-10"><a href="#cb24-10"></a>data.hill.whole_n<span class="op">$</span>Index &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_replace</span>(</span>
+<span id="cb24-11"><a href="#cb24-11"></a>  data.hill.whole_n<span class="op">$</span>Index, <span class="st">&quot;simpson.hill&quot;</span>, <span class="st">&quot;Simpson multiplicative inverse (q=2)&quot;</span>)</span>
+<span id="cb24-12"><a href="#cb24-12"></a>data.hill.whole_n &lt;-<span class="st"> </span>data.hill.whole_n[<span class="kw">order</span>(data.hill.whole_n<span class="op">$</span>Index),]</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -1944,13 +2320,11 @@ data.hill.whole_n &lt;- data.hill.whole_n[order(data.hill.whole_n$Index),]</code
 <h2 id="prepare-data-set-1">Prepare Data Set</h2>
 <p>The first step is to read in the whole community fish microbiome data.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-ps.core &lt;- readRDS(&quot;rdata/p1/ps_indv01_core_fish.rds&quot;)
-ps.core</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>ps.core &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;rdata/p1/ps_indv01_core_fish.rds&quot;</span>)</span>
+<span id="cb25-2"><a href="#cb25-2"></a>ps.core</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 27 taxa and 89 samples ]
 sample_data() Sample Data:       [ 89 samples by 11 sample variables ]
 tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
@@ -1958,53 +2332,45 @@ phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
 </div>
 <p>Then get the ASV table and transpose the table so ASVs are rows. Also get the phylogenetic tree and make sure the ASV names in the ASV table and the tip names in the phylogenetic tree are identical.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.core &lt;- t(otu_table(ps.core))
-tree.core &lt;- phy_tree(ps.core)
-identical(sort(rownames(asv.core)), sort(tree.core$tip.label))</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>asv.core &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">otu_table</span>(ps.core))</span>
+<span id="cb27-2"><a href="#cb27-2"></a>tree.core &lt;-<span class="st"> </span><span class="kw">phy_tree</span>(ps.core)</span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="kw">identical</span>(<span class="kw">sort</span>(<span class="kw">rownames</span>(asv.core)), <span class="kw">sort</span>(tree.core<span class="op">$</span>tip.label))</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-[1] TRUE</code></pre>
+<pre><code>[1] TRUE</code></pre>
 </div>
 <p>Finally, normalize the ASV table to relative abundance.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.core.norm &lt;- microbiome::transform(asv.core, transform = &quot;compositional&quot;)</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>asv.core.norm &lt;-<span class="st"> </span>microbiome<span class="op">::</span><span class="kw">transform</span>(asv.core, <span class="dt">transform =</span> <span class="st">&quot;compositional&quot;</span>)</span></code></pre></div>
 </div>
 <h2 id="alpha-diversity-estimates-1">Alpha Diversity Estimates</h2>
 <h3 id="hill-diversity-1">Hill Diversity</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-hillq0 &lt;- estimate_richness(ps.core, measures = &quot;Observed&quot;)</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>hillq0 &lt;-<span class="st"> </span><span class="kw">estimate_richness</span>(ps.core, <span class="dt">measures =</span> <span class="st">&quot;Observed&quot;</span>)</span></code></pre></div>
 </div>
 <h3 id="shannon-exponential-1">Shannon Exponential</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-shannon.hill &lt;- exp(vegan::diversity(t(asv.core.norm), index = &quot;shannon&quot;))
-shannon.core.df &lt;- as.data.frame(shannon.hill)</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>shannon.hill &lt;-<span class="st"> </span><span class="kw">exp</span>(vegan<span class="op">::</span><span class="kw">diversity</span>(<span class="kw">t</span>(asv.core.norm), <span class="dt">index =</span> <span class="st">&quot;shannon&quot;</span>))</span>
+<span id="cb31-2"><a href="#cb31-2"></a>shannon.core.df &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(shannon.hill)</span></code></pre></div>
 </div>
 <h3 id="simpson-index-1">Simpson Index</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-1/(1-(vegan::diversity(t(asv.core.norm), index = &quot;simpson&quot;)))
-simpson.hill &lt;- 1/(1-(vegan::diversity(t(asv.core.norm), index = &quot;simpson&quot;)))
-simpson.core.df &lt;- as.data.frame(simpson.hill)</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>(vegan<span class="op">::</span><span class="kw">diversity</span>(<span class="kw">t</span>(asv.core.norm), <span class="dt">index =</span> <span class="st">&quot;simpson&quot;</span>)))</span>
+<span id="cb32-2"><a href="#cb32-2"></a>simpson.hill &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>(vegan<span class="op">::</span><span class="kw">diversity</span>(<span class="kw">t</span>(asv.core.norm), <span class="dt">index =</span> <span class="st">&quot;simpson&quot;</span>)))</span>
+<span id="cb32-3"><a href="#cb32-3"></a>simpson.core.df &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(simpson.hill)</span></code></pre></div>
 </div>
 <p>Now we combine the phyloseq object, sample data, and add new columns with Hill diversity into one data frame and save the object.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-newDF.core &lt;- data.frame(hillq0, shannon.hill,
-                         simpson.hill, sample_data(ps.core))
-ps.core.hill &lt;- merge_phyloseq(otu_table(ps.core),
-                               sample_data(newDF.core),
-                               tax_table(ps.core),
-                               phy_tree(ps.core))
-saveRDS(ps.core.hill, &quot;rdata/p4/ps_core_hill.rds&quot;)</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>newDF.core &lt;-<span class="st"> </span><span class="kw">data.frame</span>(hillq0, shannon.hill,</span>
+<span id="cb33-2"><a href="#cb33-2"></a>                         simpson.hill, <span class="kw">sample_data</span>(ps.core))</span>
+<span id="cb33-3"><a href="#cb33-3"></a>ps.core.hill &lt;-<span class="st"> </span><span class="kw">merge_phyloseq</span>(<span class="kw">otu_table</span>(ps.core),</span>
+<span id="cb33-4"><a href="#cb33-4"></a>                               <span class="kw">sample_data</span>(newDF.core),</span>
+<span id="cb33-5"><a href="#cb33-5"></a>                               <span class="kw">tax_table</span>(ps.core),</span>
+<span id="cb33-6"><a href="#cb33-6"></a>                               <span class="kw">phy_tree</span>(ps.core))</span>
+<span id="cb33-7"><a href="#cb33-7"></a><span class="kw">saveRDS</span>(ps.core.hill, <span class="st">&quot;rdata/p4/ps_core_hill.rds&quot;</span>)</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 27 taxa and 89 samples ]
 sample_data() Sample Data:       [ 89 samples by 14 sample variables ]
 tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
@@ -2013,32 +2379,28 @@ phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
 <h2 id="alpha-diversity-estimates-by-zone-1">Alpha Diversity Estimates by Zone</h2>
 <p>Next, we calculate alpha diversity with Hill numbers <strong><em>for each zone</em></strong> using <code>alpha_div()</code> function.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-ps.outer &lt;- subset_samples(ps.core.hill, Zone == &quot;Outer bay&quot;)
-ps.outer &lt;- prune_taxa(taxa_sums(ps.outer) &gt; 0, ps.outer)
-ps.outer
-ps.inner &lt;- subset_samples(ps.core.hill, Zone == &quot;Inner bay&quot;)
-ps.inner &lt;- prune_taxa(taxa_sums(ps.inner) &gt; 0, ps.inner)
-ps.inner
-ps.inner.dist &lt;- subset_samples(ps.core.hill, Zone == &quot;Inner bay disturbed&quot;)
-ps.inner.dist &lt;- prune_taxa(taxa_sums(ps.inner.dist) &gt; 0, ps.inner.dist)
-ps.inner.dist</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>ps.outer &lt;-<span class="st"> </span><span class="kw">subset_samples</span>(ps.core.hill, Zone <span class="op">==</span><span class="st"> &quot;Outer bay&quot;</span>)</span>
+<span id="cb35-2"><a href="#cb35-2"></a>ps.outer &lt;-<span class="st"> </span><span class="kw">prune_taxa</span>(<span class="kw">taxa_sums</span>(ps.outer) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, ps.outer)</span>
+<span id="cb35-3"><a href="#cb35-3"></a>ps.outer</span>
+<span id="cb35-4"><a href="#cb35-4"></a>ps.inner &lt;-<span class="st"> </span><span class="kw">subset_samples</span>(ps.core.hill, Zone <span class="op">==</span><span class="st"> &quot;Inner bay&quot;</span>)</span>
+<span id="cb35-5"><a href="#cb35-5"></a>ps.inner &lt;-<span class="st"> </span><span class="kw">prune_taxa</span>(<span class="kw">taxa_sums</span>(ps.inner) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, ps.inner)</span>
+<span id="cb35-6"><a href="#cb35-6"></a>ps.inner</span>
+<span id="cb35-7"><a href="#cb35-7"></a>ps.inner.dist &lt;-<span class="st"> </span><span class="kw">subset_samples</span>(ps.core.hill, Zone <span class="op">==</span><span class="st"> &quot;Inner bay disturbed&quot;</span>)</span>
+<span id="cb35-8"><a href="#cb35-8"></a>ps.inner.dist &lt;-<span class="st"> </span><span class="kw">prune_taxa</span>(<span class="kw">taxa_sums</span>(ps.inner.dist) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, ps.inner.dist)</span>
+<span id="cb35-9"><a href="#cb35-9"></a>ps.inner.dist</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 27 taxa and 35 samples ]
 sample_data() Sample Data:       [ 35 samples by 14 sample variables ]
 tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
 phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 27 taxa and 35 samples ]
 sample_data() Sample Data:       [ 35 samples by 14 sample variables ]
 tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
 phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
-<pre><code>
-phyloseq-class experiment-level object
+<pre><code>phyloseq-class experiment-level object
 otu_table()   OTU Table:         [ 27 taxa and 19 samples ]
 sample_data() Sample Data:       [ 19 samples by 14 sample variables ]
 tax_table()   Taxonomy Table:    [ 27 taxa by 11 taxonomic ranks ]
@@ -2046,55 +2408,50 @@ phy_tree()    Phylogenetic Tree: [ 27 tips and 26 internal nodes ]</code></pre>
 </div>
 <p>Get the ASV tables and transpose the tables so ASVs are rows.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.outer &lt;- t(otu_table(ps.outer))
-asv.inner &lt;- t(otu_table(ps.inner))
-asv.inner.dist &lt;- t(otu_table(ps.inner.dist))</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>asv.outer &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">otu_table</span>(ps.outer))</span>
+<span id="cb39-2"><a href="#cb39-2"></a>asv.inner &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">otu_table</span>(ps.inner))</span>
+<span id="cb39-3"><a href="#cb39-3"></a>asv.inner.dist &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">otu_table</span>(ps.inner.dist))</span></code></pre></div>
 </div>
 <p>And transform the counts to relative abundance.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-asv.outer.norm &lt;- microbiome::transform(asv.outer, transform = &quot;compositional&quot;)
-asv.inner.norm &lt;- microbiome::transform(asv.inner, transform = &quot;compositional&quot;)
-asv.inner.dist.norm &lt;- microbiome::transform(asv.inner.dist, transform = &quot;compositional&quot;)</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>asv.outer.norm &lt;-<span class="st"> </span>microbiome<span class="op">::</span><span class="kw">transform</span>(asv.outer, <span class="dt">transform =</span> <span class="st">&quot;compositional&quot;</span>)</span>
+<span id="cb40-2"><a href="#cb40-2"></a>asv.inner.norm &lt;-<span class="st"> </span>microbiome<span class="op">::</span><span class="kw">transform</span>(asv.inner, <span class="dt">transform =</span> <span class="st">&quot;compositional&quot;</span>)</span>
+<span id="cb40-3"><a href="#cb40-3"></a>asv.inner.dist.norm &lt;-<span class="st"> </span>microbiome<span class="op">::</span><span class="kw">transform</span>(asv.inner.dist, <span class="dt">transform =</span> <span class="st">&quot;compositional&quot;</span>)</span></code></pre></div>
 </div>
 <p>Now we can test alpha diversity per zone based on Hill numbers at different diversity levels (<code>q = 0 (observed)</code>, <code>q = 1 (shannon exponential)</code>, <code>q = 2 (multiplicative simpson)</code>).</p>
 <p><em>Note</em>: for Hill numbers, alpha diversity per zone cannot be obtained as a mean across samples. The calculation is different as performed by function <code>alpha_div()</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-alpha_div(countable = asv.outer.norm, qvalue = 0)
-alpha_div(countable = asv.outer.norm, qvalue = 1)
-alpha_div(countable = asv.outer.norm, qvalue = 2)
-
-alpha_div(countable = asv.inner.norm, qvalue = 0)
-alpha_div(countable = asv.inner.norm, qvalue = 1)
-alpha_div(countable = asv.inner.norm, qvalue = 2)
-
-alpha_div(countable = asv.inner.dist.norm, qvalue = 0)
-alpha_div(countable = asv.inner.dist.norm, qvalue = 1)
-alpha_div(countable = asv.inner.dist.norm, qvalue = 2)</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.outer.norm, <span class="dt">qvalue =</span> <span class="dv">0</span>)</span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.outer.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>)</span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.outer.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>)</span>
+<span id="cb41-4"><a href="#cb41-4"></a></span>
+<span id="cb41-5"><a href="#cb41-5"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.norm, <span class="dt">qvalue =</span> <span class="dv">0</span>)</span>
+<span id="cb41-6"><a href="#cb41-6"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>)</span>
+<span id="cb41-7"><a href="#cb41-7"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>)</span>
+<span id="cb41-8"><a href="#cb41-8"></a></span>
+<span id="cb41-9"><a href="#cb41-9"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.dist.norm, <span class="dt">qvalue =</span> <span class="dv">0</span>)</span>
+<span id="cb41-10"><a href="#cb41-10"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.dist.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>)</span>
+<span id="cb41-11"><a href="#cb41-11"></a><span class="kw">alpha_div</span>(<span class="dt">countable =</span> asv.inner.dist.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <h2 id="significance-test-1">Significance Test</h2>
 <p>Here we run Kruskal-Wallis Tests on each order of diversity (q value) and posthoc Dunn Tests with Benjamin Hochberg correction for zone comparison.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-temp_table &lt;- data.frame(sample_data(ps.core))
-temp_table[, c(1:4, 7:11)] &lt;- list(NULL)
-temp_table &lt;- temp_table %&gt;% tibble::rownames_to_column(&quot;Sample&quot;)
-temp_table &lt;- temp_table %&gt;% dplyr::rename(Group = Zone)
-temp_table$Group &lt;- as.character(temp_table$Group)
-temp_table$Reef &lt;- as.character(temp_table$Reef)
-
-hill_hierarchy &lt;- temp_table[,1:2]
-hill_hierarchy2 &lt;- temp_table[, c(1, 3)]</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>temp_table &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">sample_data</span>(ps.core))</span>
+<span id="cb42-2"><a href="#cb42-2"></a>temp_table[, <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dv">7</span><span class="op">:</span><span class="dv">11</span>)] &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="ot">NULL</span>)</span>
+<span id="cb42-3"><a href="#cb42-3"></a>temp_table &lt;-<span class="st"> </span>temp_table <span class="op">%&gt;%</span><span class="st"> </span>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(<span class="st">&quot;Sample&quot;</span>)</span>
+<span id="cb42-4"><a href="#cb42-4"></a>temp_table &lt;-<span class="st"> </span>temp_table <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">Group =</span> Zone)</span>
+<span id="cb42-5"><a href="#cb42-5"></a>temp_table<span class="op">$</span>Group &lt;-<span class="st"> </span><span class="kw">as.character</span>(temp_table<span class="op">$</span>Group)</span>
+<span id="cb42-6"><a href="#cb42-6"></a>temp_table<span class="op">$</span>Reef &lt;-<span class="st"> </span><span class="kw">as.character</span>(temp_table<span class="op">$</span>Reef)</span>
+<span id="cb42-7"><a href="#cb42-7"></a></span>
+<span id="cb42-8"><a href="#cb42-8"></a>hill_hierarchy &lt;-<span class="st"> </span>temp_table[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
+<span id="cb42-9"><a href="#cb42-9"></a>hill_hierarchy2 &lt;-<span class="st"> </span>temp_table[, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code></pre></div>
 </div>
 <h3 id="by-zone-1">By Zone</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-divtestresult.q1 &lt;- div_test(asv.core.norm, qvalue = 1,
-                             hierarchy = hill_hierarchy, posthoc = TRUE)
-divtestresult.q2 &lt;- div_test(asv.core.norm, qvalue = 2,
-                             hierarchy = hill_hierarchy, posthoc = TRUE)</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>divtestresult.q1 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.core.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>,</span>
+<span id="cb43-2"><a href="#cb43-2"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb43-3"><a href="#cb43-3"></a>divtestresult.q2 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.core.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>,</span>
+<span id="cb43-4"><a href="#cb43-4"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -2138,27 +2495,24 @@ divtestresult.q2 &lt;- div_test(asv.core.norm, qvalue = 2,
 </div>
 <h4 id="q-value-1-2">q-value = 1</h4>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-                                      Z     P.unadj      P.adj
+<pre><code>                                      Z     P.unadj      P.adj
 Inner bay-Inner bay disturbed -1.633200 0.102426879 0.15364032
 Inner bay-Outer bay            1.480387 0.138769942 0.13876994
 Inner bay disturbed-Outer bay  2.875053 0.004039591 0.01211877</code></pre>
 </div>
 <h4 id="q-value-2-2">q-value = 2</h4>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-                                      Z     P.unadj      P.adj
+<pre><code>                                      Z     P.unadj      P.adj
 Inner bay-Inner bay disturbed -1.944889 0.051788329 0.07768249
 Inner bay-Outer bay            1.105664 0.268871893 0.26887189
 Inner bay disturbed-Outer bay  2.872398 0.004073694 0.01222108</code></pre>
 </div>
 <h3 id="by-reef-1">By Reef</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-divtestresult.q1 &lt;- div_test(asv.core.norm, qvalue = 1,
-                             hierarchy = hill_hierarchy2, posthoc = TRUE)
-divtestresult.q2 &lt;- div_test(asv.core.norm, qvalue = 2,
-                             hierarchy = hill_hierarchy2, posthoc = TRUE)</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>divtestresult.q1 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.core.norm, <span class="dt">qvalue =</span> <span class="dv">1</span>,</span>
+<span id="cb46-2"><a href="#cb46-2"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy2, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb46-3"><a href="#cb46-3"></a>divtestresult.q2 &lt;-<span class="st"> </span><span class="kw">div_test</span>(asv.core.norm, <span class="dt">qvalue =</span> <span class="dv">2</span>,</span>
+<span id="cb46-4"><a href="#cb46-4"></a>                             <span class="dt">hierarchy =</span> hill_hierarchy2, <span class="dt">posthoc =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -2218,16 +2572,15 @@ divtestresult.q2 &lt;- div_test(asv.core.norm, qvalue = 2,
 </div>
 <p><br/></p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-hill.core.DF &lt;- data.frame(sample_data(ps.core.hill))
-kruskal.test(Observed~Zone, data = hill.core.DF)
-kruskal.test(Observed~Reef, data = hill.core.DF)
-dunn.core.obs.zone &lt;- dunn.test(hill.core.DF$Observed, hill.core.DF$Zone,
-                              method=&quot;hochberg&quot;, table=TRUE, wrap=TRUE)
-dunn.core.obs.reef &lt;- dunn.test(hill.core.DF$Observed, hill.core.DF$Reef,
-                              method=&quot;hochberg&quot;, table = TRUE, wrap = TRUE)
-dunn.test(hill.core.DF$Observed, hill.core.DF$Zone, method=&quot;none&quot;)
-dunn.test(hill.core.DF$Observed, hill.core.DF$Reef, method=&quot;none&quot;)</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>hill.core.DF &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">sample_data</span>(ps.core.hill))</span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="kw">kruskal.test</span>(Observed<span class="op">~</span>Zone, <span class="dt">data =</span> hill.core.DF)</span>
+<span id="cb47-3"><a href="#cb47-3"></a><span class="kw">kruskal.test</span>(Observed<span class="op">~</span>Reef, <span class="dt">data =</span> hill.core.DF)</span>
+<span id="cb47-4"><a href="#cb47-4"></a>dunn.core.obs.zone &lt;-<span class="st"> </span><span class="kw">dunn.test</span>(hill.core.DF<span class="op">$</span>Observed, hill.core.DF<span class="op">$</span>Zone,</span>
+<span id="cb47-5"><a href="#cb47-5"></a>                              <span class="dt">method=</span><span class="st">&quot;hochberg&quot;</span>, <span class="dt">table=</span><span class="ot">TRUE</span>, <span class="dt">wrap=</span><span class="ot">TRUE</span>)</span>
+<span id="cb47-6"><a href="#cb47-6"></a>dunn.core.obs.reef &lt;-<span class="st"> </span><span class="kw">dunn.test</span>(hill.core.DF<span class="op">$</span>Observed, hill.core.DF<span class="op">$</span>Reef,</span>
+<span id="cb47-7"><a href="#cb47-7"></a>                              <span class="dt">method=</span><span class="st">&quot;hochberg&quot;</span>, <span class="dt">table =</span> <span class="ot">TRUE</span>, <span class="dt">wrap =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb47-8"><a href="#cb47-8"></a><span class="kw">dunn.test</span>(hill.core.DF<span class="op">$</span>Observed, hill.core.DF<span class="op">$</span>Zone, <span class="dt">method=</span><span class="st">&quot;none&quot;</span>)</span>
+<span id="cb47-9"><a href="#cb47-9"></a><span class="kw">dunn.test</span>(hill.core.DF<span class="op">$</span>Observed, hill.core.DF<span class="op">$</span>Reef, <span class="dt">method=</span><span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -2287,26 +2640,24 @@ dunn.test(hill.core.DF$Observed, hill.core.DF$Reef, method=&quot;none&quot;)</co
 </div>
 <p><br/></p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-data.hill.core_n &lt;- hill.core.DF %&gt;%
-  pivot_longer(cols = 1:3, names_to = &quot;Index&quot;,  values_to = &quot;Diversity&quot;)
-data.hill.core_n$Fraction_delailed &lt;- NULL
-data.hill.core_n &lt;- data.hill.core_n[, c(10,1,2,3,4,5,6,7,8,9,12,11)]
-data.hill.core_n &lt;- dplyr::mutate_if(data.hill.core_n, is.factor, as.character)
-data.hill.core_n$Index &lt;- stringr::str_replace(
-  data.hill.core_n$Index, &quot;Observed&quot;, &quot;Observed (q=0)&quot;)
-data.hill.core_n$Index &lt;- stringr::str_replace(
-  data.hill.core_n$Index, &quot;shannon.hill&quot;, &quot;Shannon exponential (q=1)&quot;)
-data.hill.core_n$Index &lt;- stringr::str_replace(
-  data.hill.core_n$Index, &quot;simpson.hill&quot;, &quot;Simpson multiplicative inverse (q=2)&quot;)
-data.hill.core_n &lt;- data.hill.core_n[order(data.hill.core_n$Index),]</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>data.hill.core_n &lt;-<span class="st"> </span>hill.core.DF <span class="op">%&gt;%</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">names_to =</span> <span class="st">&quot;Index&quot;</span>,  <span class="dt">values_to =</span> <span class="st">&quot;Diversity&quot;</span>)</span>
+<span id="cb48-3"><a href="#cb48-3"></a>data.hill.core_n<span class="op">$</span>Fraction_delailed &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>data.hill.core_n &lt;-<span class="st"> </span>data.hill.core_n[, <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">12</span>,<span class="dv">11</span>)]</span>
+<span id="cb48-5"><a href="#cb48-5"></a>data.hill.core_n &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">mutate_if</span>(data.hill.core_n, is.factor, as.character)</span>
+<span id="cb48-6"><a href="#cb48-6"></a>data.hill.core_n<span class="op">$</span>Index &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_replace</span>(</span>
+<span id="cb48-7"><a href="#cb48-7"></a>  data.hill.core_n<span class="op">$</span>Index, <span class="st">&quot;Observed&quot;</span>, <span class="st">&quot;Observed (q=0)&quot;</span>)</span>
+<span id="cb48-8"><a href="#cb48-8"></a>data.hill.core_n<span class="op">$</span>Index &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_replace</span>(</span>
+<span id="cb48-9"><a href="#cb48-9"></a>  data.hill.core_n<span class="op">$</span>Index, <span class="st">&quot;shannon.hill&quot;</span>, <span class="st">&quot;Shannon exponential (q=1)&quot;</span>)</span>
+<span id="cb48-10"><a href="#cb48-10"></a>data.hill.core_n<span class="op">$</span>Index &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_replace</span>(</span>
+<span id="cb48-11"><a href="#cb48-11"></a>  data.hill.core_n<span class="op">$</span>Index, <span class="st">&quot;simpson.hill&quot;</span>, <span class="st">&quot;Simpson multiplicative inverse (q=2)&quot;</span>)</span>
+<span id="cb48-12"><a href="#cb48-12"></a>data.hill.core_n &lt;-<span class="st"> </span>data.hill.core_n[<span class="kw">order</span>(data.hill.core_n<span class="op">$</span>Index),]</span></code></pre></div>
 </div>
 <h1 id="analysis-summary">Analysis Summary</h1>
 <h2 id="summary-table">Summary Table</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-data.hill.whole &lt;- readRDS(&quot;rdata/p4/data.hill.whole_n.rds&quot;)
-data.hill.core &lt;- readRDS(&quot;rdata/p4/data.hill.core_n.rds&quot;)</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>data.hill.whole &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;rdata/p4/data.hill.whole_n.rds&quot;</span>)</span>
+<span id="cb49-2"><a href="#cb49-2"></a>data.hill.core &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;rdata/p4/data.hill.core_n.rds&quot;</span>)</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -2319,119 +2670,114 @@ data.hill.core &lt;- readRDS(&quot;rdata/p4/data.hill.core_n.rds&quot;)</code></
 <p><br/></p>
 <h2 id="summary-figure">Summary Figure</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-#, foldcode=TRUE
-level_order3 &lt;- c(&#39;SCR&#39;, &#39;PPR&#39;, &#39;CCR&#39;, &#39;ALR&#39;, &#39;SIS&#39;, &#39;ROL&#39;, &#39;RNW&#39;, &#39;PST&#39;,&#39;PBL&#39;)
-level_order &lt;- c(&#39;Outer bay&#39;, &#39;Inner bay&#39;, &#39;Inner bay disturbed&#39;)
-level_order2 &lt;- c(&#39;Observed&#39;, &#39;shannon.hill&#39;, &#39;simpson.hill&#39;)
-disp.pal4 &lt;- c(&quot;royalblue4&quot;, &quot;royalblue3&quot;, &quot;royalblue1&quot;, &quot;aquamarine4&quot;,
-               &quot;mediumaquamarine&quot;, &quot;aquamarine2&quot;, &quot;chocolate3&quot;, &quot;chocolate2&quot;,
-               &quot;sienna1&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;, &quot;royalblue1&quot;,
-               &quot;aquamarine4&quot;, &quot;mediumaquamarine&quot;, &quot;aquamarine2&quot;, &quot;chocolate3&quot;,
-               &quot;chocolate2&quot;, &quot;sienna1&quot;)
-disp.pal5 &lt;-  c(&quot;midnightblue&quot;, &quot;royalblue4&quot;, &quot;royalblue3&quot;,&quot;darkslategrey&quot;,
-                &quot;aquamarine4&quot;, &quot;mediumaquamarine&quot;, &quot;chocolate4&quot;, &quot;sienna&quot;,
-                &quot;chocolate3&quot;,&quot;midnightblue&quot;, &quot;royalblue4&quot;, &quot;royalblue3&quot;,
-                &quot;darkslategrey&quot;,&quot;aquamarine4&quot;, &quot;mediumaquamarine&quot;, &quot;chocolate4&quot;,
-                &quot;sienna&quot;, &quot;chocolate3&quot;)</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co">#, foldcode=TRUE</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a>level_order3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;SCR&#39;</span>, <span class="st">&#39;PPR&#39;</span>, <span class="st">&#39;CCR&#39;</span>, <span class="st">&#39;ALR&#39;</span>, <span class="st">&#39;SIS&#39;</span>, <span class="st">&#39;ROL&#39;</span>, <span class="st">&#39;RNW&#39;</span>, <span class="st">&#39;PST&#39;</span>,<span class="st">&#39;PBL&#39;</span>)</span>
+<span id="cb50-3"><a href="#cb50-3"></a>level_order &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Outer bay&#39;</span>, <span class="st">&#39;Inner bay&#39;</span>, <span class="st">&#39;Inner bay disturbed&#39;</span>)</span>
+<span id="cb50-4"><a href="#cb50-4"></a>level_order2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Observed&#39;</span>, <span class="st">&#39;shannon.hill&#39;</span>, <span class="st">&#39;simpson.hill&#39;</span>)</span>
+<span id="cb50-5"><a href="#cb50-5"></a>disp.pal4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>, <span class="st">&quot;royalblue1&quot;</span>, <span class="st">&quot;aquamarine4&quot;</span>,</span>
+<span id="cb50-6"><a href="#cb50-6"></a>               <span class="st">&quot;mediumaquamarine&quot;</span>, <span class="st">&quot;aquamarine2&quot;</span>, <span class="st">&quot;chocolate3&quot;</span>, <span class="st">&quot;chocolate2&quot;</span>,</span>
+<span id="cb50-7"><a href="#cb50-7"></a>               <span class="st">&quot;sienna1&quot;</span>,<span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>, <span class="st">&quot;royalblue1&quot;</span>,</span>
+<span id="cb50-8"><a href="#cb50-8"></a>               <span class="st">&quot;aquamarine4&quot;</span>, <span class="st">&quot;mediumaquamarine&quot;</span>, <span class="st">&quot;aquamarine2&quot;</span>, <span class="st">&quot;chocolate3&quot;</span>,</span>
+<span id="cb50-9"><a href="#cb50-9"></a>               <span class="st">&quot;chocolate2&quot;</span>, <span class="st">&quot;sienna1&quot;</span>)</span>
+<span id="cb50-10"><a href="#cb50-10"></a>disp.pal5 &lt;-<span class="st">  </span><span class="kw">c</span>(<span class="st">&quot;midnightblue&quot;</span>, <span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>,<span class="st">&quot;darkslategrey&quot;</span>,</span>
+<span id="cb50-11"><a href="#cb50-11"></a>                <span class="st">&quot;aquamarine4&quot;</span>, <span class="st">&quot;mediumaquamarine&quot;</span>, <span class="st">&quot;chocolate4&quot;</span>, <span class="st">&quot;sienna&quot;</span>,</span>
+<span id="cb50-12"><a href="#cb50-12"></a>                <span class="st">&quot;chocolate3&quot;</span>,<span class="st">&quot;midnightblue&quot;</span>, <span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>,</span>
+<span id="cb50-13"><a href="#cb50-13"></a>                <span class="st">&quot;darkslategrey&quot;</span>,<span class="st">&quot;aquamarine4&quot;</span>, <span class="st">&quot;mediumaquamarine&quot;</span>, <span class="st">&quot;chocolate4&quot;</span>,</span>
+<span id="cb50-14"><a href="#cb50-14"></a>                <span class="st">&quot;sienna&quot;</span>, <span class="st">&quot;chocolate3&quot;</span>)</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-data.hill.whole$Reef &lt;- factor(data.hill.whole$Reef,
-                               levels = c(&#39;SCR&#39;, &#39;PPR&#39;, &#39;CCR&#39;, &#39;ALR&#39;, &#39;SIS&#39;,
-                                          &#39;ROL&#39;, &#39;RNW&#39;, &#39;PST&#39;,&#39;PBL&#39;))
-data.hill.core$Reef &lt;- factor(data.hill.core$Reef,
-                              levels = c(&#39;SCR&#39;, &#39;PPR&#39;, &#39;CCR&#39;, &#39;ALR&#39;, &#39;SIS&#39;,
-                                         &#39;ROL&#39;, &#39;RNW&#39;, &#39;PST&#39;,&#39;PBL&#39;))</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>data.hill.whole<span class="op">$</span>Reef &lt;-<span class="st"> </span><span class="kw">factor</span>(data.hill.whole<span class="op">$</span>Reef,</span>
+<span id="cb51-2"><a href="#cb51-2"></a>                               <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&#39;SCR&#39;</span>, <span class="st">&#39;PPR&#39;</span>, <span class="st">&#39;CCR&#39;</span>, <span class="st">&#39;ALR&#39;</span>, <span class="st">&#39;SIS&#39;</span>,</span>
+<span id="cb51-3"><a href="#cb51-3"></a>                                          <span class="st">&#39;ROL&#39;</span>, <span class="st">&#39;RNW&#39;</span>, <span class="st">&#39;PST&#39;</span>,<span class="st">&#39;PBL&#39;</span>))</span>
+<span id="cb51-4"><a href="#cb51-4"></a>data.hill.core<span class="op">$</span>Reef &lt;-<span class="st"> </span><span class="kw">factor</span>(data.hill.core<span class="op">$</span>Reef,</span>
+<span id="cb51-5"><a href="#cb51-5"></a>                              <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&#39;SCR&#39;</span>, <span class="st">&#39;PPR&#39;</span>, <span class="st">&#39;CCR&#39;</span>, <span class="st">&#39;ALR&#39;</span>, <span class="st">&#39;SIS&#39;</span>,</span>
+<span id="cb51-6"><a href="#cb51-6"></a>                                         <span class="st">&#39;ROL&#39;</span>, <span class="st">&#39;RNW&#39;</span>, <span class="st">&#39;PST&#39;</span>,<span class="st">&#39;PBL&#39;</span>))</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-font_theme = theme(
-        axis.title.x = element_text(size = 14),
-        axis.text.x = element_text(size = 10),
-        axis.title.y = element_text(size = 14),
-        axis.text.y = element_text(size = 8))</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>font_theme =<span class="st"> </span><span class="kw">theme</span>(</span>
+<span id="cb52-2"><a href="#cb52-2"></a>        <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">14</span>),</span>
+<span id="cb52-3"><a href="#cb52-3"></a>        <span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">10</span>),</span>
+<span id="cb52-4"><a href="#cb52-4"></a>        <span class="dt">axis.title.y =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">14</span>),</span>
+<span id="cb52-5"><a href="#cb52-5"></a>        <span class="dt">axis.text.y =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">8</span>))</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-fig01 &lt;-
-        ggplot(data = data.hill.whole, aes(x = factor(Zone, level = level_order),
-                                           y=Diversity)) +
-        stat_boxplot(aes(colour=Reef), geom =&#39;errorbar&#39;) + #alpha=0.3
-        geom_boxplot(aes(fill=Reef, colour=Reef), alpha=0.6,
-                     outlier.alpha = 0.7, outlier.shape = 16) +
-        scale_colour_manual(values=disp.pal5)+
-        scale_fill_manual(values=disp.pal4)+
-        ggtitle(&quot;Alpha Diversity&quot;, subtitle=&quot;Whole microbiome&quot;)+
-        theme(plot.title=element_text(size=18)) +
-        theme(plot.subtitle=element_text(size=16)) +
-        font_theme+
-        stat_summary(aes(fill=Reef), fun=&quot;mean&quot;, geom=&quot;point&quot;, size=2.5, shape=18,
-                     position=position_dodge(width=0.75),
-                     color=c(  &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
-                               &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;,
-                               &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
-                               &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;,
-                               &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
-                               &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;),
-                     show.legend = FALSE) +
-        scale_x_discrete(name=&quot;Zone&quot;) + scale_y_continuous(name=&quot;Hill diversity&quot;) +
-        theme(plot.title = element_text(family=NA, face=&quot;bold&quot;, size=16)) +
-        facet_wrap(~factor(Index, levels=unique(Index)),scales=&quot;free&quot;,
-                   nrow=2, ncol = 3) +
-        theme(strip.background = element_rect(color=&quot;black&quot;, fill=&quot;white&quot;,
-                                              size=1, linetype=&quot;blank&quot;),
-              strip.text.x = element_text(size = 14),
-              panel.border = element_rect(fill = NA, color=&quot;black&quot;),
-              panel.grid.major = element_blank(),
-              panel.grid.minor = element_blank(),
-              panel.background = element_rect(fill = &quot;white&quot;,colour = NA),
-              legend.key = element_rect(fill = &quot;transparent&quot;, color = NA),
-              legend.text = element_text(size = 12),
-              legend.title = element_text(size = 14))</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>fig01 &lt;-</span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="st">        </span><span class="kw">ggplot</span>(<span class="dt">data =</span> data.hill.whole, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(Zone, <span class="dt">level =</span> level_order),</span>
+<span id="cb53-3"><a href="#cb53-3"></a>                                           <span class="dt">y=</span>Diversity)) <span class="op">+</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a><span class="st">        </span><span class="kw">stat_boxplot</span>(<span class="kw">aes</span>(<span class="dt">colour=</span>Reef), <span class="dt">geom =</span><span class="st">&#39;errorbar&#39;</span>) <span class="op">+</span><span class="st"> </span><span class="co">#alpha=0.3</span></span>
+<span id="cb53-5"><a href="#cb53-5"></a><span class="st">        </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>Reef, <span class="dt">colour=</span>Reef), <span class="dt">alpha=</span><span class="fl">0.6</span>,</span>
+<span id="cb53-6"><a href="#cb53-6"></a>                     <span class="dt">outlier.alpha =</span> <span class="fl">0.7</span>, <span class="dt">outlier.shape =</span> <span class="dv">16</span>) <span class="op">+</span></span>
+<span id="cb53-7"><a href="#cb53-7"></a><span class="st">        </span><span class="kw">scale_colour_manual</span>(<span class="dt">values=</span>disp.pal5)<span class="op">+</span></span>
+<span id="cb53-8"><a href="#cb53-8"></a><span class="st">        </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>disp.pal4)<span class="op">+</span></span>
+<span id="cb53-9"><a href="#cb53-9"></a><span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Alpha Diversity&quot;</span>, <span class="dt">subtitle=</span><span class="st">&quot;Whole microbiome&quot;</span>)<span class="op">+</span></span>
+<span id="cb53-10"><a href="#cb53-10"></a><span class="st">        </span><span class="kw">theme</span>(<span class="dt">plot.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">18</span>)) <span class="op">+</span></span>
+<span id="cb53-11"><a href="#cb53-11"></a><span class="st">        </span><span class="kw">theme</span>(<span class="dt">plot.subtitle=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">16</span>)) <span class="op">+</span></span>
+<span id="cb53-12"><a href="#cb53-12"></a><span class="st">        </span>font_theme<span class="op">+</span></span>
+<span id="cb53-13"><a href="#cb53-13"></a><span class="st">        </span><span class="kw">stat_summary</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>Reef), <span class="dt">fun=</span><span class="st">&quot;mean&quot;</span>, <span class="dt">geom=</span><span class="st">&quot;point&quot;</span>, <span class="dt">size=</span><span class="fl">2.5</span>, <span class="dt">shape=</span><span class="dv">18</span>,</span>
+<span id="cb53-14"><a href="#cb53-14"></a>                     <span class="dt">position=</span><span class="kw">position_dodge</span>(<span class="dt">width=</span><span class="fl">0.75</span>),</span>
+<span id="cb53-15"><a href="#cb53-15"></a>                     <span class="dt">color=</span><span class="kw">c</span>(  <span class="st">&quot;midnightblue&quot;</span>,<span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>,</span>
+<span id="cb53-16"><a href="#cb53-16"></a>                               <span class="st">&quot;darkslategrey&quot;</span>,<span class="st">&quot;aquamarine4&quot;</span>,<span class="st">&quot;mediumaquamarine&quot;</span>,</span>
+<span id="cb53-17"><a href="#cb53-17"></a>                               <span class="st">&quot;chocolate4&quot;</span>, <span class="st">&quot;sienna&quot;</span>, <span class="st">&quot;chocolate3&quot;</span>,</span>
+<span id="cb53-18"><a href="#cb53-18"></a>                               <span class="st">&quot;midnightblue&quot;</span>,<span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>,</span>
+<span id="cb53-19"><a href="#cb53-19"></a>                               <span class="st">&quot;darkslategrey&quot;</span>,<span class="st">&quot;aquamarine4&quot;</span>,<span class="st">&quot;mediumaquamarine&quot;</span>,</span>
+<span id="cb53-20"><a href="#cb53-20"></a>                               <span class="st">&quot;chocolate4&quot;</span>, <span class="st">&quot;sienna&quot;</span>, <span class="st">&quot;chocolate3&quot;</span>,</span>
+<span id="cb53-21"><a href="#cb53-21"></a>                               <span class="st">&quot;midnightblue&quot;</span>,<span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>,</span>
+<span id="cb53-22"><a href="#cb53-22"></a>                               <span class="st">&quot;darkslategrey&quot;</span>,<span class="st">&quot;aquamarine4&quot;</span>,<span class="st">&quot;mediumaquamarine&quot;</span>,</span>
+<span id="cb53-23"><a href="#cb53-23"></a>                               <span class="st">&quot;chocolate4&quot;</span>, <span class="st">&quot;sienna&quot;</span>, <span class="st">&quot;chocolate3&quot;</span>),</span>
+<span id="cb53-24"><a href="#cb53-24"></a>                     <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb53-25"><a href="#cb53-25"></a><span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Zone&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Hill diversity&quot;</span>) <span class="op">+</span></span>
+<span id="cb53-26"><a href="#cb53-26"></a><span class="st">        </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">family=</span><span class="ot">NA</span>, <span class="dt">face=</span><span class="st">&quot;bold&quot;</span>, <span class="dt">size=</span><span class="dv">16</span>)) <span class="op">+</span></span>
+<span id="cb53-27"><a href="#cb53-27"></a><span class="st">        </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="kw">factor</span>(Index, <span class="dt">levels=</span><span class="kw">unique</span>(Index)),<span class="dt">scales=</span><span class="st">&quot;free&quot;</span>,</span>
+<span id="cb53-28"><a href="#cb53-28"></a>                   <span class="dt">nrow=</span><span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb53-29"><a href="#cb53-29"></a><span class="st">        </span><span class="kw">theme</span>(<span class="dt">strip.background =</span> <span class="kw">element_rect</span>(<span class="dt">color=</span><span class="st">&quot;black&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;white&quot;</span>,</span>
+<span id="cb53-30"><a href="#cb53-30"></a>                                              <span class="dt">size=</span><span class="dv">1</span>, <span class="dt">linetype=</span><span class="st">&quot;blank&quot;</span>),</span>
+<span id="cb53-31"><a href="#cb53-31"></a>              <span class="dt">strip.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">14</span>),</span>
+<span id="cb53-32"><a href="#cb53-32"></a>              <span class="dt">panel.border =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">color=</span><span class="st">&quot;black&quot;</span>),</span>
+<span id="cb53-33"><a href="#cb53-33"></a>              <span class="dt">panel.grid.major =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb53-34"><a href="#cb53-34"></a>              <span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb53-35"><a href="#cb53-35"></a>              <span class="dt">panel.background =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>,<span class="dt">colour =</span> <span class="ot">NA</span>),</span>
+<span id="cb53-36"><a href="#cb53-36"></a>              <span class="dt">legend.key =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;transparent&quot;</span>, <span class="dt">color =</span> <span class="ot">NA</span>),</span>
+<span id="cb53-37"><a href="#cb53-37"></a>              <span class="dt">legend.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">12</span>),</span>
+<span id="cb53-38"><a href="#cb53-38"></a>              <span class="dt">legend.title =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">14</span>))</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-fig02 &lt;-
-        ggplot(data = data.hill.core, aes(x = factor(Zone, level = level_order),
-                                          y=Diversity)) +
-        stat_boxplot(aes(colour=Reef), geom =&#39;errorbar&#39;) +
-        geom_boxplot(aes(fill=Reef, colour=Reef), alpha=0.6,
-                     outlier.alpha = 0.7, outlier.shape = 16) +
-        scale_colour_manual(values=disp.pal5) +
-        scale_fill_manual(values=disp.pal4) +
-        ggtitle(&quot;&quot;, subtitle=&quot;Core microbiome&quot;)+
-        theme(plot.subtitle = element_text(size=16))+
-        font_theme+
-        stat_summary(aes(fill=Reef), fun=&quot;mean&quot;, geom=&quot;point&quot;, size=2.5, shape=18,
-                     position=position_dodge(width=0.75),
-                     color=c(  &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
-                               &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;,
-                               &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
-                               &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;,
-                               &quot;midnightblue&quot;,&quot;royalblue4&quot;, &quot;royalblue3&quot;,
-                               &quot;darkslategrey&quot;,&quot;aquamarine4&quot;,&quot;mediumaquamarine&quot;,
-                               &quot;chocolate4&quot;, &quot;sienna&quot;, &quot;chocolate3&quot;),
-                     show.legend = FALSE)+
-        scale_x_discrete(name=&quot;Zone&quot;) + scale_y_continuous(name=&quot;Hill diversity&quot;)+
-        theme(plot.title = element_text(family=NA, face=&quot;bold&quot;, size=16)) +
-        facet_wrap(~factor(Index, levels=unique(Index)), scales=&quot;free&quot;,
-                   nrow=2, ncol = 3) +
-        theme(strip.background = element_rect(color=&quot;black&quot;, fill=&quot;white&quot;,
-                                              size=1, linetype=&quot;blank&quot;),
-              strip.text.x = element_text(size = 14),
-              panel.border = element_rect(fill = NA, color=&quot;black&quot;),
-              panel.grid.major = element_blank(),
-              panel.grid.minor = element_blank(),
-              panel.background = element_rect(fill = &quot;white&quot;,colour = NA),
-              legend.key = element_rect(fill = &quot;transparent&quot;, color = NA),
-              legend.text = element_text(size = 12),
-              legend.title = element_text(size = 14))</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>fig02 &lt;-</span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="st">        </span><span class="kw">ggplot</span>(<span class="dt">data =</span> data.hill.core, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(Zone, <span class="dt">level =</span> level_order),</span>
+<span id="cb54-3"><a href="#cb54-3"></a>                                          <span class="dt">y=</span>Diversity)) <span class="op">+</span></span>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="st">        </span><span class="kw">stat_boxplot</span>(<span class="kw">aes</span>(<span class="dt">colour=</span>Reef), <span class="dt">geom =</span><span class="st">&#39;errorbar&#39;</span>) <span class="op">+</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a><span class="st">        </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>Reef, <span class="dt">colour=</span>Reef), <span class="dt">alpha=</span><span class="fl">0.6</span>,</span>
+<span id="cb54-6"><a href="#cb54-6"></a>                     <span class="dt">outlier.alpha =</span> <span class="fl">0.7</span>, <span class="dt">outlier.shape =</span> <span class="dv">16</span>) <span class="op">+</span></span>
+<span id="cb54-7"><a href="#cb54-7"></a><span class="st">        </span><span class="kw">scale_colour_manual</span>(<span class="dt">values=</span>disp.pal5) <span class="op">+</span></span>
+<span id="cb54-8"><a href="#cb54-8"></a><span class="st">        </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span>disp.pal4) <span class="op">+</span></span>
+<span id="cb54-9"><a href="#cb54-9"></a><span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;&quot;</span>, <span class="dt">subtitle=</span><span class="st">&quot;Core microbiome&quot;</span>)<span class="op">+</span></span>
+<span id="cb54-10"><a href="#cb54-10"></a><span class="st">        </span><span class="kw">theme</span>(<span class="dt">plot.subtitle =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">16</span>))<span class="op">+</span></span>
+<span id="cb54-11"><a href="#cb54-11"></a><span class="st">        </span>font_theme<span class="op">+</span></span>
+<span id="cb54-12"><a href="#cb54-12"></a><span class="st">        </span><span class="kw">stat_summary</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>Reef), <span class="dt">fun=</span><span class="st">&quot;mean&quot;</span>, <span class="dt">geom=</span><span class="st">&quot;point&quot;</span>, <span class="dt">size=</span><span class="fl">2.5</span>, <span class="dt">shape=</span><span class="dv">18</span>,</span>
+<span id="cb54-13"><a href="#cb54-13"></a>                     <span class="dt">position=</span><span class="kw">position_dodge</span>(<span class="dt">width=</span><span class="fl">0.75</span>),</span>
+<span id="cb54-14"><a href="#cb54-14"></a>                     <span class="dt">color=</span><span class="kw">c</span>(  <span class="st">&quot;midnightblue&quot;</span>,<span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>,</span>
+<span id="cb54-15"><a href="#cb54-15"></a>                               <span class="st">&quot;darkslategrey&quot;</span>,<span class="st">&quot;aquamarine4&quot;</span>,<span class="st">&quot;mediumaquamarine&quot;</span>,</span>
+<span id="cb54-16"><a href="#cb54-16"></a>                               <span class="st">&quot;chocolate4&quot;</span>, <span class="st">&quot;sienna&quot;</span>, <span class="st">&quot;chocolate3&quot;</span>,</span>
+<span id="cb54-17"><a href="#cb54-17"></a>                               <span class="st">&quot;midnightblue&quot;</span>,<span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>,</span>
+<span id="cb54-18"><a href="#cb54-18"></a>                               <span class="st">&quot;darkslategrey&quot;</span>,<span class="st">&quot;aquamarine4&quot;</span>,<span class="st">&quot;mediumaquamarine&quot;</span>,</span>
+<span id="cb54-19"><a href="#cb54-19"></a>                               <span class="st">&quot;chocolate4&quot;</span>, <span class="st">&quot;sienna&quot;</span>, <span class="st">&quot;chocolate3&quot;</span>,</span>
+<span id="cb54-20"><a href="#cb54-20"></a>                               <span class="st">&quot;midnightblue&quot;</span>,<span class="st">&quot;royalblue4&quot;</span>, <span class="st">&quot;royalblue3&quot;</span>,</span>
+<span id="cb54-21"><a href="#cb54-21"></a>                               <span class="st">&quot;darkslategrey&quot;</span>,<span class="st">&quot;aquamarine4&quot;</span>,<span class="st">&quot;mediumaquamarine&quot;</span>,</span>
+<span id="cb54-22"><a href="#cb54-22"></a>                               <span class="st">&quot;chocolate4&quot;</span>, <span class="st">&quot;sienna&quot;</span>, <span class="st">&quot;chocolate3&quot;</span>),</span>
+<span id="cb54-23"><a href="#cb54-23"></a>                     <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
+<span id="cb54-24"><a href="#cb54-24"></a><span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Zone&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Hill diversity&quot;</span>)<span class="op">+</span></span>
+<span id="cb54-25"><a href="#cb54-25"></a><span class="st">        </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">family=</span><span class="ot">NA</span>, <span class="dt">face=</span><span class="st">&quot;bold&quot;</span>, <span class="dt">size=</span><span class="dv">16</span>)) <span class="op">+</span></span>
+<span id="cb54-26"><a href="#cb54-26"></a><span class="st">        </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="kw">factor</span>(Index, <span class="dt">levels=</span><span class="kw">unique</span>(Index)), <span class="dt">scales=</span><span class="st">&quot;free&quot;</span>,</span>
+<span id="cb54-27"><a href="#cb54-27"></a>                   <span class="dt">nrow=</span><span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb54-28"><a href="#cb54-28"></a><span class="st">        </span><span class="kw">theme</span>(<span class="dt">strip.background =</span> <span class="kw">element_rect</span>(<span class="dt">color=</span><span class="st">&quot;black&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;white&quot;</span>,</span>
+<span id="cb54-29"><a href="#cb54-29"></a>                                              <span class="dt">size=</span><span class="dv">1</span>, <span class="dt">linetype=</span><span class="st">&quot;blank&quot;</span>),</span>
+<span id="cb54-30"><a href="#cb54-30"></a>              <span class="dt">strip.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">14</span>),</span>
+<span id="cb54-31"><a href="#cb54-31"></a>              <span class="dt">panel.border =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">color=</span><span class="st">&quot;black&quot;</span>),</span>
+<span id="cb54-32"><a href="#cb54-32"></a>              <span class="dt">panel.grid.major =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb54-33"><a href="#cb54-33"></a>              <span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb54-34"><a href="#cb54-34"></a>              <span class="dt">panel.background =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>,<span class="dt">colour =</span> <span class="ot">NA</span>),</span>
+<span id="cb54-35"><a href="#cb54-35"></a>              <span class="dt">legend.key =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;transparent&quot;</span>, <span class="dt">color =</span> <span class="ot">NA</span>),</span>
+<span id="cb54-36"><a href="#cb54-36"></a>              <span class="dt">legend.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">12</span>),</span>
+<span id="cb54-37"><a href="#cb54-37"></a>              <span class="dt">legend.title =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">14</span>))</span></code></pre></div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -2482,482 +2828,6 @@ Next
 <h3 id="reuse">Reuse</h3>
 <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source code is available at <a href="https://github.com/bocasbiome/web/">https://github.com/bocasbiome/web/</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
 </div>
-<script id="distill-bibliography" type="text/bibtex">
-@article{callahan2016dada2,
-  title={DADA2: high-resolution sample inference from Illumina amplicon data},
-  author={Callahan, Benjamin J and McMurdie, Paul J and Rosen, Michael J and Han, Andrew W and Johnson, Amy Jo A and Holmes, Susan P},
-  journal={Nature Methods},
-  volume={13},
-  number={7},
-  pages={581},
-  year={2016},
-  url = {https://doi.org/10.1038/nmeth.3869},
-}
-
-@article{martin2011cutadapt,
-  title={Cutadapt removes adapter sequences from high-throughput sequencing reads},
-  author={Martin, Marcel},
-  journal={EMBnet. journal},
-  volume={17},
-  number={1},
-  pages={10--12},
-  year={2011},
-  url = {https://doi.org/10.14806/ej.17.1.200}
-}
-
-@article{quast2012silva,
-  title={The SILVA ribosomal RNA gene database project: improved data processing and web-based tools},
-  author={Quast, Christian and Pruesse, Elmar and Yilmaz, Pelin and Gerken, Jan and Schweer, Timmy and Yarza, Pablo and Peplies, J{\"o}rg and Gl{\"o}ckner, Frank Oliver},
-  journal={Nucleic Acids Research},
-  volume={41},
-  number={D1},
-  pages={D590--D596},
-  year={2012},
-  url = {https://doi.org/10.1093/nar/gks1219}
-}
-
-@article{mcmurdie2013phyloseq,
-  title={phyloseq: an R package for reproducible interactive analysis and graphics of microbiome census data},
-  author={McMurdie, Paul J and Holmes, Susan},
-  journal={PLoS One},
-  volume={8},
-  number={4},
-  pages={e61217},
-  year={2013},
-  url = {https://doi.org/10.1371/journal.pone.0061217}
-}
-
-@misc{wong2011points,
-  title={Points of view: Color blindness},
-  author={Wong, Bang},
-  journal={Nature Methods},
-  volume={8},
-  number={6},
-  pages={441},
-  year={2011},
-  url = {https://doi.org/10.1038/nmeth.1618}
-}
-
-@misc{lahti2017microbiome,
-  author = {Lahti, Leo and Shetty Sudarshan and others},
-  title = {Tools for microbiome analysis in R. Version 1.9.97},
-  year = {2017},
-  url = {https://github.com/microbiome/microbiome},
-}
-
-@article{eren2015anvi,
-  title={Anvi’o: an advanced analysis and visualization platform for ‘omics data},
-  author={Eren, A Murat and Esen, {\"O}zcan C and Quince, Christopher and Vineis, Joseph H and Morrison, Hilary G and Sogin, Mitchell L and Delmont, Tom O},
-  journal={PeerJ},
-  volume={3},
-  pages={e1319},
-  year={2015},
-  url = {https://doi.org/10.7717/peerj.1319}
-}
-
-@article{bolger2014trimmomatic,
-  title={Trimmomatic: a flexible trimmer for Illumina sequence data},
-  author={Bolger, Anthony M and Lohse, Marc and Usadel, Bjoern},
-  journal={Bioinformatics},
-  volume={30},
-  number={15},
-  pages={2114--2120},
-  year={2014},
-  url = {https://doi.org/10.1093/bioinformatics/btu170}
-}
-
-@article{koster2012snakemake,
-  title={Snakemake—a scalable bioinformatics workflow engine},
-  author={K{\"o}ster, Johannes and Rahmann, Sven},
-  journal={Bioinformatics},
-  volume={28},
-  number={19},
-  pages={2520--2522},
-  year={2012},
-  url = {https://doi.org/10.1093/bioinformatics/bts480}
-}
-
-@article{menzel2016fast,
-  title={Fast and sensitive taxonomic classification for metagenomics with Kaiju},
-  author={Menzel, Peter and Ng, Kim Lee and Krogh, Anders},
-  journal={Nature Communications},
-  volume={7},
-  pages={11257},
-  year={2016},
-  url = {https://doi.org/10.1038/ncomms11257}
-}
-
-@article{roux2015virsorter,
-  title={VirSorter: mining viral signal from microbial genomic data},
-  author={Roux, Simon and Enault, Francois and Hurwitz, Bonnie L and Sullivan, Matthew B},
-  journal={PeerJ},
-  volume={3},
-  pages={e985},
-  year={2015},
-  url = {https://doi.org/10.1093/bioinformatics/btu170}
-}
-
-@article{kim2016centrifuge,
-  title={Centrifuge: rapid and sensitive classification of metagenomic sequences},
-  author={Kim, Daehwan and Song, Li and Breitwieser, Florian P and Salzberg, Steven L},
-  journal={Genome Research},
-  volume={26},
-  number={12},
-  pages={1721--1729},
-  year={2016},
-  url = {https://doi.org/10.1101/gr.210641.116.}
-}
-
-@article{hyatt2010prodigal,
-  title={Prodigal: prokaryotic gene recognition and translation initiation site identification},
-  author={Hyatt, Doug and Chen, Gwo-Liang and LoCascio, Philip F and Land, Miriam L and Larimer, Frank W and Hauser, Loren J},
-  journal={BMC Bioinformatics},
-  volume={11},
-  number={1},
-  pages={119},
-  year={2010},
-  url = {https://doi.org/10.1186/1471-2105-11-119}
-}
-
-@article{edgar2004muscle,
-  title={MUSCLE: multiple sequence alignment with high accuracy and high throughput},
-  author={Edgar, Robert C},
-  journal={Nucleic Acids Research},
-  volume={32},
-  number={5},
-  pages={1792--1797},
-  year={2004},
-  url = {https://doi.org/10.1093/nar/gkh340}
-}
-
-@article{li2015megahit,
-  title={MEGAHIT: an ultra-fast single-node solution for large and complex metagenomics assembly via succinct de Bruijn graph},
-  author={Li, Dinghua and Liu, Chi-Man and Luo, Ruibang and Sadakane, Kunihiko and Lam, Tak-Wah},
-  journal={Bioinformatics},
-  volume={31},
-  number={10},
-  pages={1674--1676},
-  year={2015},
-  url = {https://doi.org/10.1093/bioinformatics/btv033}
-}
-
-@article{langmead2012fast,
-  title={Fast gapped-read alignment with Bowtie 2},
-  author={Langmead, Ben and Salzberg, Steven L},
-  journal={Nature Methods},
-  volume={9},
-  number={4},
-  pages={357},
-  year={2012},
-  url = {https://doi.org/10.1038/nmeth.1923}
-}
-
-@article{li2009fast,
-  title={Fast and accurate short read alignment with Burrows--Wheeler transform},
-  author={Li, Heng and Durbin, Richard},
-  journal={Bioinformatics},
-  volume={25},
-  number={14},
-  pages={1754--1760},
-  year={2009},
-  url = {https://doi.org/10.1093/bioinformatics/btp324}
-}
-
-@article{li2009sequence,
-  title={The sequence alignment/map format and SAMtools},
-  author={Li, Heng and Handsaker, Bob and Wysoker, Alec and Fennell, Tim and Ruan, Jue and Homer, Nils and Marth, Gabor and Abecasis, Goncalo and Durbin, Richard},
-  journal={Bioinformatics},
-  volume={25},
-  number={16},
-  pages={2078--2079},
-  year={2009},
-  url = {https://doi.org/10.1093/bioinformatics/btp352}
-}
-
-@article{breitwieser2018krakenuniq,
-  title={KrakenUniq: confident and fast metagenomics classification using unique k-mer counts},
-  author={Breitwieser, FP and Baker, DN and Salzberg, Steven L},
-  journal={Genome Biology},
-  volume={19},
-  number={1},
-  pages={1--10},
-  year={2018},
-  url = {https://doi.org/10.5281/zenodo.1412647}
-}
-
-@article{eren2013filtering,
-  title={A filtering method to generate high quality short reads using Illumina paired-end technology},
-  author={Eren, A Murat and Vineis, Joseph H and Morrison, Hilary G and Sogin, Mitchell L},
-  journal={PLoS One},
-  volume={8},
-  number={6},
-  year={2013},
-  url = {https://doi.org/10.1371/journal.pone.0066643}
-}
-
-@article{alneberg2014binning,
-  title={Binning metagenomic contigs by coverage and composition},
-  author={Alneberg, Johannes and Bjarnason, Brynjar Sm{\'a}ri and De Bruijn, Ino and Schirmer, Melanie and Quick, Joshua and Ijaz, Umer Z and Lahti, Leo and Loman, Nicholas J and Andersson, Anders F and Quince, Christopher},
-  journal={Nature Methods},
-  volume={11},
-  number={11},
-  pages={1144--1146},
-  year={2014},
-  url = {https://doi.org/10.1038/nmeth.3103}
-}
-
-@article{sieber2018recovery,
-  title={Recovery of genomes from metagenomes via a dereplication, aggregation and scoring strategy},
-  author={Sieber, Christian MK and Probst, Alexander J and Sharrar, Allison and Thomas, Brian C and Hess, Matthias and Tringe, Susannah G and Banfield, Jillian F},
-  journal={Nature Microbiology},
-  volume={3},
-  number={7},
-  pages={836--843},
-  year={2018},
-}
-
-@article{kang2019metabat,
-  title={MetaBAT 2: an adaptive binning algorithm for robust and efficient genome reconstruction from metagenome assemblies},
-  author={Kang, Dongwan D and Li, Feng and Kirton, Edward and Thomas, Ashleigh and Egan, Rob and An, Hong and Wang, Zhong},
-  journal={PeerJ},
-  volume={7},
-  pages={e7359},
-  year={2019},
-}
-@article{wu2016maxbin,
-  title={MaxBin 2.0: an automated binning algorithm to recover genomes from multiple metagenomic datasets},
-  author={Wu, Yu-Wei and Simmons, Blake A and Singer, Steven W},
-  journal={Bioinformatics},
-  volume={32},
-  number={4},
-  pages={605--607},
-  year={2016},
-}
-
-@article{ondov2011krona,
-  title={Interactive metagenomic visualization in a Web browser},
-  author={Ondov, Brian D and Bergman, Nicholas H and Phillippy, Adam M},
-  journal={BMC Bioinformatics},
-  volume={12},
-  number={1},
-  pages={385},
-  year={2011},
-  url = {https://doi.org/10.1186/1471-2105-12-385}
-}
-
-@article{buchfink2015fast,
-  title={Fast and sensitive protein alignment using DIAMOND},
-  author={Buchfink, Benjamin and Xie, Chao and Huson, Daniel H},
-  journal={Nature Methods},
-  volume={12},
-  number={1},
-  pages={59--60},
-  year={2015},
-  url = {https://doi.org/10.1038/nmeth.3176}
-}
-
-@article{delmont2018nitrogen,
-  title={Nitrogen-fixing populations of Planctomycetes and Proteobacteria are abundant in surface ocean metagenomes},
-  author={Delmont, Tom O and Quince, Christopher and Shaiber, Alon and Esen, {\"O}zcan C and Lee, Sonny TM and Rapp{\'e}, Michael S and McLellan, Sandra L and L{\"u}cker, Sebastian and Eren, A Murat},
-  journal={Nature Microbiology},
-  volume={3},
-  number={7},
-  pages={804--813},
-  year={2018},
-  url = {https://doi.org/10.1038/s41564-018-0176-9}
-}
-
-@article{dongen2000cluster,
-  title={A cluster algorithm for graphs},
-  author={Dongen, Stijn},
-  year={2000},
-  publisher={CWI (Centre for Mathematics and Computer Science)},
-  url = {https://www.micans.org/mcl/index.html?sec_software}
-}
-
-@article{jain2018high,
-  title={High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries},
-  author={Jain, Chirag and Rodriguez-R, Luis M and Phillippy, Adam M and Konstantinidis, Konstantinos T and Aluru, Srinivas},
-  journal={Nature Communications},
-  volume={9},
-  number={1},
-  pages={1--8},
-  year={2018},
-  url={https://doi.org/10.1038/s41467-018-07641-9}
-}
-
-@article{stamatakis2014raxml,
-  title={RAxML version 8: a tool for phylogenetic analysis and post-analysis of large phylogenies},
-  author={Stamatakis, Alexandros},
-  journal={Bioinformatics},
-  volume={30},
-  number={9},
-  pages={1312--1313},
-  year={2014},
-  url={https://doi.org/10.1093/bioinformatics/btu033}
-}
-
-@article{minh2020iq,
-  title={IQ-TREE 2: New models and efficient methods for phylogenetic inference in the genomic era},
-  author={Minh, Bui Quang and Schmidt, Heiko A and Chernomor, Olga and Schrempf, Dominik and Woodhams, Michael D and Von Haeseler, Arndt and Lanfear, Robert},
-  journal={Molecular Biology and Evolution},
-  volume={37},
-  number={5},
-  pages={1530--1534},
-  year={2020},
-  url={https://doi.org/10.1093/molbev/msaa015}
-}
-
-@article{kalyaanamoorthy2017modelfinder,
-  title={ModelFinder: fast model selection for accurate phylogenetic estimates},
-  author={Kalyaanamoorthy, Subha and Minh, Bui Quang and Wong, Thomas KF and von Haeseler, Arndt and Jermiin, Lars S},
-  journal={Nature Methods},
-  volume={14},
-  number={6},
-  pages={587},
-  year={2017},
-  url={https://doi.org/10.1038/nmeth.4285}
-}
-
-@article{quince2011removing,
-  title={Removing noise from pyrosequenced amplicons},
-  author={Quince, Christopher and Lanzen, Anders and Davenport, Russell J and Turnbaugh, Peter J},
-  journal={BMC bioinformatics},
-  volume={12},
-  number={1},
-  pages={38},
-  year={2011},
-  url={https://doi.org/10.1186/1471-2105-12-38}
-}
-@article{caporaso2011global,
-  title={Global patterns of 16S rRNA diversity at a depth of millions of sequences per sample},
-  author={Caporaso, J Gregory and Lauber, Christian L and Walters, William A and Berg-Lyons, Donna and Lozupone, Catherine A and Turnbaugh, Peter J and Fierer, Noah and Knight, Rob},
-  journal={Proceedings of the National Academy of Sciences},
-  volume={108},
-  number={Supplement 1},
-  pages={4516--4522},
-  year={2011},
-  url={https://doi.org/10.1073/pnas.1000080107}
-}
-@article{kanehisa2000kegg,
-  title={KEGG: kyoto encyclopedia of genes and genomes},
-  author={Kanehisa, Minoru and Goto, Susumu},
-  journal={Nucleic Acids Research},
-  volume={28},
-  number={1},
-  pages={27--30},
-  year={2000},
-  url={https://doi.org/10.1093/nar/28.1.27}
-}
-
-@article{kanehisa2016blastkoala,
-  title={BlastKOALA and GhostKOALA: KEGG tools for functional characterization of genome and metagenome sequences},
-  author={Kanehisa, Minoru and Sato, Yoko and Morishima, Kanae},
-  journal={Journal of Molecular Biology},
-  volume={428},
-  number={4},
-  pages={726--731},
-  year={2016},
-  url={https://doi.org/10.1016/j.jmb.2015.11.006}
-}
-
-@article{minoche2011evaluation,
-  title={Evaluation of genomic high-throughput sequencing data generated on Illumina HiSeq and genome analyzer systems},
-  author={Minoche, Andr{\'e} E and Dohm, Juliane C and Himmelbauer, Heinz},
-  journal={Genome Biology},
-  volume={12},
-  number={11},
-  pages={R112},
-  year={2011},
-  url={https://doi.org/10.1186/gb-2011-12-11-r112}
-}
-
-@article{lee2019gtotree,
-  title={GToTree: a user-friendly workflow for phylogenomics},
-  author={Lee, Michael D},
-  journal={Bioinformatics},
-  volume={35},
-  number={20},
-  pages={4162--4164},
-  year={2019},
-  url={https://doi.org/10.1093/bioinformatics/btz188}
-}
-
-@article{wang2007naive,
-  title={Naive Bayesian classifier for rapid assignment of rRNA sequences into the new bacterial taxonomy},
-  author={Wang, Qiong and Garrity, George M and Tiedje, James M and Cole, James R},
-  journal={Applied & Environmental Microbiology},
-  volume={73},
-  number={16},
-  pages={5261--5267},
-  year={2007},
-  url={https://doi.org/10.1128/AEM.00062-07}
-}
-
-@article{hoang2017ultrafast,
-  author = {Hoang, Diep Thi and Chernomor, Olga and von Haeseler, Arndt and Minh, Bui Quang and Vinh, Le Sy},
-  title = {UFBoot2: Improving the Ultrafast Bootstrap Approximation},
-  journal = {Molecular Biology and Evolution},
-  volume = {35},
-  number = {2},
-  pages = {518-522},
-  year = {2017},
-  url = {https://doi.org/10.1093/molbev/msx281}
-}
-
-@article{parada2016every,
-  title={Every base matters: assessing small subunit rRNA primers for marine microbiomes with mock communities, time series and global field samples},
-  author={Parada, Alma E and Needham, David M and Fuhrman, Jed A},
-  journal={Environmental microbiology},
-  volume={18},
-  number={5},
-  pages={1403--1414},
-  year={2016},
-  url = {https://doi.org/10.1111/1462-2920.13023}
-}
-
-@article{parks2018gtgb,
-  title={A standardized bacterial taxonomy based on genome phylogeny substantially revises the tree of life},
-  author={Parks, Donovan H and Chuvochina, Maria and Waite, David W and Rinke, Christian and Skarshewski, Adam and Chaumeil, Pierre-Alain and Hugenholtz, Philip},
-  journal={Nature Biotechnology},
-  volume={36},
-  number={10},
-  pages={1546-1696},
-  year={2018},
-  url = {https://doi.org/10.1038/nbt.4229}
-}
-
-@article{foster2017metacoder,
-  title={Metacoder: an R package for visualization and manipulation of community taxonomic diversity data},
-  author={Foster, Zachary SL and Sharpton, Thomas J and Gr{\"u}nwald, Niklaus J},
-  journal={PLoS Computational Biology},
-  volume={13},
-  number={2},
-  pages={e1005404},
-  year={2017},
-  url={https://doi.org/10.1371/journal.pcbi.1005404}
-}
-
-@article{dufrene1997species,
-  title={Species assemblages and indicator species: the need for a flexible asymmetrical approach},
-  author={Dufr{\^e}ne, Marc and Legendre, Pierre},
-  journal={Ecological Monographs},
-  volume={67},
-  number={3},
-  pages={345--366},
-  year={1997},
-  url={https://doi.org/10.1890/0012-9615(1997)067[0345:SAAIST]2.0.CO;2}
-}
-
-@article{roberts2007labdsv,
-  title={labdsv: Ordination and multivariate analysis for ecology},
-  author={Roberts, David W and others},
-  journal={R package version},
-  volume={1},
-  number={1},
-  year={2007}
-}
-</script>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->
