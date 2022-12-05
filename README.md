@@ -7,61 +7,14 @@
   <span class="pub-title"><a href=" https://doi.org/10.1038/s42003-022-03679-0" target="_new">The gut microbiome variability of a butterflyfish increases on severely degraded Caribbean reefs</a></span>
   <span class="pub-authors">Clever F<sup>☯</sup>, Sourisse JM<sup>☯</sup>, Preziosi RF, Eisen JA, Guerra ECR, Scott JJ, Wilkins LGE, Altieri AH, McMillan WO, Leray M. </span>
   <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors</span>
-<div class="pub-info">
-<div class="pub-featured-image">
-  <a href="assets/main_figs.png">
-    <img src="assets/main_figs.png" style="max-width: 100px; max-height: 400px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(10%);" />
-  </a>
 </div>
-<div class="pub-highlights">
-  <span style="display: inline-block; padding-bottom: 5px;"
-  >- Environmental degradation may alter key mutualisms underlying structure and function of ecological communities.</span><br><span style="display: inline-block; padding-bottom: 5px;"
-  >- How do microbial communities associated with fishes vary across populations in relation to habitat characteristics?</span><br><span style="display: inline-block; padding-bottom: 5px;"
-  >- Found significant differences in the gut microbiome composition of a facultative coral-feeding butterflyfish (*Chaetodon capistratus*) across reefs that differ in live coral cover. </span><br><span style="display: inline-block; padding-bottom: 5px;"
-  >- Gut microbiomes were significantly more variable at degraded reefs.</span><br><span style="display: inline-block; padding-bottom: 5px;"
-  >- Gut microbiomes on severely degraded reefs had a lower abundance of *Endozoicomonas* and a higher diversity of anaerobic fermentative bacteria.</span><br><span style="display: inline-block; padding-bottom: 5px;"
-  >- Observed that shifts in gut bacterial communities across the habitat gradient extend to a small set of potentially beneficial host associated bacteria suggesting essential fish-microbiome interactions may be vulnerable to severe coral degradation.</span>
-</div>
-  </div>
-  <span class="pub-journal">
-    <b>Communications Biology 5 (2022)</b>
-    <a href="https://doi.org/10.1038/s42003-022-03679-0" target="_blank">🔗</a>
-  </span>
-</div>
-
-<small><em>Code for the highlight box above shamelessly stolen from the [Meren Lab website](https://merenlab.org/).</em></small>
 
 
 > [Click here](https://www.nature.com/articles/s42003-022-03679-0/metrics) for article metrics on the  Communications Biology website. 
 
 <br/>
 
-
-
 This site provides reproducible workflows for the study on the gut microbiome of Caribbean butterflyfish. If you want to follow the workflow step-by-step, please use the navigation bar above or the section below, where scripts are presented in order. If you would instead like to jump to specific analyses, please select an area on the **clickable image map** to go directly to that section.
-
-<div id="image_map">
-<map name="workflow">
-    <area target="_blank" alt="" title="all fish ASVs" href="wf3.html" coords="82,65,208,168" shape="rect">
-    <area target="_blank" alt="" title="all ASVs" href="wf1.html#data-preparation" coords="23,12,261,65" shape="rect">
-    <area target="_blank" alt="" title="all ASVs" href="wf1.html#data-preparation" coords="20,168,263,219" shape="rect">
-    <area target="_blank" alt="" title="all ASVs" href="wf1.html#data-preparation" coords="23,67,80,167" shape="rect">
-    <area target="_blank" alt="" title="all ASVs" href="wf1.html#data-preparation" coords="208,66,264,168" shape="rect">
-    <area target="_blank" alt="" title="fish-core" href="wf1.html#run-indicator-analysis-to-identify-core-taxa" coords="94,284,197,363" shape="rect">
-    <area target="_blank" alt="" title="alpha diversity all" href="wf4.html#whole-community" coords="300,76,419,105" shape="rect">
-    <area target="_blank" alt="" title="beta dispersion all" href="wf6.html#beta-dispersion-plots-whole-v-core" coords="300,106,419,128" shape="rect">
-    <area target="_blank" alt="" title="beta diversity all" href="wf5.html#whole-community" coords="300,131,419,156" shape="rect">
-    <area target="_blank" alt="" title="alpha diversity core" href="wf4.html#core-community" coords="302,287,421,312" shape="rect">
-    <area target="_blank" alt="" title="beta dispersion core" href="wf6.html#beta-dispersion-plots-whole-v-core" coords="301,314,419,337" shape="rect">
-    <area target="_blank" alt="" title="beta diversity core" href="wf5.html#core-community" coords="303,339,420,365" shape="rect">
-    <area target="_blank" alt="" title="PIME" href="wf7.html" coords="596,53,748,85" shape="rect">
-    <area target="_blank" alt="" title="PIME" href="wf7.html" coords="596,99,748,132" shape="rect">
-    <area target="_blank" alt="" title="PIME" href="wf7.html" coords="597,147,749,179" shape="rect">
-    <area target="_blank" alt="" title="PIME" href="wf7.html" coords="583,11,766,51" shape="rect">
-    <area target="_blank" alt="" title="PIME" href="wf7.html" coords="581,177,763,208" shape="rect">
-</map>
-<img src="assets/wf_map.png" alt="image map example" usemap="#workflow">
-</div>
 
 
 ## Script Details
